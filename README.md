@@ -22,6 +22,8 @@ Ink is a Free Shadcn UI Blog Landing Page template to publish articles, insights
 
 [View Demo](https://shadcnstudio.com/preview/templates/shadcn-astro-ink-landing-page)
 
+[View Documentation](https://shadcnstudio.com/docs/getting-started/shadcn-studio-template-astro)
+
 <p>
   Supported by
   <a href="https://shadcnstudio.com" target="_blank">
@@ -30,7 +32,46 @@ Ink is a Free Shadcn UI Blog Landing Page template to publish articles, insights
   , with a commitment to empowering the open-source community.
 </p>
 
+## Key Features ✨
+
+- **SEO & Performance Optimized** - Fast load times, Core Web Vitals ready, and search-engine friendly structure out of the box
+- **Built with Astro** - Hybrid rendering, island architecture, and fast progressive enhancement for modern content sites
+- **Fully Accessible** - WCAG compliant design ensures your content reaches all audiences
+- **Dark Mode Support** - Light, dark, and system theme modes with complete customization
+- **Figma Design Files Included** - Design-to-code collaboration made seamless for teams
+
+## Page Structure & Sections
+
+**Pages**
+
+- **Homepage** - Hero section with featured posts, category browsing, and latest articles grid
+- **Blog List** - Filterable article catalog with search, category filtering, and pagination for easy content discovery
+- **Blog Detail** - Full-width article page with MDX support, table of contents, related posts, and author information
+- **Contact Page** - Ready-to-use contact form integrated with your blog's messaging system
+
+**Key UI Sections**
+
+- **Hero Section** - Customizable headline and call-to-action to set the tone for your blog
+- **Featured Posts** - Highlight your best content with a dedicated carousel or grid
+- **Category Navigation** - Help readers explore topics that interest them
+- **Related Posts** - Automatically suggest relevant articles at the end of each post
+- **CTA Blocks** - Convert readers with strategically placed call-to-action sections
+- **Footer** - Social links, newsletter signup, and navigation footer
+
 ---
+
+<br />
+
+<a href="https://shadcnstudio.com" target="_blank">
+  <img src="https://cdn.shadcnstudio.com/ss-assets/smm/marketing/shadcn-studio-smm-banner.png" alt="shadcn/studio banner" width="1200">
+</a>
+
+<p>
+   <a href="https://shadcnstudio.com" target="_blank">
+      shadcn/studio
+   </a>
+   is an open-source collection of copy-and-paste shadcn components, blocks, and templates - paired with a powerful theme generator & AI Tools to craft, customize, and ship faster. 🚀
+</p>
 
 ## Table of Contents 📋
 
