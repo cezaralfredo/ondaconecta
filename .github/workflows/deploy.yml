@@ -20,7 +20,7 @@ jobs:
           node-version: 22
 
       - name: 📦 Instalar dependências
-        run: npm ci
+        run: npm install
 
       - name: 🏗️ Gerar Build estático do Astro
         run: npm run build
