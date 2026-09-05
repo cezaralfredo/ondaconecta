@@ -19,11 +19,16 @@ jobs:
         with:
           node-version: 22
 
+      - name: ⚙️ Instalar pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
       - name: 📦 Instalar dependências
-        run: npm install
+        run: pnpm install --no-frozen-lockfile
 
       - name: 🏗️ Gerar Build estático do Astro
-        run: npm run build
+        run: pnpm run build
 
       - name: 🚀 Sincronizar via FTP com public_html
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
