@@ -28,8 +28,8 @@ jobs:
       - name: 🚀 Sincronizar via FTP com public_html
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
+          server: pro127.dnspro.net.br
+          username: ${{ secrets.FTP_USERNAME || 'ondaconecta' }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
           server-dir: public_html/
