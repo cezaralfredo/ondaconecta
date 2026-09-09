@@ -6,7 +6,14 @@ import mdx from '@astrojs/mdx'
 import react from '@astrojs/react'
 
 export default defineConfig({
-  site: process.env.SITE_URL || 'http://localhost:4321/',
+  site: process.env.SITE_URL || 'https://ondaconecta.com.br',
+  i18n: {
+    defaultLocale: 'pt',
+    locales: ['pt', 'en', 'es'],
+    routing: {
+      prefixDefaultLocale: false
+    }
+  },
   integrations: [
     react(),
     mdx(),

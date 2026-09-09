@@ -4,6 +4,7 @@ import { useEffect, useLayoutEffect, useState } from 'react'
 import { MailIcon, MenuIcon } from 'lucide-react'
 
 import ThemeToggle from '@/components/layout/theme-toggle'
+import LanguageSwitcher from '@/components/layout/language-switcher'
 
 import { Button } from '@/components/ui/button'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
@@ -113,10 +114,11 @@ const Header = ({ navigationData, className }: HeaderProps) => {
         <MenuNavigation navigationData={navigationData} activeSection={activeSection} className='max-lg:hidden' />
 
         {/* Actions */}
-        <div className='flex gap-3'>
+        <div className='flex items-center gap-2 sm:gap-3'>
+          <LanguageSwitcher />
           <ThemeToggle />
           <Button variant='outline' className='px-4 max-sm:hidden' asChild>
-            <a href='/contact-us'>Get in Touch</a>
+            <a href='/contact-us'>Contato</a>
           </Button>
 
           {/* Navigation for small screens */}

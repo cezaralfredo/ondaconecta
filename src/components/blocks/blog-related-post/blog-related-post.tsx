@@ -25,13 +25,13 @@ const Blog = ({ relatedPosts }: { relatedPosts: BlogPost[] }) => {
         {/* Header */}
         <div className='space-y-4'>
           <Badge variant='outline' className='h-auto'>
-            Trending
+            Tendências
           </Badge>
 
-          <h2 className='text-2xl font-semibold md:text-3xl lg:text-4xl'>Related Post</h2>
+          <h2 className='text-2xl font-semibold md:text-3xl lg:text-4xl'>Notícias Relacionadas</h2>
 
           <p className='text-muted-foreground text-lg md:text-xl'>
-            Expand your knowledge with these hand-picked posts.
+            Aprofunde-se no tema com essas leituras recomendadas.
           </p>
         </div>
 

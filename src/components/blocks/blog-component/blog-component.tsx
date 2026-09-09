@@ -125,12 +125,12 @@ const Blog = ({ blogData = [] }: BlogProps) => {
       <div className='mx-auto max-w-7xl space-y-8 px-4 sm:px-6 lg:space-y-16 lg:px-8'>
         {/* Header */}
         <div className='space-y-4'>
-          {selectedTab === 'All' && <p className='text-sm'>Blogs</p>}
+          {selectedTab === 'All' && <p className='text-sm font-semibold tracking-wide text-primary uppercase'>Todas as Publicações</p>}
           {selectedTab !== 'All' && (
             <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem>
-                  <BreadcrumbLink href='#'>Blog</BreadcrumbLink>
+                  <BreadcrumbLink href='#'>Publicações</BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
@@ -141,11 +141,11 @@ const Blog = ({ blogData = [] }: BlogProps) => {
           )}
 
           <h2 className='text-2xl font-semibold md:text-3xl lg:text-4xl'>
-            Build Better Products with Insights & Inspiration.
+            Explore as Notícias por Categoria e Tendência
           </h2>
 
           <p className='text-muted-foreground text-lg md:text-xl'>
-            Practical insights and real stories to guide your product from vision to reality.
+            Acompanhe análises, novidades e informações essenciais separadas por área de interesse.
           </p>
         </div>
 

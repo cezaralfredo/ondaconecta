@@ -13,20 +13,16 @@ import type { NavigationSection } from '@/components/blocks/menu-navigation'
 
 const navigationData: NavigationSection[] = [
   {
-    title: 'Home',
+    title: 'Início',
     href: '/#home'
   },
   {
-    title: 'Categories',
+    title: 'Categorias & Tendências',
     href: '/#categories'
   },
   {
-    title: 'Team',
-    href: '#'
-  },
-  {
-    title: 'About Us',
-    href: '#'
+    title: 'Sobre',
+    href: '/#about'
   }
 ]
 
@@ -45,10 +41,11 @@ interface Props {
 }
 
 const seoProps = Astro.props as Props
+const currentLang = Astro.currentLocale === 'en' ? 'en' : Astro.currentLocale === 'es' ? 'es' : 'pt-BR'
 ---
 
 <!doctype html>
-<html lang='en' class='scroll-smooth'>
+<html lang={currentLang} class='scroll-smooth'>
   <head>
     <HeadSeo {...seoProps} />
     <ClientRouter />

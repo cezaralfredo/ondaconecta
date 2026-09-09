@@ -1,46 +1,40 @@
 // Site Configuration
 // Centralized configuration for site metadata, SEO, and branding
 
-export const SITE_TITLE = 'Demo: Ink - Blog Landing Page | Shadcn Studio'
+export const SITE_TITLE = 'Onda Conecta | Tendências, Notícias e Inovação'
 export const SITE_DESCRIPTION =
-  'Ink is a free Shadcn UI Blog Landing Page template to publish articles, insights, and categories with a clean, fast, and readable layout.'
+  'Onda Conecta: Seu portal de novidades, inteligência de mercado, tendências e inovações que moldam o futuro. Conteúdo ágil, estruturado e aprofundado.'
 
-export const GITHUB_URL = 'https://github.com/yourusername/master-shadcn-astro'
-export const SITE_URL = 'https://shadcnstudio.com/'
+export const GITHUB_URL = 'https://github.com/cezaralfredo/ondaconecta'
+export const SITE_URL = 'https://ondaconecta.com.br'
 
 export const SITE_METADATA = {
   title: {
-    default: 'Demo: Ink - Blog Landing Page | Shadcn Studio'
+    default: 'Onda Conecta | Tendências, Notícias e Inovação'
   },
   description:
-    'Ink is a free Shadcn UI Blog Landing Page template to publish articles, insights, and categories with a clean, fast, and readable layout.',
+    'Onda Conecta: Seu portal de novidades, inteligência de mercado, tendências e inovações que moldam o futuro. Conteúdo ágil, estruturado e aprofundado.',
   keywords: [
-    'Astro',
-    'astro template',
-    'astro theme',
-    'astro starter',
-    'shadcn template',
-    'shadcn ui',
-    'shadcn/ui components',
-    'tailwind template',
-    'tailwind css',
-    'react components',
-    'SEO optimized',
-    'web development',
-    'static site generator',
-    'modern web apps',
-    'performance',
-    'typescript'
+    'notícias',
+    'tendências',
+    'inovação',
+    'tecnologia',
+    'inteligência artificial',
+    'mercado',
+    'sustentabilidade',
+    'negócios',
+    'futuro',
+    'onda conecta'
   ],
-  authors: [{ name: 'shadcn Studio', url: SITE_URL }],
-  creator: 'shadcn Studio',
-  publisher: 'shadcn Studio',
+  authors: [{ name: 'Redação Onda Conecta', url: SITE_URL }],
+  creator: 'Onda Conecta',
+  publisher: 'Onda Conecta',
   robots: {
     index: true,
     follow: true
   },
-  language: 'en-US',
-  locale: 'en_US',
+  language: 'pt-BR',
+  locale: 'pt_BR',
   icons: {
     icon: [
       { url: '/favicon/favicon.ico', sizes: '48x48' },
@@ -54,63 +48,63 @@ export const SITE_METADATA = {
   },
   openGraph: {
     type: 'website',
-    locale: 'en_US',
-    siteName: 'Ink',
-    title: 'Ink - Blog Landing Page | Shadcn Studio',
+    locale: 'pt_BR',
+    siteName: 'Onda Conecta',
+    title: 'Onda Conecta | Tendências, Notícias e Inovação',
     description:
-      'Ink is a free Shadcn UI Blog Landing Page template to publish articles, insights, and categories with a clean, fast, and readable layout.',
+      'Acompanhe as últimas novidades, grandes tendências e análises de mercado que estão transformando o cenário atual.',
     images: [
       {
         url: '/images/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Ink - Blog Landing Page',
+        alt: 'Onda Conecta - Portal de Notícias e Tendências',
         type: 'image/png'
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@shadcnstudio',
-    creator: '@shadcnstudio',
-    title: 'Ink - Blog Landing Page | Shadcn Studio',
+    site: '@ondaconecta',
+    creator: '@ondaconecta',
+    title: 'Onda Conecta | Tendências, Notícias e Inovação',
     description:
-      'Ink is a free Shadcn UI Blog Landing Page template to publish articles, insights, and categories with a clean, fast, and readable layout.',
+      'Acompanhe as últimas novidades, grandes tendências e análises de mercado que estão transformando o cenário atual.',
     images: ['/images/og-image.png']
   },
   verification: {
-    google: '', // Add your Google verification code
-    yandex: '', // Add your Yandex verification code
-    bing: '' // Add your Bing verification code
+    google: '', // Insira seu código de verificação do Google Search Console aqui
+    yandex: '',
+    bing: ''
   }
 }
 
-// Social media links
+// Redes sociais e canais oficiais
 export const SOCIAL_LINKS = {
   github: GITHUB_URL,
-  twitter: 'https://twitter.com/shadcnstudio',
-  linkedin: 'https://linkedin.com/company/shadcnstudio',
-  discord: 'https://discord.gg/shadcnstudio'
+  twitter: 'https://twitter.com/ondaconecta',
+  instagram: 'https://instagram.com/ondaconecta',
+  linkedin: 'https://linkedin.com/company/ondaconecta'
 }
 
-// Company information for structured data
+// Estrutura da organização para Rich Snippets do Google (Schema.org)
 export const COMPANY_INFO = {
-  name: 'Ink',
-  legalName: 'shadcn Studio Inc.',
+  name: 'Onda Conecta',
+  legalName: 'Onda Conecta Notícias & Mídia',
   url: SITE_URL,
   logo: `/images/site-logo.png`,
-  foundingDate: '2024',
+  foundingDate: '2025',
   address: {
-    streetAddress: '123 Web Dev Street',
-    addressLocality: 'San Francisco',
-    addressRegion: 'CA',
-    postalCode: '94102',
-    addressCountry: 'US'
+    streetAddress: 'Brasil',
+    addressLocality: 'São Paulo',
+    addressRegion: 'SP',
+    postalCode: '01000-000',
+    addressCountry: 'BR'
   },
   contactPoint: {
-    telephone: '+1-555-123-4567',
-    contactType: 'customer support',
-    email: 'support@shadcnstudio.com'
+    telephone: '+55-11-99999-9999',
+    contactType: 'editorial',
+    email: 'contato@ondaconecta.com.br'
   },
   sameAs: Object.values(SOCIAL_LINKS)
 }

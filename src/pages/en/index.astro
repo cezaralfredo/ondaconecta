@@ -6,12 +6,12 @@ import HeroSection from '@/components/blocks/hero-section/hero-section'
 import Blog from '@/components/blocks/blog-component/blog-component'
 import CTA from '@/components/blocks/cta-section/cta-section'
 
-// Get all blog posts and convert to the format expected by components
+// Get all posts for English (or fallback to all if en posts are still being populated)
 const allPosts = await getCollection('blog')
-const publishedPosts = allPosts
+const enPosts = allPosts.filter(p => p.data.lang === 'en')
+const postsToShow = enPosts.length > 0 ? enPosts : allPosts
 
-// Convert to the format expected by the React components
-const allBlogPosts = publishedPosts
+const allBlogPosts = postsToShow
   .map((post, index) => ({
     id: post.data.id || index + 1,
     slug: post.data.slug || post.id,
@@ -28,26 +28,23 @@ const allBlogPosts = publishedPosts
   }))
   .sort((a, b) => b.pubDate.localeCompare(a.pubDate))
 
-// Page-specific SEO configuration
-const pageTitle = 'Tendências, Notícias e Inovações do Mercado'
+const pageTitle = 'Global Trends, Breaking News & Market Innovations'
 const pageDescription =
-  'Fique por dentro das últimas notícias, tendências globais, avanços tecnológicos e inovações que estão moldando o mercado e a sociedade.'
+  'Stay updated with global trends, breaking news, technological advancements, and insights shaping markets and industries worldwide.'
 const pageKeywords =
-  'notícias de tendências, inovação, mercado futuro, inteligência artificial, sustentabilidade, negócios, tecnologia, onda conecta'
+  'global trends, tech innovation, future markets, artificial intelligence, sustainability, business trends, onda conecta'
 
-// Structured data for better SEO (NewsMediaOrganization / WebSite)
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'NewsMediaOrganization',
   name: 'Onda Conecta',
   description: pageDescription,
-  url: 'https://ondaconecta.com.br',
-  publishingPrinciples: 'https://ondaconecta.com.br/sobre'
+  url: 'https://ondaconecta.com.br/en',
+  publishingPrinciples: 'https://ondaconecta.com.br/about'
 }
 ---
 
 <Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} schema={schema}>
-  <!--  All Sections -->
   <HeroSection blogData={allBlogPosts} client:load />
   <Blog blogData={allBlogPosts} client:load />
   <CTA />

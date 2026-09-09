@@ -15,19 +15,18 @@ const HeroSection = ({ blogData }: { blogData: BlogPost[] }) => {
         {/* Hero Header */}
         <div className='flex max-w-4xl flex-col items-center gap-4 self-center text-center'>
           <Badge variant='outline' className='h-auto text-sm font-normal'>
-            Trusted by 1,000,000+ professionals
+            Radar de Tendências & Inteligência de Mercado
           </Badge>
           <h1 className='text-3xl leading-[1.29167] font-semibold text-balance sm:text-4xl lg:text-5xl'>
-            Build Better Products with Insights that Drive Real Impact.
+            Conecte-se às novidades e tendências que moldam o futuro.
           </h1>
           <p className='text-muted-foreground mx-auto max-w-2xl text-xl'>
-            Learn how to design, develop, launch, and grow digital products through practical knowledge and proven
-            frameworks.
+            Artigos aprofundados, notícias verificadas e análises sobre tecnologia, negócios, inovação e sustentabilidade.
           </p>
           <form className='gap-3 py-1 max-sm:w-full max-sm:space-y-2 sm:flex sm:flex-row md:w-sm'>
-            <Input type='email' placeholder='Your email' className='bg-background input-lg flex-1 px-3 text-base' />
+            <Input type='email' placeholder='Seu melhor e-mail' className='bg-background input-lg flex-1 px-3 text-base' />
             <Button size='lg' className='text-base max-sm:w-full' type='submit'>
-              Subscribe
+              Receber Notícias
             </Button>
           </form>
         </div>

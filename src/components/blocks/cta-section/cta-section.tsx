@@ -26,22 +26,21 @@ const CTA = () => {
               <Card className='bg-muted rounded-lg shadow-none ring-0'>
                 <CardContent className='flex h-full flex-col justify-between gap-4'>
                   <h2 className='text-xl leading-tight font-semibold lg:text-2xl'>
-                    Explore insights, stories, and strategies that help you build better products every day.
+                    Receba análises exclusivas e tendências diretamente no seu e-mail.
                   </h2>
                   <div>
                     <p className='text-muted-foreground mb-3 text-base'>
-                      Join 1,000,000+ subscribers receiving expert tips on earning more, investing smarter and living
-                      better, all in our free newsletter.
+                      Faça parte de nossa comunidade e receba resumos selecionados sobre tendências globais, inovação e inteligência de mercado sem spam.
                     </p>
                     {/* Email Form */}
                     <form className='gap-3 py-1 max-sm:space-y-2 sm:flex sm:flex-row'>
                       <Input
                         type='email'
-                        placeholder='Your email'
+                        placeholder='Seu melhor e-mail'
                         className='bg-background input-lg flex-1 px-3 text-base'
                       />
                       <Button size='lg' className='text-base max-sm:w-full' type='submit'>
-                        Subscribe
+                        Assinar Grátis
                       </Button>
                     </form>
                   </div>

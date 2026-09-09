@@ -21,19 +21,19 @@ const Footer = () => {
             href='#'
             className='text-muted-foreground hover:text-foreground opacity-80 transition-opacity duration-300 hover:opacity-100'
           >
-            Support
+            Contato
           </a>
           <a
             href='#'
             className='text-muted-foreground hover:text-foreground opacity-80 transition-opacity duration-300 hover:opacity-100'
           >
-            Terms & Conditions
+            Termos de Uso
           </a>
           <a
             href='#'
             className='text-muted-foreground hover:text-foreground opacity-80 transition-opacity duration-300 hover:opacity-100'
           >
-            Privacy Policy
+            Privacidade
           </a>
         </div>
 
@@ -59,11 +59,11 @@ const Footer = () => {
         <p className='flex items-center gap-1 text-center font-medium text-balance max-sm:flex-col'>
           <span>
             {`©${new Date().getFullYear()}`}{' '}
-            <a className='hover:underline' href='/#'>
-              INK,
+            <a className='hover:underline font-semibold' href='/#'>
+              Onda Conecta.
             </a>
           </span>
-          <span> Made with ❤️ for better web.</span>
+          <span> Conectando você às tendências e inovações que moldam o futuro.</span>
         </p>
       </div>
     </footer>

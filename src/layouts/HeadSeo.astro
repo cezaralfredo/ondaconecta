@@ -31,7 +31,7 @@ const {
 } = Astro.props
 
 // Use site metadata defaults if not provided
-const finalTitle = title ? `Demo: ${title} - Ink | Shadcn Studio` : SITE_METADATA.title.default
+const finalTitle = title ? `${title} | Onda Conecta` : SITE_METADATA.title.default
 const finalDescription = description || SITE_METADATA.description
 const finalKeywords = keywords || SITE_METADATA.keywords.join(', ')
 const finalImage = image || SITE_METADATA.openGraph.images[0].url
@@ -41,14 +41,15 @@ const finalAuthor = author || SITE_METADATA.authors[0].name
 // Robots meta tag
 const robotsContent = `${noindex || !SITE_METADATA.robots.index ? 'noindex' : 'index'}, ${nofollow || !SITE_METADATA.robots.follow ? 'nofollow' : 'follow'}, max-image-preview:large, max-snippet:-1, max-video-preview:-1`
 
-// Default schema.org structured data
+// Default schema.org structured data para portal de notícias/tendências
 const defaultSchema = {
   '@context': 'https://schema.org',
-  '@type': 'WebSite',
+  '@type': 'NewsMediaOrganization',
   name: SITE_METADATA.openGraph.siteName,
   url: Astro.site?.toString(),
   description: finalDescription,
-  inLanguage: SITE_METADATA.language.split('-')[0],
+  inLanguage: 'pt-BR',
+  publishingPrinciples: `${Astro.site}sobre`,
   potentialAction: {
     '@type': 'SearchAction',
     target: {
@@ -77,8 +78,12 @@ const schemaData = schema || defaultSchema
 <meta name='creator' content={SITE_METADATA.creator} />
 <meta name='publisher' content={SITE_METADATA.publisher} />
 
-<!-- Canonical URL -->
+<!-- Canonical & Hreflang Tags para SEO Multilíngue -->
 <link rel='canonical' href={canonicalURL} />
+<link rel='alternate' hreflang='pt-BR' href={new URL(Astro.url.pathname.replace(/^\/(en|es)/, ''), Astro.site)} />
+<link rel='alternate' hreflang='en' href={new URL(`/en${Astro.url.pathname.replace(/^\/(en|es)/, '')}`, Astro.site)} />
+<link rel='alternate' hreflang='es' href={new URL(`/es${Astro.url.pathname.replace(/^\/(en|es)/, '')}`, Astro.site)} />
+<link rel='alternate' hreflang='x-default' href={new URL(Astro.url.pathname.replace(/^\/(en|es)/, ''), Astro.site)} />
 
 <!-- Robots Meta Tags -->
 <meta name='robots' content={robotsContent} />
@@ -98,8 +103,8 @@ const schemaData = schema || defaultSchema
 {SITE_METADATA.verification.yandex && <meta name='yandex-verification' content={SITE_METADATA.verification.yandex} />}
 
 <!-- Language and Locale -->
-<meta property='og:locale' content={SITE_METADATA.locale} />
-<meta http-equiv='content-language' content={SITE_METADATA.language} />
+<meta property='og:locale' content={Astro.currentLocale === 'en' ? 'en_US' : Astro.currentLocale === 'es' ? 'es_ES' : 'pt_BR'} />
+<meta http-equiv='content-language' content={Astro.currentLocale || 'pt-BR'} />
 
 <!-- Favicon and Icons -->
 {SITE_METADATA.icons.icon.map(icon => <link rel='icon' type={icon.type} sizes={icon.sizes} href={icon.url} />)}
