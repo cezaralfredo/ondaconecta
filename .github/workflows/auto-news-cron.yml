@@ -1,0 +1,44 @@
+name: Auto News Cron Publisher (Onda Conecta)
+
+on:
+  # Agendamento Cron: roda todos os dias às 08:00 e às 18:00 (Horário de Brasília = 11:00 e 21:00 UTC)
+  schedule:
+    - cron: '0 11 * * *'
+    - cron: '0 21 * * *'
+  # Permite acionar manualmente a qualquer momento pela aba Actions no GitHub
+  workflow_dispatch:
+
+jobs:
+  fetch-and-publish:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: ⬇️ Checkout do código
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: 🤖 Executar Automação de Notícias com IA
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: node scripts/auto-publisher.mjs
+
+      - name: 📦 Salvar alterações e Disparar Deploy
+        run: |
+          git config --global user.name "Onda Conecta Bot"
+          git config --global user.email "bot@ondaconecta.com.br"
+          git add src/content/blog/ scripts/published-history.json
+          
+          # Apenas commita se houver arquivos novos
+          if ! git diff-index --quiet HEAD --; then
+            git commit -m "chore(auto): publicação autônoma de tendências mundiais"
+            git push origin main
+          else
+            echo "Nenhuma alteração detectada para commit."
+          fi
