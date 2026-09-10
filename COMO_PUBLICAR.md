@@ -28,7 +28,7 @@ O site foi construído com arquitetura estática moderna (**Astro SSG**). Isso s
 
 ---
 
-## ⚡ Método 1: Publicação Rápida via IA (Recomendado)
+## ⚡ Método 1: Publicação Rápida via IA (Sob Demanda)
 
 Você pode publicar um artigo completo simplesmente me dando uma instrução em linguagem natural aqui no chat.
 
@@ -40,15 +40,22 @@ Você pode publicar um artigo completo simplesmente me dando uma instrução em 
 > **Exemplo B (A partir de uma notícia ou link):**  
 > *"Pegue essa matéria/link sobre a regulação do mercado de carbono e transforme em um artigo completo para a Onda Conecta com SEO de ponta e tradução."*
 
-### O que acontece nos bastidores:
-1. A skill `onda-writer` redige o texto em **pt-BR**, focado em intenção de busca no Google Brasil, e cria as versões em **EN** e **ES**.
-2. A skill `onda-publisher` calcula o próximo `id`, gera o slug amigável, valida a tipagem e cria os 3 arquivos `.mdx`.
-3. É gerada ou atribuída a imagem da capa em `public/images/blog-post/`.
-4. O commit e push no Git são feitos automaticamente, disparando o deploy para o ar.
+---
+
+## 🤖 Método 2: Piloto Automático na IDE com Antigravity (`onda-cron-agent`)
+
+Você pode me pedir para buscar notícias da web e publicar agora mesmo, ou agendar para que eu rode em segundo plano enquanto você trabalha:
+
+### 1. Execução Imediata pelo Antigravity:
+> *"Execute a skill onda-cron-agent na categoria Sustentabilidade, pesquise as tendências mundiais de hoje e publique no site."*
+
+### 2. Agendamento com o comando `/schedule`:
+Você pode usar o slash command do chat para agendar lembretes periódicos:
+> `/schedule cron="0 10 * * *" prompt="Execute a skill onda-cron-agent, busque uma grande novidade de tecnologia ou IA, redija em PT/EN/ES e faça o deploy."`
 
 ---
 
-## 🛠️ Método 2: Publicação Manual (Passo a Passo)
+## 🛠️ Método 3: Publicação Manual (Passo a Passo)
 
 Se você preferir escrever ou editar um artigo manualmente, siga os passos abaixo:
 
