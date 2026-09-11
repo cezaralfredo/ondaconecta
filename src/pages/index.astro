@@ -4,7 +4,6 @@ import { getCollection } from 'astro:content'
 
 import HeroSection from '@/components/blocks/hero-section/hero-section'
 import Blog from '@/components/blocks/blog-component/blog-component'
-import CTA from '@/components/blocks/cta-section/cta-section'
 
 // Get all blog posts and convert to the format expected by components
 const allPosts = await getCollection('blog')
@@ -52,5 +51,4 @@ const schema = {
   <!--  All Sections -->
   <HeroSection blogData={allBlogPosts} client:load />
   <Blog blogData={allBlogPosts} client:load />
-  <CTA />
 </Layout>

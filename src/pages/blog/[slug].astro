@@ -17,7 +17,6 @@ import { getRelatedPosts, getPostNavigation, calculateReadTime } from '@/utils/b
 import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
 
 import Blog from '@/components/blocks/blog-related-post/blog-related-post'
-import CTA from '@/components/blocks/cta-section/cta-section'
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection('blog')
@@ -259,7 +258,5 @@ const schema = {
     </section>
 
     <Blog relatedPosts={formattedRelatedPosts} />
-
-    <CTA />
   </main>
 </Layout>

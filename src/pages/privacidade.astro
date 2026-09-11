@@ -1,0 +1,117 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb'
+
+const pageTitle = 'Política de Privacidade'
+const pageDescription = 'Política de Privacidade e Proteção de Dados (LGPD) do portal Onda Conecta.'
+const pageKeywords = 'política de privacidade, proteção de dados, lgpd, cookies, segurança, onda conecta'
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Política de Privacidade | Onda Conecta',
+  description: pageDescription,
+  url: 'https://ondaconecta.com.br/privacidade'
+}
+---
+
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} schema={schema}>
+  <section class='py-12 sm:py-16 lg:py-20'>
+    <div class='mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-10'>
+      <!-- Breadcrumbs -->
+      <Breadcrumb>
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink href='/'>Início</BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage>Privacidade</BreadcrumbPage>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
+
+      <!-- Cabeçalho -->
+      <div class='space-y-4 border-b pb-8'>
+        <h1 class='text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl'>
+          Política de Privacidade
+        </h1>
+        <p class='text-muted-foreground text-lg'>
+          Última atualização: {new Date().toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' })}
+        </p>
+      </div>
+
+      <!-- Conteúdo da Política -->
+      <div class='prose prose-neutral dark:prose-invert max-w-none space-y-8 text-foreground/90 leading-relaxed text-base'>
+        <section class='space-y-3'>
+          <h2 class='text-2xl font-semibold text-foreground'>1. Compromisso com a sua Privacidade</h2>
+          <p>
+            O portal <strong>Onda Conecta</strong> (<a href='https://ondaconecta.com.br' class='text-primary hover:underline'>ondaconecta.com.br</a>), em parceria com a <strong>Anauê Design, Marketing e IA</strong>, valoriza a confiança de seus leitores e preza pela total transparência e segurança no tratamento de dados pessoais, em estrita conformidade com a <strong>Lei Geral de Proteção de Dados Pessoais (LGPD — Lei nº 13.709/2018)</strong> e demais normas aplicáveis.
+          </p>
+        </section>
+
+        <section class='space-y-3'>
+          <h2 class='text-2xl font-semibold text-foreground'>2. Quais Dados Coletamos e Como</h2>
+          <p>Ao navegar pelo portal, podemos receber ou coletar os seguintes tipos de informações:</p>
+          <ul class='list-disc pl-6 space-y-2'>
+            <li>
+              <strong>Dados Técnicos e de Navegação:</strong> Informações anônimas coletadas automaticamente pelo navegador e servidores de hospedagem (endereço IP aproximado, tipo de dispositivo, navegador, resolução de tela, páginas acessadas, data e horário).
+            </li>
+            <li>
+              <strong>Cookies e Armazenamento Local (localStorage):</strong> Utilizamos armazenamento local no seu navegador exclusivamente para lembrar preferências essenciais do usuário, como o <em>tema visual</em> (Modo Claro / Modo Escuro) e a preferência de <em>idioma</em>.
+            </li>
+            <li>
+              <strong>Dados Fornecidos Voluntariamente:</strong> Informações fornecidas caso o leitor opte por entrar em contato direto com nossa equipe via canais de suporte (como WhatsApp).
+            </li>
+          </ul>
+        </section>
+
+        <section class='space-y-3'>
+          <h2 class='text-2xl font-semibold text-foreground'>3. Finalidade do Tratamento de Dados</h2>
+          <p>Os dados coletados têm propósitos estritamente legítimos, tais como:</p>
+          <ul class='list-disc pl-6 space-y-2'>
+            <li>Garantir o funcionamento correto, a responsividade e a alta performance de carregamento das páginas;</li>
+            <li>Personalizar a experiência de leitura através de preferências salvas no próprio dispositivo do leitor;</li>
+            <li>Monitorar métricas de audiência gerais de forma agregada e anônima para aprimorar as pautas editoriais;</li>
+            <li>Atender a solicitações, feedbacks e dúvidas enviadas pelos leitores.</li>
+          </ul>
+        </section>
+
+        <section class='space-y-3'>
+          <h2 class='text-2xl font-semibold text-foreground'>4. Compartilhamento e Segurança dos Dados</h2>
+          <p>
+            <strong>Não comercializamos, alugamos ou repassamos seus dados pessoais a terceiros para fins de marketing sem sua prévia autorização.</strong>
+          </p>
+          <p>
+            Dados técnicos podem ser processados por provedores de infraestrutura de nuvem confiáveis (como provedores de hospedagem e redes de entrega de conteúdo — CDN), empregando protocolos modernos de criptografia (HTTPS / SSL/TLS) para proteger o tráfego de ponta a ponta contra acessos não autorizados.
+          </p>
+        </section>
+
+        <section class='space-y-3'>
+          <h2 class='text-2xl font-semibold text-foreground'>5. Direitos dos Titulares (LGPD)</h2>
+          <p>Nos termos do artigo 18 da LGPD, você possui direito de:</p>
+          <ul class='list-disc pl-6 space-y-2'>
+            <li>Confirmar a existência de tratamento de dados;</li>
+            <li>Solicitar a correção de dados incompletos ou inexatos;</li>
+            <li>Revogar qualquer consentimento previamente concedido;</li>
+            <li>Solicitar a exclusão de dados pessoais tratados com seu consentimento.</li>
+          </ul>
+        </section>
+
+        <section class='space-y-3'>
+          <h2 class='text-2xl font-semibold text-foreground'>6. Atualizações desta Política</h2>
+          <p>
+            Podemos atualizar esta Política de Privacidade a qualquer momento para refletir melhorias no site ou novas determinações regulatórias. Recomendamos a consulta periódica desta página.
+          </p>
+        </section>
+
+        <section class='space-y-3'>
+          <h2 class='text-2xl font-semibold text-foreground'>7. Canal de Atendimento de Privacidade</h2>
+          <p>
+            Para exercer seus direitos de titular ou tirar qualquer dúvida relacionada à privacidade dos seus dados, fale diretamente com nossa equipe editorial pelo WhatsApp: <a href='https://wa.me/5585996277707' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline font-medium'>+55 (85) 99627-7707</a>.
+          </p>
+        </section>
+      </div>
+    </div>
+  </section>
+</Layout>

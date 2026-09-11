@@ -21,13 +21,13 @@ const Footer = () => {
             Contato
           </a>
           <a
-            href='#'
+            href='/termos-de-uso'
             className='text-muted-foreground hover:text-foreground opacity-80 transition-opacity duration-300 hover:opacity-100'
           >
             Termos de Uso
           </a>
           <a
-            href='#'
+            href='/privacidade'
             className='text-muted-foreground hover:text-foreground opacity-80 transition-opacity duration-300 hover:opacity-100'
           >
             Privacidade

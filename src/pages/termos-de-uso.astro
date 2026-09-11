@@ -1,0 +1,108 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb'
+
+const pageTitle = 'Termos de Uso'
+const pageDescription = 'Termos e Condições de Uso do portal de notícias e tendências Onda Conecta.'
+const pageKeywords = 'termos de uso, condições gerais, aviso legal, direitos autorais, onda conecta'
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Termos de Uso | Onda Conecta',
+  description: pageDescription,
+  url: 'https://ondaconecta.com.br/termos-de-uso'
+}
+---
+
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} schema={schema}>
+  <section class='py-12 sm:py-16 lg:py-20'>
+    <div class='mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-10'>
+      <!-- Breadcrumbs -->
+      <Breadcrumb>
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink href='/'>Início</BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage>Termos de Uso</BreadcrumbPage>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
+
+      <!-- Cabeçalho -->
+      <div class='space-y-4 border-b pb-8'>
+        <h1 class='text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl'>
+          Termos de Uso
+        </h1>
+        <p class='text-muted-foreground text-lg'>
+          Última atualização: {new Date().toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' })}
+        </p>
+      </div>
+
+      <!-- Conteúdo dos Termos -->
+      <div class='prose prose-neutral dark:prose-invert max-w-none space-y-8 text-foreground/90 leading-relaxed text-base'>
+        <section class='space-y-3'>
+          <h2 class='text-2xl font-semibold text-foreground'>1. Aceitação dos Termos</h2>
+          <p>
+            Bem-vindo ao portal <strong>Onda Conecta</strong> (<a href='https://ondaconecta.com.br' class='text-primary hover:underline'>ondaconecta.com.br</a>). Ao navegar, acessar ou utilizar qualquer página, artigo, notícia ou funcionalidade disponibilizada em nosso portal, você concorda expressamente em cumprir e vincular-se a estes <strong>Termos de Uso</strong> e à nossa <strong>Política de Privacidade</strong>. Caso discorde de qualquer cláusula aqui descrita, orientamos que interrompa a navegação imediatamente.
+          </p>
+        </section>
+
+        <section class='space-y-3'>
+          <h2 class='text-2xl font-semibold text-foreground'>2. Natureza e Propósito Editorial do Portal</h2>
+          <p>
+            O <strong>Onda Conecta</strong> é um veículo informativo digital focado na curadoria, redação e divulgação de notícias, tendências de mercado, avanços em inteligência artificial, tecnologia, negócios, inovação e sustentabilidade.
+          </p>
+          <p>
+            O conteúdo publicado possui caráter exclusivamente jornalístico, educativo e reflexivo. <strong>Nenhuma matéria ou artigo configura recomendação de investimento financeiro, assessoria jurídica, contábil ou médica.</strong> Decisões baseadas em informações do portal são de responsabilidade única e exclusiva do usuário.
+          </p>
+        </section>
+
+        <section class='space-y-3'>
+          <h2 class='text-2xl font-semibold text-foreground'>3. Propriedade Intelectual e Direitos Autorais</h2>
+          <p>
+            Todos os textos, análises, compilações, logotipos, elementos visuais, códigos e identidades gráficas presentes no portal são de titularidade do <strong>Onda Conecta</strong> ou de seus parceiros e colaboradores (incluindo Anauê Design, Marketing e IA), estando protegidos pela legislação brasileira de direitos autorais (Lei nº 9.610/1998) e tratados internacionais.
+          </p>
+          <ul class='list-disc pl-6 space-y-2'>
+            <li><strong>Uso Pessoal:</strong> É autorizada a leitura, visualização e compartilhamento de links diretos das matérias para uso pessoal e não comercial.</li>
+            <li><strong>Reprodução Parcial (Citação):</strong> É permitida a citação de trechos curtos, desde que haja atribuição expressa e link direto para o artigo original no Onda Conecta.</li>
+            <li><strong>Vedação:</strong> É proibida a cópia integral, raspagem sistemática (scraping automatizado para fins predatórios), redistribuição ou exploração comercial não autorizada por escrito.</li>
+          </ul>
+        </section>
+
+        <section class='space-y-3'>
+          <h2 class='text-2xl font-semibold text-foreground'>4. Links Externos e Isenção de Responsabilidade</h2>
+          <p>
+            Nossos artigos podem conter links para plataformas e sites de terceiros (fontes de notícias, órgãos oficiais, relatórios de pesquisa). Não exercemos controle sobre políticas, termos ou conteúdos desses sites e não assumimos responsabilidade direta ou indireta por quaisquer danos ou perdas causados por serviços externos.
+          </p>
+        </section>
+
+        <section class='space-y-3'>
+          <h2 class='text-2xl font-semibold text-foreground'>5. Conduta e Responsabilidades do Usuário</h2>
+          <p>O usuário compromete-se a utilizar o portal de forma ético-legal, abstendo-se de:</p>
+          <ul class='list-disc pl-6 space-y-2'>
+            <li>Praticar atos que possam comprometer a segurança, integridade ou estabilidade da infraestrutura do site;</li>
+            <li>Introduzir códigos maliciosos, vírus ou qualquer componente tecnológico prejudicial;</li>
+            <li>Utilizar o portal para veiculação de conteúdos ofensivos, fraudulentos ou ilegais.</li>
+          </ul>
+        </section>
+
+        <section class='space-y-3'>
+          <h2 class='text-2xl font-semibold text-foreground'>6. Modificações dos Termos</h2>
+          <p>
+            O <strong>Onda Conecta</strong> reserva-se o direito de atualizar e modificar estes Termos de Uso periodicamente para refletir evoluções do portal ou adequações legislativas. As alterações entram em vigor a partir da data de sua publicação nesta página.
+          </p>
+        </section>
+
+        <section class='space-y-3'>
+          <h2 class='text-2xl font-semibold text-foreground'>7. Contato e Esclarecimentos</h2>
+          <p>
+            Em caso de dúvidas sobre estes Termos de Uso ou solicitações editoriais, entre em contato através de nosso canal oficial de atendimento via WhatsApp: <a href='https://wa.me/5585996277707' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline font-medium'>+55 (85) 99627-7707</a>.
+          </p>
+        </section>
+      </div>
+    </div>
+  </section>
+</Layout>

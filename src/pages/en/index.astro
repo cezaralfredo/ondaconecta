@@ -4,7 +4,6 @@ import { getCollection } from 'astro:content'
 
 import HeroSection from '@/components/blocks/hero-section/hero-section'
 import Blog from '@/components/blocks/blog-component/blog-component'
-import CTA from '@/components/blocks/cta-section/cta-section'
 
 // Get all posts for English (or fallback to all if en posts are still being populated)
 const allPosts = await getCollection('blog')
@@ -47,5 +46,4 @@ const schema = {
 <Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} schema={schema}>
   <HeroSection blogData={allBlogPosts} client:load />
   <Blog blogData={allBlogPosts} client:load />
-  <CTA />
 </Layout>
