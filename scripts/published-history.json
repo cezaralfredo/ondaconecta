@@ -11,5 +11,31 @@
       "Valor Investe"
     ],
     "title": "Selic a 14% e Tesouro IPCA+: Como Blindar seu Patrimônio em 2026"
+  },
+  {
+    "id": 12,
+    "slug": "bootstrapping-startups-mercado-2026",
+    "category": "Mercado & Negócios",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-09-11T08:00:00-03:00",
+    "sources": [
+      "Times Brasil | CNBC",
+      "Startups.com.br",
+      "Brazil Journal"
+    ],
+    "title": "Juros Altos e a Virada do Bootstrapping: O Novo Jogo das Startups em 2026"
+  },
+  {
+    "id": 15,
+    "slug": "slow-travel-turismo-experiencia-2026",
+    "category": "Estilo de Vida & Viagens",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-09-11T18:00:00-03:00",
+    "sources": [
+      "Mercado e Eventos",
+      "Panrotas",
+      "ALL Accor"
+    ],
+    "title": "Slow Travel e Turismo de Experiência: Como as Viagens Estão Mudando em 2026"
   }
 ]
