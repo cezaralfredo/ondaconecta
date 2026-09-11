@@ -9,7 +9,7 @@ Este guia prático e didático foi elaborado para orientar você em **todas as e
 O site foi construído com arquitetura estática moderna (**Astro SSG**). Isso significa que você não precisa de painéis lentos de WordPress nem de banco de dados:
 
 ```
-[Tema ou Notícia Bruta] 
+[Tema ou Notícia Bruta]
         ↓
 [Skill onda-writer] (Redige com SEO em PT/EN/ES)
         ↓
@@ -28,45 +28,41 @@ O site foi construído com arquitetura estática moderna (**Astro SSG**). Isso s
 
 ---
 
-## ⚡ Método 1: Publicação Rápida via IA (Sob Demanda)
+## ⚡ Método 1: Publicação Rápida via IA (Recomendado)
 
 Você pode publicar um artigo completo simplesmente me dando uma instrução em linguagem natural aqui no chat.
 
 ### Exemplos de comandos que você pode usar:
 
-> **Exemplo A (A partir de um tema em alta):**  
-> *"Publique um artigo sobre o avanço dos agentes de IA autônomos nas empresas globais e seu impacto no mercado brasileiro. Crie a capa e as versões em inglês e espanhol."*
+> **Exemplo A (A partir de um tema em alta):**
+> _"Publique um artigo sobre o avanço dos agentes de IA autônomos nas empresas globais e seu impacto no mercado brasileiro. Crie a capa e as versões em inglês e espanhol."_
 
-> **Exemplo B (A partir de uma notícia ou link):**  
-> *"Pegue essa matéria/link sobre a regulação do mercado de carbono e transforme em um artigo completo para a Onda Conecta com SEO de ponta e tradução."*
+> **Exemplo B (A partir de uma notícia ou link):**
+> _"Pegue essa matéria/link sobre a regulação do mercado de carbono e transforme em um artigo completo para a Onda Conecta com SEO de ponta e tradução."_
 
----
+### O que acontece nos bastidores:
 
-## 🤖 Método 2: Piloto Automático na IDE com Antigravity (`onda-cron-agent`)
-
-Você pode me pedir para buscar notícias da web e publicar agora mesmo, ou agendar para que eu rode em segundo plano enquanto você trabalha:
-
-### 1. Execução Imediata pelo Antigravity:
-> *"Execute a skill onda-cron-agent na categoria Sustentabilidade, pesquise as tendências mundiais de hoje e publique no site."*
-
-### 2. Agendamento com o comando `/schedule`:
-Você pode usar o slash command do chat para agendar lembretes periódicos:
-> `/schedule cron="0 10 * * *" prompt="Execute a skill onda-cron-agent, busque uma grande novidade de tecnologia ou IA, redija em PT/EN/ES e faça o deploy."`
+1. A skill `onda-writer` redige o texto em **pt-BR**, focado em intenção de busca no Google Brasil, e cria as versões em **EN** e **ES**.
+2. A skill `onda-publisher` calcula o próximo `id`, gera o slug amigável, valida a tipagem e cria os 3 arquivos `.mdx`.
+3. É gerada ou atribuída a imagem da capa em `public/images/blog-post/`.
+4. O commit e push no Git são feitos automaticamente, disparando o deploy para o ar.
 
 ---
 
-## 🛠️ Método 3: Publicação Manual (Passo a Passo)
+## 🛠️ Método 2: Publicação Manual (Passo a Passo)
 
 Se você preferir escrever ou editar um artigo manualmente, siga os passos abaixo:
 
 ### Passo 1: Definir os Nomes dos Arquivos
-Escolha um **slug** (identificador amigável em minúsculas separado por hífens).  
+
+Escolha um **slug** (identificador amigável em minúsculas separado por hífens).
 Exemplo: `mercado-de-carbono-brasil-2026`
 
 Você criará três arquivos em `src/content/blog/`:
-1. `mercado-de-carbono-brasil-2026.mdx` *(versão em português)*
-2. `mercado-de-carbono-brasil-2026-en.mdx` *(versão em inglês)*
-3. `mercado-de-carbono-brasil-2026-es.mdx` *(versão em espanhol)*
+
+1. `mercado-de-carbono-brasil-2026.mdx` _(versão em português)_
+2. `mercado-de-carbono-brasil-2026-en.mdx` _(versão em inglês)_
+3. `mercado-de-carbono-brasil-2026-es.mdx` _(versão em espanhol)_
 
 ---
 
@@ -75,6 +71,7 @@ Você criará três arquivos em `src/content/blog/`:
 No início de todo arquivo `.mdx`, entre os três traços `---`, inclua o bloco de metadados:
 
 #### 🇧🇷 Versão Principal em Português:
+
 ```yaml
 ---
 id: 9
@@ -94,6 +91,7 @@ featured: false
 ```
 
 #### 🇺🇸 Versão em Inglês:
+
 ```yaml
 ---
 id: 10
@@ -114,6 +112,7 @@ featured: false
 ```
 
 #### 🇪🇸 Versão em Espanhol:
+
 ```yaml
 ---
 id: 11
@@ -139,14 +138,14 @@ featured: false
 
 Para manter o layout e os filtros do site consistentes, utilize uma das seguintes categorias:
 
-| Categoria (PT) | Categoria (EN) | Categoria (ES) |
-| :--- | :--- | :--- |
-| **Tendências** | Trends | Tendencias |
-| **Inovação & IA** | Innovation & AI | Innovación e IA |
+| Categoria (PT)         | Categoria (EN)     | Categoria (ES)      |
+| :--------------------- | :----------------- | :------------------ |
+| **Tendências**         | Trends             | Tendencias          |
+| **Inovação & IA**      | Innovation & AI    | Innovación e IA     |
 | **Mercado & Negócios** | Business & Markets | Mercados y Negocios |
-| **Tecnologia** | Technology | Tecnología |
-| **Sustentabilidade** | Sustainability | Sostenibilidad |
-| **Comportamento** | Culture & Society | Comportamiento |
+| **Tecnologia**         | Technology         | Tecnología          |
+| **Sustentabilidade**   | Sustainability     | Sostenibilidad      |
+| **Comportamento**      | Culture & Society  | Comportamiento      |
 
 ---
 
@@ -174,6 +173,7 @@ Resumo rápido da tendência com uma chamada para reflexão do leitor.
 ---
 
 ### Passo 5: Adicionar a Imagem de Capa
+
 - Salve o banner da postagem em: `public/images/blog-post/<slug>.webp`.
 - **Dica de Performance:** Prefira imagens no formato `.webp`, com resolução aproximada de `1200x675 px` (proporção 16:9) e tamanho abaixo de `150 KB`.
 
@@ -200,7 +200,7 @@ O GitHub Actions compilará automaticamente as páginas estáticas e fará a sin
 
 ## 🎯 Dicas de Ouro para Conquistar o Top 1 do Google
 
-1. **Gatilhos de Atualidade no Título:** Palavras como *"em 2026"*, *"novas regras"*, *"tendência global"*, *"guia prático"* atraem cliques imediatos.
+1. **Gatilhos de Atualidade no Título:** Palavras como _"em 2026"_, _"novas regras"_, _"tendência global"_, _"guia prático"_ atraem cliques imediatos.
 2. **Meta Description Atraente:** Mantenha entre 130 e 155 caracteres. Deve responder resumidamente o que o leitor vai ganhar lendo a matéria.
 3. **Escaneabilidade:** Leitores e robôs do Google priorizam artigos organizados em listas, tópicos e seções claras com `H2` e `H3`.
 4. **Visão Global + Aplicação Nacional:** Explicar tendências mundiais conectando com a realidade brasileira é a chave para a autoridade editorial da **Onda Conecta**.

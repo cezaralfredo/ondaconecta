@@ -12,61 +12,100 @@ import fs from 'fs'
 import path from 'path'
 
 // Categorias monitoradas e suas consultas de busca globais
+// Categorias monitoradas com fontes globais e nacionais de alta relevância
 const CATEGORIES = [
   {
     name: 'Inovação & IA',
     enName: 'Innovation & AI',
     esName: 'Innovación e IA',
-    rssQuery: 'artificial+intelligence+breakthrough+OR+generative+AI+business'
-  },
-  {
-    name: 'Tendências',
-    enName: 'Trends',
-    esName: 'Tendencias',
-    rssQuery: 'global+consumer+trends+OR+future+work+technology'
+    globalQuery: 'when:48h (artificial intelligence breakthrough OR generative AI business OR autonomous AI agents OR LLM)',
+    brQuery: 'when:48h (inteligência artificial OR IA generativa OR agentes autônomos OR automação) site:tecmundo.com.br OR site:canaltech.com.br OR site:olhardigital.com.br OR site:exame.com OR site:epocanegocios.globo.com'
   },
   {
     name: 'Mercado & Negócios',
     enName: 'Business & Markets',
     esName: 'Mercados y Negocios',
-    rssQuery: 'global+markets+economy+venture+capital+startups'
+    globalQuery: 'when:48h (global markets economy OR venture capital OR startup funding OR tech acquisitions)',
+    brQuery: 'when:48h (mercado financeiro OR startups OR venture capital OR aquisição) site:braziljournal.com OR site:neofeed.com.br OR site:startse.com OR site:infomoney.com.br OR site:pipelinevalor.globo.com'
   },
   {
-    name: 'Sustentabilidade',
-    enName: 'Sustainability',
-    esName: 'Sostenibilidad',
-    rssQuery: 'carbon+market+climate+tech+renewable+energy+ESG'
+    name: 'Finanças Pessoais',
+    enName: 'Personal Finance',
+    esName: 'Finanzas Personales',
+    globalQuery: 'when:48h (personal finance strategies OR smart investing trends OR fintech crypto wealth)',
+    brQuery: 'when:48h (finanças pessoais OR investimentos OR Selic OR dividendos OR planejamento financeiro) site:infomoney.com.br OR site:valorinveste.globo.com OR site:einvestidor.estadao.com.br OR site:inteligenciafinanceira.com.br'
+  },
+  {
+    name: 'Saúde & Bem-estar',
+    enName: 'Health & Wellness',
+    esName: 'Salud y Bienestar',
+    globalQuery: 'when:48h (longevity science OR mental health wellness OR preventative medicine biotech fitness)',
+    brQuery: 'when:48h (longevidade OR saúde preventiva OR bem-estar OR medicina OR saúde mental) site:saude.abril.com.br OR site:uol.com.br/vivabem OR site:ge.globo.com/eu-atleta OR site:drauziovarella.uol.com.br'
+  },
+  {
+    name: 'Estética & Beleza',
+    enName: 'Beauty & Aesthetics',
+    esName: 'Estética y Belleza',
+    globalQuery: 'when:48h (skincare clinical breakthrough OR beauty aesthetics trends OR dermatology cosmetics)',
+    brQuery: 'when:48h (skincare OR procedimentos estéticos OR beleza OR dermatologia OR cuidados com a pele) site:vogue.globo.com/beleza OR site:marieclaire.globo.com/beleza OR site:revistaglamour.globo.com/beleza'
+  },
+  {
+    name: 'Estilo de Vida & Viagens',
+    enName: 'Lifestyle & Travel',
+    esName: 'Estilo de Vida y Viajes',
+    globalQuery: 'when:48h (emerging travel destinations OR luxury lifestyle trends OR digital nomad remote work)',
+    brQuery: 'when:48h (viagens OR destinos tendência OR turismo de experiência OR estilo de vida) site:viagemeturismo.abril.com.br OR site:guiaviajarmelhor.com.br OR site:melhoresdestinos.com.br OR site:revistapegn.globo.com'
+  },
+  {
+    name: 'Tendências',
+    enName: 'Trends',
+    esName: 'Tendencias',
+    globalQuery: 'when:48h (global consumer trends OR future of work OR modern culture trends)',
+    brQuery: 'when:48h (tendência de consumo OR comportamento OR novas tecnologias) site:meioemensagem.com.br OR site:startse.com OR site:fastcompanybrasil.com'
   },
   {
     name: 'Tecnologia',
     enName: 'Technology',
     esName: 'Tecnología',
-    rssQuery: 'semiconductors+quantum+computing+software+engineering'
+    globalQuery: 'when:48h (semiconductors OR quantum computing OR cybersecurity threat software)',
+    brQuery: 'when:48h (tecnologia OR cibersegurança OR semicondutores OR software) site:canaltech.com.br OR site:tecmundo.com.br OR site:convergenciadigital.com.br'
+  },
+  {
+    name: 'Sustentabilidade',
+    enName: 'Sustainability',
+    esName: 'Sostenibilidad',
+    globalQuery: 'when:48h (carbon credit market OR climate tech renewable energy ESG)',
+    brQuery: 'when:48h (mercado de carbono OR sustentabilidade OR energia solar OR ESG Brasil) site:reset.com.br OR site:exame.com/esg OR site:umsoplaneta.globo.com'
   }
 ]
 
 const BLOG_DIR = path.resolve('src/content/blog')
 const HISTORY_FILE = path.resolve('scripts/published-history.json')
 
-// Função para buscar notícias recentes no Google News RSS
-async function fetchLatestNews(query) {
-  const url = `https://news.google.com/rss/search?q=${encodeURIComponent(query)}&hl=en-US&gl=US&ceid=US:en`
+// Função para buscar notícias recentes no Google News RSS (Global ou Brasil)
+async function fetchLatestNews(query, isBrazil = false) {
+  const params = isBrazil
+    ? 'hl=pt-BR&gl=BR&ceid=BR:pt-419'
+    : 'hl=en-US&gl=US&ceid=US:en'
+  const url = `https://news.google.com/rss/search?q=${encodeURIComponent(query)}&${params}`
   const res = await fetch(url)
   const xml = await res.text()
 
   const items = []
   const itemMatches = xml.match(/<item>[\s\S]*?<\/item>/g) || []
 
-  for (const itemXml of itemMatches.slice(0, 5)) {
+  for (const itemXml of itemMatches.slice(0, 6)) {
     const titleMatch = itemXml.match(/<title>(.*?)<\/title>/)
     const linkMatch = itemXml.match(/<link>(.*?)<\/link>/)
     const pubDateMatch = itemXml.match(/<pubDate>(.*?)<\/pubDate>/)
+    const sourceMatch = itemXml.match(/<source[^>]*>(.*?)<\/source>/)
 
     if (titleMatch && linkMatch) {
       items.push({
         title: titleMatch[1].replace(/<!\[CDATA\[(.*?)\]\]>/g, '$1').trim(),
         link: linkMatch[1].trim(),
-        pubDate: pubDateMatch ? pubDateMatch[1].trim() : new Date().toISOString()
+        pubDate: pubDateMatch ? pubDateMatch[1].trim() : new Date().toISOString(),
+        source: sourceMatch ? sourceMatch[1].replace(/<!\[CDATA\[(.*?)\]\]>/g, '$1').trim() : (isBrazil ? 'Fonte Nacional' : 'Global Source')
       })
     }
   }
@@ -205,8 +244,18 @@ async function main() {
     ? CATEGORIES.find(c => c.name.toLowerCase().includes(categoryArg.toLowerCase())) || CATEGORIES[0]
     : CATEGORIES[Math.floor(Math.random() * CATEGORIES.length)]
 
-  console.log(`📡 Buscando notícias de tendência para a categoria: ${category.name}...`)
-  const newsItems = await fetchLatestNews(category.rssQuery)
+  // Alterna aleatoriamente entre priorizar notícias nacionais ou globais (50%/50%)
+  const prioritizeBrazil = Math.random() > 0.5
+  console.log(`📡 Buscando notícias para a categoria: ${category.name} (${prioritizeBrazil ? 'Foco: Brasil / Nacional' : 'Foco: Global'}) ...`)
+  
+  // Coleta tanto notícias nacionais quanto internacionais
+  const [brItems, globalItems] = await Promise.all([
+    fetchLatestNews(category.brQuery, true),
+    fetchLatestNews(category.globalQuery, false)
+  ])
+
+  // Une os itens conforme a prioridade da rodada
+  const newsItems = prioritizeBrazil ? [...brItems, ...globalItems] : [...globalItems, ...brItems]
 
   const history = loadHistory()
   const candidate = newsItems.find(item => !history.includes(item.title) && !history.includes(item.link))
