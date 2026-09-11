@@ -105,9 +105,8 @@ const Blog = ({ blogData = [] }: BlogProps) => {
   const [selectedTab, setSelectedTab] = useState('All')
   const [searchQuery, setSearchQuery] = useState('')
 
-  // Filter out featured posts to avoid duplication with hero section
-  // Sort posts by ID in descending order (newest first)
-  const nonFeaturedPosts = blogData.filter(post => !post.featured).sort((a, b) => b.id - a.id)
+  // Exibe todas as publicações ordenadas pelas mais recentes primeiro (por ID decrescente)
+  const displayPosts = [...blogData].sort((a, b) => b.id - a.id)
 
   // Categorias padronizadas oficiais do projeto Onda Conecta
   const categories = ['All', ...PROJECT_CATEGORIES]
@@ -253,8 +252,8 @@ const Blog = ({ blogData = [] }: BlogProps) => {
 
           {/* All Posts Tab */}
           <TabsContent value='All'>
-            {filterBySearch(nonFeaturedPosts).length > 0 ? (
-              <BlogGrid posts={filterBySearch(nonFeaturedPosts)} onCategoryClick={handleTabChange} />
+            {filterBySearch(displayPosts).length > 0 ? (
+              <BlogGrid posts={filterBySearch(displayPosts)} onCategoryClick={handleTabChange} />
             ) : (
               <div className='py-12 text-center text-muted-foreground'>
                 Nenhum artigo encontrado para "{searchQuery}".
@@ -264,7 +263,7 @@ const Blog = ({ blogData = [] }: BlogProps) => {
 
           {/* Category-specific Tabs */}
           {PROJECT_CATEGORIES.map((category, index) => {
-            const categoryPosts = filterBySearch(nonFeaturedPosts.filter(post => post.category === category))
+            const categoryPosts = filterBySearch(displayPosts.filter(post => post.category === category))
             return (
               <TabsContent key={index} value={category}>
                 {categoryPosts.length > 0 ? (

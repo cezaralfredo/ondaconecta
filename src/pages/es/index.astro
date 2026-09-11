@@ -25,7 +25,7 @@ const allBlogPosts = postsToShow
     readTime: post.data.readTime || 5,
     featured: post.data.featured || false
   }))
-  .sort((a, b) => b.pubDate.localeCompare(a.pubDate))
+  .sort((a, b) => b.id - a.id)
 
 const pageTitle = 'Tendencias Globales, Noticias e Innovaciones del Mercado'
 const pageDescription =
