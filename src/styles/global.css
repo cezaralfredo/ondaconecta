@@ -23,7 +23,7 @@
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.37 0.03 259.73);
   --muted: oklch(0.9443 0.0165 274.82);
-  --muted-foreground: oklch(0.55 0.02 264.41);
+  --muted-foreground: oklch(0.38 0.025 264.41);
   --accent: oklch(0.95 0.02 260.18);
   --accent-foreground: oklch(0.48 0.2 260.47);
   --destructive: oklch(0.58 0.22 27.29);
@@ -74,7 +74,7 @@
   --secondary: oklch(0.35 0.04 261.4);
   --secondary-foreground: oklch(0.93 0.01 261.82);
   --muted: oklch(0.3 0.03 260.51);
-  --muted-foreground: oklch(0.71 0.02 261.33);
+  --muted-foreground: oklch(0.85 0.015 261.33);
   --accent: oklch(0.33 0.04 264.63);
   --accent-foreground: oklch(0.93 0.01 261.82);
   --destructive: oklch(0.64 0.21 25.39);
@@ -167,9 +167,13 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground text-[18px] leading-relaxed;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+  }
+
+  p {
+    @apply text-[18px] leading-relaxed text-muted-foreground;
   }
 
   /* For native button elements and elements with role="button", e.g., button, checkbox, radio, switch etc. */
@@ -258,7 +262,7 @@
     @apply text-foreground mt-4 mb-2 scroll-mt-23 text-base font-medium;
   }
   p {
-    @apply text-muted-foreground mb-4;
+    @apply text-muted-foreground mb-5 text-[18px] leading-relaxed;
   }
   a {
     @apply text-primary font-medium no-underline transition-colors hover:underline;
@@ -270,16 +274,16 @@
     @apply italic;
   }
   ul {
-    @apply mb-4 list-inside list-disc space-y-2 pl-2;
+    @apply mb-5 list-inside list-disc space-y-2 pl-2;
   }
   li {
-    @apply text-muted-foreground;
+    @apply text-muted-foreground text-[18px] leading-relaxed;
   }
   ol {
-    @apply mb-6 list-decimal space-y-4 pl-6;
+    @apply mb-6 list-decimal space-y-4 pl-6 text-[18px] leading-relaxed;
   }
   blockquote {
-    @apply border-muted-foreground/30 text-muted-foreground my-6 border-l-4 pl-4 italic;
+    @apply border-muted-foreground/30 text-muted-foreground my-6 border-l-4 pl-4 italic text-[18px] leading-relaxed;
   }
   code {
     @apply bg-muted rounded px-1.5 py-0.5 font-mono text-sm;
