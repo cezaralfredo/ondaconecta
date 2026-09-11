@@ -1,14 +1,13 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 
-import { SearchIcon, ArrowRightIcon, CalendarDaysIcon } from 'lucide-react'
+import { SearchIcon, ArrowRightIcon, CalendarDaysIcon, ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
-import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { PROJECT_CATEGORIES } from '@/consts'
 import {
@@ -153,6 +152,15 @@ const Blog = ({ blogData = [] }: BlogProps) => {
     </div>
   )
 
+  const scrollContainerRef = useRef<HTMLDivElement>(null)
+
+  const handleScrollCategories = (direction: 'left' | 'right') => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = direction === 'left' ? -240 : 240
+      scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' })
+    }
+  }
+
   return (
     <section className='py-8 sm:py-16 lg:py-24' id='categories'>
       <div className='mx-auto max-w-7xl space-y-8 px-4 sm:px-6 lg:space-y-16 lg:px-8'>
@@ -183,25 +191,52 @@ const Blog = ({ blogData = [] }: BlogProps) => {
         </div>
 
         {/* Tabs and Search */}
-        <Tabs defaultValue='All' value={selectedTab} onValueChange={handleTabChange} className='gap-8 lg:gap-16'>
-          <div className='flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center'>
-            <ScrollArea className='bg-muted w-full rounded-lg sm:w-auto'>
-              <TabsList className='h-auto gap-1 group-data-horizontal/tabs:h-auto'>
-                {categories.map(category => (
-                  <TabsTrigger
-                    key={category}
-                    value={category}
-                    id={`category-${category}`}
-                    className='hover:bg-primary/10 cursor-pointer rounded-lg px-4 text-base group-data-horizontal/tabs:after:h-0'
-                  >
-                    {category}
-                  </TabsTrigger>
-                ))}
-              </TabsList>
-              <ScrollBar orientation='horizontal' />
-            </ScrollArea>
+        <Tabs defaultValue='All' value={selectedTab} onValueChange={handleTabChange} className='gap-8 lg:gap-16 w-full'>
+          <div className='flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between w-full'>
+            {/* Categories Scrollable Bar with Navigation */}
+            <div className='relative flex items-center min-w-0 max-w-full flex-1 overflow-hidden'>
+              <Button
+                variant='ghost'
+                size='icon'
+                aria-label='Rolar categorias para a esquerda'
+                onClick={() => handleScrollCategories('left')}
+                className='hidden md:flex shrink-0 h-9 w-8 text-muted-foreground hover:text-foreground hover:bg-muted mr-1 z-10'
+              >
+                <ChevronLeftIcon className='size-4' />
+              </Button>
 
-            <div className='relative max-md:w-full'>
+              <div
+                ref={scrollContainerRef}
+                className='w-full overflow-x-auto no-scrollbar scroll-smooth py-1'
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+              >
+                <TabsList className='bg-muted inline-flex h-auto w-max max-w-none items-center gap-1.5 p-1 rounded-xl'>
+                  {categories.map(category => (
+                    <TabsTrigger
+                      key={category}
+                      value={category}
+                      id={`category-${category}`}
+                      className='hover:bg-primary/10 cursor-pointer rounded-lg px-3.5 py-1.5 text-sm sm:text-base font-medium whitespace-nowrap transition-colors'
+                    >
+                      {category}
+                    </TabsTrigger>
+                  ))}
+                </TabsList>
+              </div>
+
+              <Button
+                variant='ghost'
+                size='icon'
+                aria-label='Rolar categorias para a direita'
+                onClick={() => handleScrollCategories('right')}
+                className='hidden md:flex shrink-0 h-9 w-8 text-muted-foreground hover:text-foreground hover:bg-muted ml-1 z-10'
+              >
+                <ChevronRightIcon className='size-4' />
+              </Button>
+            </div>
+
+            {/* Search Input */}
+            <div className='relative w-full lg:w-72 shrink-0'>
               <div className='text-muted-foreground pointer-events-none absolute inset-y-0 left-0 flex items-center justify-center pl-3 peer-disabled:opacity-50'>
                 <SearchIcon className='size-4' />
                 <span className='sr-only'>Pesquisar</span>
@@ -211,7 +246,7 @@ const Blog = ({ blogData = [] }: BlogProps) => {
                 placeholder='Buscar notícias...'
                 value={searchQuery}
                 onChange={e => setSearchQuery(e.target.value)}
-                className='peer h-10 px-9 [&::-webkit-search-cancel-button]:appearance-none [&::-webkit-search-decoration]:appearance-none [&::-webkit-search-results-button]:appearance-none [&::-webkit-search-results-decoration]:appearance-none'
+                className='peer h-10 w-full px-9 [&::-webkit-search-cancel-button]:appearance-none [&::-webkit-search-decoration]:appearance-none [&::-webkit-search-results-button]:appearance-none [&::-webkit-search-results-decoration]:appearance-none'
               />
             </div>
           </div>
