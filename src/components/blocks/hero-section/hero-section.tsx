@@ -2,7 +2,6 @@ import { ArrowUpRightIcon, CalendarDaysIcon } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { Input } from '@/components/ui/input'
 import { Card, CardContent } from '@/components/ui/card'
 import type { BlogPost } from '@/components/blocks/blog-component/blog-component'
 
@@ -23,12 +22,6 @@ const HeroSection = ({ blogData }: { blogData: BlogPost[] }) => {
           <p className='text-muted-foreground mx-auto max-w-2xl text-xl'>
             Artigos aprofundados, notícias verificadas e análises sobre tecnologia, negócios, inovação e sustentabilidade.
           </p>
-          <form className='gap-3 py-1 max-sm:w-full max-sm:space-y-2 sm:flex sm:flex-row md:w-sm'>
-            <Input type='email' placeholder='Seu melhor e-mail' className='bg-background input-lg flex-1 px-3 text-base' />
-            <Button size='lg' className='text-base max-sm:w-full' type='submit'>
-              Receber Notícias
-            </Button>
-          </form>
         </div>
 
         <div className='grid grid-cols-1 gap-6 sm:grid-cols-2'>

@@ -7,8 +7,6 @@ import HeadSeo from '@/layouts/HeadSeo.astro'
 import Header from '@/components/layout/header'
 import Footer from '@/components/layout/footer'
 
-import DownloadButton from '@/components/layout/Download'
-
 import type { NavigationSection } from '@/components/blocks/menu-navigation'
 
 const navigationData: NavigationSection[] = [
@@ -19,10 +17,6 @@ const navigationData: NavigationSection[] = [
   {
     title: 'Categorias & Tendências',
     href: '/#categories'
-  },
-  {
-    title: 'Sobre',
-    href: '/#about'
   }
 ]
 
@@ -95,8 +89,6 @@ const currentLang = Astro.currentLocale === 'en' ? 'en' : Astro.currentLocale ==
 
       {/* Footer Section */}
       <Footer client:load />
-
-      <DownloadButton />
     </div>
   </body>
 </html>

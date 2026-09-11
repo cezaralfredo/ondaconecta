@@ -1,8 +1,3 @@
-import FacebookIcon from '@/assets/svg/facebook-icon'
-import InstagramIcon from '@/assets/svg/instagram-icon'
-import TwitterIcon from '@/assets/svg/twitter-icon'
-import YoutubeIcon from '@/assets/svg/youtube-icon'
-
 import { Separator } from '@/components/ui/separator'
 
 import Logo from '@/components/logo'
@@ -18,7 +13,9 @@ const Footer = () => {
         </a>
         <div className='flex flex-wrap items-center justify-center gap-x-3 gap-y-2 whitespace-nowrap sm:gap-5'>
           <a
-            href='#'
+            href='https://wa.me/5585996277707'
+            target='_blank'
+            rel='noopener noreferrer'
             className='text-muted-foreground hover:text-foreground opacity-80 transition-opacity duration-300 hover:opacity-100'
           >
             Contato
@@ -36,21 +33,6 @@ const Footer = () => {
             Privacidade
           </a>
         </div>
-
-        <div className='flex items-center gap-4'>
-          <a href='#' className='text-muted-foreground hover:text-foreground'>
-            <FacebookIcon className='size-5' />
-          </a>
-          <a href='#' className='text-muted-foreground hover:text-foreground'>
-            <InstagramIcon className='size-5' />
-          </a>
-          <a href='#' className='text-muted-foreground hover:text-foreground'>
-            <TwitterIcon className='size-5' />
-          </a>
-          <a href='#' className='text-muted-foreground hover:text-foreground'>
-            <YoutubeIcon className='size-5' />
-          </a>
-        </div>
       </div>
 
       <Separator />
@@ -60,10 +42,20 @@ const Footer = () => {
           <span>
             {`©${new Date().getFullYear()}`}{' '}
             <a className='hover:underline font-semibold' href='/#'>
-              Onda Conecta.
+              Onda Conecta
+            </a>{' '}
+            &{' '}
+            <a
+              className='hover:underline font-semibold'
+              href='https://anauedesign.com.br'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              Anauê Design, Marketing e IA
             </a>
+            .
           </span>
-          <span> Conectando você às tendências e inovações que moldam o futuro.</span>
+          <span> Nosso compromisso é levar o que há de incrível até você!</span>
         </p>
       </div>
     </footer>
