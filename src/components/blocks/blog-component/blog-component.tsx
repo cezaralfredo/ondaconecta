@@ -10,6 +10,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { PROJECT_CATEGORIES } from '@/consts'
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -103,14 +104,14 @@ const BlogGrid = ({ posts, onCategoryClick }: { posts: BlogPost[]; onCategoryCli
 
 const Blog = ({ blogData = [] }: BlogProps) => {
   const [selectedTab, setSelectedTab] = useState('All')
+  const [searchQuery, setSearchQuery] = useState('')
 
   // Filter out featured posts to avoid duplication with hero section
   // Sort posts by ID in descending order (newest first)
   const nonFeaturedPosts = blogData.filter(post => !post.featured).sort((a, b) => b.id - a.id)
 
-  // Dynamically generate categories from the available data
-  const uniqueCategories = [...new Set(nonFeaturedPosts.map(post => post.category))]
-  const categories = ['All', ...uniqueCategories.sort()]
+  // Categorias padronizadas oficiais do projeto Onda Conecta
+  const categories = ['All', ...PROJECT_CATEGORIES]
 
   const handleTabChange = (tab: string) => {
     setSelectedTab(tab)
@@ -119,6 +120,38 @@ const Blog = ({ blogData = [] }: BlogProps) => {
       window.location.href = '#categories'
     }
   }
+
+  // Filtragem de posts por termo de busca
+  const filterBySearch = (posts: BlogPost[]) => {
+    if (!searchQuery.trim()) return posts
+    const query = searchQuery.toLowerCase()
+    return posts.filter(
+      post =>
+        post.title.toLowerCase().includes(query) ||
+        post.description.toLowerCase().includes(query) ||
+        post.category.toLowerCase().includes(query)
+    )
+  }
+
+  const renderEmptyCategory = (categoryName: string) => (
+    <div className='flex flex-col items-center justify-center rounded-xl border border-dashed border-border py-16 px-4 text-center'>
+      <div className='bg-primary/10 text-primary mb-3 flex size-12 items-center justify-center rounded-full'>
+        <CalendarDaysIcon className='size-6' />
+      </div>
+      <h3 className='text-foreground text-lg font-medium'>Novos artigos em breve em {categoryName}</h3>
+      <p className='text-muted-foreground mt-1 max-w-md text-sm'>
+        Nossa redação está apurando novidades, tendências e análises aprofundadas para esta editoria.
+      </p>
+      <Button
+        variant='outline'
+        size='sm'
+        className='mt-4'
+        onClick={() => handleTabChange('All')}
+      >
+        Ver todas as publicações
+      </Button>
+    </div>
+  )
 
   return (
     <section className='py-8 sm:py-16 lg:py-24' id='categories'>
@@ -130,7 +163,7 @@ const Blog = ({ blogData = [] }: BlogProps) => {
             <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem>
-                  <BreadcrumbLink href='#'>Publicações</BreadcrumbLink>
+                  <BreadcrumbLink href='#categories' onClick={(e) => { e.preventDefault(); handleTabChange('All'); }}>Publicações</BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
@@ -171,11 +204,13 @@ const Blog = ({ blogData = [] }: BlogProps) => {
             <div className='relative max-md:w-full'>
               <div className='text-muted-foreground pointer-events-none absolute inset-y-0 left-0 flex items-center justify-center pl-3 peer-disabled:opacity-50'>
                 <SearchIcon className='size-4' />
-                <span className='sr-only'>Search</span>
+                <span className='sr-only'>Pesquisar</span>
               </div>
               <Input
                 type='search'
-                placeholder='Search'
+                placeholder='Buscar notícias...'
+                value={searchQuery}
+                onChange={e => setSearchQuery(e.target.value)}
                 className='peer h-10 px-9 [&::-webkit-search-cancel-button]:appearance-none [&::-webkit-search-decoration]:appearance-none [&::-webkit-search-results-button]:appearance-none [&::-webkit-search-results-decoration]:appearance-none'
               />
             </div>
@@ -183,18 +218,28 @@ const Blog = ({ blogData = [] }: BlogProps) => {
 
           {/* All Posts Tab */}
           <TabsContent value='All'>
-            <BlogGrid posts={nonFeaturedPosts} onCategoryClick={handleTabChange} />
+            {filterBySearch(nonFeaturedPosts).length > 0 ? (
+              <BlogGrid posts={filterBySearch(nonFeaturedPosts)} onCategoryClick={handleTabChange} />
+            ) : (
+              <div className='py-12 text-center text-muted-foreground'>
+                Nenhum artigo encontrado para "{searchQuery}".
+              </div>
+            )}
           </TabsContent>
 
           {/* Category-specific Tabs */}
-          {categories.slice(1).map((category, index) => (
-            <TabsContent key={index} value={category}>
-              <BlogGrid
-                posts={nonFeaturedPosts.filter(post => post.category === category)}
-                onCategoryClick={handleTabChange}
-              />
-            </TabsContent>
-          ))}
+          {PROJECT_CATEGORIES.map((category, index) => {
+            const categoryPosts = filterBySearch(nonFeaturedPosts.filter(post => post.category === category))
+            return (
+              <TabsContent key={index} value={category}>
+                {categoryPosts.length > 0 ? (
+                  <BlogGrid posts={categoryPosts} onCategoryClick={handleTabChange} />
+                ) : (
+                  renderEmptyCategory(category)
+                )}
+              </TabsContent>
+            )
+          })}
         </Tabs>
       </div>
     </section>

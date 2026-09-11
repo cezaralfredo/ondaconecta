@@ -108,3 +108,20 @@ export const COMPANY_INFO = {
   },
   sameAs: Object.values(SOCIAL_LINKS)
 }
+
+// Categorias oficiais padronizadas do portal Onda Conecta
+export const PROJECT_CATEGORIES = [
+  'Inovação & IA',
+  'Mercado & Negócios',
+  'Finanças Pessoais',
+  'Saúde & Bem-estar',
+  'Estética & Beleza',
+  'Estilo de Vida & Viagens',
+  'Tendências',
+  'Tecnologia',
+  'Sustentabilidade',
+  'Comportamento'
+] as const
+
+export type ProjectCategory = (typeof PROJECT_CATEGORIES)[number]
+
