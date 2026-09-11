@@ -34,8 +34,15 @@ const { Content, headings } = await render(entry)
 const allPosts = await getCollection('blog')
 const publishedPosts = allPosts
 
-// Get related posts (same category)
-const relatedPosts = getRelatedPosts(publishedPosts, entry.id, entry.data.category, 3)
+// Get related posts (same category and same language)
+const currentLang = entry.data.lang || 'pt'
+const relatedPosts = getRelatedPosts(publishedPosts, entry.id, entry.data.category, 3, currentLang)
+
+// Identify translations of this article
+const baseSlug = entry.data.translationOf || entry.id.replace(/-(en|es)$/, '')
+const ptVersion = publishedPosts.find(p => p.id === baseSlug)
+const enVersion = publishedPosts.find(p => p.id === `${baseSlug}-en` || (p.data.translationOf === baseSlug && p.data.lang === 'en'))
+const esVersion = publishedPosts.find(p => p.id === `${baseSlug}-es` || (p.data.translationOf === baseSlug && p.data.lang === 'es'))
 
 // Map relatedPosts to BlogPost type for the Blog component
 const formattedRelatedPosts = relatedPosts.map(post => ({
@@ -53,11 +60,12 @@ const formattedRelatedPosts = relatedPosts.map(post => ({
   featured: post.data.featured || false
 }))
 
-// Get previous and next posts
-const { previous: previousPost, next: nextPost } = getPostNavigation(publishedPosts, entry.id)
+// Get previous and next posts (same language)
+const { previous: previousPost, next: nextPost } = getPostNavigation(publishedPosts, entry.id, currentLang)
 
 // Calculate read time if not provided
 const readTime = entry.data.readTime || calculateReadTime(entry.body)
+
 
 const schema = {
   '@context': 'https://schema.org',
@@ -134,6 +142,54 @@ const schema = {
                   <span class='text-muted-foreground text-sm'>Data</span>
                   <span class='text-foreground text-sm font-medium'>{entry.data.pubDate}</span>
                 </div>
+                {
+                  (ptVersion || enVersion || esVersion) && (
+                    <div class='flex flex-col gap-1.5'>
+                      <span class='text-muted-foreground text-sm'>Idiomas disponíveis</span>
+                      <div class='flex items-center gap-1.5 pt-0.5'>
+                        {ptVersion && (
+                          <a
+                            href={`/blog/${ptVersion.id}`}
+                            class={`rounded-md px-2 py-0.5 text-xs font-semibold transition-colors ${
+                              currentLang === 'pt'
+                                ? 'bg-primary text-primary-foreground'
+                                : 'bg-muted hover:bg-muted/80 text-muted-foreground'
+                            }`}
+                            title='Ler em Português'
+                          >
+                            🇧🇷 PT
+                          </a>
+                        )}
+                        {enVersion && (
+                          <a
+                            href={`/blog/${enVersion.id}`}
+                            class={`rounded-md px-2 py-0.5 text-xs font-semibold transition-colors ${
+                              currentLang === 'en'
+                                ? 'bg-primary text-primary-foreground'
+                                : 'bg-muted hover:bg-muted/80 text-muted-foreground'
+                            }`}
+                            title='Read in English'
+                          >
+                            🇺🇸 EN
+                          </a>
+                        )}
+                        {esVersion && (
+                          <a
+                            href={`/blog/${esVersion.id}`}
+                            class={`rounded-md px-2 py-0.5 text-xs font-semibold transition-colors ${
+                              currentLang === 'es'
+                                ? 'bg-primary text-primary-foreground'
+                                : 'bg-muted hover:bg-muted/80 text-muted-foreground'
+                            }`}
+                            title='Leer en Español'
+                          >
+                            🇪🇸 ES
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  )
+                }
               </div>
             </div>
 

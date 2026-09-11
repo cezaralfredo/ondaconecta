@@ -8,7 +8,9 @@ import CTA from '@/components/blocks/cta-section/cta-section'
 
 // Get all blog posts and convert to the format expected by components
 const allPosts = await getCollection('blog')
-const publishedPosts = allPosts
+// Exibe na home principal apenas os posts em português (ou posts sem idioma definido por retrocompatibilidade)
+const publishedPosts = allPosts.filter(p => !p.data.lang || p.data.lang === 'pt')
+
 
 // Convert to the format expected by the React components
 const allBlogPosts = publishedPosts

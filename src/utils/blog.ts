@@ -21,18 +21,28 @@ export function getRelatedPosts(
   posts: CollectionEntry<'blog'>[],
   currentSlug: string,
   currentCategory: string,
-  limit: number = 3
+  limit: number = 3,
+  currentLang?: string
 ): CollectionEntry<'blog'>[] {
+  // Filtra primeiro pelo mesmo idioma para não misturar traduções
+  const langFilteredPosts = currentLang
+    ? posts.filter(post => (post.data.lang || 'pt') === currentLang)
+    : posts
+
   // First try to get posts from same category
-  const sameCategoryPosts = posts.filter(post => post.data.category === currentCategory && post.id !== currentSlug)
+  const sameCategoryPosts = langFilteredPosts.filter(
+    post => post.data.category === currentCategory && post.id !== currentSlug
+  )
 
   // If we have enough posts from same category, use them
   if (sameCategoryPosts.length >= limit) {
     return sameCategoryPosts.slice(0, limit)
   }
 
-  // If not enough posts from same category, fill with other posts
-  const otherPosts = posts.filter(post => post.data.category !== currentCategory && post.id !== currentSlug)
+  // If not enough posts from same category, fill with other posts of the same language
+  const otherPosts = langFilteredPosts.filter(
+    post => post.data.category !== currentCategory && post.id !== currentSlug
+  )
 
   return [...sameCategoryPosts, ...otherPosts].slice(0, limit)
 }
@@ -42,10 +52,16 @@ export function getRelatedPosts(
  */
 export function getPostNavigation(
   posts: CollectionEntry<'blog'>[],
-  currentSlug: string
+  currentSlug: string,
+  currentLang?: string
 ): { previous: CollectionEntry<'blog'> | null; next: CollectionEntry<'blog'> | null } {
-  // Sort posts by pubDate (newest first)
-  const sortedPosts = [...posts].sort((a, b) => a.data.id - b.data.id)
+  // Filtra pelo mesmo idioma para a navegação ser coerente
+  const langFilteredPosts = currentLang
+    ? posts.filter(post => (post.data.lang || 'pt') === currentLang)
+    : posts
+
+  // Sort posts by id (newest first)
+  const sortedPosts = [...langFilteredPosts].sort((a, b) => a.data.id - b.data.id)
   const currentIndex = sortedPosts.findIndex(post => post.id === currentSlug)
 
   if (currentIndex === -1) {
