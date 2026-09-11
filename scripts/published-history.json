@@ -1,1 +1,15 @@
-[]
+[
+  {
+    "id": 9,
+    "slug": "tesouro-ipca-selic-investimentos-2026",
+    "category": "Finanças Pessoais",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-09-10T21:07:00-03:00",
+    "sources": [
+      "Anbima",
+      "InfoMoney",
+      "Valor Investe"
+    ],
+    "title": "Selic a 14% e Tesouro IPCA+: Como Blindar seu Patrimônio em 2026"
+  }
+]

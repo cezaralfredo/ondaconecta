@@ -10,37 +10,82 @@ Esta skill define o tom de voz, as diretrizes editoriais e os critérios de **SE
 ---
 
 ## 1. Escopo Editorial: Tendências & Influências Mundiais com Impacto no Brasil
-
-- **Voz:** Especialista, ágil, visionária, acessível e confiável.
-- **Radar Temático Global:** Monitorar acontecimentos, rupturas tecnológicas, IA, regulação de mercados, sustentabilidade e tendências mundiais (EUA, Europa, Ásia, mercados globais).
-- **Ângulo Editorial Principal (SEO Brasil):** Toda tendência mundial deve ser explicada respondendo a: *"Como isso impacta o Brasil, as empresas e os profissionais brasileiros?"*. Isso garante tração máxima nos mecanismos de busca nacionais.
+ 
+- **Voz:** Especialista, ágil, visionária, acessível, elegante e confiável.
+- **Radar Temático Global Multidisciplinar:** Monitorar acontecimentos, rupturas e inovações nas principais verticais da vida contemporânea:
+  - **Inovação, Tecnologia & IA:** Agentes autônomos, inteligência artificial, automação, cibersegurança e semicondutores.
+  - **Mercado & Negócios:** Startups, venture capital, grandes movimentos corporativos e macroeconomia.
+  - **Finanças Pessoais:** Estratégias de investimento, planejamento financeiro, finanças descentralizadas, novas fintechs e comportamento com dinheiro.
+  - **Saúde & Bem-estar:** Longevidade ativa, biohacking, medicina preventiva, avanços biotecnológicos e equilíbrio mental.
+  - **Estética & Beleza:** Revoluções em skincare, dermocosmética, procedimentos estéticos minimamente invasivos, tendências globais de beleza e bem-estar corporal.
+  - **Estilo de Vida & Viagens:** Turismo imersivo, destinos emergentes, estilo de vida nômade, tendências de consumo consciente e lazer premium.
+  - **Sustentabilidade & Futuro:** Transição verde, ESG e mercado de carbono.
+- **Paridade Editorial (50% Nacional / 50% Global):** Todas as categorias possuem o mesmo patamar de relevância. O portal cobre tanto grandes avanços mundiais quanto acontecimentos marcantes, tendências inusitadas, mudanças regulatórias e inovações originadas no Brasil (comprovadas por veículos nacionais de ponta como Brazil Journal, InfoMoney, Valor, Vogue Brasil, Saúde Abril, Viagem e Turismo, TecMundo e Canaltech).
+- **Ângulo Editorial Principal:**
+  - Se a notícia for **global**: traduzir e aprofundar respondendo: *"Como isso impacta o Brasil, as pessoas, as empresas ou o cotidiano do leitor?"*.
+  - Se a notícia for **nacional**: destacar a vanguarda, a originalidade do caso brasileiro e como a novidade se posiciona frente aos padrões internacionais.
 - **Formato Tríplice (Multilíngue):** Toda publicação deve conter o artigo principal em **Português (`pt`)** e suas versões adaptadas com fluência natural para **Inglês (`en`)** e **Espanhol (`es`)**.
 
 ---
 
-## 2. Checklist de SEO On-Page (Foco em Top 1 do Google)
+## 2. Estrutura Editorial de Elite & SEO On-Page (Foco em Top 1 e IA Search)
 
-Para garantir que cada notícia indexe e dispute as primeiras posições:
+Para garantir que cada matéria domine a SERP tradicional e seja citada por motores de busca generativa (Google AI Overviews, Perplexity, Gemini):
 
-1. **Título (H1):**
-   - Máximo de 65 caracteres para não truncar na SERP.
-   - Conter a palavra-chave de tendência com gatilho temporal (ex: "em 2026", "o que muda", "tendência global").
-2. **Meta Description:**
-   - Entre 130 e 155 caracteres com benefício claro e call-to-action de leitura.
-3. **Hierarquia Semântica:**
-   - `H2` para grandes pilares analíticos da notícia.
-   - `H3` para dados, cases mundiais e listas rápidas.
-4. **Escaneabilidade:**
-   - Parágrafos de até 3-4 linhas, tópicos em bullet points e destaques em negrito.
-5. **Conclusão & Síntese da Tendência:**
-   - Fechamento com lição prática e pergunta de engajamento para comentários e compartilhamento.
+### A. Elementos de Abertura & Retenção Imediata:
+1. **Título Magnético (`H1`):**
+   - Máximo de 65 caracteres para não truncar nos motores de busca.
+   - Conter a palavra-chave central com gatilho temporal ou de impacto (ex: *"em 2026"*, *"o que muda"*, *"tendência global"*).
+2. **Meta Description Persuasiva:**
+   - Entre 130 e 155 caracteres com benefício claro e verbo de ação convidando à leitura.
+3. **Bloco Obrigatório: "Em Poucas Linhas" (`Key Takeaways`):**
+   - Posicionado logo após a introdução (primeiros 2 parágrafos).
+   - Caixa ou lista contendo 3 bullet points de impacto rápido:
+     - O fato central e sua magnitude numérica/estatística.
+     - Como a tendência se aplica ao Brasil e ao mercado local.
+     - O horizonte temporal ou recomendação prática.
+
+### B. Desenvolvimento Analítico & Escaneabilidade:
+4. **Citação Explícita de Fontes Primárias (E-E-A-T):**
+   - Citar nominalmente os veículos e fontes trazidos pelo `onda-researcher` (ex: *"De acordo com apuração do Brazil Journal..."*, *"Dados publicados pela Anvisa revelam que..."*).
+   - Incluir dados estatísticos concretos para sustentar argumentos.
+5. **Hierarquia Semântica e Ritmo Visual:**
+   - `H2` para os pilares estratégicos da discussão.
+   - `H3` para dados rápidos, listas ou estudos de caso.
+   - Parágrafos curtos de no máximo 3 a 4 linhas.
+   - **Negritos seletivos** nos termos centrais para leitura dinâmica fluida.
+6. **Malha de Links Internos (`Internal Linking`):**
+   - Incluir pelo menos 1 link contextual para outra matéria relevante do portal (ex: `[Leia também nossa análise sobre...](/blog/<slug-relacionado>)`).
+
+### C. Fechamento para "Featured Snippets" & Conversão:
+7. **Seção de Perguntas Frequentes (`FAQ / People Also Ask`):**
+   - 2 a 3 perguntas frequentes que o leitor pesquisa no Google sobre o tema, com respostas diretas e precisas de até 3 linhas (formato ideal para a "posição zero" da busca).
+8. **Síntese da Tendência & Pergunta de Engajamento:**
+   - Fechamento com lição prática e pergunta aberta estimulando comentários e compartilhamento nas redes.
 
 ---
 
-## 3. Saída Padronizada da Redação
+## 3. Fluxo de Entrada e Redação Multilíngue Sequencial
 
-A skill sempre entrega os 3 arquivos prontos para publicação:
-1. `src/content/blog/<slug>.mdx` (Versão principal em Português - `lang: 'pt'`)
-2. `src/content/blog/<slug>-en.mdx` (Versão em Inglês - `lang: 'en'`)
-3. `src/content/blog/<slug>-es.mdx` (Versão em Espanhol - `lang: 'es'`)
+A skill consome o `Briefing JSON` (da `onda-researcher`) e os metadados visuais (da `onda-designer`), redigindo em 3 etapas sucessivas:
+
+1. **Artigo Mestre em Português (`lang: 'pt'`):**
+   - Redige o artigo completo em `src/content/blog/<slug>.mdx` com todas as seções (Key Takeaways, fontes, análise, FAQ e encerramento).
+2. **Transposição e Adaptação Nativa para Inglês (`lang: 'en'`):**
+   - Redige em `src/content/blog/<slug>-en.mdx` com `translationOf: '<slug>'`.
+   - Vocabulário fluente e natural no estilo editorial de publicações como *Wired* ou *TechCrunch* (não tradução literal).
+3. **Transposição e Adaptação Nativa para Espanhol (`lang: 'es'`):**
+   - Redige em `src/content/blog/<slug>-es.mdx` com `translationOf: '<slug>'`.
+   - Adaptação rica para o público hispânico e latino-americano.
+
+---
+
+## 4. Saída Padronizada da Redação
+
+A skill entrega os 3 arquivos MDX validados e prontos para publicação pelo `onda-publisher`:
+1. `src/content/blog/<slug>.mdx`
+2. `src/content/blog/<slug>-en.mdx`
+3. `src/content/blog/<slug>-es.mdx`
+
+
 

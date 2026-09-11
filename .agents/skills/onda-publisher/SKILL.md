@@ -36,39 +36,76 @@ featured: false # ou true se for manchete principal
 ```
 
 ### Categorias Padronizadas:
-- `Tendências`
+
 - `Inovação & IA`
 - `Mercado & Negócios`
+- `Finanças Pessoais`
+- `Saúde & Bem-estar`
+- `Estética & Beleza`
+- `Estilo de Vida & Viagens`
+- `Tendências`
 - `Tecnologia`
 - `Sustentabilidade`
 - `Comportamento`
 
 ---
 
-## 2. Passo a Passo de Execução da Publicação Multilíngue
+## 2. Regras de Blindagem Técnica e Engenharia
 
-Quando o usuário pedir para publicar um artigo novo:
+Para evitar quebras no build do Astro e inconsistências em produção, a skill aplica as seguintes regras obrigatórias:
+
+### A. Sanitização e Escape Seguro de Strings no YAML:
+- Campos como `title`, `description` e `imageAlt` frequentemente possuem aspas simples (`'`), aspas duplas (`"`) ou dois-pontos (`:`).
+- **Regra:** Sempre use aspas duplas delimitando os valores textuais no frontmatter, escapando aspas internas com `\"`.
+  ```yaml
+  title: "IA em 2026: O que muda nos investimentos e no mercado de trabalho?"
+  description: "Entenda o impacto prático dos agentes autônomos e como proteger seus rendimentos."
+  ```
+
+### B. Cálculo Dinâmico Real de Tempo de Leitura (`readTime`):
+- O `readTime` nunca deve ser um valor arbitrário.
+- **Fórmula:** Conte o total de palavras do corpo do artigo (excluindo o frontmatter) e divida pela média de leitura humana (200 palavras por minuto):
+  $$\text{readTime} = \max(1, \text{Math.ceil}(\text{palavras} / 200))$$
+
+### C. Formatação Nativa de Datas (`pubDate`):
+Cada versão idiomática deve receber a data formatada de acordo com os padrões locais da sua região:
+- **Português (`pt`):** Formato extenso brasileiro (ex: `"10 de Março de 2026"`).
+- **Inglês (`en`):** Formato nativo norte-americano (ex: `"March 10, 2026"`).
+- **Espanhol (`es`):** Formato nativo hispânico (ex: `"10 de Marzo de 2026"`).
+
+### D. Gestão Equilibrada da Flag `featured`:
+- O artigo original em português recebe `featured: true` apenas se for a principal matéria da categoria na semana (ou com `urgency_score >= 8`).
+- As versões em inglês e espanhol acompanham o mesmo valor da flag da versão principal.
+
+---
+
+## 3. Passo a Passo de Execução da Publicação Multilíngue
+
+Quando o usuário ou o orquestrador disparar a publicação:
 
 1. **Obter o Próximo ID Sequencial:**
    - Liste os arquivos existentes em `src/content/blog/`.
-   - Leia o maior valor de `id` nos frontmatters existentes e incremente +1 para o artigo em português, e use IDs sequenciais subsequentes para as versões em inglês e espanhol.
+   - Identifique o maior número de `id` nos frontmatters existentes.
+   - Atribua `maior_id + 1` para o artigo em português, `maior_id + 2` para o inglês e `maior_id + 3` para o espanhol.
 
-2. **Gerar os Slugs e Nomes de Arquivo:**
+2. **Gerar e Salvar os Arquivos MDX:**
    - `src/content/blog/<slug>.mdx` (Português, `lang: 'pt'`)
    - `src/content/blog/<slug>-en.mdx` (Inglês, `lang: 'en'`, `translationOf: '<slug>'`)
    - `src/content/blog/<slug>-es.mdx` (Espanhol, `lang: 'es'`, `translationOf: '<slug>'`)
 
-3. **Garantir a Imagem de Capa:**
-   - Salve a arte compartilhada entre as versões em `public/images/blog-post/<slug>.webp`.
+3. **Garantir a Capa Otimizada:**
+   - Confirme a existência do arquivo de capa compartilhado em `public/images/blog-post/<slug>.webp`.
 
-4. **Validação do Build Local:**
-   - Execute no terminal: `npm run build` para garantir que as rotas e tipos Zod estão perfeitos.
+4. **Validação do Build Local (Zero-Error Policy):**
+   - Execute no terminal: `npm run build`.
+   - Se o comando retornar código de saída diferente de 0, **interrompa o fluxo imediatamente**, identifique o erro de schema ou sintaxe no MDX e corrija antes de qualquer ação no Git.
 
-5. **Deploy Automático via Git:**
-   - Execute:
+5. **Deploy Contínuo via Git:**
+   - Execute com segurança:
      ```bash
-     git add src/content/blog/<slug>* public/images/
+     git add src/content/blog/<slug>* public/images/ scripts/published-history.json
      git commit -m "feat(blog): publicar <slug> em pt/en/es"
      git push origin main
      ```
-   - O GitHub Actions processará o build estático de todos os idiomas e enviará via FTP para a produção.
+   - O pipeline de CI/CD (GitHub Actions / Vercel) iniciará automaticamente o deploy em produção.
+
