@@ -76,8 +76,28 @@ const CATEGORIES = [
     esName: 'Sostenibilidad',
     globalQuery: 'when:48h (carbon credit market OR climate tech renewable energy ESG)',
     brQuery: 'when:48h (mercado de carbono OR sustentabilidade OR energia solar OR ESG Brasil) site:reset.com.br OR site:exame.com/esg OR site:umsoplaneta.globo.com'
+  },
+  {
+    name: 'Comportamento',
+    enName: 'Behavior & Culture',
+    esName: 'Comportamiento y Cultura',
+    globalQuery: 'when:48h (social trends OR digital culture trends OR modern human behavior psychology)',
+    brQuery: 'when:48h (comportamento digital OR cultura pop OR hábitos contemporâneos OR novas gerações) site:uol.com.br OR site:g1.globo.com OR site:folha.uol.com.br OR site:estadao.com.br'
   }
 ]
+
+// Grade Semanal de Publicações Automatizadas (2x ao dia)
+// Dias: 0=Domingo, 1=Segunda, 2=Terça, 3=Quarta, 4=Quinta, 5=Sexta, 6=Sábado
+// Períodos: 'morning' (08:00 BRT) e 'evening' (18:00 BRT)
+const EDITORIAL_SCHEDULE = {
+  1: { morning: 'Mercado & Negócios', evening: 'Saúde & Bem-estar' },
+  2: { morning: 'Inovação & IA', evening: 'Tendências' },
+  3: { morning: 'Finanças Pessoais', evening: 'Estética & Beleza' },
+  4: { morning: 'Tecnologia', evening: 'Sustentabilidade' },
+  5: { morning: 'Mercado & Negócios', evening: 'Estilo de Vida & Viagens' },
+  6: { morning: 'Inovação & IA', evening: 'Comportamento' },
+  0: { morning: 'Tendências', evening: 'Estilo de Vida & Viagens' }
+}
 
 const BLOG_DIR = path.resolve('src/content/blog')
 const HISTORY_FILE = path.resolve('scripts/published-history.json')
@@ -157,10 +177,12 @@ Fonte/Link: ${newsItem.link}
 Categoria: ${category.name}
 
 Gere um conteúdo jornalístico profundo, agradável, dinâmico e otimizado para TOP 1 NO GOOGLE.
-A notícia deve analisar o acontecimento global e explicar:
-- O que está acontecendo no cenário mundial.
+A notícia deve analisar o acontecimento e explicar:
+- O que está acontecendo no cenário mundial ou nacional.
 - Por que isso é uma grande tendência ou influência.
 - Como isso impacta diretamente empresas, profissionais e o mercado no Brasil.
+- Citar nominalmente a fonte de apuração com hiperlink Markdown apontando para "${newsItem.link}".
+- Incluir no final do corpo uma seção explícita "### 🔗 Fontes & Referências Consultadas:" com o link da notícia original [${newsItem.title}](${newsItem.link}).
 
 Gere a resposta EXATAMENTE no seguinte formato JSON (sem markdown de formatação ao redor, apenas o JSON puro):
 
@@ -230,6 +252,30 @@ ${body}
   fs.writeFileSync(path.join(BLOG_DIR, filename), content.trim() + '\n')
 }
 
+// Obter categoria estrategicamente programada para o dia e horário atual (Horário de Brasília)
+function getScheduledCategory(overrideArg) {
+  if (overrideArg) {
+    const found = CATEGORIES.find(c => c.name.toLowerCase().includes(overrideArg.toLowerCase()))
+    if (found) return found
+  }
+
+  // Obter hora e dia da semana atuais no fuso horário de Brasília (America/Sao_Paulo)
+  const now = new Date()
+  const brTimeStr = now.toLocaleString('en-US', { timeZone: 'America/Sao_Paulo' })
+  const brDate = new Date(brTimeStr)
+  const dayOfWeek = brDate.getDay() // 0=Domingo, 1=Segunda, ..., 6=Sábado
+  const hour = brDate.getHours()
+
+  // Se for antes das 14h BRT, executa a edição da manhã (08h); após as 14h, a edição da tarde (18h)
+  const period = hour < 14 ? 'morning' : 'evening'
+  const daySchedule = EDITORIAL_SCHEDULE[dayOfWeek] || EDITORIAL_SCHEDULE[1]
+  const targetCategoryName = daySchedule[period] || 'Tendências'
+
+  console.log(`📅 Agenda Editorial Ativa: Dia ${dayOfWeek} (${['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'][dayOfWeek]}), Período: ${period === 'morning' ? 'Manhã (08h BRT)' : 'Tarde (18h BRT)'} -> Categoria: "${targetCategoryName}"`)
+
+  return CATEGORIES.find(c => c.name.toLowerCase() === targetCategoryName.toLowerCase()) || CATEGORIES[0]
+}
+
 // Execução Principal
 async function main() {
   const apiKey = process.env.GEMINI_API_KEY
@@ -238,11 +284,8 @@ async function main() {
     process.exit(1)
   }
 
-  // Sorteia uma categoria ou aceita argumento via linha de comando
-  const categoryArg = process.argv[2]
-  const category = categoryArg
-    ? CATEGORIES.find(c => c.name.toLowerCase().includes(categoryArg.toLowerCase())) || CATEGORIES[0]
-    : CATEGORIES[Math.floor(Math.random() * CATEGORIES.length)]
+  // Determina a categoria com base na agenda editorial estratégica ou no argumento de teste
+  const category = getScheduledCategory(process.argv[2])
 
   // Alterna aleatoriamente entre priorizar notícias nacionais ou globais (50%/50%)
   const prioritizeBrazil = Math.random() > 0.5
