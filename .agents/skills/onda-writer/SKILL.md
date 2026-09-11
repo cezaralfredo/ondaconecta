@@ -46,8 +46,9 @@ Para garantir que cada matéria domine a SERP tradicional e seja citada por moto
      - O horizonte temporal ou recomendação prática.
 
 ### B. Desenvolvimento Analítico & Escaneabilidade:
-4. **Citação Explícita de Fontes Primárias (E-E-A-T):**
-   - Citar nominalmente os veículos e fontes trazidos pelo `onda-researcher` (ex: *"De acordo com apuração do Brazil Journal..."*, *"Dados publicados pela Anvisa revelam que..."*).
+4. **Citação e Hiperlinks para Fontes Primárias (E-E-A-T & Google AI Overviews):**
+   - Citar nominalmente os veículos e fontes trazidos pelo `onda-researcher` (ex: *"De acordo com apuração do [Brazil Journal](url-fonte)..."*, *"Dados publicados pela [Anvisa](url-fonte) revelam que..."*).
+   - **Inserção de Hiperlinks Externos de Autoridade:** Vincular diretamente os links das matérias ou estudos originais (1 a 3 links externos de alta autoridade por artigo), abrindo sempre com segurança (`target="_blank" rel="noopener noreferrer"` ou link em Markdown com foco em autoridade).
    - Incluir dados estatísticos concretos para sustentar argumentos.
 5. **Hierarquia Semântica e Ritmo Visual:**
    - `H2` para os pilares estratégicos da discussão.
@@ -57,11 +58,20 @@ Para garantir que cada matéria domine a SERP tradicional e seja citada por moto
 6. **Malha de Links Internos (`Internal Linking`):**
    - Incluir pelo menos 1 link contextual para outra matéria relevante do portal (ex: `[Leia também nossa análise sobre...](/blog/<slug-relacionado>)`).
 
-### C. Fechamento para "Featured Snippets" & Conversão:
+### C. Fechamento para "Featured Snippets", Conversão & Credibilidade:
 7. **Seção de Perguntas Frequentes (`FAQ / People Also Ask`):**
    - 2 a 3 perguntas frequentes que o leitor pesquisa no Google sobre o tema, com respostas diretas e precisas de até 3 linhas (formato ideal para a "posição zero" da busca).
 8. **Síntese da Tendência & Pergunta de Engajamento:**
    - Fechamento com lição prática e pergunta aberta estimulando comentários e compartilhamento nas redes.
+9. **Bloco Padronizado: Fontes & Referências Consultadas:**
+   - Logo antes do encerramento ou logo após a conclusão, incluir obrigatoriamente a lista de fontes oficiais consultadas:
+     ```markdown
+     ---
+
+     ### 🔗 Fontes & Referências Consultadas:
+     - [Nome do Veículo 1](URL_da_Fonte_1) — *Contexto breve da matéria ou estudo*
+     - [Nome do Veículo 2](URL_da_Fonte_2) — *Contexto breve da matéria ou estudo*
+     ```
 
 ---
 
