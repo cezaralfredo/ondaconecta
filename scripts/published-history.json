@@ -63,5 +63,31 @@
       "Terra"
     ],
     "title": "Zillennials e a Desconexão Digital: Os Novos Hábitos de Consumo em 2026"
+  },
+  {
+    "id": 24,
+    "slug": "bebidas-funcionais-mocktails-tendencias-2026",
+    "category": "Tendências",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-09-13T08:00:00-03:00",
+    "sources": [
+      "Folha Vitória",
+      "InfoMoney",
+      "Panrotas / HSMAI"
+    ],
+    "title": "Bebidas Funcionais e Mocktails: O Novo Brinde do Consumo em 2026"
+  },
+  {
+    "id": 27,
+    "slug": "turismo-bem-estar-experiencias-hotelaria-2026",
+    "category": "Estilo de Vida & Viagens",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-09-13T18:00:00-03:00",
+    "sources": [
+      "VEJA RIO",
+      "Panrotas",
+      "Catraca Livre"
+    ],
+    "title": "Turismo de Bem-Estar e Hotelaria Regenerativa: As Viagens em 2026"
   }
 ]
