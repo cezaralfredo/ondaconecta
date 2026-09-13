@@ -37,5 +37,31 @@
       "ALL Accor"
     ],
     "title": "Slow Travel e Turismo de Experiência: Como as Viagens Estão Mudando em 2026"
+  },
+  {
+    "id": 18,
+    "slug": "agentes-autonomos-compras-futuro-consumo-2026",
+    "category": "Inovação & IA",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-09-12T08:00:00-03:00",
+    "sources": [
+      "Midiamax",
+      "Brazil Economy",
+      "TecMundo"
+    ],
+    "title": "Agentes de IA que Compram Sozinhos: O Futuro do Consumo em 2026"
+  },
+  {
+    "id": 21,
+    "slug": "zillennials-desconexao-digital-consumo-2026",
+    "category": "Comportamento",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-09-12T18:00:00-03:00",
+    "sources": [
+      "Estadão",
+      "VEJA",
+      "Terra"
+    ],
+    "title": "Zillennials e a Desconexão Digital: Os Novos Hábitos de Consumo em 2026"
   }
 ]
