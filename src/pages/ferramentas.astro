@@ -1,0 +1,39 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb'
+import ToolsHub from '@/components/blocks/tools-hub/tools-hub'
+
+const pageTitle = 'Ferramentas Úteis | Onda Conecta'
+const pageDescription = 'Calculadora de juros compostos, gerador de QR Code, analisador de texto e diretório das ferramentas de IA e produtividade mais usadas na internet.'
+const pageKeywords = 'ferramentas online, calculadora juros compostos, gerador de qr code, contador de palavras, ferramentas de ia, produtividade, utilitários grátis, onda conecta'
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Ferramentas Úteis | Onda Conecta',
+  description: pageDescription,
+  url: 'https://ondaconecta.com.br/ferramentas'
+}
+---
+
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} schema={schema}>
+  <div class='border-b bg-muted/20 py-4'>
+    <div class='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
+      <Breadcrumb>
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink href='/'>Início</BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage>Ferramentas Úteis</BreadcrumbPage>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
+    </div>
+  </div>
+
+  <main>
+    <ToolsHub client:load lang='pt' />
+  </main>
+</Layout>

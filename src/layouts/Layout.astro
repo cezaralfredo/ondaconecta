@@ -9,14 +9,21 @@ import Footer from '@/components/layout/footer'
 
 import type { NavigationSection } from '@/components/blocks/menu-navigation'
 
+const isEn = Astro.currentLocale === 'en'
+const isEs = Astro.currentLocale === 'es'
+
 const navigationData: NavigationSection[] = [
   {
-    title: 'Início',
-    href: '/#home'
+    title: isEn ? 'Home' : isEs ? 'Inicio' : 'Início',
+    href: isEn ? '/en#home' : isEs ? '/es#home' : '/#home'
   },
   {
-    title: 'Categorias & Tendências',
-    href: '/#categories'
+    title: isEn ? 'Categories & Trends' : isEs ? 'Categorías y Tendencias' : 'Categorias & Tendências',
+    href: isEn ? '/en#categories' : isEs ? '/es#categories' : '/#categories'
+  },
+  {
+    title: isEn ? 'Useful Tools' : isEs ? 'Herramientas' : 'Ferramentas Úteis',
+    href: isEn ? '/en/tools' : isEs ? '/es/herramientas' : '/ferramentas'
   }
 ]
 

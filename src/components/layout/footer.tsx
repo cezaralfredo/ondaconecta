@@ -13,6 +13,12 @@ const Footer = () => {
         </a>
         <div className='flex flex-wrap items-center justify-center gap-x-3 gap-y-2 whitespace-nowrap sm:gap-5'>
           <a
+            href='/ferramentas'
+            className='text-muted-foreground hover:text-foreground opacity-80 transition-opacity duration-300 hover:opacity-100'
+          >
+            Ferramentas Úteis
+          </a>
+          <a
             href='https://wa.me/5585996277707'
             target='_blank'
             rel='noopener noreferrer'
