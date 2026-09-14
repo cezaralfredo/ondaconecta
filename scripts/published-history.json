@@ -102,5 +102,31 @@
       "Conselho Federal de Biomedicina"
     ],
     "title": "Da Expectativa à Autonomia: Como a Medicina Molecular Redefine a Longevidade"
+  },
+  {
+    "id": 33,
+    "slug": "exossomos-peptideos-skin-biohacking-2026",
+    "category": "Estética & Beleza",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-09-14T14:00:00-03:00",
+    "sources": [
+      "Vogue Brasil Beleza",
+      "Marie Claire",
+      "Business of Fashion"
+    ],
+    "title": "Adeus aos Preenchimentos Exagerados? A Revolução dos Exossomos e Peptídeos na Pele"
+  },
+  {
+    "id": 36,
+    "slug": "mercado-carbono-esg-transicao-energetica-2026",
+    "category": "Sustentabilidade",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-09-14T18:00:00-03:00",
+    "sources": [
+      "Reset UOL",
+      "Exame ESG",
+      "Comissão de Valores Mobiliários (CVM)"
+    ],
+    "title": "Do Discurso à Auditoria: Como as Regras Globais de Carbono Afetam as Empresas Brasileiras"
   }
 ]
