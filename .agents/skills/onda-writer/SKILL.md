@@ -33,9 +33,40 @@ Esta skill define o tom de voz, as diretrizes editoriais e os critérios de **SE
 Para garantir que cada matéria domine a SERP tradicional e seja citada por motores de busca generativa (Google AI Overviews, Perplexity, Gemini):
 
 ### A. Elementos de Abertura & Retenção Imediata:
-1. **Título Magnético (`H1`):**
-   - Máximo de 65 caracteres para não truncar nos motores de busca.
-   - Conter a palavra-chave central com gatilho temporal ou de impacto (ex: *"em 2026"*, *"o que muda"*, *"tendência global"*).
+1. **Arquitetura Sintática de Títulos Magnéticos (`H1`) — Matriz de 5 Fórmulas:**
+   - **Extensão Ideal:** Entre 50 e 75 caracteres (visibilidade ideal na SERP e mobile sem truncamento).
+   - **Regra Anti-Fórmula Única:** É expressamente proibido usar a fórmula repetitiva de substantivos compostos terminados em *"em 2026"* de forma mecânica. A redação deve alternar obrigatoriamente entre os **5 Arquétipos Editoriais**:
+
+     - **Fórmula A — Provocação / Pergunta de Ruptura (Alto CTR & Curiosidade):**
+       - *Estrutura:* `[Pergunta de Impacto / Dilema]? + [Explicação do Fenômeno ou Causa]`
+       - *Exemplo:* *"O Fim do Álcool Social? Por que os Mocktails e Bebidas Funcionais Conquistaram o Copo do Consumidor"*
+       - *Aplicação:* Ideal para mudanças de comportamento, tendências de consumo, gastronomia e estilo de vida.
+
+     - **Fórmula B — Dado Numérico / Métrica Âncora no Front-Load (Autoridade & Finanças):**
+       - *Estrutura:* `[Número / Percentual / Estatística de Impacto]: + [Guia / Ação Estratégica]`
+       - *Exemplo:* *"Selic a 14% ao Ano: O Guia Definitivo para Blindar seu Patrimônio com Tesouro IPCA+"*
+       - *Aplicação:* Ideal para economia, finanças pessoais, dados de mercado e investimentos.
+
+     - **Fórmula C — Declaração Contraintuitiva / Tese de Ruptura (Negócios & Tecnologia):**
+       - *Estrutura:* `[Afirmação Desafiadora ou Paradoxo]: + [Como o Mercado / Profissionais Operam essa Virada]`
+       - *Exemplo:* *"A Virada do Bootstrapping: Como Startups Faturam Alto Sem Capital de Risco"*
+       - *Aplicação:* Ideal para inovação, startups, carreira corporativa e modelos operacionais.
+
+     - **Fórmula D — Metáfora Viva / Ação Dinâmica (IA & Vanguarda Tech):**
+       - *Estrutura:* `[Cena / Ação Viva com Sujeito Ativo]: + [O Desdobramento no Mundo Real]`
+       - *Exemplo:* *"Quando a IA Passa o Cartão: A Ascensão dos Agentes Autônomos no Comércio Global"*
+       - *Aplicação:* Ideal para inteligência artificial, robótica, automação e futurismo.
+
+     - **Fórmula E — Contraste Sensorial / Redefinição de Conceito (Bem-Estar & Viagens):**
+       - *Estrutura:* `[Contraste Binário Forte ou Redefinição]: + [O Movimento Cultural em Curso]`
+       - *Exemplos:*
+         - *"Menos Telas, Mais Vida Real: A Virada Silenciosa dos Zillennials no Consumo"*
+         - *"A Arte de Viajar Sem Pressa: Por que o Slow Travel Virou o Novo Luxo"*
+       - *Aplicação:* Ideal para viagens, desaceleração, saúde mental, design e cultura.
+
+   - **Tradução Cultural nos Títulos Multilíngues:**
+     - Não traduzir títulos palavra por palavra.
+     - Adaptar para o ritmo e idioms nativos de veículos globais (ex: Bloomberg, Wired, TechCrunch para `en`; El País, Expansión para `es`).
 2. **Meta Description Persuasiva:**
    - Entre 130 e 155 caracteres com benefício claro e verbo de ação convidando à leitura.
 3. **Bloco Obrigatório: "Em Poucas Linhas" (`Key Takeaways`):**
