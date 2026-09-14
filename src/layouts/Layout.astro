@@ -48,6 +48,14 @@ const currentLang = Astro.currentLocale === 'en' ? 'en' : Astro.currentLocale ==
 <!doctype html>
 <html lang={currentLang} class='scroll-smooth'>
   <head>
+    {/* Adcash Monetization Library & AutoTag */}
+    <script is:inline id='aclib' type='text/javascript' src='//acscdn.com/script/aclib.js'></script>
+    <script is:inline type='text/javascript'>
+      aclib.runAutoTag({
+        zoneId: '9ywtxjg2wq',
+      });
+    </script>
+
     <HeadSeo {...seoProps} />
     <ClientRouter />
     <script is:inline>
