@@ -80,7 +80,7 @@ const Header = ({ navigationData, className }: HeaderProps) => {
     const path = window.location.pathname
 
     setTimeout(() => {
-      if (path === '/' || path === '/#home') {
+      if (path === '/' || path === '/en' || path === '/es') {
         setActiveSection('home')
       } else if (path.startsWith('/blog/')) {
         setActiveSection('') // Don't show any active state on blog post pages
@@ -104,9 +104,9 @@ const Header = ({ navigationData, className }: HeaderProps) => {
     >
       <div className='mx-auto flex h-full max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-8'>
         {/* Logo */}
-        <a href='/#home' className='flex items-center gap-3'>
+        <a href='/' className='flex items-center gap-3'>
           <LogoSvg />
-          <span className='text-primary text-[20px] font-semibold'>INK</span>
+          <span className='text-primary text-[20px] font-semibold'>Onda Conecta</span>
         </a>
 
         {/* Navigation */}

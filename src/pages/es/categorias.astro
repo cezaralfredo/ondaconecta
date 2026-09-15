@@ -1,0 +1,61 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { getCollection } from 'astro:content'
+import Blog from '@/components/blocks/blog-component/blog-component'
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb'
+
+const allPosts = await getCollection('blog')
+const esPosts = allPosts.filter(p => p.data.lang === 'es')
+const postsToShow = esPosts.length > 0 ? esPosts : allPosts
+
+const allBlogPosts = postsToShow
+  .map((post, index) => ({
+    id: post.data.id || index + 1,
+    slug: post.data.slug || post.id,
+    title: post.data.title,
+    description: post.data.description,
+    imageUrl: post.data.imageUrl || '/images/blog-post/post-1.webp',
+    imageAlt: post.data.imageAlt || post.data.title,
+    pubDate: post.data.pubDate,
+    category: post.data.category,
+    author: post.data.author,
+    avatarUrl: post.data.avatarUrl || '/images/avatars/post-1.webp',
+    readTime: post.data.readTime || 5,
+    featured: post.data.featured || false
+  }))
+  .sort((a, b) => b.id - a.id)
+
+const pageTitle = 'Categorías y Tendencias | Onda Conecta'
+const pageDescription = 'Descubra artículos analíticos, tendencias de mercado, innovación, IA y estilo de vida clasificados por categorías.'
+const pageKeywords = 'categorías onda conecta, tendencias, tecnología, ia, negocios, sostenibilidad, bienestar'
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: pageTitle,
+  description: pageDescription,
+  url: 'https://ondaconecta.com.br/es/categorias'
+}
+---
+
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} schema={schema}>
+  <div class='border-b bg-muted/20 py-4'>
+    <div class='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
+      <Breadcrumb>
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink href='/es'>Inicio</BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage>Categorías y Tendencias</BreadcrumbPage>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
+    </div>
+  </div>
+
+  <main>
+    <Blog blogData={allBlogPosts} client:load />
+  </main>
+</Layout>

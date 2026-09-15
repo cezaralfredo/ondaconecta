@@ -15,11 +15,11 @@ const isEs = Astro.currentLocale === 'es'
 const navigationData: NavigationSection[] = [
   {
     title: isEn ? 'Home' : isEs ? 'Inicio' : 'Início',
-    href: isEn ? '/en#home' : isEs ? '/es#home' : '/#home'
+    href: isEn ? '/en' : isEs ? '/es' : '/'
   },
   {
     title: isEn ? 'Categories & Trends' : isEs ? 'Categorías y Tendencias' : 'Categorias & Tendências',
-    href: isEn ? '/en#categories' : isEs ? '/es#categories' : '/#categories'
+    href: isEn ? '/en/categories' : isEs ? '/es/categorias' : '/categorias'
   },
   {
     title: isEn ? 'Useful Tools' : isEs ? 'Herramientas' : 'Ferramentas Úteis',

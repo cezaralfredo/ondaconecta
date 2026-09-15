@@ -1,0 +1,61 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { getCollection } from 'astro:content'
+import Blog from '@/components/blocks/blog-component/blog-component'
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb'
+
+const allPosts = await getCollection('blog')
+const enPosts = allPosts.filter(p => p.data.lang === 'en')
+const postsToShow = enPosts.length > 0 ? enPosts : allPosts
+
+const allBlogPosts = postsToShow
+  .map((post, index) => ({
+    id: post.data.id || index + 1,
+    slug: post.data.slug || post.id,
+    title: post.data.title,
+    description: post.data.description,
+    imageUrl: post.data.imageUrl || '/images/blog-post/post-1.webp',
+    imageAlt: post.data.imageAlt || post.data.title,
+    pubDate: post.data.pubDate,
+    category: post.data.category,
+    author: post.data.author,
+    avatarUrl: post.data.avatarUrl || '/images/avatars/post-1.webp',
+    readTime: post.data.readTime || 5,
+    featured: post.data.featured || false
+  }))
+  .sort((a, b) => b.id - a.id)
+
+const pageTitle = 'Categories & Trends | Onda Conecta'
+const pageDescription = 'Explore in-depth articles, trends, market intelligence, tech, and lifestyle insights across our curated categories.'
+const pageKeywords = 'categories onda conecta, tech, ai, trends, startups, finance, wellness, sustainability'
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: pageTitle,
+  description: pageDescription,
+  url: 'https://ondaconecta.com.br/en/categories'
+}
+---
+
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} schema={schema}>
+  <div class='border-b bg-muted/20 py-4'>
+    <div class='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
+      <Breadcrumb>
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink href='/en'>Home</BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage>Categories & Trends</BreadcrumbPage>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
+    </div>
+  </div>
+
+  <main>
+    <Blog blogData={allBlogPosts} client:load />
+  </main>
+</Layout>

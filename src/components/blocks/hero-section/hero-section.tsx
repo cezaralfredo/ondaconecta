@@ -50,7 +50,7 @@ const HeroSection = ({ blogData }: { blogData: BlogPost[] }) => {
                         onClick={e => {
                           e.preventDefault()
                           e.stopPropagation()
-                          window.location.href = `/#category-${item.category}`
+                          window.location.href = `/categorias?category=${encodeURIComponent(item.category)}`
                         }}
                       >
                         {item.category}

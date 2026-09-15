@@ -43,10 +43,11 @@ const MenuNavigation = ({ navigationData, activeSection, className }: MenuNaviga
       <NavigationMenuList className='flex-wrap justify-start gap-3'>
         {navigationData.map(navItem => {
           if (navItem.href) {
-            // Root link item
-            // Extract section ID from href (e.g., "/#categories" -> "categories", "/#" -> "home")
-            const sectionFromHref = navItem.href === '/#' ? 'home' : navItem.href.replace('/#', '')
-            const isActive = sectionFromHref === activeSection
+            // Match by pathname directly or clean section
+            const currentPath = typeof window !== 'undefined' ? window.location.pathname : ''
+            const isExactPath = currentPath === navItem.href
+            const isHomeActive = (navItem.href === '/' || navItem.href === '/en' || navItem.href === '/es') && (currentPath === '/' || currentPath === '/en' || currentPath === '/es')
+            const isActive = isExactPath || (isHomeActive && activeSection === 'home')
 
             return (
               <NavigationMenuItem key={navItem.title}>
