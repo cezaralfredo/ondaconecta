@@ -113,10 +113,6 @@ const Blog = ({ blogData = [] }: BlogProps) => {
 
   const handleTabChange = (tab: string) => {
     setSelectedTab(tab)
-
-    if (tab === 'All') {
-      window.location.href = '#categories'
-    }
   }
 
   // Filtragem de posts por termo de busca
