@@ -128,5 +128,31 @@
       "Comissão de Valores Mobiliários (CVM)"
     ],
     "title": "Do Discurso à Auditoria: Como as Regras Globais de Carbono Afetam as Empresas Brasileiras"
+  },
+  {
+    "id": 39,
+    "slug": "agentes-ia-open-finance-pagamentos-autonomos-2026",
+    "category": "Inovação & IA",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-09-15T08:00:00-03:00",
+    "sources": [
+      "TecMundo",
+      "Época Negócios",
+      "Banco Central do Brasil"
+    ],
+    "title": "Quando a IA Passa o Pix: A Chegada dos Agentes Autônomos ao Open Finance"
+  },
+  {
+    "id": 42,
+    "slug": "revolucao-analogica-jovens-consumo-desacelerado-2026",
+    "category": "Tendências",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-09-15T18:00:00-03:00",
+    "sources": [
+      "Meio & Mensagem",
+      "Fast Company Brasil",
+      "WGSN"
+    ],
+    "title": "A Revolução do Analógico: Por Que as Novas Gerações Abraçam o Consumo Lento"
   }
 ]
