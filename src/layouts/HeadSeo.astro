@@ -107,6 +107,8 @@ const schemaData = schema || defaultSchema
 <meta http-equiv='content-language' content={Astro.currentLocale || 'pt-BR'} />
 
 <!-- Favicon and Icons -->
+<link rel='icon' type='image/webp' href='/favicon.webp' />
+<link rel='icon' type='image/x-icon' href='/favicon.ico' />
 {SITE_METADATA.icons.icon.map(icon => <link rel='icon' type={icon.type} sizes={icon.sizes} href={icon.url} />)}
 {SITE_METADATA.icons.apple.map(icon => <link rel='apple-touch-icon' sizes={icon.sizes} href={icon.url} />)}
 {SITE_METADATA.icons.shortcut.map(icon => <link rel='shortcut icon' href={icon.url} />)}
