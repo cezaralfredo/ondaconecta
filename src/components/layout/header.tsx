@@ -14,7 +14,7 @@ import type { NavigationSection } from '@/components/blocks/menu-navigation'
 
 import { cn } from '@/lib/utils'
 
-import LogoSvg from '@/assets/svg/logo'
+import Logo from '@/components/logo'
 
 type HeaderProps = {
   navigationData: NavigationSection[]
@@ -104,9 +104,8 @@ const Header = ({ navigationData, className }: HeaderProps) => {
     >
       <div className='mx-auto flex h-full max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-8'>
         {/* Logo */}
-        <a href='/' className='flex items-center gap-3'>
-          <LogoSvg />
-          <span className='text-primary text-[20px] font-semibold'>Onda Conecta</span>
+        <a href='/' className='flex items-center'>
+          <Logo />
         </a>
 
         {/* Navigation */}

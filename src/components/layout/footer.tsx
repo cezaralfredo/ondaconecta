@@ -6,10 +6,8 @@ const Footer = () => {
   return (
     <footer>
       <div className='mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-4 max-md:flex-col sm:px-6 sm:py-6 md:gap-6 md:py-8 lg:px-8'>
-        <a href='/'>
-          <div className='flex items-center gap-3'>
-            <Logo className='gap-3' />
-          </div>
+        <a href='/' className='flex items-center'>
+          <Logo />
         </a>
         <div className='flex flex-wrap items-center justify-center gap-x-3 gap-y-2 whitespace-nowrap sm:gap-5'>
           <a
