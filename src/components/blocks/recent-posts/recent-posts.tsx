@@ -21,7 +21,7 @@ export const RecentPosts = ({
   const latestPosts = blogData.slice(0, 4)
 
   return (
-    <section className='py-12 sm:py-16 lg:py-20'>
+    <section className='pt-8 pb-12 sm:pt-10 sm:pb-16 lg:pt-12 lg:pb-20'>
       <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10'>
         {/* Cabeçalho da Seção */}
         <div className='flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b pb-6'>
@@ -74,8 +74,8 @@ export const RecentPosts = ({
                     <span>{post.pubDate}</span>
                   </div>
 
-                  {/* Título em Destaque Negrito Bold */}
-                  <h3 className='text-lg font-bold leading-snug tracking-tight text-foreground group-hover:text-primary transition-colors line-clamp-3'>
+                  {/* Título em Destaque Negrito Bold com altura alinhada */}
+                  <h3 className='text-lg font-bold leading-snug tracking-tight text-foreground group-hover:text-primary transition-colors line-clamp-3 min-h-[4.25rem]'>
                     {post.title}
                   </h3>
                 </div>
