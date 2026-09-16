@@ -35,7 +35,7 @@ export const RecentPosts = ({
             </h2>
           </div>
           <Button asChild variant='ghost' className='gap-2 text-primary hover:text-primary/80 self-start sm:self-auto'>
-            <a href='/categorias'>
+            <a href='/#categories'>
               Ver acervo completo
               <ArrowRightIcon className='size-4' />
             </a>
@@ -95,7 +95,7 @@ export const RecentPosts = ({
         {/* Botão de Destaque para Categorias */}
         <div className='pt-4 text-center'>
           <Button asChild size='lg' className='rounded-xl shadow-md gap-2 font-semibold'>
-            <a href='/categorias'>
+            <a href='/#categories'>
               Explorar todas as matérias e categorias
               <ArrowRightIcon className='size-4' />
             </a>

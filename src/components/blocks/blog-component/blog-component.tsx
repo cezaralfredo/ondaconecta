@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 import { SearchIcon, ArrowRightIcon, CalendarDaysIcon, ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
 
@@ -111,6 +111,22 @@ const Blog = ({ blogData = [] }: BlogProps) => {
   // Categorias padronizadas oficiais do projeto Onda Conecta
   const categories = ['All', ...PROJECT_CATEGORIES]
 
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const handleCategoryFromUrl = () => {
+        const params = new URLSearchParams(window.location.search)
+        const categoryParam = params.get('category')
+        if (categoryParam && categories.includes(categoryParam)) {
+          setSelectedTab(categoryParam)
+        }
+      }
+
+      handleCategoryFromUrl()
+      window.addEventListener('popstate', handleCategoryFromUrl)
+      return () => window.removeEventListener('popstate', handleCategoryFromUrl)
+    }
+  }, [])
+
   const handleTabChange = (tab: string) => {
     setSelectedTab(tab)
   }
@@ -166,7 +182,7 @@ const Blog = ({ blogData = [] }: BlogProps) => {
             <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem>
-                  <BreadcrumbLink href='/categorias' onClick={(e) => { e.preventDefault(); handleTabChange('All'); }}>Publicações</BreadcrumbLink>
+                  <BreadcrumbLink href='/#categories' onClick={(e) => { e.preventDefault(); handleTabChange('All'); }}>Publicações</BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
