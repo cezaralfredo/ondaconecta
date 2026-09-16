@@ -1,0 +1,238 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb'
+
+const pageTitle = 'Quem Somos | Onda Conecta & Anauê Design'
+const pageDescription = 'Conheça quem está por trás do Onda Conecta: a iniciativa da equipe sênior da Anauê Design para trazer tendências, inovação e o que realmente importa sem rodeios.'
+const pageKeywords = 'quem somos, onda conecta, anauê design, marketing digital fortaleza, inteligência artificial, tendências, cezar alfredo, bernardo neto'
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: 'Quem Somos | Onda Conecta',
+  description: pageDescription,
+  url: 'https://ondaconecta.com.br/quem-somos',
+  mainEntity: {
+    '@type': 'Organization',
+    name: 'Onda Conecta',
+    parentOrganization: {
+      '@type': 'Organization',
+      name: 'Anauê Design',
+      url: 'https://anauedesign.com.br'
+    }
+  }
+}
+---
+
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} schema={schema}>
+  <!-- Breadcrumbs -->
+  <div class='border-b bg-muted/20 py-4'>
+    <div class='mx-auto max-w-5xl px-4 sm:px-6 lg:px-8'>
+      <Breadcrumb>
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink href='/'>Início</BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage>Quem Somos</BreadcrumbPage>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
+    </div>
+  </div>
+
+  <article class='py-12 sm:py-16 lg:py-20'>
+    <div class='mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 space-y-16'>
+      
+      <!-- HERO & MANIFESTO -->
+      <div class='space-y-6 text-center max-w-3xl mx-auto'>
+        <div class='inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-xs sm:text-sm font-semibold text-primary'>
+          ✦ Nascido na terra do sol, conectado com o mundo
+        </div>
+        <h1 class='text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl text-balance'>
+          Na crista da onda. <br class='hidden sm:inline' />
+          <span class='bg-gradient-to-r from-primary via-primary/80 to-blue-500 bg-clip-text text-transparent'>
+            Sem enrolação, sem clichês.
+          </span>
+        </h1>
+        <p class='text-lg sm:text-xl text-muted-foreground leading-relaxed text-balance'>
+          Sabe aquele oceano infinito de notícias repetitivas, títulos caça-cliques e gurus prometendo o fim do mundo a cada 15 minutos? Pois é. Nós também cansamos. Por isso criamos o <strong>Onda Conecta</strong>.
+        </p>
+      </div>
+
+      <!-- IMAGEM EDITORIAL DE DESTAQUE -->
+      <div class='relative overflow-hidden rounded-2xl border bg-muted shadow-xl'>
+        <img
+          src='/images/quem-somos-onda-conecta.webp'
+          alt='Equipe em estúdio criativo em Fortaleza com vista para a costa e luz do sol, trabalhando em estratégias de tecnologia e design'
+          class='w-full object-cover aspect-[16/9] hover:scale-[1.01] transition-transform duration-500'
+          loading='lazy'
+        />
+        <div class='absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-6 sm:p-8'>
+          <p class='text-white text-sm sm:text-base font-medium drop-shadow-md'>
+            📍 Diretamente de Fortaleza para o Brasil e o mundo: inteligência aplicada com calor humano e rigor técnico.
+          </p>
+        </div>
+      </div>
+
+      <!-- QUEM ESTÁ POR TRÁS: A CONEXÃO COM A ANAUÊ DESIGN -->
+      <div class='grid grid-cols-1 lg:grid-cols-12 gap-8 items-center rounded-3xl border bg-gradient-to-br from-card to-muted/40 p-8 sm:p-12'>
+        <div class='lg:col-span-7 space-y-5'>
+          <div class='inline-block text-xs font-bold uppercase tracking-wider text-primary'>
+            O DNA por trás do projeto
+          </div>
+          <h2 class='text-2xl sm:text-3xl font-bold text-foreground'>
+            Somos feitos pela equipe da <a href='https://anauedesign.com.br' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>Anauê Design</a>
+          </h2>
+          <p class='text-muted-foreground leading-relaxed text-base sm:text-lg'>
+            A Anauê nasceu em 2019 em Fortaleza com uma missão bem clara: <strong>entregar resultado real, sem terceirização e sem planilhas de vaidade</strong>. Enquanto construímos sites de alta performance, arquiteturas de IA, estratégias de SEO e ecossistemas digitais robustos para dezenas de empresas em todo o país, tínhamos um incômodo diário...
+          </p>
+          <p class='text-muted-foreground leading-relaxed text-base sm:text-lg'>
+            Víamos tendências globais incríveis acontecendo lá fora — de agentes autônomos e Open Finance a novas correntes de consumo e biohacking —, mas quando essas novidades chegavam ao leitor brasileiro, vinham truncadas, traduzidas no automático ou cheias de jargão impenetrável.
+          </p>
+          <div class='pt-2'>
+            <a
+              href='https://anauedesign.com.br/quem-somos.html'
+              target='_blank'
+              rel='noopener noreferrer'
+              class='inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-md transition-all hover:bg-primary/90 hover:gap-3'
+            >
+              Conheça a história completa da Anauê ↗
+            </a>
+          </div>
+        </div>
+
+        <div class='lg:col-span-5 grid grid-cols-2 gap-4'>
+          <div class='rounded-2xl border bg-background/80 p-5 shadow-sm text-center space-y-1'>
+            <div class='text-3xl font-black text-primary'>5+</div>
+            <div class='text-xs sm:text-sm font-medium text-muted-foreground'>Anos de Estrada</div>
+          </div>
+          <div class='rounded-2xl border bg-background/80 p-5 shadow-sm text-center space-y-1'>
+            <div class='text-3xl font-black text-primary'>50+</div>
+            <div class='text-xs sm:text-sm font-medium text-muted-foreground'>Projetos Entregues</div>
+          </div>
+          <div class='rounded-2xl border bg-background/80 p-5 shadow-sm text-center space-y-1'>
+            <div class='text-3xl font-black text-primary'>98%</div>
+            <div class='text-xs sm:text-sm font-medium text-muted-foreground'>Recomendação Real</div>
+          </div>
+          <div class='rounded-2xl border bg-background/80 p-5 shadow-sm text-center space-y-1'>
+            <div class='text-3xl font-black text-primary'>0%</div>
+            <div class='text-xs sm:text-sm font-medium text-muted-foreground'>Conversa Fiada</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUEM SOMOS: OS CAPITÃES DO BARCO -->
+      <div class='space-y-8'>
+        <div class='text-center space-y-3 max-w-2xl mx-auto'>
+          <h2 class='text-2xl sm:text-3xl font-bold tracking-tight text-foreground'>
+            Gente de verdade, cabeça no futuro e mão na massa
+          </h2>
+          <p class='text-muted-foreground text-sm sm:text-base'>
+            Aqui não tem bot anônimo se passando por repórter. Tem gente apaixonada pelo que faz afinando a orquestra e guiando cada linha publicada.
+          </p>
+        </div>
+
+        <div class='grid grid-cols-1 md:grid-cols-2 gap-6'>
+          <!-- CARD CEZAR ALFREDO -->
+          <div class='group relative rounded-3xl border bg-card p-8 shadow-sm transition-all hover:border-primary/50 hover:shadow-lg space-y-4'>
+            <div class='flex items-center gap-4'>
+              <div class='h-16 w-16 rounded-2xl bg-gradient-to-tr from-primary/20 via-primary/30 to-blue-500/30 flex items-center justify-center text-xl font-bold text-primary border border-primary/20 shadow-inner'>
+                CA
+              </div>
+              <div>
+                <h3 class='text-xl font-bold text-foreground'>Cezar Alfredo</h3>
+                <p class='text-xs font-semibold text-primary tracking-wide uppercase'>Sócio & CEO · Estrategista Digital</p>
+              </div>
+            </div>
+            <p class='text-muted-foreground leading-relaxed text-sm sm:text-base'>
+              O maestro das soluções multicanais. Seja aumentando o ruído nas redes certas ou diminuindo a frequência quando o mercado fica barulhento demais, Cezar encara a estratégia digital como uma grande orquestra — onde cada instrumento precisa soar no tempo certo para transformar atenção em autoridade.
+            </p>
+          </div>
+
+          <!-- CARD BERNARDO NETO -->
+          <div class='group relative rounded-3xl border bg-card p-8 shadow-sm transition-all hover:border-primary/50 hover:shadow-lg space-y-4'>
+            <div class='flex items-center gap-4'>
+              <div class='h-16 w-16 rounded-2xl bg-gradient-to-tr from-blue-500/20 via-primary/30 to-emerald-500/20 flex items-center justify-center text-xl font-bold text-primary border border-primary/20 shadow-inner'>
+                BN
+              </div>
+              <div>
+                <h3 class='text-xl font-bold text-foreground'>Bernardo Neto</h3>
+                <p class='text-xs font-semibold text-primary tracking-wide uppercase'>Sócio & CEO · Moodle & Tech Expert</p>
+              </div>
+            </div>
+            <p class='text-muted-foreground leading-relaxed text-sm sm:text-base'>
+              A baliza harmônica fundamental da operação. Bernardo é quem afere a precisão técnica, aprova as diretrizes das trilhas tecnológicas e garante que a engrenagem rode sem falhas. Especialista renomado em arquiteturas complexas e ecossistemas de aprendizagem, é o guardião da consistência de ponta a ponta.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- O QUE ESPERAR DO ONDA CONECTA -->
+      <div class='space-y-8 rounded-3xl border bg-muted/20 p-8 sm:p-12'>
+        <div class='text-center space-y-2 max-w-2xl mx-auto'>
+          <h2 class='text-2xl sm:text-3xl font-bold text-foreground'>
+            O que você vai (e não vai) encontrar por aqui
+          </h2>
+          <p class='text-muted-foreground text-sm sm:text-base'>
+            Nosso compromisso editorial firmado em cartório digital.
+          </p>
+        </div>
+
+        <div class='grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4'>
+          <div class='rounded-2xl border bg-card p-6 space-y-3 shadow-sm'>
+            <div class='text-2xl'>🌊</div>
+            <h3 class='text-lg font-bold text-foreground'>A Crista da Onda</h3>
+            <p class='text-sm text-muted-foreground leading-relaxed'>
+              Cobrimos as verticais que moldam o amanhã: Inovação & IA, Mercado, Finanças, Saúde, Estética, Estilo de Vida e Sustentabilidade. Tudo o que está mudando o jogo no Brasil e no mundo.
+            </p>
+          </div>
+
+          <div class='rounded-2xl border bg-card p-6 space-y-3 shadow-sm'>
+            <div class='text-2xl'>🎯</div>
+            <h3 class='text-lg font-bold text-foreground'>Direto ao Ponto</h3>
+            <p class='text-sm text-muted-foreground leading-relaxed'>
+              Textos com <em>Key Takeaways</em> imediatos, dados comprovados e fontes primárias confiáveis. Respeitamos seu tempo porque tempo é o ativo mais caro que você tem.
+            </p>
+          </div>
+
+          <div class='rounded-2xl border bg-card p-6 space-y-3 shadow-sm'>
+            <div class='text-2xl'>☕</div>
+            <h3 class='text-lg font-bold text-foreground'>Zero Palavrão Corporativo</h3>
+            <p class='text-sm text-muted-foreground leading-relaxed'>
+              Nada de <em>"sinergias holísticas disruptivas"</em> que ninguém entende. Aqui a tecnologia e os negócios são explicados em bom português (e também em inglês e espanhol, porque a gente não brinca em serviço).
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CALL TO ACTION FINAL -->
+      <div class='rounded-3xl border border-primary/30 bg-gradient-to-r from-primary/10 via-primary/5 to-background p-8 sm:p-12 text-center space-y-6'>
+        <h2 class='text-2xl sm:text-3xl font-bold text-foreground'>
+          Quer surfar essa onda com a gente?
+        </h2>
+        <p class='text-muted-foreground max-w-xl mx-auto text-base sm:text-lg'>
+          Acompanhe nossas publicações diárias, explore nossas <a href='/ferramentas' class='text-primary font-semibold hover:underline'>Ferramentas Gratuitas</a> ou venha tomar um café virtual com o time da Anauê se tiver um projeto digital desafiador.
+        </p>
+        <div class='flex flex-wrap items-center justify-center gap-4 pt-2'>
+          <a
+            href='/'
+            class='inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-lg hover:bg-primary/90 transition-all'
+          >
+            Explorar Notícias & Trends
+          </a>
+          <a
+            href='https://anauedesign.com.br'
+            target='_blank'
+            rel='noopener noreferrer'
+            class='inline-flex items-center gap-2 rounded-xl border border-input bg-background/80 px-6 py-3.5 text-sm font-semibold text-foreground shadow-sm hover:bg-muted transition-all'
+          >
+            Falar com a Anauê Design ↗
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </article>
+</Layout>
