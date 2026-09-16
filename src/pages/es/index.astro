@@ -4,6 +4,7 @@ import { getCollection } from 'astro:content'
 
 import HeroSection from '@/components/blocks/hero-section/hero-section'
 import Blog from '@/components/blocks/blog-component/blog-component'
+import AdBanner from '@/components/ads/AdBanner.astro'
 
 // Get all posts for Spanish (or fallback to all if es posts are still being populated)
 const allPosts = await getCollection('blog')
@@ -44,6 +45,22 @@ const schema = {
 ---
 
 <Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} schema={schema}>
+  {/* Banner Superior (12170634) */}
+  <div class='mx-auto max-w-7xl px-4 pt-4 sm:px-6 lg:px-8'>
+    <AdBanner zoneId='12170634' />
+  </div>
+
   <HeroSection blogData={allBlogPosts} client:load />
+
+  {/* Banner Central (12170662) */}
+  <div class='mx-auto max-w-7xl px-4 py-2 sm:px-6 lg:px-8'>
+    <AdBanner zoneId='12170662' />
+  </div>
+
   <Blog blogData={allBlogPosts} client:load />
+
+  {/* Banner Inferior (12170662) */}
+  <div class='mx-auto max-w-7xl px-4 pb-8 sm:px-6 lg:px-8'>
+    <AdBanner zoneId='12170662' />
+  </div>
 </Layout>
