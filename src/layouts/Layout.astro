@@ -12,22 +12,43 @@ import type { NavigationSection } from '@/components/blocks/menu-navigation'
 const isEn = Astro.currentLocale === 'en'
 const isEs = Astro.currentLocale === 'es'
 
+const categoryPrefix = isEn ? '/en/categories' : isEs ? '/es/categorias' : '/categorias'
+const categoryParamPrefix = isEn ? '/en/categories?category=' : isEs ? '/es/categorias?category=' : '/categorias?category='
+
+const categorySubmenu = [
+  { title: isEn ? 'Inovação & IA' : isEs ? 'Innovación e IA' : 'Inovação & IA', href: `${categoryParamPrefix}${encodeURIComponent('Inovação & IA')}` },
+  { title: isEn ? 'Mercado & Negócios' : isEs ? 'Mercados y Negocios' : 'Mercado & Negócios', href: `${categoryParamPrefix}${encodeURIComponent('Mercado & Negócios')}` },
+  { title: isEn ? 'Finanças Pessoais' : isEs ? 'Finanzas Personales' : 'Finanças Pessoais', href: `${categoryParamPrefix}${encodeURIComponent('Finanças Pessoais')}` },
+  { title: isEn ? 'Saúde & Bem-estar' : isEs ? 'Salud y Bienestar' : 'Saúde & Bem-estar', href: `${categoryParamPrefix}${encodeURIComponent('Saúde & Bem-estar')}` },
+  { title: isEn ? 'Estética & Beleza' : isEs ? 'Estética y Belleza' : 'Estética & Beleza', href: `${categoryParamPrefix}${encodeURIComponent('Estética & Beleza')}` },
+  { title: isEn ? 'Estilo de Vida & Viagens' : isEs ? 'Estilo de Vida y Viajes' : 'Estilo de Vida & Viagens', href: `${categoryParamPrefix}${encodeURIComponent('Estilo de Vida & Viagens')}` },
+  { title: isEn ? 'Tendências' : isEs ? 'Tendencias' : 'Tendências', href: `${categoryParamPrefix}${encodeURIComponent('Tendências')}` },
+  { title: isEn ? 'Tecnologia' : isEs ? 'Tecnología' : 'Tecnologia', href: `${categoryParamPrefix}${encodeURIComponent('Tecnologia')}` },
+  { title: isEn ? 'Sustentabilidade' : isEs ? 'Sostenibilidad' : 'Sustentabilidade', href: `${categoryParamPrefix}${encodeURIComponent('Sustentabilidade')}` },
+  { title: isEn ? 'Comportamento' : isEs ? 'Comportamiento' : 'Comportamento', href: `${categoryParamPrefix}${encodeURIComponent('Comportamento')}` },
+  { title: isEn ? '⚡ Todas as Categorias' : isEs ? '⚡ Todas las Categorías' : '⚡ Todas as Categorias', href: categoryPrefix }
+]
+
 const navigationData: NavigationSection[] = [
   {
     title: isEn ? 'Home' : isEs ? 'Inicio' : 'Início',
     href: isEn ? '/en' : isEs ? '/es' : '/'
   },
   {
-    title: isEn ? 'Categories & Trends' : isEs ? 'Categorías y Tendencias' : 'Categorias & Tendências',
-    href: isEn ? '/en/categories' : isEs ? '/es/categorias' : '/categorias'
+    title: isEn ? 'About Us' : isEs ? 'Quiénes Somos' : 'Quem Somos',
+    href: '/quem-somos'
   },
   {
-    title: isEn ? 'Useful Tools' : isEs ? 'Herramientas' : 'Ferramentas Úteis',
+    title: isEn ? 'Categories' : isEs ? 'Categorías' : 'Categorias',
+    items: categorySubmenu
+  },
+  {
+    title: isEn ? 'Useful Tools' : isEs ? 'Herramientas' : 'Ferramentas',
     href: isEn ? '/en/tools' : isEs ? '/es/herramientas' : '/ferramentas'
   },
   {
-    title: isEn ? 'About Us' : isEs ? 'Quiénes Somos' : 'Quem Somos',
-    href: '/quem-somos'
+    title: isEn ? 'Contact' : isEs ? 'Contacto' : 'Contato',
+    href: '/contato'
   }
 ]
 

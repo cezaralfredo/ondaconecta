@@ -23,9 +23,7 @@ const Footer = () => {
             Quem Somos
           </a>
           <a
-            href='https://wa.me/5585996277707'
-            target='_blank'
-            rel='noopener noreferrer'
+            href='/contato'
             className='text-muted-foreground hover:text-foreground opacity-80 transition-opacity duration-300 hover:opacity-100'
           >
             Contato

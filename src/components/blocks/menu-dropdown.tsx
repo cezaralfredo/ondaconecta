@@ -77,7 +77,7 @@ const MenuDropdown = ({ trigger, navigationData, activeSection, align = 'start' 
                     <ChevronRightIcon className='shrink-0 transition-transform [[data-state=open]>&]:rotate-90' />
                   </DropdownMenuItem>
                 </CollapsibleTrigger>
-                <CollapsibleContent className='pl-2'>
+                <CollapsibleContent className='pl-2 max-h-72 overflow-y-auto space-y-0.5'>
                   {navItem.items?.map(item => (
                     <DropdownMenuItem key={item.title} asChild>
                       <a href={item.href}>

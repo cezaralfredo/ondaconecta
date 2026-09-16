@@ -81,7 +81,7 @@ const BlogGrid = ({ posts, onCategoryClick }: { posts: BlogPost[]; onCategoryCli
                   {post.category}
                 </Badge>
               </div>
-              <h3 className='line-clamp-2 text-lg font-medium md:text-xl'>{post.title}</h3>
+              <h3 className='line-clamp-2 text-lg font-bold md:text-xl text-foreground group-hover:text-primary transition-colors'>{post.title}</h3>
               <p className='text-muted-foreground line-clamp-2 text-base'>{post.description}</p>
               <div className='flex items-center justify-between'>
                 <span className='text-sm font-medium'>{post.author}</span>

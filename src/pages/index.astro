@@ -3,7 +3,7 @@ import Layout from '@/layouts/Layout.astro'
 import { getCollection } from 'astro:content'
 
 import HeroSection from '@/components/blocks/hero-section/hero-section'
-import Blog from '@/components/blocks/blog-component/blog-component'
+import RecentPosts from '@/components/blocks/recent-posts/recent-posts'
 import AdBanner from '@/components/ads/AdBanner.astro'
 
 // Get all blog posts and convert to the format expected by components
@@ -31,9 +31,9 @@ const allBlogPosts = publishedPosts
   .sort((a, b) => b.id - a.id)
 
 // Page-specific SEO configuration
-const pageTitle = 'Tendências, Notícias e Inovações do Mercado'
+const pageTitle = 'Tendências, atualidades, zoom e buzz! | Onda Conecta'
 const pageDescription =
-  'Fique por dentro das últimas notícias, tendências globais, avanços tecnológicos e inovações que estão moldando o mercado e a sociedade.'
+  'Seu filtro de leitura: artigos aprofundados, notícias verificadas e análises rigorosas sobre tecnologia, negócios, inovação e futuro.'
 const pageKeywords =
   'notícias de tendências, inovação, mercado futuro, inteligência artificial, sustentabilidade, negócios, tecnologia, onda conecta'
 
@@ -62,8 +62,8 @@ const schema = {
     <AdBanner zoneId='12170662' />
   </div>
 
-  {/* Grade Completa de Artigos e Categorias */}
-  <Blog blogData={allBlogPosts} client:load />
+  {/* Seção com os 4 últimos artigos postados e títulos em destaque */}
+  <RecentPosts blogData={allBlogPosts} client:load />
 
   {/* Banner Final da Home (12170662) */}
   <div class='mx-auto max-w-7xl px-4 pb-8 sm:px-6 lg:px-8'>

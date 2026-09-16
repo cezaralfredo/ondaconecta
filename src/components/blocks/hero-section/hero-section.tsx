@@ -5,7 +5,17 @@ import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
 import type { BlogPost } from '@/components/blocks/blog-component/blog-component'
 
-const HeroSection = ({ blogData }: { blogData: BlogPost[] }) => {
+interface HeroSectionProps {
+  blogData: BlogPost[]
+  title?: string
+  subtitle?: string
+}
+
+const HeroSection = ({
+  blogData,
+  title = 'Tendências, atualidades, zoom e buzz!',
+  subtitle = 'Seu filtro de leitura: artigos aprofundados, notícias verificadas e análises rigorosas.'
+}: HeroSectionProps) => {
   const featuredPosts = blogData.filter(post => post.featured)
 
   return (
@@ -16,11 +26,11 @@ const HeroSection = ({ blogData }: { blogData: BlogPost[] }) => {
           <Badge variant='outline' className='h-auto text-sm font-normal'>
             Radar de Tendências & Inteligência de Mercado
           </Badge>
-          <h1 className='text-3xl leading-[1.29167] font-semibold text-balance sm:text-4xl lg:text-5xl'>
-            Conecte-se às novidades e tendências que moldam o futuro.
+          <h1 className='text-3xl leading-[1.29167] font-bold text-balance sm:text-4xl lg:text-5xl'>
+            {title}
           </h1>
           <p className='text-muted-foreground mx-auto max-w-2xl text-xl'>
-            Artigos aprofundados, notícias verificadas e análises sobre tecnologia, negócios, inovação e sustentabilidade.
+            {subtitle}
           </p>
         </div>
 
@@ -46,7 +56,7 @@ const HeroSection = ({ blogData }: { blogData: BlogPost[] }) => {
                         <p className='text-base'>{item.pubDate}</p>
                       </div>
                       <Badge
-                        className='bg-primary/10 text-primary h-auto cursor-pointer border-0 text-sm'
+                        className='bg-primary/10 text-primary h-auto cursor-pointer border-0 text-sm font-medium'
                         onClick={e => {
                           e.preventDefault()
                           e.stopPropagation()
@@ -57,7 +67,7 @@ const HeroSection = ({ blogData }: { blogData: BlogPost[] }) => {
                       </Badge>
                     </div>
                     <a href={`/blog/${item.slug}`}>
-                      <h3 className='text-xl font-medium'>{item.title}</h3>
+                      <h3 className='text-xl font-bold leading-snug hover:text-primary transition-colors'>{item.title}</h3>
                     </a>
 
                     <p className='text-muted-foreground text-base'>{item.description}</p>

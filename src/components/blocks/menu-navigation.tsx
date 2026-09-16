@@ -71,15 +71,18 @@ const MenuNavigation = ({ navigationData, activeSection, className }: MenuNaviga
               <NavigationMenuTrigger className='dark:data-[state=open]:hover:bg-accent/50 text-muted-foreground hover:text-primary dark:hover:bg-accent/50 bg-transparent px-3 py-1.5 text-base [&>svg]:size-4'>
                 {navItem.title}
               </NavigationMenuTrigger>
-              <NavigationMenuContent className='data-[motion=from-start]:slide-in-from-left-30! data-[motion=to-start]:slide-out-to-left-30! data-[motion=from-end]:slide-in-from-right-30! data-[motion=to-end]:slide-out-to-right-30! absolute w-auto'>
-                <ul className='grid w-38 gap-4'>
-                  <li>
-                    {navItem.items?.map(item => (
-                      <NavigationMenuLink key={item.title} href={item.href}>
+              <NavigationMenuContent className='absolute left-0 top-0 w-auto rounded-2xl p-2 shadow-xl border bg-popover text-popover-foreground'>
+                <ul className='grid w-[460px] grid-cols-2 gap-1.5 p-2'>
+                  {navItem.items?.map(item => (
+                    <li key={item.title}>
+                      <NavigationMenuLink
+                        href={item.href}
+                        className='block select-none rounded-lg p-2.5 text-sm font-medium leading-none text-muted-foreground no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground'
+                      >
                         {item.title}
                       </NavigationMenuLink>
-                    ))}
-                  </li>
+                    </li>
+                  ))}
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
