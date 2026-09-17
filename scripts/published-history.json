@@ -180,5 +180,31 @@
       "Vogue Brasil"
     ],
     "title": "O Fim do Skincare de 10 Passos? A Ascensão da Beleza Metabólica e dos Pós-Bióticos"
+  },
+  {
+    "id": 49,
+    "slug": "criptografia-pos-quantica-seguranca-ciberseguranca-2026",
+    "category": "Tecnologia",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-09-17T08:00:00-03:00",
+    "sources": [
+      "NIST",
+      "ITI (Instituto Nacional de Tecnologia da Informação)",
+      "CryptoID"
+    ],
+    "title": "Ameaça Silenciosa: Por Que as Empresas Correm Rumo à Criptografia Pós-Quântica"
+  },
+  {
+    "id": 52,
+    "slug": "redata-data-centers-verdes-ia-energia-limpa-2026",
+    "category": "Sustentabilidade",
+    "focus": "Nacional com impacto Global (50/50)",
+    "publishedAt": "2026-09-17T18:00:00-03:00",
+    "sources": [
+      "Ministério da Fazenda / Gov.br",
+      "Exame ESG",
+      "Canal Solar"
+    ],
+    "title": "Capital da IA Verde? Como o Redata Transforma o Brasil no Hub dos Data Centers"
   }
 ]
