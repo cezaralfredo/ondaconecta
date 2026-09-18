@@ -36,25 +36,43 @@ export type BlogPost = {
 
 interface BlogProps {
   blogData?: BlogPost[]
+  lang?: string
 }
 
-const BlogGrid = ({ posts, onCategoryClick }: { posts: BlogPost[]; onCategoryClick: (category: string) => void }) => {
+const BlogGrid = ({
+  posts,
+  onCategoryClick,
+  lang = 'pt'
+}: {
+  posts: BlogPost[]
+  onCategoryClick: (category: string) => void
+  lang?: string
+}) => {
   return (
     <div className='grid gap-6 sm:grid-cols-2 lg:grid-cols-3'>
-      {posts.map(post => (
-        <a
-          href={`/blog/${post.slug}`}
-          key={post.id}
-          className='group h-full cursor-pointer shadow-none transition-all duration-300'
-          onClick={e => {
-            const target = e.target as HTMLElement
+      {posts.map(post => {
+        const cleanSlug = post.slug.replace(/-(en|es)$/, '')
+        const postHref =
+          lang === 'en'
+            ? `/en/blog/${cleanSlug}`
+            : lang === 'es'
+            ? `/es/blog/${cleanSlug}`
+            : `/blog/${cleanSlug}`
 
-            if (target.closest('.badge')) {
-              e.preventDefault()
-              e.stopPropagation()
-            }
-          }}
-        >
+        return (
+          <a
+            href={postHref}
+            key={post.id}
+            className='group h-full cursor-pointer shadow-none transition-all duration-300'
+            onClick={e => {
+              const target = e.target as HTMLElement
+
+              if (target.closest('.badge')) {
+                e.preventDefault()
+                e.stopPropagation()
+              }
+            }}
+          >
           <Card className='shadow-none'>
             <CardContent className='space-y-3.5'>
               <div className='mb-6 overflow-hidden rounded-lg sm:mb-12'>
@@ -96,14 +114,70 @@ const BlogGrid = ({ posts, onCategoryClick }: { posts: BlogPost[]; onCategoryCli
             </CardContent>
           </Card>
         </a>
-      ))}
+      )
+    })}
     </div>
   )
 }
 
-const Blog = ({ blogData = [] }: BlogProps) => {
+const blogI18n: Record<
+  string,
+  {
+    allPublications: string
+    publications: string
+    title: string
+    subtitle: string
+    searchPlaceholder: string
+    noArticlesFound: string
+    comingSoon: string
+    comingSoonDesc: string
+    viewAll: string
+    homeHref: string
+  }
+> = {
+  pt: {
+    allPublications: 'Todas as Publicações',
+    publications: 'Publicações',
+    title: 'Explore as Notícias por Categoria e Tendência',
+    subtitle: 'Acompanhe análises, novidades e informações essenciais separadas por área de interesse.',
+    searchPlaceholder: 'Buscar notícias...',
+    noArticlesFound: 'Nenhum artigo encontrado para',
+    comingSoon: 'Novos artigos em breve em',
+    comingSoonDesc: 'Nossa redação está apurando novidades, tendências e análises aprofundadas para esta editoria.',
+    viewAll: 'Ver todas as publicações',
+    homeHref: '/#categories'
+  },
+  en: {
+    allPublications: 'All Publications',
+    publications: 'Articles',
+    title: 'Explore News by Category & Trends',
+    subtitle: 'Follow in-depth analysis, breaking news, and essential insights across key topics.',
+    searchPlaceholder: 'Search articles...',
+    noArticlesFound: 'No articles found for',
+    comingSoon: 'New articles coming soon in',
+    comingSoonDesc: 'Our editorial team is curating the latest news, market trends, and in-depth analyses.',
+    viewAll: 'View all publications',
+    homeHref: '/en#categories'
+  },
+  es: {
+    allPublications: 'Todas las Publicaciones',
+    publications: 'Publicaciones',
+    title: 'Explora las Noticias por Categoría y Tendencia',
+    subtitle: 'Sigue análisis en profundidad, noticias verificadas y tendencias clave por área de interés.',
+    searchPlaceholder: 'Buscar noticias...',
+    noArticlesFound: 'No se encontraron artículos para',
+    comingSoon: 'Nuevos artículos próximamente en',
+    comingSoonDesc: 'Nuestra redacción está investigando novedades, tendencias y análisis para esta sección.',
+    viewAll: 'Ver todas las publicaciones',
+    homeHref: '/es#categories'
+  }
+}
+
+const Blog = ({ blogData = [], lang = 'pt' }: BlogProps) => {
   const [selectedTab, setSelectedTab] = useState('All')
   const [searchQuery, setSearchQuery] = useState('')
+
+  const labels = blogI18n[lang] || blogI18n.pt
 
   // Exibe todas as publicações ordenadas pelas mais recentes primeiro (por ID decrescente)
   const displayPosts = [...blogData].sort((a, b) => b.id - a.id)
@@ -148,9 +222,9 @@ const Blog = ({ blogData = [] }: BlogProps) => {
       <div className='bg-primary/10 text-primary mb-3 flex size-12 items-center justify-center rounded-full'>
         <CalendarDaysIcon className='size-6' />
       </div>
-      <h3 className='text-foreground text-lg font-medium'>Novos artigos em breve em {categoryName}</h3>
+      <h3 className='text-foreground text-lg font-medium'>{labels.comingSoon} {categoryName}</h3>
       <p className='text-muted-foreground mt-1 max-w-md text-sm'>
-        Nossa redação está apurando novidades, tendências e análises aprofundadas para esta editoria.
+        {labels.comingSoonDesc}
       </p>
       <Button
         variant='outline'
@@ -158,7 +232,7 @@ const Blog = ({ blogData = [] }: BlogProps) => {
         className='mt-4'
         onClick={() => handleTabChange('All')}
       >
-        Ver todas as publicações
+        {labels.viewAll}
       </Button>
     </div>
   )
@@ -177,12 +251,12 @@ const Blog = ({ blogData = [] }: BlogProps) => {
       <div className='mx-auto max-w-7xl space-y-8 px-4 sm:px-6 lg:space-y-16 lg:px-8'>
         {/* Header */}
         <div className='space-y-4'>
-          {selectedTab === 'All' && <p className='text-sm font-semibold tracking-wide text-primary uppercase'>Todas as Publicações</p>}
+          {selectedTab === 'All' && <p className='text-sm font-semibold tracking-wide text-primary uppercase'>{labels.allPublications}</p>}
           {selectedTab !== 'All' && (
             <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem>
-                  <BreadcrumbLink href='/#categories' onClick={(e) => { e.preventDefault(); handleTabChange('All'); }}>Publicações</BreadcrumbLink>
+                  <BreadcrumbLink href={labels.homeHref} onClick={(e) => { e.preventDefault(); handleTabChange('All'); }}>{labels.publications}</BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
@@ -193,11 +267,11 @@ const Blog = ({ blogData = [] }: BlogProps) => {
           )}
 
           <h2 className='text-2xl font-semibold md:text-3xl lg:text-4xl'>
-            Explore as Notícias por Categoria e Tendência
+            {labels.title}
           </h2>
 
           <p className='text-muted-foreground text-lg md:text-xl'>
-            Acompanhe análises, novidades e informações essenciais separadas por área de interesse.
+            {labels.subtitle}
           </p>
         </div>
 
@@ -250,11 +324,11 @@ const Blog = ({ blogData = [] }: BlogProps) => {
             <div className='relative w-full lg:w-72 shrink-0'>
               <div className='text-muted-foreground pointer-events-none absolute inset-y-0 left-0 flex items-center justify-center pl-3 peer-disabled:opacity-50'>
                 <SearchIcon className='size-4' />
-                <span className='sr-only'>Pesquisar</span>
+                <span className='sr-only'>{labels.searchPlaceholder}</span>
               </div>
               <Input
                 type='search'
-                placeholder='Buscar notícias...'
+                placeholder={labels.searchPlaceholder}
                 value={searchQuery}
                 onChange={e => setSearchQuery(e.target.value)}
                 className='peer h-10 w-full px-9 [&::-webkit-search-cancel-button]:appearance-none [&::-webkit-search-decoration]:appearance-none [&::-webkit-search-results-button]:appearance-none [&::-webkit-search-results-decoration]:appearance-none'
@@ -265,10 +339,10 @@ const Blog = ({ blogData = [] }: BlogProps) => {
           {/* All Posts Tab */}
           <TabsContent value='All'>
             {filterBySearch(displayPosts).length > 0 ? (
-              <BlogGrid posts={filterBySearch(displayPosts)} onCategoryClick={handleTabChange} />
+              <BlogGrid posts={filterBySearch(displayPosts)} onCategoryClick={handleTabChange} lang={lang} />
             ) : (
               <div className='py-12 text-center text-muted-foreground'>
-                Nenhum artigo encontrado para "{searchQuery}".
+                {labels.noArticlesFound} "{searchQuery}".
               </div>
             )}
           </TabsContent>
@@ -279,7 +353,7 @@ const Blog = ({ blogData = [] }: BlogProps) => {
             return (
               <TabsContent key={index} value={category}>
                 {categoryPosts.length > 0 ? (
-                  <BlogGrid posts={categoryPosts} onCategoryClick={handleTabChange} />
+                  <BlogGrid posts={categoryPosts} onCategoryClick={handleTabChange} lang={lang} />
                 ) : (
                   renderEmptyCategory(category)
                 )}

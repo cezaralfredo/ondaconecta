@@ -33,7 +33,10 @@ export const LanguageSwitcher = () => {
   const switchLanguage = (targetCode: string) => {
     const currentPath = window.location.pathname
     // Remove qualquer prefixo existente (/en ou /es)
-    const cleanPath = currentPath.replace(/^\/(en|es)(\/|$)/, '/')
+    let cleanPath = currentPath.replace(/^\/(en|es)(\/|$)/, '/')
+
+    // Se estiver em um post de blog, normaliza removendo sufixos legados (-en ou -es)
+    cleanPath = cleanPath.replace(/(\/blog\/[^\/]+)-(en|es)(\/|$)/, '$1$3')
 
     let newUrl = cleanPath
     if (targetCode === 'en') {

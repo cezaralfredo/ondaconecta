@@ -14,6 +14,12 @@ export default defineConfig({
       prefixDefaultLocale: false
     }
   },
+  redirects: {
+    '/us': '/en',
+    '/us/categories': '/en/categories',
+    '/us/tools': '/en/tools',
+    '/us/blog/[slug]': '/en/blog/[slug]'
+  },
   integrations: [
     react(),
     mdx(),

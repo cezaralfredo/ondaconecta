@@ -20,11 +20,34 @@ import Blog from '@/components/blocks/blog-related-post/blog-related-post'
 import AdBanner from '@/components/ads/AdBanner.astro'
 
 export async function getStaticPaths() {
-  const blogEntries = await getCollection('blog')
-  return blogEntries.map(entry => ({
-    params: { slug: entry.id },
-    props: { entry }
-  }))
+  const allEntries = await getCollection('blog')
+  const esEntries = allEntries.filter(entry => entry.data.lang === 'es')
+
+  const paths: Array<{ params: { slug: string }; props: { entry: any } }> = []
+  const seenSlugs = new Set<string>()
+
+  for (const entry of esEntries) {
+    // 1. Slugs com sufixo (ex: criptografia-...-es)
+    if (!seenSlugs.has(entry.id)) {
+      paths.push({
+        params: { slug: entry.id },
+        props: { entry }
+      })
+      seenSlugs.add(entry.id)
+    }
+
+    // 2. Slugs limpos canônicos (ex: criptografia-...)
+    const baseSlug = entry.data.translationOf || entry.id.replace(/-es$/, '')
+    if (baseSlug && !seenSlugs.has(baseSlug)) {
+      paths.push({
+        params: { slug: baseSlug },
+        props: { entry }
+      })
+      seenSlugs.add(baseSlug)
+    }
+  }
+
+  return paths
 }
 
 const { entry } = Astro.props
@@ -34,8 +57,8 @@ const { Content, headings } = await render(entry)
 const allPosts = await getCollection('blog')
 const publishedPosts = allPosts
 
-// Get related posts (same category and same language)
-const currentLang = entry.data.lang || 'pt'
+// Current language
+const currentLang = 'es'
 const relatedPosts = getRelatedPosts(publishedPosts, entry.id, entry.data.category, 3, currentLang)
 
 // Identify translations of this article
@@ -47,7 +70,7 @@ const esVersion = publishedPosts.find(p => p.id === `${baseSlug}-es` || (p.data.
 // Map relatedPosts to BlogPost type for the Blog component
 const formattedRelatedPosts = relatedPosts.map(post => ({
   id: post.data.id,
-  slug: post.data.slug,
+  slug: post.data.translationOf || post.id.replace(/-es$/, ''),
   title: post.data.title,
   description: post.data.description,
   imageUrl: post.data.imageUrl || '',
@@ -60,12 +83,11 @@ const formattedRelatedPosts = relatedPosts.map(post => ({
   featured: post.data.featured || false
 }))
 
-// Get previous and next posts (same language)
+// Get previous and next posts (Spanish language)
 const { previous: previousPost, next: nextPost } = getPostNavigation(publishedPosts, entry.id, currentLang)
 
 // Calculate read time if not provided
 const readTime = entry.data.readTime || calculateReadTime(entry.body)
-
 
 const schema = {
   '@context': 'https://schema.org',
@@ -74,6 +96,7 @@ const schema = {
   description: entry.data.description,
   image: entry.data.imageUrl,
   datePublished: entry.data.pubDate,
+  inLanguage: 'es-ES',
   author: {
     '@type': 'Person',
     name: entry.data.author
@@ -106,11 +129,11 @@ const schema = {
               <Breadcrumb>
                 <BreadcrumbList>
                   <BreadcrumbItem>
-                    <BreadcrumbLink href='/'>Início</BreadcrumbLink>
+                    <BreadcrumbLink href='/es'>Inicio</BreadcrumbLink>
                   </BreadcrumbItem>
                   <BreadcrumbSeparator />
                   <BreadcrumbItem>
-                    <BreadcrumbLink href='/#categories'>Notícias</BreadcrumbLink>
+                    <BreadcrumbLink href='/es/categorias'>Noticias</BreadcrumbLink>
                   </BreadcrumbItem>
                   <BreadcrumbSeparator />
                   <BreadcrumbItem>
@@ -135,26 +158,22 @@ const schema = {
                   </div>
                 </div>
                 <div class='flex flex-col gap-1.5'>
-                  <span class='text-muted-foreground text-sm'>Tempo de Leitura</span>
-                  <span class='text-foreground text-sm font-medium'>{readTime} min de leitura</span>
+                  <span class='text-muted-foreground text-sm'>Tiempo de Lectura</span>
+                  <span class='text-foreground text-sm font-medium'>{readTime} min de lectura</span>
                 </div>
                 <div class='flex flex-col gap-1.5'>
-                  <span class='text-muted-foreground text-sm'>Data</span>
+                  <span class='text-muted-foreground text-sm'>Fecha</span>
                   <span class='text-foreground text-sm font-medium'>{entry.data.pubDate}</span>
                 </div>
                 {
                   (ptVersion || enVersion || esVersion) && (
                     <div class='flex flex-col gap-1.5'>
-                      <span class='text-muted-foreground text-sm'>Idiomas disponíveis</span>
+                      <span class='text-muted-foreground text-sm'>Idiomas disponibles</span>
                       <div class='flex items-center gap-1.5 pt-0.5'>
                         {ptVersion && (
                           <a
                             href={`/blog/${baseSlug}`}
-                            class={`rounded-md px-2 py-0.5 text-xs font-semibold transition-colors ${
-                              currentLang === 'pt'
-                                ? 'bg-primary text-primary-foreground'
-                                : 'bg-muted hover:bg-muted/80 text-muted-foreground'
-                            }`}
+                            class='rounded-md bg-muted hover:bg-muted/80 text-muted-foreground px-2 py-0.5 text-xs font-semibold transition-colors'
                             title='Ler em Português'
                           >
                             🇧🇷 PT
@@ -163,11 +182,7 @@ const schema = {
                         {enVersion && (
                           <a
                             href={`/en/blog/${baseSlug}`}
-                            class={`rounded-md px-2 py-0.5 text-xs font-semibold transition-colors ${
-                              currentLang === 'en'
-                                ? 'bg-primary text-primary-foreground'
-                                : 'bg-muted hover:bg-muted/80 text-muted-foreground'
-                            }`}
+                            class='rounded-md bg-muted hover:bg-muted/80 text-muted-foreground px-2 py-0.5 text-xs font-semibold transition-colors'
                             title='Read in English'
                           >
                             🇺🇸 EN
@@ -176,11 +191,7 @@ const schema = {
                         {esVersion && (
                           <a
                             href={`/es/blog/${baseSlug}`}
-                            class={`rounded-md px-2 py-0.5 text-xs font-semibold transition-colors ${
-                              currentLang === 'es'
-                                ? 'bg-primary text-primary-foreground'
-                                : 'bg-muted hover:bg-muted/80 text-muted-foreground'
-                            }`}
+                            class='rounded-md bg-primary text-primary-foreground px-2 py-0.5 text-xs font-semibold transition-colors'
                             title='Leer en Español'
                           >
                             🇪🇸 ES
@@ -243,28 +254,28 @@ const schema = {
             <div class='flex w-full justify-between pt-8'>
               {
                 previousPost ? (
-                  <a href={`/blog/${previousPost.id}`}>
+                  <a href={`/es/blog/${previousPost.data.translationOf || previousPost.id.replace(/-es$/, '')}`}>
                     <Button variant='outline'>
                       <ChevronLeftIcon className='size-4' />
-                      Artigo Anterior
+                      Artículo Anterior
                     </Button>
                   </a>
                 ) : (
                   <Button variant='outline' disabled>
                     <ChevronLeftIcon className='size-4' />
-                    Artigo Anterior
+                    Artículo Anterior
                   </Button>
                 )
               }
 
               {
                 nextPost ? (
-                  <a class='ms-auto' href={`/blog/${nextPost.id}`}>
+                  <a class='ms-auto' href={`/es/blog/${nextPost.data.translationOf || nextPost.id.replace(/-es$/, '')}`}>
                     <Button
                       className='bg-sky-600/10 text-sky-600 hover:bg-sky-600/20 focus-visible:ring-sky-600/20 dark:bg-sky-400/10 dark:text-sky-400 dark:hover:bg-sky-400/20 dark:focus-visible:ring-sky-400/40'
                       variant='outline'
                     >
-                      Próximo Artigo
+                      Siguiente Artículo
                       <ChevronRightIcon className='size-4' />
                     </Button>
                   </a>
@@ -274,7 +285,7 @@ const schema = {
                     variant='outline'
                     disabled
                   >
-                    Próximo Artigo
+                    Siguiente Artículo
                     <ChevronRightIcon className='size-4' />
                   </Button>
                 )

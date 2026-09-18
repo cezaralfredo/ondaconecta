@@ -57,12 +57,21 @@ const BlogRelatedPost = ({ relatedPosts, lang = 'pt' }: RelatedPostsProps) => {
 
         {/* Posts Grid */}
         <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>
-          {relatedPosts.map(post => (
-            <a
-              href={`/blog/${post.slug}`}
-              key={post.id}
-              className='group h-full cursor-pointer shadow-none transition-all duration-300'
-            >
+          {relatedPosts.map(post => {
+            const cleanSlug = post.slug.replace(/-(en|es)$/, '')
+            const postHref =
+              lang === 'en'
+                ? `/en/blog/${cleanSlug}`
+                : lang === 'es'
+                ? `/es/blog/${cleanSlug}`
+                : `/blog/${cleanSlug}`
+
+            return (
+              <a
+                href={postHref}
+                key={post.id}
+                className='group h-full cursor-pointer shadow-none transition-all duration-300'
+              >
               <Card className='shadow-none transition-shadow hover:shadow-md'>
                 <CardContent className='space-y-3.5'>
                   <div className='mb-4 overflow-hidden rounded-lg sm:mb-6'>
@@ -103,7 +112,8 @@ const BlogRelatedPost = ({ relatedPosts, lang = 'pt' }: RelatedPostsProps) => {
                 </CardContent>
               </Card>
             </a>
-          ))}
+          )
+        })}
         </div>
       </div>
     </section>
