@@ -3,6 +3,7 @@ import Layout from '@/layouts/Layout.astro'
 import { getCollection } from 'astro:content'
 
 import HeroSection from '@/components/blocks/hero-section/hero-section'
+import RecentPosts from '@/components/blocks/recent-posts/recent-posts'
 import Blog from '@/components/blocks/blog-component/blog-component'
 import AdBanner from '@/components/ads/AdBanner.astro'
 
@@ -57,6 +58,9 @@ const schema = {
     blogData={allBlogPosts}
     client:load
   />
+
+  {/* Latest Updates Section (4 latest posts) */}
+  <RecentPosts blogData={allBlogPosts} lang='en' client:load />
 
   {/* Banner Middle (12170662) */}
   <div class='mx-auto max-w-7xl px-4 py-2 sm:px-6 lg:px-8'>
