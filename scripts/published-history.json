@@ -206,5 +206,31 @@
       "Canal Solar"
     ],
     "title": "Capital da IA Verde? Como o Redata Transforma o Brasil no Hub dos Data Centers"
+  },
+  {
+    "id": 55,
+    "slug": "ma-startups-inteligencia-artificial-mercado-2026",
+    "category": "Mercado & Negócios",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-09-18T08:00:00-03:00",
+    "sources": [
+      "Startups.com.br",
+      "Brazil Journal",
+      "Distrito"
+    ],
+    "title": "A Nova Moeda do M&A: Como Dados Proprietários e IA Redefinem as Startups"
+  },
+  {
+    "id": 58,
+    "slug": "hushpitality-astroturismo-luxo-silencioso-viagens-2026",
+    "category": "Estilo de Vida & Viagens",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-09-18T18:00:00-03:00",
+    "sources": [
+      "Panrotas",
+      "Viagem e Turismo (Abril)",
+      "BeFly Travel"
+    ],
+    "title": "A Arte de Silenciar o Mundo: Por Que o Hushpitality Virou o Novo Luxo"
   }
 ]
