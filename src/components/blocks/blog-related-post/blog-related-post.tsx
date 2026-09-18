@@ -2,40 +2,60 @@
 
 import { ArrowRightIcon, CalendarDaysIcon } from 'lucide-react'
 
-import { getCollection } from 'astro:content'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 
 import type { BlogPost } from '@/components/blocks/blog-component/blog-component'
 
-export async function getStaticPaths() {
-  const blogEntries = await getCollection('blog')
-
-  return blogEntries.map(entry => ({
-    params: { slug: entry.id },
-    props: { entry }
-  }))
+interface RelatedPostsProps {
+  relatedPosts: BlogPost[]
+  lang?: string
 }
 
-const Blog = ({ relatedPosts }: { relatedPosts: BlogPost[] }) => {
+const BlogRelatedPost = ({ relatedPosts, lang = 'pt' }: RelatedPostsProps) => {
+  const labels: Record<string, { badge: string; title: string; subtitle: string }> = {
+    pt: {
+      badge: 'Leituras Recomendadas',
+      title: 'Notícias Relacionadas',
+      subtitle: 'Aprofunde-se no tema com essas leituras selecionadas.'
+    },
+    en: {
+      badge: 'Recommended Reading',
+      title: 'Related Articles',
+      subtitle: 'Dive deeper into the topic with these curated analyses.'
+    },
+    es: {
+      badge: 'Lecturas Recomendadas',
+      title: 'Noticias Relacionadas',
+      subtitle: 'Profundice en el tema con estas lecturas recomendadas.'
+    }
+  }
+
+  const currentLabels = labels[lang] || labels.pt
+
   return (
-    <section className='py-8 sm:py-16 lg:py-24'>
-      <div className='mx-auto max-w-7xl space-y-16 px-4 py-8 sm:px-6 lg:px-8'>
+    <section className='border-t border-border/30 py-8 sm:py-16 lg:py-20'>
+      <div className='mx-auto max-w-7xl space-y-10 px-4 sm:px-6 lg:px-8'>
         {/* Header */}
-        <div className='space-y-4'>
-          <Badge variant='outline' className='h-auto'>
-            Tendências
+        <div className='space-y-3'>
+          <Badge
+            variant='outline'
+            className='border-primary/20 bg-primary/5 text-primary h-auto text-xs font-medium'
+          >
+            {currentLabels.badge}
           </Badge>
 
-          <h2 className='text-2xl font-semibold md:text-3xl lg:text-4xl'>Notícias Relacionadas</h2>
+          <h2 className='text-foreground text-2xl font-bold tracking-tight md:text-3xl lg:text-4xl'>
+            {currentLabels.title}
+          </h2>
 
-          <p className='text-muted-foreground text-lg md:text-xl'>
-            Aprofunde-se no tema com essas leituras recomendadas.
+          <p className='text-muted-foreground text-base md:text-lg'>
+            {currentLabels.subtitle}
           </p>
         </div>
 
-        {/* Tabs and Search */}
+        {/* Posts Grid */}
         <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>
           {relatedPosts.map(post => (
             <a
@@ -43,32 +63,40 @@ const Blog = ({ relatedPosts }: { relatedPosts: BlogPost[] }) => {
               key={post.id}
               className='group h-full cursor-pointer shadow-none transition-all duration-300'
             >
-              <Card className='shadow-none'>
+              <Card className='shadow-none transition-shadow hover:shadow-md'>
                 <CardContent className='space-y-3.5'>
-                  <div className='mb-6 overflow-hidden rounded-lg sm:mb-12'>
+                  <div className='mb-4 overflow-hidden rounded-lg sm:mb-6'>
                     <img
                       src={post.imageUrl}
                       alt={post.imageAlt}
-                      className='h-59.5 w-full object-cover transition-transform duration-300 group-hover:scale-105'
+                      className='h-52 w-full object-cover transition-transform duration-300 group-hover:scale-105'
                       loading='lazy'
                     />
                   </div>
                   <div className='flex items-center justify-between gap-1.5'>
-                    <div className='text-muted-foreground flex items-center gap-1.5'>
-                      <CalendarDaysIcon className='size-5' />
-                      <p className='text-base'>{post.pubDate}</p>
+                    <div className='text-muted-foreground flex items-center gap-1.5 text-xs'>
+                      <CalendarDaysIcon className='size-4' />
+                      <p>{post.pubDate}</p>
                     </div>
-                    <Badge className='bg-primary/10 text-primary h-auto border-0 text-sm'>{post.category}</Badge>
+                    <Badge className='bg-primary/10 text-primary h-auto border-0 text-xs font-medium'>
+                      {post.category}
+                    </Badge>
                   </div>
-                  <h3 className='line-clamp-2 text-lg font-medium md:text-xl'>{post.title}</h3>
-                  <p className='text-muted-foreground line-clamp-2 text-base'>{post.description}</p>
-                  <div className='flex items-center justify-between'>
-                    <span className='text-sm font-medium'>{post.author}</span>
+                  <h3 className='text-foreground group-hover:text-primary line-clamp-2 text-base font-bold transition-colors md:text-lg'>
+                    {post.title}
+                  </h3>
+                  <p className='text-muted-foreground line-clamp-2 text-sm'>
+                    {post.description}
+                  </p>
+                  <div className='flex items-center justify-between pt-1'>
+                    <span className='text-muted-foreground text-xs font-medium'>
+                      {post.author}
+                    </span>
                     <Button
                       size='icon'
-                      className='group-hover:bg-primary! bg-background text-foreground hover:bg-primary! hover:text-primary-foreground group-hover:text-primary-foreground group-hover:border-primary hover:border-primary border-border border bg-clip-border'
+                      className='group-hover:bg-primary! bg-background text-foreground hover:bg-primary! hover:text-primary-foreground group-hover:text-primary-foreground group-hover:border-primary hover:border-primary border-border h-8 w-8 border bg-clip-border'
                     >
-                      <ArrowRightIcon className='size-4 -rotate-45' />
+                      <ArrowRightIcon className='size-3.5 -rotate-45' />
                       <span className='sr-only'>Read more: {post.title}</span>
                     </Button>
                   </div>
@@ -82,4 +110,4 @@ const Blog = ({ relatedPosts }: { relatedPosts: BlogPost[] }) => {
   )
 }
 
-export default Blog
+export default BlogRelatedPost

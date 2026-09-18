@@ -95,8 +95,8 @@ const schema = {
       <div class='mx-auto max-w-7xl space-y-8 px-4 sm:px-6 lg:space-y-16 lg:px-8'>
         <div class='gap-16 md:grid md:grid-cols-5 lg:grid-cols-7'>
           <!-- Table of Contents Sidebar -->
-          <div class='hidden md:col-span-2 md:block lg:col-span-2'>
-            <DynamicToc headings={headings} />
+          <div class='hidden md:col-span-2 md:block lg:col-span-2 self-start'>
+            <DynamicToc headings={headings} lang={currentLang} />
           </div>
 
           <!-- Main Content -->
@@ -285,6 +285,10 @@ const schema = {
       </div>
     </section>
 
-    <Blog relatedPosts={formattedRelatedPosts} />
+    {
+      formattedRelatedPosts.length > 0 && (
+        <Blog relatedPosts={formattedRelatedPosts} lang={currentLang} client:load />
+      )
+    }
   </main>
 </Layout>
