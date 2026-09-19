@@ -111,17 +111,55 @@ const tocTitle = titleMap[lang] || 'Sobre esta página'
 <script>
   const HEADER_OFFSET = 110
 
+  let currentScrollHandler: (() => void) | null = null
+
   const initializeToc = () => {
+    // Limpar listener anterior em transições de página
+    if (currentScrollHandler) {
+      window.removeEventListener('scroll', currentScrollHandler)
+      currentScrollHandler = null
+    }
+
     const links = document.querySelectorAll<HTMLAnchorElement>('.toc-link')
-    const sections = document.querySelectorAll<HTMLElement>('h2[id], h3[id]')
+    if (!links.length) return
+
+    // Mapear todos os IDs válidos presentes no TOC
+    const validIds = new Set<string>()
+    links.forEach(link => {
+      const href = link.getAttribute('href') || ''
+      const cleanId = href.replace(/^#/, '')
+      validIds.add(cleanId)
+      try {
+        validIds.add(decodeURIComponent(cleanId))
+      } catch (_) {}
+    })
+
+    // Selecionar apenas cabeçalhos do artigo que realmente estão no TOC
+    const articleContainer = document.getElementById('content') || document
+    const rawHeadings = articleContainer.querySelectorAll<HTMLElement>('h2[id], h3[id]')
+    const sections = Array.from(rawHeadings).filter(h => {
+      const id = h.id
+      return validIds.has(id) || validIds.has(decodeURIComponent(id))
+    })
+
     let activeId = ''
 
     const updateActiveLink = () => {
       links.forEach(link => {
-        const linkHref = link.getAttribute('href')
-        const indicator = link.querySelector('.toc-indicator')
+        const linkHref = link.getAttribute('href') || ''
+        const rawHrefId = linkHref.replace(/^#/, '')
+        let decodedHrefId = rawHrefId
+        try {
+          decodedHrefId = decodeURIComponent(rawHrefId)
+        } catch (_) {}
 
-        if (linkHref === `#${activeId}`) {
+        const indicator = link.querySelector('.toc-indicator')
+        const isActive =
+          rawHrefId === activeId ||
+          decodedHrefId === activeId ||
+          link.getAttribute('data-heading-link') === activeId
+
+        if (isActive) {
           link.classList.add('font-medium', 'text-foreground')
           link.classList.remove('text-muted-foreground', 'text-muted-foreground/80')
           if (indicator) {
@@ -139,59 +177,84 @@ const tocTitle = titleMap[lang] || 'Sobre esta página'
       })
     }
 
-    // Function to find active heading based on scroll position
+    // Identificar o cabeçalho ativo baseado na posição de rolagem
     const findActiveHeading = () => {
       const scrollY = window.scrollY
       let foundId = ''
 
-      // Find the last heading above the scroll position
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i]
         const sectionTop = section.getBoundingClientRect().top + scrollY
-        if (sectionTop - HEADER_OFFSET <= scrollY) {
+        if (sectionTop - (HEADER_OFFSET + 10) <= scrollY) {
           foundId = section.id
           break
         }
       }
 
-      // If no heading found, use the first one
       if (!foundId && sections.length > 0) {
         foundId = sections[0].id
       }
 
-      if (foundId !== activeId) {
+      if (foundId && foundId !== activeId) {
         activeId = foundId
         updateActiveLink()
       }
     }
 
-    // Add click event for smooth scrolling
+    // Scroll suave e sem falhas para qualquer seletor ou ID numérico
     links.forEach(link => {
       link.addEventListener('click', e => {
         e.preventDefault()
         const href = link.getAttribute('href')
-        if (href) {
-          const target = document.querySelector(href)
-          if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' })
-            activeId = href.substring(1)
-            updateActiveLink()
+        if (!href) return
+
+        const rawId = href.replace(/^#/, '')
+        let decodedId = rawId
+        try {
+          decodedId = decodeURIComponent(rawId)
+        } catch (_) {}
+
+        // Busca resiliente por ID sem restrições de seletores CSS
+        let target: HTMLElement | null =
+          document.getElementById(decodedId) ||
+          document.getElementById(rawId)
+
+        if (!target) {
+          try {
+            target = document.querySelector(`[id="${CSS.escape(decodedId)}"]`) ||
+                     document.querySelector(`[id="${CSS.escape(rawId)}"]`)
+          } catch (_) {}
+        }
+
+        if (target) {
+          const elementPosition = target.getBoundingClientRect().top
+          const offsetPosition = elementPosition + window.pageYOffset - (HEADER_OFFSET - 20)
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          })
+
+          activeId = target.id
+          updateActiveLink()
+
+          if (history.pushState) {
+            history.pushState(null, '', `#${target.id}`)
           }
         }
       })
     })
 
-    // Set initial active heading
+    // Ativar posição inicial
     setTimeout(() => {
       findActiveHeading()
-    }, 50)
+    }, 100)
 
-    // Use scroll listener for more reliable heading detection
-    const scrollHandler = () => {
+    currentScrollHandler = () => {
       findActiveHeading()
     }
 
-    window.addEventListener('scroll', scrollHandler, { passive: true })
+    window.addEventListener('scroll', currentScrollHandler, { passive: true })
   }
 
   document.addEventListener('astro:page-load', initializeToc)
