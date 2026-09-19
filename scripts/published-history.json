@@ -244,6 +244,31 @@
       "Harvard Health Publishing",
       "Anvisa"
     ],
-    "title": "Cloreto de Magnésio P.A.: O Guia Completo para Sono, Músculos e Vitalidade"
+  },
+  {
+    "id": 64,
+    "slug": "small-language-models-edge-ai-empresas-2026",
+    "category": "Inovação & IA",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-09-19T08:00:00-03:00",
+    "sources": [
+      "Computer Weekly",
+      "MIT Technology Review",
+      "Startups.com.br"
+    ],
+    "title": "A Virada dos SLMs: Por Que Menos Nuvem Significa Mais Lucro e Privacidade"
+  },
+  {
+    "id": 67,
+    "slug": "underconsumption-core-desconsumo-comportamento-2026",
+    "category": "Comportamento",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-09-19T18:00:00-03:00",
+    "sources": [
+      "The Guardian",
+      "WGSN",
+      "Sebrae"
+    ],
+    "title": "Menos Compras, Mais Significado: A Ascensão do Underconsumption Core"
   }
 ]
