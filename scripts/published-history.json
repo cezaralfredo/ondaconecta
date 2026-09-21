@@ -282,5 +282,33 @@
       "Anvisa"
     ],
     "title": "Cloreto de Magnésio: O Segredo Mineral para Disposição e Noites Tranquilas"
+  },
+  {
+    "id": 73,
+    "slug": "unserious-microalegrias-fim-da-seriedade-consumo",
+    "category": "Tendências",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-09-21T08:00:00-03:00",
+    "sources": [
+      "WGSN",
+      "Fast Company Brasil",
+      "Meio & Mensagem",
+      "Sebrae"
+    ],
+    "title": "O Fim da Seriedade? Por Que o Movimento 'Unserious' e as Microalegrias Conquistaram o Consumo"
+  },
+  {
+    "id": 76,
+    "slug": "coolcationing-turismo-clima-fresco-viagens",
+    "category": "Estilo de Vida & Viagens",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-09-21T18:00:00-03:00",
+    "sources": [
+      "PANROTAS",
+      "Condé Nast Traveler",
+      "The Guardian Travel",
+      "Embratur"
+    ],
+    "title": "Adeus Calor Extremo: Por Que o 'Coolcationing' e os Destinos de Serra Redefinem as Viagens de Luxo"
   }
 ]
