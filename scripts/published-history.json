@@ -310,5 +310,33 @@
       "Embratur"
     ],
     "title": "Adeus Calor Extremo: Por Que o 'Coolcationing' e os Destinos de Serra Redefinem as Viagens de Luxo"
+  },
+  {
+    "id": 79,
+    "slug": "eficiencia-operacional-startups-venture-capital",
+    "category": "Mercado & Negócios",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-09-21T08:00:00-03:00",
+    "sources": [
+      "Distrito",
+      "Brazil Journal",
+      "InfoMoney",
+      "Exame"
+    ],
+    "title": "A Morte do Crescimento a Qualquer Custo: Por Que a Eficiência Operacional Virou a Nova Moeda do Venture Capital"
+  },
+  {
+    "id": 82,
+    "slug": "crononutricao-ritmo-circadiano-saude-metabolica",
+    "category": "Saúde & Bem-estar",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-09-21T18:00:00-03:00",
+    "sources": [
+      "SBEM",
+      "Harvard Health Publishing",
+      "VivaBem UOL",
+      "Saúde Abril"
+    ],
+    "title": "O Fim da Contagem de Calorias? Como a Crononutrição e o Relógio Biológico Redefinem a Saúde Metabólica"
   }
 ]
