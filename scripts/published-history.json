@@ -244,6 +244,7 @@
       "Harvard Health Publishing",
       "Anvisa"
     ],
+    "title": "Cloreto de Magnésio P.A.: O Guia Completo para Sono, Músculos e Vitalidade"
   },
   {
     "id": 64,
@@ -269,6 +270,7 @@
       "WGSN",
       "Sebrae"
     ],
+    "title": "Menos Compras, Mais Significado: A Ascensão do Underconsumption Core"
   },
   {
     "id": 70,
@@ -338,5 +340,31 @@
       "Saúde Abril"
     ],
     "title": "O Fim da Contagem de Calorias? Como a Crononutrição e o Relógio Biológico Redefinem a Saúde Metabólica"
+  },
+  {
+    "id": 85,
+    "slug": "onu-controle-agentes-autonomos-ia-governanca",
+    "category": "Inovação & IA",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-09-22T08:00:00-03:00",
+    "sources": [
+      "Olhar Digital",
+      "United Nations (ONU)",
+      "Hugging Face"
+    ],
+    "title": "Quando os Agentes Decidem Sozinhos: Por Que a ONU Quer um Órgão Global de IA"
+  },
+  {
+    "id": 88,
+    "slug": "concentracao-venture-capital-ia-startups",
+    "category": "Tendências",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-09-22T18:00:00-03:00",
+    "sources": [
+      "StartSe",
+      "PitchBook",
+      "Brazil Journal"
+    ],
+    "title": "9 em Cada 10 Dólares: A Concentração de Capital em IA e o Novo Jogo das Startups"
   }
 ]
