@@ -76,7 +76,8 @@ export const SITE_METADATA = {
   verification: {
     google: '', // Insira seu código de verificação do Google Search Console aqui
     yandex: '',
-    bing: ''
+    bing: '',
+    pinterest: 'bd54178a186a40896b54b626589fc5bc'
   }
 }
 

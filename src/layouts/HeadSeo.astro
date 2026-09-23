@@ -101,6 +101,7 @@ const schemaData = schema || defaultSchema
 }
 {SITE_METADATA.verification.bing && <meta name='msvalidate.01' content={SITE_METADATA.verification.bing} />}
 {SITE_METADATA.verification.yandex && <meta name='yandex-verification' content={SITE_METADATA.verification.yandex} />}
+{SITE_METADATA.verification.pinterest && <meta name='p:domain_verify' content={SITE_METADATA.verification.pinterest} />}
 
 <!-- Language and Locale -->
 <meta property='og:locale' content={Astro.currentLocale === 'en' ? 'en_US' : Astro.currentLocale === 'es' ? 'es_ES' : 'pt_BR'} />

@@ -17,7 +17,6 @@ import { getRelatedPosts, getPostNavigation, calculateReadTime } from '@/utils/b
 import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
 
 import Blog from '@/components/blocks/blog-related-post/blog-related-post'
-import AdBanner from '@/components/ads/AdBanner.astro'
 
 export async function getStaticPaths() {
   const allEntries = await getCollection('blog')
@@ -222,33 +221,6 @@ const schema = {
             <article id='content' class='prose dark:prose-invert max-w-none'>
               <Content />
             </article>
-
-            {/* Injeção dinâmica do Banner no meio do artigo (12170662) */}
-            <div id='mid-article-ad-slot' class='hidden my-6'>
-              <AdBanner zoneId='12170662' />
-            </div>
-
-            <script is:inline>
-              document.addEventListener('DOMContentLoaded', () => {
-                const article = document.getElementById('content');
-                const adSlot = document.getElementById('mid-article-ad-slot');
-                if (article && adSlot) {
-                  const paragraphs = article.querySelectorAll('p, h2, h3');
-                  if (paragraphs.length >= 4) {
-                    const midIndex = Math.floor(paragraphs.length / 2);
-                    paragraphs[midIndex].insertAdjacentElement('afterend', adSlot);
-                    adSlot.classList.remove('hidden');
-                  } else {
-                    adSlot.classList.remove('hidden');
-                  }
-                }
-              });
-            </script>
-
-            {/* Banner Final da Leitura do Artigo (12170662) */}
-            <div class='w-full pt-4 pb-2'>
-              <AdBanner zoneId='12170662' />
-            </div>
 
             <!-- Post Navigation -->
             <div class='flex w-full justify-between pt-8'>

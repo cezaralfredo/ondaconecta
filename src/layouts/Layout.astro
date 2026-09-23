@@ -73,9 +73,6 @@ const currentLang = Astro.currentLocale === 'en' ? 'en' : Astro.currentLocale ==
 <!doctype html>
 <html lang={currentLang} class='scroll-smooth'>
   <head>
-    {/* Adcash Monetization Library (for banners) */}
-    <script is:inline id='aclib' type='text/javascript' src='//acscdn.com/script/aclib.js'></script>
-
     <HeadSeo {...seoProps} />
     <ClientRouter />
     <script is:inline>
