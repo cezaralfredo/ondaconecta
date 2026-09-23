@@ -366,5 +366,33 @@
       "Brazil Journal"
     ],
     "title": "9 em Cada 10 Dólares: A Concentração de Capital em IA e o Novo Jogo das Startups"
+  },
+  {
+    "id": 91,
+    "slug": "tokenizacao-rwa-drex-renda-fixa-investimentos",
+    "category": "Finanças Pessoais",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-09-23T08:00:00-03:00",
+    "sources": [
+      "Banco Central do Brasil (BCB)",
+      "Anbima",
+      "Febraban",
+      "Exame"
+    ],
+    "title": "RWA e Drex: Como a Renda Fixa Tokenizada Transforma os Investimentos Pessoais"
+  },
+  {
+    "id": 94,
+    "slug": "pdrn-estetica-regenerativa-quiet-beauty-pele",
+    "category": "Estética & Beleza",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-09-23T18:00:00-03:00",
+    "sources": [
+      "Vogue Brasil Beleza",
+      "Marie Claire",
+      "The Aesthetic Guide",
+      "Sociedade Brasileira de Dermatologia (SBD)"
+    ],
+    "title": "O Fim dos Rostos Artificiais? O PDRN e a Revolução da Quiet Beauty na Pele"
   }
 ]
