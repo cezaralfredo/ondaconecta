@@ -17,6 +17,7 @@ import { getRelatedPosts, getPostNavigation, calculateReadTime } from '@/utils/b
 import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
 
 import Blog from '@/components/blocks/blog-related-post/blog-related-post'
+import ArticleDisclaimer from '@/components/astro/ArticleDisclaimer.astro'
 
 export async function getStaticPaths() {
   const allEntries = await getCollection('blog')
@@ -220,6 +221,7 @@ const schema = {
             <!-- Article Content -->
             <article id='content' class='prose dark:prose-invert max-w-none'>
               <Content />
+              <ArticleDisclaimer category={entry.data.category} lang='en' />
             </article>
 
             <!-- Post Navigation -->

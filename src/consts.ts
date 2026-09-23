@@ -97,14 +97,14 @@ export const COMPANY_INFO = {
   logo: `/images/site-logo.png`,
   foundingDate: '2025',
   address: {
-    streetAddress: 'Brasil',
-    addressLocality: 'São Paulo',
-    addressRegion: 'SP',
-    postalCode: '01000-000',
+    streetAddress: 'Rua Firmo Ananias Cardoso, 622',
+    addressLocality: 'Sapiranga, Fortaleza',
+    addressRegion: 'CE',
+    postalCode: '60833-432',
     addressCountry: 'BR'
   },
   contactPoint: {
-    telephone: '+55-11-99999-9999',
+    telephone: '+55-85-99627-7707',
     contactType: 'editorial',
     email: 'contato@ondaconecta.com.br'
   },
@@ -120,7 +120,6 @@ export const PROJECT_CATEGORIES = [
   'Estética & Beleza',
   'Estilo de Vida & Viagens',
   'Tendências',
-  'Tecnologia',
   'Sustentabilidade',
   'Comportamento'
 ] as const

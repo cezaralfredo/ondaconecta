@@ -1,4 +1,4 @@
-# robots.txt for shadcn Studio
+# robots.txt for Onda Conecta
 # Production-ready configuration for search engine crawlers
 
 # Allow all major search engines full access
@@ -8,7 +8,6 @@ Allow: /
 # Disallow admin and private areas
 Disallow: /admin/
 Disallow: /private/
-Disallow: /_astro/
 
 # Disallow search result pages (if you add search)
 Disallow: /search?
@@ -19,10 +18,15 @@ Allow: /*.css$
 Allow: /*.js$
 
 # Sitemap location
-Sitemap: https://yourdomain.com/sitemap-index.xml
+Sitemap: https://ondaconecta.com.br/sitemap-index.xml
 
 # Specific bot configurations
 User-agent: Googlebot
+Crawl-delay: 0
+Allow: /
+
+# Google AdSense Crawler
+User-agent: Mediapartners-Google
 Crawl-delay: 0
 Allow: /
 

@@ -1,0 +1,86 @@
+---
+import { AlertCircle, ShieldAlert } from 'lucide-react'
+
+interface Props {
+  category?: string
+  lang?: 'pt' | 'en' | 'es' | string
+}
+
+const { category = '', lang = Astro.currentLocale || 'pt' } = Astro.props
+
+const lowerCategory = category.toLowerCase()
+const isHealth =
+  lowerCategory.includes('saúde') ||
+  lowerCategory.includes('saude') ||
+  lowerCategory.includes('health') ||
+  lowerCategory.includes('salud') ||
+  lowerCategory.includes('estética') ||
+  lowerCategory.includes('estetica') ||
+  lowerCategory.includes('beleza') ||
+  lowerCategory.includes('beauty')
+
+const isFinance =
+  lowerCategory.includes('finan') ||
+  lowerCategory.includes('invest') ||
+  lowerCategory.includes('riqueza') ||
+  lowerCategory.includes('money')
+
+const isEn = lang === 'en'
+const isEs = lang === 'es'
+---
+
+{
+  isHealth && (
+    <div class='my-8 rounded-2xl border border-amber-500/30 bg-amber-500/10 p-5 text-foreground/90 backdrop-blur-sm transition-all sm:p-6'>
+      <div class='flex items-start gap-4'>
+        <div class='rounded-xl bg-amber-500/20 p-2 text-amber-600 dark:text-amber-400'>
+          <ShieldAlert className='size-5' />
+        </div>
+        <div class='space-y-1.5 text-sm sm:text-base leading-relaxed'>
+          <h4 class='font-semibold text-amber-700 dark:text-amber-400'>
+            {isEn
+              ? 'Medical & Health Disclaimer'
+              : isEs
+                ? 'Descargo de Responsabilidad Médica y de Salud'
+                : 'Aviso de Isenção de Responsabilidade Médica e de Saúde'}
+          </h4>
+          <p class='text-muted-foreground'>
+            {isEn
+              ? 'The information provided in this article is for educational and informational purposes only and does not constitute medical advice, diagnosis, or treatment. Always consult a qualified physician, nutritionist, or healthcare provider before beginning any supplement regimen or making changes to your wellness routine.'
+              : isEs
+                ? 'El contenido de este artículo tiene un propósito exclusivamente informativo, científico y educativo, y no constituye asesoramiento, diagnóstico o prescripción médica. Consulte siempre a un médico, nutricionista o profesional de la salud calificado antes de iniciar cualquier suplementación o modificación en sus hábitos.'
+                : 'O conteúdo publicado neste artigo tem propósito estritamente informativo, científico e educacional, não constituindo orientação, diagnóstico ou prescrição médica. Consulte sempre um médico ou nutricionista registrado antes de iniciar qualquer suplementação, tratamento ou alteração em sua dieta e hábitos de saúde.'}
+          </p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+{
+  isFinance && (
+    <div class='my-8 rounded-2xl border border-blue-500/30 bg-blue-500/10 p-5 text-foreground/90 backdrop-blur-sm transition-all sm:p-6'>
+      <div class='flex items-start gap-4'>
+        <div class='rounded-xl bg-blue-500/20 p-2 text-blue-600 dark:text-blue-400'>
+          <AlertCircle className='size-5' />
+        </div>
+        <div class='space-y-1.5 text-sm sm:text-base leading-relaxed'>
+          <h4 class='font-semibold text-blue-700 dark:text-blue-400'>
+            {isEn
+              ? 'Financial & Investment Disclaimer'
+              : isEs
+                ? 'Descargo de Responsabilidad Financiera'
+                : 'Aviso de Isenção de Responsabilidade Financeira'}
+          </h4>
+          <p class='text-muted-foreground'>
+            {isEn
+              ? 'The content in this article is for analytical, informational, and educational purposes only and should not be construed as financial, investment, or legal advice. All financial decisions should be evaluated according to your individual goals, horizon, and risk profile with certified financial advisors.'
+              : isEs
+                ? 'El contenido de este artículo tiene fines exclusivamente analíticos, informativos y educativos, y no constituye una recomendación directa de compra, venta o asesoramiento financiero personalizado. Evalúe siempre sus objetivos personales y tolerancia al riesgo con asesores certificados.'
+                : 'O conteúdo deste artigo possui caráter exclusivamente informativo, jornalístico e reflexivo, não representando recomendação direta de investimento, compra ou venda de ativos financeiros. Decisões de investimento devem sempre considerar seus objetivos pessoais, horizonte temporal e perfil de risco com a assessoria de profissionais habilitados.'}
+          </p>
+        </div>
+      </div>
+    </div>
+  )
+}
