@@ -1,8 +1,8 @@
 ---
 /**
  * Pinterest Tracker Component
- * Combina o Pinterest Tag (Client-Side) com a Pinterest Conversions API (Server-Side CAPI)
- * com desduplicação automática via event_id único por ação.
+ * Combines Pinterest Tag (Client-Side) with Pinterest Conversions API (Server-Side CAPI)
+ * with automatic deduplication via unique event_id per action.
  */
 interface Props {
   tagId?: string
@@ -15,7 +15,7 @@ const emailHash = '2bbc7d3c4aa09982f805eb0de75a0b9dee7dba10338297794dcde89767510
 
 <!-- Pinterest Tag & Conversions API (CAPI) Integration -->
 <script is:inline define:vars={{ tagId, userEmail }}>
-  // 1. Inicialização do Pinterest Tag Client-Side
+  // 1. Pinterest Tag Client-Side init
   !function(e){if(!window.pintrk){window.pintrk = function () {
   window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
     n=window.pintrk;n.queue=[],n.version="3.0";var
@@ -25,15 +25,15 @@ const emailHash = '2bbc7d3c4aa09982f805eb0de75a0b9dee7dba10338297794dcde89767510
 
   pintrk('load', tagId, { em: userEmail });
 
-  // 2. Helper Global de Rastreamento Híbrido (Client-Side + Server-Side CAPI)
+  // 2. Hybrid Tracking Helper (Client-Side + Server-Side CAPI)
   window.trackPinterestEvent = function (eventName, customData, userEmailOverride) {
     try {
-      // Gera ID único por evento para que o Pinterest desduplique Tag e CAPI perfeitamente
+      // Unique ID per event for Pinterest Tag/CAPI deduplication
       var eventId = 'pin_' + Date.now() + '_' + Math.random().toString(36).substring(2, 9);
       var eventSourceUrl = window.location.href;
       var cleanEventName = eventName === 'page' || eventName === 'PageVisit' ? 'page_visit' : eventName;
 
-      // Disparo Client-side (Pinterest Tag)
+      // Client-side dispatch (Pinterest Tag)
       if (typeof window.pintrk === 'function') {
         var clientData = Object.assign({}, customData || {}, { event_id: eventId });
         if (cleanEventName === 'page_visit') {
@@ -43,7 +43,7 @@ const emailHash = '2bbc7d3c4aa09982f805eb0de75a0b9dee7dba10338297794dcde89767510
         }
       }
 
-      // Disparo Server-side (Pinterest Conversions API via endpoint próprio)
+      // Server-side dispatch (Pinterest Conversions API via own endpoint)
       var payload = {
         event_name: cleanEventName,
         event_id: eventId,
@@ -67,18 +67,18 @@ const emailHash = '2bbc7d3c4aa09982f805eb0de75a0b9dee7dba10338297794dcde89767510
           body: jsonPayload,
           keepalive: true
         }).catch(function () {
-          // Falha silenciosa em dev local ou offline
+          // Silent fail on local dev or offline
         });
       }
     } catch (e) {
-      // Previne qualquer bloqueio na interface do usuário
+      // Prevents any UI blocking
     }
   };
 
-  // 3. Rastreamento da visualização inicial
+  // 3. Initial page view tracking
   window.trackPinterestEvent('page_visit');
 
-  // 4. Rastreamento dinâmico em transições de página do Astro ClientRouter
+  // 4. Dynamic tracking on Astro ClientRouter page transitions
   document.addEventListener('astro:after-swap', function () {
     if (typeof window.trackPinterestEvent === 'function') {
       window.trackPinterestEvent('page_visit');

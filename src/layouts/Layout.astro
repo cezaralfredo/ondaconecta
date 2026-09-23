@@ -73,9 +73,9 @@ const currentLang = Astro.currentLocale === 'en' ? 'en' : Astro.currentLocale ==
 <!doctype html>
 <html lang={currentLang} class='scroll-smooth'>
   <head>
-    <PinterestTracker />
-
     <HeadSeo {...seoProps} />
+
+    <PinterestTracker />
     <ClientRouter />
     <script is:inline>
       ;(function () {
