@@ -104,6 +104,19 @@ Para garantir que cada matéria domine a SERP tradicional e seja citada por moto
      - [Nome do Veículo 2](URL_da_Fonte_2) — *Contexto breve da matéria ou estudo*
      ```
 
+### D. Blindagem Google AdSense, Diretrizes YMYL e Transparência Comercial:
+10. **Conformidade Estrita com as Políticas do Google AdSense:**
+    - **Extensão Mínima Anti-Thin Content:** Todo artigo deve ter extensão substantiva de **800 a 1.500+ palavras**, eliminando qualquer risco de penalização por *"Conteúdo de baixo valor"*.
+    - **Segurança Editorial YMYL (Your Money or Your Life):**
+      - **Saúde & Estética (`Saúde & Bem-estar`, `Estética & Beleza`):** Proibido fazer alegações médicas de cura milagrosa, promessas irreais de transformação biológica ou prescrições categóricas. Todo conteúdo deve ser embasado em literatura médica/científica reconhecida (NIH, Anvisa, Harvard, etc.). O layout do site injeta automaticamente o box `<ArticleDisclaimer />` com aviso de isenção médica.
+      - **Finanças & Investimentos (`Finanças Pessoais`, `Mercado & Negócios`):** Proibido prometer "retorno garantido" ou indicar compra de ativos específicos como ordem imperativa. O tom deve ser puramente analítico e educacional. O layout do site injeta automaticamente o box `<ArticleDisclaimer />` com aviso de isenção financeira.
+    - **Links Comerciais e de Afiliados (Shopee, Amazon, etc.):**
+      - Caso a matéria apresente recomendações de produtos físicos ou digitais, os links externos de compra **devem obrigatoriamente** conter o atributo de segurança:
+        `rel="nofollow sponsored noopener noreferrer"`
+      - Imediatamente após a vitrine ou lista de produtos, inserir a nota de transparência:
+        `*Transparência editorial: Os links acima são links de afiliados. Caso você decida adquirir através deles, poderemos receber uma comissão sem qualquer custo adicional para você.*`
+        (Adaptando a nota com fluência natural para inglês em `en` e espanhol em `es`).
+
 ---
 
 ## 3. Fluxo de Entrada e Redação Multilíngue Sequencial

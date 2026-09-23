@@ -35,16 +35,15 @@ featured: false # ou true se for manchete principal
 ---
 ```
 
-### Categorias Padronizadas:
+### Categorias Padronizadas (9 Categorias Oficiais Ativas):
 
-- `Inovação & IA`
+- `Inovação & IA` (inclui inteligência artificial, automação e tendências tecnológicas)
 - `Mercado & Negócios`
 - `Finanças Pessoais`
 - `Saúde & Bem-estar`
 - `Estética & Beleza`
 - `Estilo de Vida & Viagens`
 - `Tendências`
-- `Tecnologia`
 - `Sustentabilidade`
 - `Comportamento`
 
@@ -76,6 +75,12 @@ Cada versão idiomática deve receber a data formatada de acordo com os padrões
 ### D. Gestão Equilibrada da Flag `featured`:
 - O artigo original em português recebe `featured: true` apenas se for a principal matéria da categoria na semana (ou com `urgency_score >= 8`).
 - As versões em inglês e espanhol acompanham o mesmo valor da flag da versão principal.
+
+### E. Validação Prévia de Monetização e AdSense (Compliance Check):
+Antes de gerar o build e comitar, a skill deve verificar os 3 pilares de monetização:
+1. **Auditoria de Categoria Ativa:** Certificar-se de que a `category` pertence às 9 categorias oficiais permitidas. Jamais aceitar a categoria obsoleta `"Tecnologia"` (se vier com esse valor, converter automaticamente para `"Inovação & IA"`).
+2. **Checagem Anti-Thin Content:** Validar se o artigo tem extensão substantiva (mínimo de 700 a 800 palavras no corpo do texto). Artigos superficiais devem ser rejeitados para reescrita antes de entrar na esteira de publicação.
+3. **Segurança de Links Comerciais:** Se o artigo contiver links externos de afiliados ou parceiros de e-commerce (ex: Shopee, Amazon, etc.), verificar se possuem obrigatoriamente `rel="nofollow sponsored noopener noreferrer"` e a nota de transparência editorial.
 
 ---
 
