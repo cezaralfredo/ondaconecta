@@ -204,7 +204,7 @@ const schema = {
         <!-- FORMULÁRIO INTERATIVO -->
         <div class='lg:col-span-7 rounded-2xl border bg-background/90 p-6 sm:p-8 shadow-sm space-y-5'>
           <h3 class='text-lg font-bold text-foreground'>Envie uma mensagem rápida</h3>
-          <form class='space-y-4' onsubmit='event.preventDefault(); window.location.href="mailto:contato@anauedesign.com.br?subject=" + encodeURIComponent("Contato via Onda Conecta: " + (document.getElementById("form-subject")?.value || "Nova Mensagem")) + "&body=" + encodeURIComponent("Nome: " + (document.getElementById("form-name")?.value || "") + "\nEmail: " + (document.getElementById("form-email")?.value || "") + "\n\nMensagem:\n" + (document.getElementById("form-message")?.value || ""));'>
+          <form id='contact-form' class='space-y-4'>
             <div class='grid grid-cols-1 sm:grid-cols-2 gap-4'>
               <div class='space-y-1.5'>
                 <label for='form-name' class='text-xs font-semibold text-foreground'>Seu Nome</label>
@@ -257,6 +257,31 @@ const schema = {
               Enviar Mensagem para a Equipe ➔
             </button>
           </form>
+
+          <script is:inline>
+            document.getElementById('contact-form')?.addEventListener('submit', function (e) {
+              e.preventDefault();
+              var name = document.getElementById('form-name')?.value || '';
+              var email = document.getElementById('form-email')?.value || '';
+              var subject = document.getElementById('form-subject')?.value || 'Nova Mensagem';
+              var message = document.getElementById('form-message')?.value || '';
+
+              // Rastreia evento de conversão 'lead' com Tag e Conversions API (CAPI)
+              if (typeof window.trackPinterestEvent === 'function') {
+                window.trackPinterestEvent('lead', {
+                  lead_type: 'contact_form',
+                  lead_subject: subject
+                }, email);
+              }
+
+              // Encaminha para o e-mail oficial
+              var mailtoUrl = 'mailto:contato@anauedesign.com.br?subject=' + 
+                encodeURIComponent('Contato via Onda Conecta: ' + subject) + 
+                '&body=' + encodeURIComponent('Nome: ' + name + '\nEmail: ' + email + '\n\nMensagem:\n' + message);
+              
+              window.location.href = mailtoUrl;
+            });
+          </script>
         </div>
 
       </div>

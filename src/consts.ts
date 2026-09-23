@@ -81,6 +81,16 @@ export const SITE_METADATA = {
   }
 }
 
+// Configuração oficial do Pinterest (Tag + Conversions API)
+export const PINTEREST_CONFIG = {
+  tagId: '2614098012141',
+  adAccountId: '549770820233',
+  userEmail: 'gerandoparceria@gmail.com',
+  userEmailHash: '2bbc7d3c4aa09982f805eb0de75a0b9dee7dba10338297794dcde89767510358',
+  domainVerification: 'bd54178a186a40896b54b626589fc5bc',
+  capiEndpoint: '/api/pinterest-capi.php'
+}
+
 // Redes sociais e canais oficiais
 export const SOCIAL_LINKS = {
   github: GITHUB_URL,

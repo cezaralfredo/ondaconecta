@@ -1,0 +1,98 @@
+---
+/**
+ * Pinterest Tracker Component
+ * Combina o Pinterest Tag (Client-Side) com a Pinterest Conversions API (Server-Side CAPI)
+ * com desduplicação automática via event_id único por ação.
+ */
+interface Props {
+  tagId?: string
+  userEmail?: string
+}
+
+const { tagId = '2614098012141', userEmail = 'gerandoparceria@gmail.com' } = Astro.props
+const emailHash = '2bbc7d3c4aa09982f805eb0de75a0b9dee7dba10338297794dcde89767510358'
+---
+
+<!-- Pinterest Tag & Conversions API (CAPI) Integration -->
+<script is:inline define:vars={{ tagId, userEmail }}>
+  // 1. Inicialização do Pinterest Tag Client-Side
+  !function(e){if(!window.pintrk){window.pintrk = function () {
+  window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
+    n=window.pintrk;n.queue=[],n.version="3.0";var
+    t=document.createElement("script");t.async=!0,t.src=e;var
+    r=document.getElementsByTagName("script")[0];
+    r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+
+  pintrk('load', tagId, { em: userEmail });
+
+  // 2. Helper Global de Rastreamento Híbrido (Client-Side + Server-Side CAPI)
+  window.trackPinterestEvent = function (eventName, customData, userEmailOverride) {
+    try {
+      // Gera ID único por evento para que o Pinterest desduplique Tag e CAPI perfeitamente
+      var eventId = 'pin_' + Date.now() + '_' + Math.random().toString(36).substring(2, 9);
+      var eventSourceUrl = window.location.href;
+      var cleanEventName = eventName === 'page' || eventName === 'PageVisit' ? 'page_visit' : eventName;
+
+      // Disparo Client-side (Pinterest Tag)
+      if (typeof window.pintrk === 'function') {
+        var clientData = Object.assign({}, customData || {}, { event_id: eventId });
+        if (cleanEventName === 'page_visit') {
+          window.pintrk('page', clientData);
+        } else {
+          window.pintrk('track', cleanEventName, clientData);
+        }
+      }
+
+      // Disparo Server-side (Pinterest Conversions API via endpoint próprio)
+      var payload = {
+        event_name: cleanEventName,
+        event_id: eventId,
+        event_source_url: eventSourceUrl,
+        custom_data: customData || {}
+      };
+
+      if (userEmailOverride) {
+        payload.email = userEmailOverride;
+      }
+
+      var jsonPayload = JSON.stringify(payload);
+
+      if (typeof navigator !== 'undefined' && navigator.sendBeacon) {
+        var blob = new Blob([jsonPayload], { type: 'application/json' });
+        navigator.sendBeacon('/api/pinterest-capi.php', blob);
+      } else if (typeof fetch !== 'undefined') {
+        fetch('/api/pinterest-capi.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: jsonPayload,
+          keepalive: true
+        }).catch(function () {
+          // Falha silenciosa em dev local ou offline
+        });
+      }
+    } catch (e) {
+      // Previne qualquer bloqueio na interface do usuário
+    }
+  };
+
+  // 3. Rastreamento da visualização inicial
+  window.trackPinterestEvent('page_visit');
+
+  // 4. Rastreamento dinâmico em transições de página do Astro ClientRouter
+  document.addEventListener('astro:after-swap', function () {
+    if (typeof window.trackPinterestEvent === 'function') {
+      window.trackPinterestEvent('page_visit');
+    }
+  });
+</script>
+
+<noscript>
+  <img
+    height="1"
+    width="1"
+    style="display:none;"
+    alt=""
+    src={`https://ct.pinterest.com/v3/?event=init&tid=${tagId}&pd[em]=${emailHash}&noscript=1`}
+  />
+</noscript>
+<!-- End Pinterest Tag & Conversions API -->
