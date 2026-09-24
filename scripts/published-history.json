@@ -394,5 +394,33 @@
       "Sociedade Brasileira de Dermatologia (SBD)"
     ],
     "title": "O Fim dos Rostos Artificiais? O PDRN e a Revolução da Quiet Beauty na Pele"
+  },
+  {
+    "id": 97,
+    "slug": "soberania-ia-chips-brasil-supercomputadores",
+    "category": "Inovação & IA",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-09-24T08:00:00-03:00",
+    "sources": [
+      "Ministério da Ciência, Tecnologia e Inovação (MCTI)",
+      "BNDES",
+      "Canaltech & Olhar Digital",
+      "Centro de Tecnologia da Informação Renato Archer (CTI)"
+    ],
+    "title": "Além do Vale do Silício: Como o Brasil Constrói Sua Soberania em Chips e Supercomputadores de IA"
+  },
+  {
+    "id": 100,
+    "slug": "saf-combustivel-sustentavel-aviacao-brasil",
+    "category": "Sustentabilidade",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-09-24T18:00:00-03:00",
+    "sources": [
+      "Ministério de Portos e Aeroportos & ANAC",
+      "Agência Nacional do Petróleo (ANP)",
+      "IATA (International Air Transport Association)",
+      "Complexo do Pecém e Porto do Açu"
+    ],
+    "title": "O Fim do Querosene Fóssil? Como o Brasil Lidera a Corrida Global do Combustível Sustentável de Aviação"
   }
 ]
