@@ -422,5 +422,33 @@
       "Complexo do Pecém e Porto do Açu"
     ],
     "title": "O Fim do Querosene Fóssil? Como o Brasil Lidera a Corrida Global do Combustível Sustentável de Aviação"
+  },
+  {
+    "id": 103,
+    "slug": "venture-debt-credito-privado-startups-brasil",
+    "category": "Mercado & Negócios",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-09-25T08:00:00-03:00",
+    "sources": [
+      "NeoFeed",
+      "Startups.com.br",
+      "Comissão de Valores Mobiliários (CVM)",
+      "InfoMoney"
+    ],
+    "title": "Crescer Sem Vender a Empresa: Como o Venture Debt Virou a Principal Arma das Startups Brasileiras"
+  },
+  {
+    "id": 106,
+    "slug": "set-jetting-turismo-filmes-series-viagens",
+    "category": "Estilo de Vida & Viagens",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-09-25T18:00:00-03:00",
+    "sources": [
+      "Grupo Expedia",
+      "Panrotas",
+      "Mercado & Eventos",
+      "Embratur"
+    ],
+    "title": "Das Telas para as Malas: Como o Set-Jetting Redefine as Rotas de Viagem e o Turismo no Brasil"
   }
 ]
