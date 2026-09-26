@@ -93,7 +93,7 @@ const EDITORIAL_SCHEDULE = {
   1: { morning: 'Mercado & Negócios', evening: 'Saúde & Bem-estar' },
   2: { morning: 'Inovação & IA', evening: 'Tendências' },
   3: { morning: 'Finanças Pessoais', evening: 'Estética & Beleza' },
-  4: { morning: 'Tecnologia', evening: 'Sustentabilidade' },
+  4: { morning: 'Inovação & IA', evening: 'Sustentabilidade' },
   5: { morning: 'Mercado & Negócios', evening: 'Estilo de Vida & Viagens' },
   6: { morning: 'Inovação & IA', evening: 'Comportamento' },
   0: { morning: 'Tendências', evening: 'Estilo de Vida & Viagens' }
@@ -137,7 +137,8 @@ async function fetchLatestNews(query, isBrazil = false) {
 function loadHistory() {
   if (fs.existsSync(HISTORY_FILE)) {
     try {
-      return JSON.parse(fs.readFileSync(HISTORY_FILE, 'utf-8'))
+      const data = JSON.parse(fs.readFileSync(HISTORY_FILE, 'utf-8'))
+      return Array.isArray(data) ? data : []
     } catch (e) {
       return []
     }
@@ -147,6 +148,43 @@ function loadHistory() {
 
 function saveHistory(history) {
   fs.writeFileSync(HISTORY_FILE, JSON.stringify(history.slice(-200), null, 2))
+}
+
+// Verificação inteligente de duplicidade contra o histórico estruturado
+function isItemDuplicate(item, history) {
+  const norm = str => (str || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]/g, ' ').trim()
+  const itemTitle = norm(item.title)
+  const itemWords = itemTitle.split(/\s+/).filter(w => w.length > 3)
+  const itemLink = (item.link || '').trim().toLowerCase()
+
+  return history.some(entry => {
+    if (typeof entry === 'string') {
+      const entryNorm = norm(entry)
+      return entryNorm === itemTitle || (itemLink && entry.toLowerCase().includes(itemLink))
+    }
+
+    const entryTitle = norm(entry.title)
+    if (entryTitle && (entryTitle === itemTitle || entryTitle.includes(itemTitle) || itemTitle.includes(entryTitle))) {
+      return true
+    }
+
+    if (itemWords.length >= 4 && entryTitle) {
+      const matches = itemWords.filter(w => entryTitle.includes(w))
+      if (matches.length / itemWords.length >= 0.7) return true
+    }
+
+    if (itemLink && Array.isArray(entry.sources) && entry.sources.some(s => s && s.toLowerCase().includes(itemLink))) {
+      return true
+    }
+
+    return false
+  })
+}
+
+// Calcular tempo estimado de leitura (200 palavras por minuto)
+function calculateReadTime(text) {
+  const words = (text || '').replace(/[#*`_\[\]()>-]/g, ' ').trim().split(/\s+/).filter(Boolean).length
+  return Math.max(1, Math.ceil(words / 200))
 }
 
 // Obter próximo ID disponível nos arquivos existentes
@@ -229,20 +267,20 @@ Gere a resposta EXATAMENTE no seguinte formato JSON (sem markdown de formataçã
   return JSON.parse(rawText)
 }
 
-// Salvar artigo MDX
+// Salvar artigo MDX com escape seguro de YAML
 function writeMdx(filename, frontmatter, body) {
   const content = `---
 id: ${frontmatter.id}
-slug: '${frontmatter.slug}'
-lang: '${frontmatter.lang}'
-${frontmatter.translationOf ? `translationOf: '${frontmatter.translationOf}'\n` : ''}title: '${frontmatter.title.replace(/'/g, "''")}'
-description: '${frontmatter.description.replace(/'/g, "''")}'
-imageUrl: '${frontmatter.imageUrl}'
-imageAlt: '${frontmatter.imageAlt.replace(/'/g, "''")}'
-pubDate: '${frontmatter.pubDate}'
+slug: ${JSON.stringify(frontmatter.slug)}
+lang: ${JSON.stringify(frontmatter.lang)}
+${frontmatter.translationOf ? `translationOf: ${JSON.stringify(frontmatter.translationOf)}\n` : ''}title: ${JSON.stringify(frontmatter.title)}
+description: ${JSON.stringify(frontmatter.description)}
+imageUrl: ${JSON.stringify(frontmatter.imageUrl)}
+imageAlt: ${JSON.stringify(frontmatter.imageAlt)}
+pubDate: ${JSON.stringify(frontmatter.pubDate)}
 author: 'Redação Onda Conecta'
 avatarUrl: '/images/avatars/1.webp'
-category: '${frontmatter.category}'
+category: ${JSON.stringify(frontmatter.category)}
 readTime: ${frontmatter.readTime}
 featured: ${frontmatter.featured || false}
 ---
@@ -301,7 +339,7 @@ async function main() {
   const newsItems = prioritizeBrazil ? [...brItems, ...globalItems] : [...globalItems, ...brItems]
 
   const history = loadHistory()
-  const candidate = newsItems.find(item => !history.includes(item.title) && !history.includes(item.link))
+  const candidate = newsItems.find(item => !isItemDuplicate(item, history))
 
   if (!candidate) {
     console.log('ℹ️ Nenhuma notícia nova e não duplicada encontrada no momento.')
@@ -330,6 +368,11 @@ async function main() {
   ]
   const chosenImage = fallbackImages[Math.floor(Math.random() * fallbackImages.length)]
 
+  const finalCategory = category.name === 'Tecnologia' ? 'Inovação & IA' : category.name
+  const ptReadTime = calculateReadTime(generated.pt.body)
+  const enReadTime = calculateReadTime(generated.en.body)
+  const esReadTime = calculateReadTime(generated.es.body)
+
   // 1. Salvar versão em Português
   writeMdx(`${generated.slug}.mdx`, {
     id: baseId,
@@ -340,8 +383,8 @@ async function main() {
     imageUrl: chosenImage,
     imageAlt: generated.pt.title,
     pubDate: today,
-    category: generated.pt.category,
-    readTime: 6,
+    category: finalCategory,
+    readTime: ptReadTime,
     featured: true
   }, generated.pt.body)
 
@@ -357,7 +400,7 @@ async function main() {
     imageAlt: generated.en.title,
     pubDate: todayEn,
     category: generated.en.category,
-    readTime: 6,
+    readTime: enReadTime,
     featured: false
   }, generated.en.body)
 
@@ -373,13 +416,21 @@ async function main() {
     imageAlt: generated.es.title,
     pubDate: todayEs,
     category: generated.es.category,
-    readTime: 6,
+    readTime: esReadTime,
     featured: false
   }, generated.es.body)
 
-  // Registrar no histórico
-  history.push(candidate.title)
-  history.push(candidate.link)
+  // Registrar no histórico padronizado (compatível com a esteira do Onda Conecta)
+  const newEntry = {
+    id: baseId,
+    slug: generated.slug,
+    category: finalCategory,
+    focus: prioritizeBrazil ? 'Nacional (50/50)' : 'Global com impacto no Brasil (50/50)',
+    publishedAt: new Date().toISOString(),
+    sources: [candidate.source, candidate.link].filter(Boolean),
+    title: candidate.title
+  }
+  history.push(newEntry)
   saveHistory(history)
 
   console.log(`✅ Sucesso! 3 artigos publicados:`)

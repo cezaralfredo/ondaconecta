@@ -138,14 +138,17 @@ featured: false
 
 Para manter o layout e os filtros do site consistentes, utilize uma das seguintes categorias:
 
-| Categoria (PT)         | Categoria (EN)     | Categoria (ES)      |
-| :--------------------- | :----------------- | :------------------ |
-| **Tendências**         | Trends             | Tendencias          |
-| **Inovação & IA**      | Innovation & AI    | Innovación e IA     |
-| **Mercado & Negócios** | Business & Markets | Mercados y Negocios |
-| **Tecnologia**         | Technology         | Tecnología          |
-| **Sustentabilidade**   | Sustainability     | Sostenibilidad      |
-| **Comportamento**      | Culture & Society  | Comportamiento      |
+| Categoria (PT)               | Categoria (EN)         | Categoria (ES)          |
+| :--------------------------- | :--------------------- | :---------------------- |
+| **Inovação & IA**            | Innovation & AI        | Innovación e IA         |
+| **Mercado & Negócios**       | Business & Markets     | Mercados y Negocios     |
+| **Finanças Pessoais**        | Personal Finance       | Finanzas Personales     |
+| **Saúde & Bem-estar**        | Health & Wellness      | Salud y Bienestar       |
+| **Estética & Beleza**        | Beauty & Aesthetics    | Estética y Belleza      |
+| **Estilo de Vida & Viagens** | Lifestyle & Travel     | Estilo de Vida y Viajes |
+| **Tendências**               | Trends                 | Tendencias              |
+| **Sustentabilidade**         | Sustainability         | Sostenibilidad          |
+| **Comportamento**            | Behavior & Culture     | Comportamiento          |
 
 ---
 
