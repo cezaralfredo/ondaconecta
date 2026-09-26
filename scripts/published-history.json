@@ -450,5 +450,33 @@
       "Embratur"
     ],
     "title": "Das Telas para as Malas: Como o Set-Jetting Redefine as Rotas de Viagem e o Turismo no Brasil"
+  },
+  {
+    "id": 109,
+    "slug": "shadow-ai-agentes-autonomos-empresas-seguranca",
+    "category": "Inovação & IA",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-09-26T08:00:00-03:00",
+    "sources": [
+      "Fast Company Brasil",
+      "Distrito",
+      "Exame Inovação",
+      "Senado Federal"
+    ],
+    "title": "71% Usam, Ninguém Vê: A Ascensão da Shadow AI e dos Agentes Invisíveis nas Empresas"
+  },
+  {
+    "id": 112,
+    "slug": "renascenca-terceiros-espacos-comunidade-desconexao",
+    "category": "Comportamento",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-09-26T18:00:00-03:00",
+    "sources": [
+      "WGSN",
+      "Meio & Mensagem",
+      "Sebrae",
+      "Project for Public Spaces"
+    ],
+    "title": "Nem Casa, Nem Trabalho: Por Que a Renascença dos Terceiros Espaços Conquistou o Brasil"
   }
 ]
