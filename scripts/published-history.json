@@ -478,5 +478,33 @@
       "Project for Public Spaces"
     ],
     "title": "Nem Casa, Nem Trabalho: Por Que a Renascença dos Terceiros Espaços Conquistou o Brasil"
+  },
+  {
+    "id": 115,
+    "slug": "economia-solo-lares-unipessoais-consumo-brasil",
+    "category": "Tendências",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-09-27T08:00:00-03:00",
+    "sources": [
+      "IBGE",
+      "Sebrae",
+      "Mercado & Consumo",
+      "Fast Company Brasil"
+    ],
+    "title": "15,6 Milhões Moram Sós: A Força da Economia Solo e a Virada do Consumo no Brasil"
+  },
+  {
+    "id": 118,
+    "slug": "turismo-do-sono-hoteis-circadianos-viagens",
+    "category": "Estilo de Vida & Viagens",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-09-27T18:00:00-03:00",
+    "sources": [
+      "Associação Brasileira do Sono (ABS)",
+      "Hotelier News",
+      "Panrotas",
+      "Condé Nast Traveler"
+    ],
+    "title": "Dormir Virou o Novo Luxo: A Ascensão do Turismo do Sono e dos Hotéis Circadianos"
   }
 ]
