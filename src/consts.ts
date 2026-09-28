@@ -74,10 +74,14 @@ export const SITE_METADATA = {
     images: ['/images/og-image.png']
   },
   verification: {
-    google: '', // Insira seu código de verificação do Google Search Console aqui
+    google: '', // Verificado via DNS TXT
     yandex: '',
     bing: '',
     pinterest: 'bd54178a186a40896b54b626589fc5bc'
+  },
+  // Configuração Google AdSense (preencha com seu ID ca-pub-XXXXXXXXXXXXXXXX quando obtiver no painel)
+  adsense: {
+    clientId: process.env.PUBLIC_ADSENSE_CLIENT_ID || '' // ex: 'ca-pub-XXXXXXXXXXXXXXXX'
   }
 }
 

@@ -1,0 +1,191 @@
+---
+/**
+ * Onda Conecta — Banner de Consentimento de Cookies (LGPD, GDPR & Google Consent Mode v2)
+ * Garante conformidade total com as exigências de privacidade do Google AdSense
+ */
+const currentLocale = Astro.currentLocale || 'pt'
+const isEn = currentLocale === 'en'
+const isEs = currentLocale === 'es'
+
+const texts = {
+  title: isEn ? 'Privacy & Cookies' : isEs ? 'Privacidad y Cookies' : 'Privacidade & Cookies',
+  message: isEn
+    ? 'We use essential cookies to ensure site functionality, as well as analytics and advertising cookies (such as Google AdSense) to deliver relevant insights and maintain our free editorial portal.'
+    : isEs
+      ? 'Utilizamos cookies esenciales para el funcionamiento del sitio, así como cookies de análisis y publicidad (como Google AdSense) para ofrecer contenidos relevantes y mantener nuestro portal gratuito.'
+      : 'Utilizamos cookies essenciais para o funcionamento do site e cookies de análise e publicidade (como Google AdSense) para entregar conteúdos relevantes e manter nosso portal editorial gratuito.',
+  privacyLinkText: isEn ? 'Privacy Policy' : isEs ? 'Política de Privacidad' : 'Política de Privacidade',
+  acceptAll: isEn ? 'Accept All' : isEs ? 'Aceptar Todo' : 'Aceitar Todos',
+  essentialOnly: isEn ? 'Essential Only' : isEs ? 'Solo Esenciales' : 'Apenas Essenciais'
+}
+---
+
+<aside
+  id='cookie-consent-banner'
+  role='region'
+  aria-label={texts.title}
+  class='fixed bottom-4 left-4 right-4 z-50 mx-auto hidden max-w-xl translate-y-8 opacity-0 transition-all duration-500 ease-out sm:bottom-6 sm:right-6 sm:left-auto sm:max-w-md'
+>
+  <div
+    class='relative overflow-hidden rounded-2xl border border-border/80 bg-background/95 p-5 shadow-2xl backdrop-blur-xl dark:bg-card/95 sm:p-6'
+  >
+    <!-- Brilho sutil no topo do card -->
+    <div
+      class='pointer-events-none absolute -top-12 left-1/2 h-24 w-48 -translate-x-1/2 rounded-full bg-primary/20 blur-2xl'
+    ></div>
+
+    <div class='relative space-y-4'>
+      <!-- Cabeçalho com ícone -->
+      <div class='flex items-center gap-3'>
+        <div
+          class='flex size-9 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary border border-primary/20'
+        >
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            viewBox='0 0 24 24'
+            fill='none'
+            stroke='currentColor'
+            stroke-width='2'
+            stroke-linecap='round'
+            stroke-linejoin='round'
+            class='size-5'
+            aria-hidden='true'
+          >
+            <path d='M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5' />
+            <path d='M8.5 8.5v.01' />
+            <path d='M16 15.5v.01' />
+            <path d='M12 12v.01' />
+            <path d='M11 17v.01' />
+            <path d='M7 13v.01' />
+          </svg>
+        </div>
+        <h3 class='text-base font-semibold tracking-tight text-foreground'>
+          {texts.title}
+        </h3>
+      </div>
+
+      <!-- Texto descritivo -->
+      <p class='text-xs leading-relaxed text-muted-foreground sm:text-sm'>
+        {texts.message}{' '}
+        <a
+          href='/privacidade'
+          class='font-medium text-primary underline underline-offset-4 hover:text-primary/80 transition-colors'
+        >
+          {texts.privacyLinkText}
+        </a>.
+      </p>
+
+      <!-- Botões de ação -->
+      <div class='flex flex-col-reverse gap-2 sm:flex-row sm:justify-end'>
+        <button
+          type='button'
+          id='btn-cookie-essential'
+          class='inline-flex items-center justify-center rounded-xl border border-input bg-background/50 px-3.5 py-2 text-xs font-medium text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:text-sm'
+        >
+          {texts.essentialOnly}
+        </button>
+        <button
+          type='button'
+          id='btn-cookie-accept-all'
+          class='inline-flex items-center justify-center rounded-xl bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground shadow-sm transition-all hover:bg-primary/90 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:text-sm'
+        >
+          {texts.acceptAll}
+        </button>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<script is:inline>
+  ;(function () {
+    const CONSENT_KEY = 'ondaconecta_cookie_consent'
+
+    // Inicialização segura do dataLayer do Google Consent Mode v2
+    window.dataLayer = window.dataLayer || []
+    function gtag() {
+      window.dataLayer.push(arguments)
+    }
+
+    function updateGoogleConsent(status) {
+      if (typeof window.gtag === 'function') {
+        if (status === 'all') {
+          window.gtag('consent', 'update', {
+            ad_storage: 'granted',
+            ad_user_data: 'granted',
+            ad_personalization: 'granted',
+            analytics_storage: 'granted'
+          })
+        } else {
+          window.gtag('consent', 'update', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied'
+          })
+        }
+      }
+    }
+
+    function initCookieBanner() {
+      const banner = document.getElementById('cookie-consent-banner')
+      if (!banner) return
+
+      let savedConsent = null
+      try {
+        savedConsent = localStorage.getItem(CONSENT_KEY)
+      } catch (e) {
+        // localStorage indisponível ou bloqueado por modo restrito
+      }
+
+      // Se já houver consentimento registrado, sincroniza com Google Consent e não exibe
+      if (savedConsent) {
+        updateGoogleConsent(savedConsent)
+        banner.classList.add('hidden')
+        return
+      }
+
+      // Se ainda não consentiu, exibe o banner com suave delay
+      banner.classList.remove('hidden')
+      setTimeout(() => {
+        banner.classList.remove('translate-y-8', 'opacity-0')
+        banner.classList.add('translate-y-0', 'opacity-100')
+      }, 300)
+
+      const btnAcceptAll = document.getElementById('btn-cookie-accept-all')
+      const btnEssential = document.getElementById('btn-cookie-essential')
+
+      function closeBanner(type) {
+        try {
+          localStorage.setItem(CONSENT_KEY, type)
+        } catch (e) {}
+        updateGoogleConsent(type)
+
+        banner.classList.remove('translate-y-0', 'opacity-100')
+        banner.classList.add('translate-y-8', 'opacity-0')
+        setTimeout(() => {
+          banner.classList.add('hidden')
+        }, 500)
+      }
+
+      if (btnAcceptAll && !btnAcceptAll.dataset.bound) {
+        btnAcceptAll.dataset.bound = 'true'
+        btnAcceptAll.addEventListener('click', () => closeBanner('all'))
+      }
+
+      if (btnEssential && !btnEssential.dataset.bound) {
+        btnEssential.dataset.bound = 'true'
+        btnEssential.addEventListener('click', () => closeBanner('essential'))
+      }
+    }
+
+    // Executa no carregamento inicial da página
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initCookieBanner)
+    } else {
+      initCookieBanner()
+    }
+
+    // Reexecuta nas transições de página do Astro (Astro View Transitions)
+    document.addEventListener('astro:page-load', initCookieBanner)
+  })()
+</script>

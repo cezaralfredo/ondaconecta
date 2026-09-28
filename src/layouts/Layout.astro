@@ -7,6 +7,7 @@ import HeadSeo from '@/layouts/HeadSeo.astro'
 import PinterestTracker from '@/components/astro/PinterestTracker.astro'
 import Header from '@/components/layout/header'
 import Footer from '@/components/layout/footer'
+import CookieConsent from '@/components/astro/CookieConsent.astro'
 
 import type { NavigationSection } from '@/components/blocks/menu-navigation'
 
@@ -73,6 +74,19 @@ const currentLang = Astro.currentLocale === 'en' ? 'en' : Astro.currentLocale ==
 <!doctype html>
 <html lang={currentLang} class='scroll-smooth'>
   <head>
+    {/* Google Consent Mode v2 - Padrão restrito até aprovação do usuário (LGPD / GDPR) */}
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { window.dataLayer.push(arguments); }
+      // Default: denied para cookies de anúncios e personalização
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied'
+      });
+    </script>
+
     <HeadSeo {...seoProps} />
 
     <PinterestTracker />
@@ -124,5 +138,8 @@ const currentLang = Astro.currentLocale === 'en' ? 'en' : Astro.currentLocale ==
       {/* Footer Section */}
       <Footer client:load />
     </div>
+
+    {/* Cookie Consent Banner (LGPD / GDPR / Google Consent Mode v2) */}
+    <CookieConsent />
   </body>
 </html>
