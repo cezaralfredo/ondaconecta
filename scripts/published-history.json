@@ -506,5 +506,35 @@
       "Condé Nast Traveler"
     ],
     "title": "Dormir Virou o Novo Luxo: A Ascensão do Turismo do Sono e dos Hotéis Circadianos"
+  },
+  {
+    "id": 121,
+    "slug": "corporate-venture-capital-startups-investimentos-brasil",
+    "category": "Mercado & Negócios",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-09-28T08:00:00-03:00",
+    "sources": [
+      "Global Corporate Venturing (GCV)",
+      "ApexBrasil",
+      "ABVCAP",
+      "Brazil Journal",
+      "Startups.com.br"
+    ],
+    "title": "US$ 233 Bilhões em Jogo: Como o Corporate Venture Capital Salva Startups e Redefine os Investimentos no Brasil"
+  },
+  {
+    "id": 124,
+    "slug": "miocinas-forca-muscular-biomarcador-longevidade",
+    "category": "Saúde & Bem-estar",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-09-28T18:00:00-03:00",
+    "sources": [
+      "JAMA Network Open",
+      "Nature Medicine",
+      "Sociedade Brasileira de Geriatria e Gerontologia (SBGG)",
+      "VivaBem / UOL Saúde",
+      "Saúde Abril"
+    ],
+    "title": "Músculo É Remédio: Como as Miocinas e a Força Física Viraram o Biomarcador Definitivo da Longevidade"
   }
 ]
