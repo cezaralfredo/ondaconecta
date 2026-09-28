@@ -103,14 +103,17 @@ const schemaData = schema || defaultSchema
 {SITE_METADATA.verification.yandex && <meta name='yandex-verification' content={SITE_METADATA.verification.yandex} />}
 {SITE_METADATA.verification.pinterest && <meta name='p:domain_verify' content={SITE_METADATA.verification.pinterest} />}
 
-<!-- Google AdSense Tag (Ativado automaticamente quando SITE_METADATA.adsense.clientId for preenchido) -->
+<!-- Google AdSense Tags (Verificação & Ativação de Anúncios) -->
 {
   SITE_METADATA.adsense?.clientId && (
-    <script
-      async
-      src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${SITE_METADATA.adsense.clientId}`}
-      crossorigin='anonymous'
-    />
+    <>
+      <meta name='google-adsense-account' content={SITE_METADATA.adsense.clientId} />
+      <script
+        async
+        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${SITE_METADATA.adsense.clientId}`}
+        crossorigin='anonymous'
+      />
+    </>
   )
 }
 

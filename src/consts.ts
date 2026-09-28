@@ -79,9 +79,9 @@ export const SITE_METADATA = {
     bing: '',
     pinterest: 'bd54178a186a40896b54b626589fc5bc'
   },
-  // Configuração Google AdSense (preencha com seu ID ca-pub-XXXXXXXXXXXXXXXX quando obtiver no painel)
+  // Configuração Google AdSense Oficial
   adsense: {
-    clientId: process.env.PUBLIC_ADSENSE_CLIENT_ID || '' // ex: 'ca-pub-XXXXXXXXXXXXXXXX'
+    clientId: process.env.PUBLIC_ADSENSE_CLIENT_ID || 'ca-pub-4965740102250985'
   }
 }
 

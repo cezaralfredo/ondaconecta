@@ -1,4 +1,3 @@
 # ads.txt - Onda Conecta (https://ondaconecta.com.br)
-# Assim que sua conta do Google AdSense for criada/aprovada, adicione o seu ID oficial de anunciante na linha abaixo:
-# Exemplo:
-# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+google.com, pub-4965740102250985, DIRECT, f08c47fec0942fa0
+
