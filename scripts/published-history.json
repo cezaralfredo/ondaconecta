@@ -536,5 +536,33 @@
       "Saúde Abril"
     ],
     "title": "Músculo É Remédio: Como as Miocinas e a Força Física Viraram o Biomarcador Definitivo da Longevidade"
+  },
+  {
+    "id": 127,
+    "slug": "colaboradores-digitais-ia-equipes-hibridas-trabalho",
+    "category": "Inovação & IA",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-09-29T08:00:00-03:00",
+    "sources": [
+      "Fast Company Brasil",
+      "Exame Inovação",
+      "World Economic Forum (WEF)",
+      "Gartner Research"
+    ],
+    "title": "Crachá, E-mail e Salário Zero: A Ascensão dos Colaboradores Digitais nas Empresas"
+  },
+  {
+    "id": 130,
+    "slug": "fim-da-posse-digital-midias-fisicas-consumo-tatel",
+    "category": "Tendências",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-09-29T18:00:00-03:00",
+    "sources": [
+      "Meio & Mensagem",
+      "Fast Company Brasil",
+      "WGSN Consumer Trends",
+      "Associação Pró-Música Brasil"
+    ],
+    "title": "O Fim da Posse Digital? Por Que a Fadiga do Streaming Fez Renascer as Mídias Físicas"
   }
 ]
