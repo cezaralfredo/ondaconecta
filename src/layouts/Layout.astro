@@ -5,6 +5,7 @@ import { ClientRouter } from 'astro:transitions'
 
 import HeadSeo from '@/layouts/HeadSeo.astro'
 import PinterestTracker from '@/components/astro/PinterestTracker.astro'
+import OneSignal from '@/components/astro/OneSignal.astro'
 import Header from '@/components/layout/header'
 import Footer from '@/components/layout/footer'
 import CookieConsent from '@/components/astro/CookieConsent.astro'
@@ -90,6 +91,7 @@ const currentLang = Astro.currentLocale === 'en' ? 'en' : Astro.currentLocale ==
     <HeadSeo {...seoProps} />
 
     <PinterestTracker />
+    <OneSignal />
     <ClientRouter />
     <script is:inline>
       ;(function () {

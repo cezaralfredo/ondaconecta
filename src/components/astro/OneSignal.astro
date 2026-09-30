@@ -1,0 +1,82 @@
+---
+/**
+ * Onda Conecta — Web Push Notifications (OneSignal SDK v16)
+ * Alavanca o retorno de audiência instantânea para novos artigos publicados.
+ */
+import { ONESIGNAL_CONFIG } from '@/consts'
+
+interface Props {
+  appId?: string
+}
+
+const { appId = ONESIGNAL_CONFIG.appId } = Astro.props
+
+const currentLocale = Astro.currentLocale || 'pt'
+const isEn = currentLocale === 'en'
+const isEs = currentLocale === 'es'
+
+const promptTexts = {
+  actionMessage: isEn
+    ? 'Receive instant alerts on breaking trends, market intelligence, and exclusive analyses from Onda Conecta.'
+    : isEs
+      ? 'Recibe alertas instantáneas sobre nuevas tendencias, inteligencia de mercado y análisis exclusivos de Onda Conecta.'
+      : 'Receba alertas instantâneos sobre novas tendências, inteligência de mercado e análises exclusivas do Onda Conecta.',
+  acceptButton: isEn ? 'Enable Alerts' : isEs ? 'Activar Alertas' : 'Ativar Notificações',
+  cancelButton: isEn ? 'Maybe Later' : isEs ? 'Más Tarde' : 'Mais Tarde'
+}
+---
+
+{/* OneSignal SDK v16 & Initialization */}
+<script is:inline src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+
+<script is:inline define:vars={{ appId, promptTexts }}>
+  (function () {
+    if (!appId || appId === 'YOUR_ONESIGNAL_APP_ID') {
+      console.info('[Onda Conecta] OneSignal App ID não configurado no .env (PUBLIC_ONESIGNAL_APP_ID). O Web Push aguarda o ID para ativar.');
+      return;
+    }
+
+    window.OneSignalDeferred = window.OneSignalDeferred || [];
+    OneSignalDeferred.push(async function (OneSignal) {
+      try {
+        await OneSignal.init({
+          appId: appId,
+          allowLocalhostAsSecureOrigin: true,
+          notifyButton: {
+            enable: false // Usamos o slidedown moderno e elegante no lugar do sino vermelho flutuante
+          },
+          promptOptions: {
+            slidedown: {
+              prompts: [
+                {
+                  type: 'push',
+                  autoPrompt: true,
+                  text: {
+                    actionMessage: promptTexts.actionMessage,
+                    acceptButton: promptTexts.acceptButton,
+                    cancelButton: promptTexts.cancelButton
+                  },
+                  delay: {
+                    pageViews: 1,
+                    timeDelay: 6 // Aguarda 6 segundos para não interromper a primeira impressão do leitor
+                  }
+                }
+              ]
+            }
+          }
+        });
+
+        // Função global para acionamento manual (por exemplo, via botão no rodapé ou no artigo)
+        window.subscribeToOndaConectaPush = async function () {
+          try {
+            await OneSignal.Slidedown.promptPush();
+          } catch (err) {
+            console.error('[OneSignal] Erro ao abrir prompt manual:', err);
+          }
+        };
+      } catch (e) {
+        console.error('[OneSignal] Erro na inicialização:', e);
+      }
+    });
+  })();
+</script>

@@ -95,6 +95,11 @@ export const PINTEREST_CONFIG = {
   capiEndpoint: '/api/pinterest-capi.php'
 }
 
+// Configuração oficial do OneSignal Web Push
+export const ONESIGNAL_CONFIG = {
+  appId: process.env.PUBLIC_ONESIGNAL_APP_ID || '5c88c7df-4148-4612-914a-aa98419e2e28'
+}
+
 // Redes sociais e canais oficiais
 export const SOCIAL_LINKS = {
   github: GITHUB_URL,
