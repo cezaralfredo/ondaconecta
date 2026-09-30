@@ -86,8 +86,9 @@ Para garantir que cada matéria domine a SERP tradicional e seja citada por moto
    - `H3` para dados rápidos, listas ou estudos de caso.
    - Parágrafos curtos de no máximo 3 a 4 linhas.
    - **Negritos seletivos** nos termos centrais para leitura dinâmica fluida.
-6. **Malha de Links Internos (`Internal Linking`):**
-   - Incluir pelo menos 1 link contextual para outra matéria relevante do portal (ex: `[Leia também nossa análise sobre...](/blog/<slug-relacionado>)`).
+6. **Malha de Links Internos & Retenção Contextual (`Internal Linking & ReadAlso`):**
+   - Incluir pelo menos 1 link contextual no corpo do texto para outra matéria relevante do portal.
+   - **Box Visual de Retenção:** Inserir o componente `<ReadAlso slug="slug-do-artigo-relacionado" />` estrategicamente entre o 3º e 4º subtítulo (H2), convidando o leitor a continuar explorando o portal antes que ele decida sair da página (aumentando o tempo de permanência, o CTR interno e multiplicando as impressões de anúncios do Google AdSense).
 
 ### C. Fechamento para "Featured Snippets", Conversão & Credibilidade:
 7. **Seção de Perguntas Frequentes (`FAQ / People Also Ask`):**

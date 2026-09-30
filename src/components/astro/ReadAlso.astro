@@ -1,0 +1,91 @@
+---
+/**
+ * Onda Conecta — Componente "Leia Também" (Contextual Internal Link Box)
+ * Aumenta drasticamente o tempo de permanência, CTR interno e impressões por sessão do Google AdSense.
+ */
+import { getCollection } from 'astro:content'
+import { ArrowRight, BookOpen } from 'lucide-react'
+
+interface Props {
+  slug?: string
+  title?: string
+  url?: string
+  readTime?: number | string
+  category?: string
+  lang?: 'pt' | 'en' | 'es' | string
+}
+
+const {
+  slug,
+  title: customTitle,
+  url: customUrl,
+  readTime: customReadTime,
+  category: customCategory,
+  lang = Astro.currentLocale || 'pt'
+} = Astro.props
+
+const isEn = lang === 'en'
+const isEs = lang === 'es'
+
+let postTitle = customTitle
+let postUrl = customUrl
+let postReadTime = customReadTime
+let postCategory = customCategory
+let postImage = ''
+
+if (slug) {
+  const allPosts = await getCollection('blog')
+  const found = allPosts.find(p => p.id === slug || p.data.slug === slug)
+  if (found) {
+    postTitle = postTitle || found.data.title
+    postUrl = postUrl || (isEn ? `/en/blog/${found.id}` : isEs ? `/es/blog/${found.id}` : `/blog/${found.id}`)
+    postReadTime = postReadTime || found.data.readTime
+    postCategory = postCategory || found.data.category
+    postImage = found.data.imageUrl || ''
+  }
+}
+
+const label = isEn ? 'RECOMMENDED READING' : isEs ? 'LECTURA RECOMENDADA' : 'LEIA TAMBÉM'
+const minText = isEn ? 'min read' : isEs ? 'min de lectura' : 'min de leitura'
+---
+
+{
+  postTitle && postUrl && (
+    <aside class='not-prose my-8 overflow-hidden rounded-2xl border border-sky-500/20 bg-gradient-to-r from-sky-500/10 via-sky-500/5 to-transparent p-4 sm:p-5 shadow-sm transition-all duration-300 hover:border-sky-500/40 hover:shadow-md'>
+      <a href={postUrl} class='group flex items-center justify-between gap-4'>
+        <div class='flex items-start gap-3.5 sm:gap-4'>
+          <div class='flex size-10 shrink-0 items-center justify-center rounded-xl bg-sky-500/15 text-sky-600 dark:text-sky-400 group-hover:scale-105 transition-transform'>
+            <BookOpen className='size-5' />
+          </div>
+          <div class='space-y-1'>
+            <div class='flex items-center gap-2'>
+              <span class='text-[10px] sm:text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400'>
+                {label}
+              </span>
+              {postCategory && (
+                <>
+                  <span class='text-muted-foreground/40 text-xs'>•</span>
+                  <span class='text-[11px] font-medium text-muted-foreground'>
+                    {postCategory}
+                  </span>
+                </>
+              )}
+            </div>
+            <h4 class='text-sm sm:text-base font-semibold text-foreground group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors line-clamp-2'>
+              {postTitle}
+            </h4>
+            {postReadTime && (
+              <p class='text-xs text-muted-foreground'>
+                {postReadTime} {minText}
+              </p>
+            )}
+          </div>
+        </div>
+
+        <div class='flex size-8 shrink-0 items-center justify-center rounded-full bg-muted/60 text-muted-foreground transition-all duration-200 group-hover:translate-x-1 group-hover:bg-sky-500 group-hover:text-white'>
+          <ArrowRight className='size-4' />
+        </div>
+      </a>
+    </aside>
+  )
+}

@@ -1,0 +1,69 @@
+---
+/**
+ * Onda Conecta — Banner de Canal do WhatsApp
+ * Retém a audiência em um canal direto proprietário com 100% de entrega orgânica.
+ */
+import { SOCIAL_LINKS } from '@/consts'
+
+interface Props {
+  lang?: 'pt' | 'en' | 'es' | string
+  channelUrl?: string
+}
+
+const { lang = Astro.currentLocale || 'pt', channelUrl = (SOCIAL_LINKS as any).whatsappChannel || 'https://whatsapp.com/channel/0029Vb4wJ1T89inlOndaConecta' } = Astro.props
+
+const isEn = lang === 'en'
+const isEs = lang === 'es'
+
+const texts = {
+  badge: isEn ? 'OFFICIAL COMMUNITY' : isEs ? 'COMUNIDAD OFICIAL' : 'COMUNIDADE OFICIAL',
+  title: isEn
+    ? 'Get breaking trends and market intelligence directly on WhatsApp'
+    : isEs
+      ? 'Recibe tendencias emergentes e inteligencia de mercado en tu WhatsApp'
+      : 'Receba tendências e inteligência de mercado direto no seu WhatsApp',
+  description: isEn
+    ? 'Join Onda Conecta’s free broadcast channel. Unfiltered editorial insights, deep dives, and early alerts delivered straight to your phone.'
+    : isEs
+      ? 'Únete al canal gratuito de Onda Conecta. Análisis editoriales profundos, tendencias globales y primicias sin algoritmos.'
+      : 'Faça parte do canal oficial gratuito do Onda Conecta. Insights aprofundados, tendências globais e alertas em tempo real sem algoritmos.',
+  button: isEn ? 'Join WhatsApp Channel' : isEs ? 'Unirse al Canal' : 'Entrar no Canal do WhatsApp'
+}
+---
+
+<aside class='not-prose my-10 overflow-hidden rounded-2xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/10 via-emerald-500/5 to-transparent p-6 shadow-lg backdrop-blur-md transition-all duration-300 hover:border-emerald-500/50 sm:p-8'>
+  <div class='flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between'>
+    <div class='space-y-2.5 max-w-xl'>
+      <div class='inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400'>
+        <span class='size-2 rounded-full bg-emerald-500 animate-pulse'></span>
+        {texts.badge}
+      </div>
+      <h3 class='text-xl sm:text-2xl font-bold tracking-tight text-foreground'>
+        {texts.title}
+      </h3>
+      <p class='text-sm sm:text-base text-muted-foreground leading-relaxed'>
+        {texts.description}
+      </p>
+    </div>
+
+    <div class='shrink-0'>
+      <a
+        href={channelUrl}
+        target='_blank'
+        rel='noopener noreferrer'
+        class='inline-flex items-center justify-center gap-3 rounded-xl bg-emerald-600 px-6 py-3.5 text-sm font-semibold text-white shadow-md transition-all duration-200 hover:bg-emerald-500 hover:shadow-emerald-500/25 active:scale-95'
+      >
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          viewBox='0 0 24 24'
+          fill='currentColor'
+          class='size-5 shrink-0'
+          aria-hidden='true'
+        >
+          <path d='M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01zm-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.66.31-.23.25-.88.86-.88 2.1s.9 2.43 1.02 2.6c.12.17 1.77 2.7 4.29 3.78.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.12-.23-.19-.48-.31z' />
+        </svg>
+        <span>{texts.button}</span>
+      </a>
+    </div>
+  </div>
+</aside>
