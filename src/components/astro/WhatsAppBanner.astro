@@ -29,9 +29,14 @@ const texts = {
       : 'Faça parte do canal oficial gratuito do Onda Conecta. Insights aprofundados, tendências globais e alertas em tempo real sem algoritmos.',
   button: isEn ? 'Join WhatsApp Channel' : isEs ? 'Unirse al Canal' : 'Entrar no Canal do WhatsApp'
 }
+
+// Controle de ativação do banner (definido como false para manter oculto até ativação futura)
+const ENABLE_WHATSAPP_BANNER = false
 ---
 
-<aside class='not-prose my-10 overflow-hidden rounded-2xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/10 via-emerald-500/5 to-transparent p-6 shadow-lg backdrop-blur-md transition-all duration-300 hover:border-emerald-500/50 sm:p-8'>
+{
+  ENABLE_WHATSAPP_BANNER && (
+    <aside class='not-prose my-10 overflow-hidden rounded-2xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/10 via-emerald-500/5 to-transparent p-6 shadow-lg backdrop-blur-md transition-all duration-300 hover:border-emerald-500/50 sm:p-8'>
   <div class='flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between'>
     <div class='space-y-2.5 max-w-xl'>
       <div class='inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400'>
@@ -67,3 +72,5 @@ const texts = {
     </div>
   </div>
 </aside>
+  )
+}
