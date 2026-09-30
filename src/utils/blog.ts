@@ -84,3 +84,47 @@ export function formatDate(date: Date): string {
     day: 'numeric'
   })
 }
+
+const monthMap: Record<string, number> = {
+  // Português
+  janeiro: 0, fevereiro: 1, março: 2, marco: 2, abril: 3, maio: 4, junho: 5,
+  julho: 6, agosto: 7, setembro: 8, outubro: 9, novembro: 10, dezembro: 11,
+  // Espanhol
+  enero: 0, febrero: 1, marzo: 2, mayo: 4, junio: 5, julio: 6,
+  agosto: 7, septiembre: 8, setiembre: 8, octubre: 9, noviembre: 10, diciembre: 11,
+  // Inglês
+  january: 0, february: 1, march: 2, april: 3, may: 4, june: 5,
+  july: 6, august: 7, september: 8, october: 9, november: 10, december: 11
+}
+
+/**
+ * Converte strings de datas em múltiplos idiomas (PT/EN/ES) em um objeto Date válido
+ */
+export function parsePubDate(dateStr: string | Date | undefined): Date {
+  if (!dateStr) return new Date()
+  if (dateStr instanceof Date) return dateStr
+  const directDate = new Date(dateStr)
+  if (!isNaN(directDate.getTime())) return directDate
+
+  // Formatos: "11 de Setembro de 2026", "10 de Marzo de 2026"
+  const ptEsMatch = String(dateStr).match(/(\d{1,2})\s+de\s+([a-zA-ZçÇ]+)\s+de\s+(\d{4})/i)
+  if (ptEsMatch) {
+    const day = parseInt(ptEsMatch[1], 10)
+    const monthName = ptEsMatch[2].toLowerCase()
+    const year = parseInt(ptEsMatch[3], 10)
+    const month = monthMap[monthName] ?? 0
+    return new Date(year, month, day, 12, 0, 0)
+  }
+
+  // Formatos: "September 11, 2026"
+  const enMatch = String(dateStr).match(/([a-zA-Z]+)\s+(\d{1,2}),?\s+(\d{4})/i)
+  if (enMatch) {
+    const monthName = enMatch[1].toLowerCase()
+    const day = parseInt(enMatch[2], 10)
+    const year = parseInt(enMatch[3], 10)
+    const month = monthMap[monthName] ?? 0
+    return new Date(year, month, day, 12, 0, 0)
+  }
+
+  return new Date()
+}

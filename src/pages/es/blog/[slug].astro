@@ -13,13 +13,14 @@ import {
 } from '@/components/ui/breadcrumb'
 import DynamicToc from '@/components/astro/DynamicToc.astro'
 import { AuthorMetadata } from '@/components/AuthorAvatar'
-import { getRelatedPosts, getPostNavigation, calculateReadTime } from '@/utils/blog'
+import { getRelatedPosts, getPostNavigation, calculateReadTime, parsePubDate } from '@/utils/blog'
 import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
 
 import Blog from '@/components/blocks/blog-related-post/blog-related-post'
 import ArticleDisclaimer from '@/components/astro/ArticleDisclaimer.astro'
 import WhatsAppBanner from '@/components/astro/WhatsAppBanner.astro'
 import ReadAlso from '@/components/astro/ReadAlso.astro'
+import SocialShareBar from '@/components/astro/SocialShareBar.astro'
 
 export async function getStaticPaths() {
   const allEntries = await getCollection('blog')
@@ -91,17 +92,43 @@ const { previous: previousPost, next: nextPost } = getPostNavigation(publishedPo
 // Calculate read time if not provided
 const readTime = entry.data.readTime || calculateReadTime(entry.body)
 
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') || 'https://ondaconecta.com.br'
+const postUrl = new URL(Astro.url.pathname, Astro.site).toString()
+const publishedDate = parsePubDate(entry.data.pubDate)
+const isoPublishedDate = publishedDate.toISOString()
+
+const imageUrl = entry.data.imageUrl
+  ? (entry.data.imageUrl.startsWith('http') ? entry.data.imageUrl : `${siteUrl}${entry.data.imageUrl}`)
+  : `${siteUrl}/images/og-image.png`
+
 const schema = {
   '@context': 'https://schema.org',
-  '@type': 'BlogPosting',
+  '@type': 'NewsArticle',
   headline: entry.data.title,
   description: entry.data.description,
-  image: entry.data.imageUrl,
-  datePublished: entry.data.pubDate,
+  image: [imageUrl],
+  datePublished: isoPublishedDate,
+  dateModified: isoPublishedDate,
   inLanguage: 'es-ES',
-  author: {
-    '@type': 'Person',
-    name: entry.data.author
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': postUrl
+  },
+  author: [
+    {
+      '@type': 'Person',
+      name: entry.data.author || 'Redação Onda Conecta',
+      url: `${siteUrl}/quem-somos`
+    }
+  ],
+  publisher: {
+    '@type': 'NewsMediaOrganization',
+    name: 'Onda Conecta',
+    url: siteUrl,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${siteUrl}/images/logo-onda-conecta.webp`
+    }
   }
 }
 ---
@@ -111,7 +138,7 @@ const schema = {
   description={entry.data.description}
   image={entry.data.imageUrl}
   type='article'
-  publishedTime={entry.data.pubDate}
+  publishedTime={isoPublishedDate}
   author={entry.data.author}
   schema={schema}
 >
@@ -226,6 +253,14 @@ const schema = {
               {/* <WhatsAppBanner lang='es' /> */}
               <ArticleDisclaimer category={entry.data.category} lang='es' />
             </article>
+
+            <!-- Social Share Bar (Pinterest Rich Pin & Quick Share) -->
+            <SocialShareBar
+              title={entry.data.title}
+              description={entry.data.description}
+              media={entry.data.imageUrl}
+              lang={currentLang}
+            />
 
             <!-- Post Navigation -->
             <div class='flex w-full justify-between pt-8'>
