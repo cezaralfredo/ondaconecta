@@ -16,7 +16,8 @@
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,astro,css}\"",
     "check-types": "tsc --noEmit",
     "clean": "rm -rf .astro",
-    "clean:node_modules": "rm -rf .astro node_modules"
+    "clean:node_modules": "rm -rf .astro node_modules",
+    "indexnow": "node scripts/submit-indexnow.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",

@@ -100,6 +100,13 @@ export const ONESIGNAL_CONFIG = {
   appId: process.env.PUBLIC_ONESIGNAL_APP_ID || '5c88c7df-4148-4612-914a-aa98419e2e28'
 }
 
+// Configuração oficial do Protocolo IndexNow (Bing, Yandex, Seznam)
+export const INDEXNOW_CONFIG = {
+  host: 'ondaconecta.com.br',
+  key: '1a0c66547d41c2a29b2e9149c1e4a5f1',
+  keyLocation: 'https://ondaconecta.com.br/1a0c66547d41c2a29b2e9149c1e4a5f1.txt'
+}
+
 // Redes sociais e canais oficiais
 export const SOCIAL_LINKS = {
   github: GITHUB_URL,

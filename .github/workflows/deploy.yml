@@ -37,3 +37,7 @@ jobs:
           timeout: 60000
           security: 'loose'
           log-level: 'verbose'
+
+      - name: ⚡ Notificar motores de busca via IndexNow (Bing / Yandex)
+        run: node scripts/submit-indexnow.mjs
+
