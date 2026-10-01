@@ -10,6 +10,7 @@
 
 import fs from 'fs'
 import path from 'path'
+import { submitToIndexNow } from './submit-indexnow.mjs'
 
 // Categorias monitoradas e suas consultas de busca globais
 // Categorias monitoradas com fontes globais e nacionais de alta relevância
@@ -432,6 +433,19 @@ async function main() {
   }
   history.push(newEntry)
   saveHistory(history)
+
+  // Notificar motores de busca via IndexNow para as 3 novas URLs geradas
+  try {
+    const newUrls = [
+      `https://ondaconecta.com.br/blog/${generated.slug}/`,
+      `https://ondaconecta.com.br/en/blog/${generated.slug}-en/`,
+      `https://ondaconecta.com.br/es/blog/${generated.slug}-es/`
+    ]
+    console.log('⚡ Notificando motores de busca via IndexNow...')
+    await submitToIndexNow(newUrls)
+  } catch (indexNowErr) {
+    console.warn('⚠️ Falha secundária ao notificar IndexNow (não impede a publicação):', indexNowErr.message)
+  }
 
   console.log(`✅ Sucesso! 3 artigos publicados:`)
   console.log(`   - PT: src/content/blog/${generated.slug}.mdx`)

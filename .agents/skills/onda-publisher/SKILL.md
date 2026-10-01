@@ -112,5 +112,6 @@ Quando o usuário ou o orquestrador disparar a publicação:
      git commit -m "feat(blog): publicar <slug> em pt/en/es"
      git push origin main
      ```
-   - O pipeline de CI/CD (GitHub Actions / Vercel) iniciará automaticamente o deploy em produção.
+   - O pipeline de CI/CD (GitHub Actions) iniciará automaticamente o deploy em produção e notificará os motores de busca (Bing/Yandex) via **IndexNow**.
+   - Opcionalmente, pode-se disparar a notificação imediata das novas URLs via terminal: `npm run indexnow`.
 
