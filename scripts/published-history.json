@@ -592,5 +592,33 @@
       "Cosmetics & Toiletries"
     ],
     "title": "O Fim do Ácido Hialurônico? Como a Ectoína Virou o Escudo Supremo da Barreira Cutânea"
+  },
+  {
+    "id": 139,
+    "slug": "prisao-de-silicio-nvidia-contencao-agentes-ia",
+    "category": "Inovação & IA",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-10-01T08:00:00-03:00",
+    "sources": [
+      "Nvidia Corporation",
+      "CISO Advisor Brasil",
+      "EY Insights & Strategy",
+      "Exame Inovação"
+    ],
+    "title": "A 'Prisão de Silício' da Nvidia: Por que Conter Agentes de IA Virou a Nova Obsessão Corporativa"
+  },
+  {
+    "id": 142,
+    "slug": "fim-do-esg-de-planilha-carbono-balanco-auditado",
+    "category": "Sustentabilidade",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-10-01T18:00:00-03:00",
+    "sources": [
+      "Comissão de Valores Mobiliários (CVM)",
+      "ISSB / IFRS Foundation",
+      "Capital Reset",
+      "European Commission Climate Action"
+    ],
+    "title": "O Fim do ESG de Planilha: Por que o Carbono Virou Linha de Balanço Auditada no Brasil"
   }
 ]
