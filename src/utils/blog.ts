@@ -21,7 +21,7 @@ export function getRelatedPosts(
   posts: CollectionEntry<'blog'>[],
   currentSlug: string,
   currentCategory: string,
-  limit: number = 3,
+  limit: number = 6,
   currentLang?: string
 ): CollectionEntry<'blog'>[] {
   // Filtra primeiro pelo mesmo idioma para não misturar traduções
@@ -91,7 +91,7 @@ const monthMap: Record<string, number> = {
   julho: 6, agosto: 7, setembro: 8, outubro: 9, novembro: 10, dezembro: 11,
   // Espanhol
   enero: 0, febrero: 1, marzo: 2, mayo: 4, junio: 5, julio: 6,
-  agosto: 7, septiembre: 8, setiembre: 8, octubre: 9, noviembre: 10, diciembre: 11,
+  septiembre: 8, setiembre: 8, octubre: 9, noviembre: 10, diciembre: 11,
   // Inglês
   january: 0, february: 1, march: 2, april: 3, may: 4, june: 5,
   july: 6, august: 7, september: 8, october: 9, november: 10, december: 11

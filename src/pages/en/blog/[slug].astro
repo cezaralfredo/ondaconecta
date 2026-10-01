@@ -62,7 +62,7 @@ const publishedPosts = allPosts
 
 // Current language
 const currentLang = 'en'
-const relatedPosts = getRelatedPosts(publishedPosts, entry.id, entry.data.category, 3, currentLang)
+const relatedPosts = getRelatedPosts(publishedPosts, entry.id, entry.data.category, 6, currentLang)
 
 // Identify translations of this article
 const baseSlug = entry.data.translationOf || entry.id.replace(/-(en|es)$/, '')
