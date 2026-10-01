@@ -11,6 +11,7 @@
 import fs from 'fs'
 import path from 'path'
 import { submitToIndexNow } from './submit-indexnow.mjs'
+import { postArticleToTelegram } from './telegram-publisher.mjs'
 
 // Categorias monitoradas e suas consultas de busca globais
 // Categorias monitoradas com fontes globais e nacionais de alta relevância
@@ -445,6 +446,24 @@ async function main() {
     await submitToIndexNow(newUrls)
   } catch (indexNowErr) {
     console.warn('⚠️ Falha secundária ao notificar IndexNow (não impede a publicação):', indexNowErr.message)
+  }
+
+  // Notificar canal oficial do Telegram (se TELEGRAM_BOT_TOKEN estiver configurado)
+  try {
+    if (process.env.TELEGRAM_BOT_TOKEN) {
+      console.log('⚡ Disparando notificação para o canal do Telegram...')
+      await postArticleToTelegram({
+        title: generated.pt.title,
+        description: generated.pt.description,
+        slug: generated.slug,
+        category: finalCategory,
+        readTime: ptReadTime,
+        imageUrl: chosenImage,
+        lang: 'pt'
+      })
+    }
+  } catch (tgErr) {
+    console.warn('⚠️ Falha secundária ao notificar Telegram:', tgErr.message)
   }
 
   console.log(`✅ Sucesso! 3 artigos publicados:`)

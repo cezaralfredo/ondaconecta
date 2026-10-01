@@ -36,6 +36,7 @@ const copiedLabel = isEn ? 'Copied!' : isEs ? '¡Copiado!' : 'Copiado!'
 
 const pinterestUrl = `https://www.pinterest.com/pin/create/button/?url=${encodeURIComponent(postUrl)}&media=${encodeURIComponent(fullMediaUrl)}&description=${encodeURIComponent(title)}`
 const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(`${title} — ${postUrl}`)}`
+const telegramUrl = `https://t.me/share/url?url=${encodeURIComponent(postUrl)}&text=${encodeURIComponent(title)}`
 const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(postUrl)}`
 const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(postUrl)}`
 ---
@@ -73,6 +74,19 @@ const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(t
     >
       <svg class='size-4 fill-current' viewBox='0 0 24 24'>
         <path d='M17.472 14.382c-.301-.15-1.782-.879-2.058-.979-.276-.1-.476-.15-.677.15-.201.3-.778.979-.953 1.179-.176.2-.351.226-.652.075-.301-.15-1.272-.469-2.424-1.496-.896-.799-1.501-1.787-1.677-2.088-.176-.301-.019-.464.132-.614.135-.135.301-.351.452-.527.15-.176.201-.301.301-.502.101-.201.05-.377-.025-.527-.075-.15-.677-1.632-.928-2.235-.245-.588-.495-.508-.677-.518-.176-.009-.377-.011-.578-.011s-.527.075-.803.377c-.276.301-1.054 1.03-1.054 2.512s1.079 2.914 1.23 3.115c.15.201 2.124 3.243 5.145 4.549.719.311 1.28.497 1.718.636.723.23 1.381.198 1.901.12.58-.088 1.782-.728 2.033-1.431.251-.703.251-1.306.176-1.431-.076-.125-.276-.201-.577-.351zM12.004 21.996h-.002c-1.802 0-3.568-.485-5.114-1.402l-.367-.218-3.803.997 1.015-3.708-.239-.381a10.02 10.02 0 01-1.536-5.28c0-5.529 4.498-10.027 10.03-10.027 2.679 0 5.197 1.044 7.091 2.94 1.895 1.896 2.938 4.416 2.937 7.097 0 5.531-4.498 10.029-10.017 10.029zm8.513-18.537C18.243 1.185 15.239 0 12.004 0 5.372 0 .004 5.368.004 12c0 2.115.552 4.181 1.6 6.002L0 24l6.168-1.572c1.761.961 3.754 1.468 5.836 1.468h.005c6.63 0 12-5.369 12-12 0-3.208-1.25-6.223-3.492-8.437z'></path>
+      </svg>
+    </a>
+
+    <!-- Telegram Button -->
+    <a
+      href={telegramUrl}
+      target='_blank'
+      rel='noopener noreferrer'
+      title='Compartilhar no Telegram'
+      class='inline-flex items-center justify-center rounded-lg border border-border/80 bg-background p-2 text-muted-foreground transition-all hover:border-[#229ED9] hover:bg-[#229ED9]/10 hover:text-[#229ED9] active:scale-95'
+    >
+      <svg class='size-4 fill-current' viewBox='0 0 24 24'>
+        <path d='M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.458c.538-.196 1.006.128.832.949z'/>
       </svg>
     </a>
 

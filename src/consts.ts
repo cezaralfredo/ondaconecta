@@ -112,7 +112,17 @@ export const SOCIAL_LINKS = {
   github: GITHUB_URL,
   twitter: 'https://twitter.com/ondaconecta',
   instagram: 'https://instagram.com/ondaconecta',
-  linkedin: 'https://linkedin.com/company/ondaconecta'
+  linkedin: 'https://linkedin.com/company/ondaconecta',
+  telegram: 'https://t.me/ondaconecta',
+  pinterest: 'https://br.pinterest.com/ondaconecta/'
+}
+
+// Configuração oficial do Canal e Bot do Telegram
+export const TELEGRAM_CONFIG = {
+  channelUrl: 'https://t.me/ondaconecta',
+  channelUsername: '@ondaconecta',
+  botToken: process.env.TELEGRAM_BOT_TOKEN || '',
+  chatId: process.env.TELEGRAM_CHAT_ID || '@ondaconecta'
 }
 
 // Estrutura da organização para Rich Snippets do Google (Schema.org)

@@ -1,0 +1,79 @@
+---
+/**
+ * Onda Conecta — Banner de Canal do Telegram
+ * Retém a audiência em um canal direto proprietário com 100% de entrega orgânica e sem intermediários.
+ */
+import { TELEGRAM_CONFIG } from '@/consts'
+
+interface Props {
+  lang?: 'pt' | 'en' | 'es' | string
+  channelUrl?: string
+}
+
+const {
+  lang = Astro.currentLocale || 'pt',
+  channelUrl = TELEGRAM_CONFIG.channelUrl || 'https://t.me/ondaconecta'
+} = Astro.props
+
+const isEn = lang === 'en'
+const isEs = lang === 'es'
+
+const texts = {
+  badge: isEn ? 'OFFICIAL TELEGRAM COMMUNITY' : isEs ? 'COMUNIDAD OFICIAL EN TELEGRAM' : 'COMUNIDADE OFICIAL NO TELEGRAM',
+  title: isEn
+    ? 'Get breaking trends and market intelligence directly on Telegram'
+    : isEs
+      ? 'Recibe tendencias emergentes e inteligencia de mercado en tu Telegram'
+      : 'Receba tendências e inteligência de mercado direto no seu Telegram',
+  description: isEn
+    ? 'Join Onda Conecta’s free official broadcast channel. Unfiltered editorial insights, deep dives, and early alerts delivered straight to your phone.'
+    : isEs
+      ? 'Únete al canal oficial gratuito de Onda Conecta. Análisis editoriales profundos, tendencias globales y primicias sin algoritmos.'
+      : 'Faça parte do canal oficial gratuito do Onda Conecta no Telegram. Insights aprofundados, tendências globais e alertas em tempo real sem filtros de algoritmo.',
+  button: isEn ? 'Join Telegram Channel' : isEs ? 'Unirse al Canal' : 'Entrar no Canal do Telegram'
+}
+
+const ENABLE_TELEGRAM_BANNER = true
+---
+
+{
+  ENABLE_TELEGRAM_BANNER && (
+    <aside class='not-prose my-10 overflow-hidden rounded-2xl border border-sky-500/30 bg-gradient-to-br from-sky-500/10 via-blue-500/5 to-transparent p-6 shadow-lg backdrop-blur-md transition-all duration-300 hover:border-sky-500/50 sm:p-8'>
+      <div class='flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between'>
+        <div class='space-y-2.5 max-w-xl'>
+          <div class='inline-flex items-center gap-2 rounded-full border border-sky-500/30 bg-sky-500/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-sky-600 dark:text-sky-400'>
+            <span class='size-2 rounded-full bg-sky-500 animate-pulse'></span>
+            {texts.badge}
+          </div>
+          <h3 class='text-xl sm:text-2xl font-bold tracking-tight text-foreground'>
+            {texts.title}
+          </h3>
+          <p class='text-sm sm:text-base text-muted-foreground leading-relaxed'>
+            {texts.description}
+          </p>
+        </div>
+
+        <div class='shrink-0'>
+          <a
+            href={channelUrl}
+            target='_blank'
+            rel='noopener noreferrer'
+            class='inline-flex items-center justify-center gap-3 rounded-xl bg-[#229ED9] px-6 py-3.5 text-sm font-semibold text-white shadow-md transition-all duration-200 hover:bg-[#1b87ba] hover:shadow-sky-500/25 hover:scale-105 active:scale-95'
+          >
+            <!-- Telegram Paper Plane Icon -->
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              viewBox='0 0 24 24'
+              fill='currentColor'
+              class='size-5 shrink-0'
+              aria-hidden='true'
+            >
+              <path d='M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.458c.538-.196 1.006.128.832.949z'/>
+            </svg>
+            <span>{texts.button}</span>
+          </a>
+        </div>
+      </div>
+    </aside>
+  )
+}

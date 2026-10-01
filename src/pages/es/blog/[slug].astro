@@ -19,6 +19,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
 import Blog from '@/components/blocks/blog-related-post/blog-related-post'
 import ArticleDisclaimer from '@/components/astro/ArticleDisclaimer.astro'
 import WhatsAppBanner from '@/components/astro/WhatsAppBanner.astro'
+import TelegramBanner from '@/components/astro/TelegramBanner.astro'
 import ReadAlso from '@/components/astro/ReadAlso.astro'
 import SocialShareBar from '@/components/astro/SocialShareBar.astro'
 
@@ -249,10 +250,12 @@ const schema = {
 
             <!-- Article Content -->
             <article id='content' class='prose dark:prose-invert max-w-none'>
-              <Content components={{ ReadAlso, WhatsAppBanner }} />
-              {/* <WhatsAppBanner lang='es' /> */}
+              <Content components={{ ReadAlso, WhatsAppBanner, TelegramBanner }} />
               <ArticleDisclaimer category={entry.data.category} lang='es' />
             </article>
+
+            <!-- Telegram Official Channel Community Banner -->
+            <TelegramBanner lang='es' />
 
             <!-- Social Share Bar (Pinterest Rich Pin & Quick Share) -->
             <SocialShareBar
