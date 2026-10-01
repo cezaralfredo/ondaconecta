@@ -12,6 +12,7 @@ import fs from 'fs'
 import path from 'path'
 import { submitToIndexNow } from './submit-indexnow.mjs'
 import { postArticleToTelegram } from './telegram-publisher.mjs'
+import { crossPostToEnsuc } from './ensuc-cross-publisher.mjs'
 
 // Categorias monitoradas e suas consultas de busca globais
 // Categorias monitoradas com fontes globais e nacionais de alta relevância
@@ -464,6 +465,22 @@ async function main() {
     }
   } catch (tgErr) {
     console.warn('⚠️ Falha secundária ao notificar Telegram:', tgErr.message)
+  }
+
+  // Sincronizar com o blog da ENSUC se for da categoria Sustentabilidade (Link Building)
+  try {
+    console.log('⚡ Verificando sincronização com o blog da ENSUC (Link Building)...')
+    await crossPostToEnsuc({
+      title: generated.pt.title,
+      description: generated.pt.description,
+      slug: generated.slug,
+      category: finalCategory,
+      readTime: ptReadTime,
+      imageUrl: chosenImage,
+      lang: 'pt'
+    })
+  } catch (ensucErr) {
+    console.warn('⚠️ Falha secundária ao sincronizar com a ENSUC:', ensucErr.message)
   }
 
   console.log(`✅ Sucesso! 3 artigos publicados:`)

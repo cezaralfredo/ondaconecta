@@ -18,7 +18,8 @@
     "clean": "rm -rf .astro",
     "clean:node_modules": "rm -rf .astro node_modules",
     "indexnow": "node scripts/submit-indexnow.mjs",
-    "telegram": "node scripts/telegram-publisher.mjs"
+    "telegram": "node scripts/telegram-publisher.mjs",
+    "ensuc": "node scripts/ensuc-cross-publisher.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",
