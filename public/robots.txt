@@ -5,9 +5,10 @@
 User-agent: *
 Allow: /
 
-# Disallow admin and private areas
+# Disallow admin, private areas and legacy redirect folders
 Disallow: /admin/
 Disallow: /private/
+Disallow: /us/
 
 # Disallow search result pages
 Disallow: /search?

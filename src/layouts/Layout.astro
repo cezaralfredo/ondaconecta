@@ -66,6 +66,12 @@ interface Props {
   noindex?: boolean
   nofollow?: boolean
   schema?: Record<string, any>
+  alternateLinks?: {
+    pt?: string
+    en?: string
+    es?: string
+    default?: string
+  } | false
 }
 
 const seoProps = Astro.props as Props

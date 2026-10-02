@@ -13,15 +13,17 @@ interface Props {
   noindex?: boolean
   nofollow?: boolean
   schema?: Record<string, any>
+  alternateLinks?: {
+    pt?: string
+    en?: string
+    es?: string
+    default?: string
+  } | false
 }
 
 const rawPath = Astro.url.pathname.replace(/\/$/, '') || '/'
 const canonicalURL = new URL(rawPath, Astro.site)
-const baseCleanPath = rawPath.replace(/^\/(en|es)/, '') || '/'
-const cleanPathNoSlash = baseCleanPath === '/' ? '' : baseCleanPath
-const ptCanonical = new URL(baseCleanPath, Astro.site)
-const enCanonical = new URL(`/en${cleanPathNoSlash}`, Astro.site)
-const esCanonical = new URL(`/es${cleanPathNoSlash}`, Astro.site)
+
 const {
   title,
   description,
@@ -33,8 +35,42 @@ const {
   modifiedTime,
   noindex = false,
   nofollow = false,
-  schema
+  schema,
+  alternateLinks
 } = Astro.props
+
+// Páginas institucionais que só existem em Português (não possuem versão /en nem /es)
+const isPtOnlyStaticPage = [
+  '/quem-somos',
+  '/contato',
+  '/termos-de-uso',
+  '/privacidade',
+  '/404',
+  '/ferramentas'
+].includes(rawPath)
+
+// Configuração de Hreflang: se alternateLinks for false ou página pt-only, não emite hreflang enganoso
+let hreflangPt: URL | null = null
+let hreflangEn: URL | null = null
+let hreflangEs: URL | null = null
+let hreflangDefault: URL | null = null
+
+if (alternateLinks !== false && !isPtOnlyStaticPage) {
+  if (alternateLinks) {
+    if (alternateLinks.pt) hreflangPt = new URL(alternateLinks.pt, Astro.site)
+    if (alternateLinks.en) hreflangEn = new URL(alternateLinks.en, Astro.site)
+    if (alternateLinks.es) hreflangEs = new URL(alternateLinks.es, Astro.site)
+    if (alternateLinks.default) hreflangDefault = new URL(alternateLinks.default, Astro.site)
+  } else {
+    // Páginas com suporte nativo a múltiplos idiomas (Home, rotas do blog, etc.)
+    const baseCleanPath = rawPath.replace(/^\/(en|es)/, '') || '/'
+    const cleanPathNoSlash = baseCleanPath === '/' ? '' : baseCleanPath
+    hreflangPt = new URL(baseCleanPath, Astro.site)
+    hreflangEn = new URL(`/en${cleanPathNoSlash}`, Astro.site)
+    hreflangEs = new URL(`/es${cleanPathNoSlash}`, Astro.site)
+    hreflangDefault = hreflangPt
+  }
+}
 
 // Use site metadata defaults if not provided
 const finalTitle = title ? `${title} | Onda Conecta` : SITE_METADATA.title.default
@@ -86,10 +122,10 @@ const schemaData = schema || defaultSchema
 
 <!-- Canonical & Hreflang Tags para SEO Multilíngue -->
 <link rel='canonical' href={canonicalURL} />
-<link rel='alternate' hreflang='pt-BR' href={ptCanonical} />
-<link rel='alternate' hreflang='en' href={enCanonical} />
-<link rel='alternate' hreflang='es' href={esCanonical} />
-<link rel='alternate' hreflang='x-default' href={ptCanonical} />
+{hreflangPt && <link rel='alternate' hreflang='pt-BR' href={hreflangPt} />}
+{hreflangEn && <link rel='alternate' hreflang='en' href={hreflangEn} />}
+{hreflangEs && <link rel='alternate' hreflang='es' href={hreflangEs} />}
+{hreflangDefault && <link rel='alternate' hreflang='x-default' href={hreflangDefault} />}
 
 <!-- Robots Meta Tags -->
 <meta name='robots' content={robotsContent} />

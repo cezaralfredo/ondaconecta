@@ -167,6 +167,12 @@ const schema = {
   publishedTime={isoPublishedDate}
   author={entry.data.author}
   schema={schema}
+  alternateLinks={{
+    pt: ptVersion ? `/blog/${baseSlug}` : undefined,
+    en: enVersion ? `/en/blog/${baseSlug}` : undefined,
+    es: `/es/blog/${baseSlug}`,
+    default: ptVersion ? `/blog/${baseSlug}` : `/es/blog/${baseSlug}`
+  }}
 >
   <main class='flex flex-col'>
     <section class='py-8 sm:pt-16 sm:pb-24'>
