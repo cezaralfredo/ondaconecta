@@ -128,3 +128,32 @@ export function parsePubDate(dateStr: string | Date | undefined): Date {
 
   return new Date()
 }
+
+/**
+ * Extrai perguntas e respostas da seção FAQ do Markdown/MDX para dados estruturados GEO / FAQPage
+ */
+export function extractFaqFromContent(content: string | undefined): Array<{ question: string; answer: string }> {
+  if (!content) return []
+
+  const faqs: Array<{ question: string; answer: string }> = []
+  // Procura por blocos de FAQ: ### [Pergunta]? seguido por parágrafos de resposta
+  const faqSectionMatch = content.match(/##\s+(?:Perguntas Frequentes|Frequently Asked Questions|Preguntas Frecuentes)[\s\S]*?(?=\n##\s+|$)/i)
+  
+  const textToScan = faqSectionMatch ? faqSectionMatch[0] : content
+  const regex = /###\s+([^?\n]+(?:\?|:))\s*\n+([\s\S]*?)(?=\n###|\n##|$)/g
+  
+  let match
+  while ((match = regex.exec(textToScan)) !== null) {
+    const question = match[1].replace(/^[#\s]+/, '').trim()
+    const answer = match[2]
+      .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // remove links markdown
+      .replace(/[*_`]/g, '') // remove formatações simples
+      .trim()
+
+    if (question && answer && answer.length > 10) {
+      faqs.push({ question, answer })
+    }
+  }
+
+  return faqs
+}

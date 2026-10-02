@@ -1,0 +1,39 @@
+# Onda Conecta — Portal Editorial de Tendências e Inovação
+
+> Portal de notícias e análises aprofundadas sobre inovação tecnológica, inteligência artificial, mercado financeiro, sustentabilidade, estilo de vida contemporâneo e bem-estar para o público brasileiro e internacional (PT, EN, ES).
+
+## Sobre o Portal
+Onda Conecta é um veículo de comunicação digital fundado no Brasil com cobertura trilíngue (Português do Brasil, Inglês e Espanhol). Publica diariamente matérias investigativas, guias estratégicos e ensaios analíticos com foco em E-E-A-T (Experiência, Especialidade, Autoridade e Confiabilidade), citando dados de órgãos oficiais (CVM, Banco Central, IBGE, Anvisa, NIST, ISSB) e publicações de referência econômica e tecnológica.
+
+## Categorias Editoriais Oficiais
+- **Inovação & IA**: Inteligência artificial generativa, agentes autônomos, semicondutores, LLMs, computação quântica e cibersegurança.
+  - URL PT: https://ondaconecta.com.br/?category=Inova%C3%A7%C3%A3o%20%26%20IA#categories
+  - URL EN: https://ondaconecta.com.br/en?category=Inova%C3%A7%C3%A3o%20%26%20IA#categories
+  - URL ES: https://ondaconecta.com.br/es?category=Inova%C3%A7%C3%A3o%20%26%20IA#categories
+- **Mercado & Negócios**: Venture capital, startups, macroeconomia, IPOs, fusões e aquisições (M&A).
+  - URL: https://ondaconecta.com.br/?category=Mercado%20%26%20Neg%C3%B3cios#categories
+- **Finanças Pessoais**: Tesouro Direto, renda fixa, planejamento financeiro, RWA, Drex e criptoeconomia.
+  - URL: https://ondaconecta.com.br/?category=Finan%C3%A7as%20Pessoais#categories
+- **Saúde & Bem-estar**: Longevidade saudável, crononutrição, ritmo circadiano, medicina preventiva e biotecnologia.
+  - URL: https://ondaconecta.com.br/?category=Sa%C3%BAde%20%26%20Bem-estar#categories
+- **Estética & Beleza**: Dermocosmética, exossomos, PDRN, peptídeos, quiet beauty e saúde da barreira cutânea.
+  - URL: https://ondaconecta.com.br/?category=Est%C3%A9tica%20%26%20Beleza#categories
+- **Estilo de Vida & Viagens**: Turismo intencional, hushpitality, ecoturismo regenerativo, trabalho remoto global e slow travel.
+  - URL: https://ondaconecta.com.br/?category=Estilo%20de%20Vida%20%26%20Viagens#categories
+- **Tendências & Comportamento**: Mudanças de consumo, zillennials, economia solo, consumo desacelerado e cultura digital.
+  - URL: https://ondaconecta.com.br/?category=Tend%C3%AAncias#categories
+- **Sustentabilidade**: Normas IFRS S1/S2, Resolução 193 CVM, CBAM europeu, combustíveis sustentáveis (SAF) e data centers verdes.
+  - URL: https://ondaconecta.com.br/?category=Sustentabilidade#categories
+
+## Artigos Estratégicos Recentes
+- [A Crise Silenciosa de Retornos no Venture Capital](https://ondaconecta.com.br/blog/crise-retornos-venture-capital-saidas-startups): Análise sobre a seca de IPOs frente aos US$ 510 bilhões investidos em IA e o impacto no ecossistema de startups brasileiro.
+- [O Avanço do Turismo Intencional](https://ondaconecta.com.br/blog/turismo-intencional-viagens-experiencia-bem-estar): Como viagens focadas em presença, restauração biológica e hospedagens boutique integradas à natureza redefinem o turismo de experiência.
+- [O Fim do ESG de Planilha](https://ondaconecta.com.br/blog/fim-do-esg-de-planilha-carbono-balanco-auditado): O impacto da Resolução 193 da CVM e das normas IFRS S1 e S2 na auditoria do carbono corporativo.
+- [A Prisão de Silício da Nvidia e Agentes Autônomos](https://ondaconecta.com.br/blog/prisao-de-silicio-nvidia-contencao-agentes-ia): A governança e contenção de segurança para agentes de IA empresariais.
+- [Ectoína e Barreira Cutânea](https://ondaconecta.com.br/blog/ectoina-barreira-cutanea-skincare-extremolitos): A ascensão dos extremólitos no skincare e dermocosmética avançada.
+- [Recorde do Tesouro Direto 24 Horas](https://ondaconecta.com.br/blog/recorde-tesouro-direto-fuga-poupanca-reserva-emergencia): A migração histórica de investidores da poupança para a dívida pública soberana.
+
+## Canais e Feeds
+- **Sitemap Principal**: https://ondaconecta.com.br/sitemap-index.xml
+- **Feed RSS**: https://ondaconecta.com.br/rss.xml
+- **Telegram Oficial**: https://t.me/ondaconecta

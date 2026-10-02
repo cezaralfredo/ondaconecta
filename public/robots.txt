@@ -1,5 +1,5 @@
 # robots.txt for Onda Conecta
-# Production-ready configuration for search engine crawlers
+# Production-ready configuration for search engine crawlers & GEO (Generative Engine Optimization)
 
 # Allow all major search engines full access
 User-agent: *
@@ -9,7 +9,7 @@ Allow: /
 Disallow: /admin/
 Disallow: /private/
 
-# Disallow search result pages (if you add search)
+# Disallow search result pages
 Disallow: /search?
 Disallow: /*?q=
 
@@ -17,12 +17,59 @@ Disallow: /*?q=
 Allow: /*.css$
 Allow: /*.js$
 
-# Sitemap location
+# Sitemap & LLMs resources
 Sitemap: https://ondaconecta.com.br/sitemap-index.xml
 
-# Specific bot configurations
+# -------------------------------------------------------------
+# GEO (Generative Engine Optimization) & AI Search Crawlers
+# Granting explicit and unrestricted access to AI engines
+# -------------------------------------------------------------
+
+# OpenAI (ChatGPT Search, Browse with Bing, SearchGPT)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Google Gemini, AI Overviews & Search
 User-agent: Googlebot
 Crawl-delay: 0
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Anthropic (Claude Search & Browsing)
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Microsoft Copilot & Bing
+User-agent: Bingbot
+Crawl-delay: 0
+Allow: /
+
+User-agent: Copilot
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
 Allow: /
 
 # Google AdSense Crawler
@@ -30,27 +77,9 @@ User-agent: Mediapartners-Google
 Crawl-delay: 0
 Allow: /
 
-User-agent: Bingbot
-Crawl-delay: 0
-Allow: /
-
-# Block AI training bots (optional - uncomment if desired)
-# User-agent: GPTBot
-# Disallow: /
-
-# User-agent: ChatGPT-User
-# Disallow: /
-
-# User-agent: CCBot
-# Disallow: /
-
-# User-agent: anthropic-ai
-# Disallow: /
-
-# User-agent: Claude-Web
-# Disallow: /
-
-# Block aggressive crawlers and scrapers
+# -------------------------------------------------------------
+# SEO Scrapers Rate Limiting
+# -------------------------------------------------------------
 User-agent: AhrefsBot
 Crawl-delay: 10
 
@@ -60,11 +89,8 @@ Crawl-delay: 10
 User-agent: DotBot
 Crawl-delay: 10
 
-# Block known bad bots
+# Block known aggressive / malicious scrapers
 User-agent: MJ12bot
-Disallow: /
-
-User-agent: SemrushBot
 Disallow: /
 
 User-agent: PetalBot

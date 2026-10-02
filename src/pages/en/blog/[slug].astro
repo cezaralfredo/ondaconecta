@@ -13,7 +13,7 @@ import {
 } from '@/components/ui/breadcrumb'
 import DynamicToc from '@/components/astro/DynamicToc.astro'
 import { AuthorMetadata } from '@/components/AuthorAvatar'
-import { getRelatedPosts, getPostNavigation, calculateReadTime, parsePubDate } from '@/utils/blog'
+import { getRelatedPosts, getPostNavigation, calculateReadTime, parsePubDate, extractFaqFromContent } from '@/utils/blog'
 import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
 
 import Blog from '@/components/blocks/blog-related-post/blog-related-post'
@@ -102,35 +102,60 @@ const imageUrl = entry.data.imageUrl
   ? (entry.data.imageUrl.startsWith('http') ? entry.data.imageUrl : `${siteUrl}${entry.data.imageUrl}`)
   : `${siteUrl}/images/og-image.png`
 
-const schema = {
-  '@context': 'https://schema.org',
-  '@type': 'NewsArticle',
-  headline: entry.data.title,
-  description: entry.data.description,
-  image: [imageUrl],
-  datePublished: isoPublishedDate,
-  dateModified: isoPublishedDate,
-  inLanguage: 'en-US',
-  mainEntityOfPage: {
-    '@type': 'WebPage',
-    '@id': postUrl
-  },
-  author: [
-    {
-      '@type': 'Person',
-      name: entry.data.author || 'Redação Onda Conecta',
-      url: `${siteUrl}/quem-somos`
-    }
-  ],
-  publisher: {
-    '@type': 'NewsMediaOrganization',
-    name: 'Onda Conecta',
-    url: siteUrl,
-    logo: {
-      '@type': 'ImageObject',
-      url: `${siteUrl}/images/logo-onda-conecta.webp`
+const faqs = extractFaqFromContent(entry.body)
+
+const schemaGraph: any[] = [
+  {
+    '@type': 'NewsArticle',
+    '@id': `${postUrl}#article`,
+    isPartOf: {
+      '@type': 'WebPage',
+      '@id': postUrl
+    },
+    headline: entry.data.title,
+    description: entry.data.description,
+    image: [imageUrl],
+    datePublished: isoPublishedDate,
+    dateModified: isoPublishedDate,
+    inLanguage: 'en-US',
+    mainEntityOfPage: postUrl,
+    author: [
+      {
+        '@type': 'Person',
+        name: entry.data.author || 'Redação Onda Conecta',
+        url: `${siteUrl}/quem-somos`
+      }
+    ],
+    publisher: {
+      '@type': 'NewsMediaOrganization',
+      name: 'Onda Conecta',
+      url: siteUrl,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteUrl}/images/logo-onda-conecta.webp`
+      }
     }
   }
+]
+
+if (faqs.length > 0) {
+  schemaGraph.push({
+    '@type': 'FAQPage',
+    '@id': `${postUrl}#faq`,
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer
+      }
+    }))
+  })
+}
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': schemaGraph
 }
 ---
 
