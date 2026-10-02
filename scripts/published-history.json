@@ -620,5 +620,31 @@
       "European Commission Climate Action"
     ],
     "title": "O Fim do ESG de Planilha: Por que o Carbono Virou Linha de Balanço Auditada no Brasil"
+  },
+  {
+    "id": 145,
+    "slug": "crise-retornos-venture-capital-saidas-startups",
+    "category": "Mercado & Negócios",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-10-02T08:00:00-03:00",
+    "sources": [
+      "InfoMoney",
+      "Brazil Journal",
+      "NeoFeed"
+    ],
+    "title": "US$ 510 Bilhões e Saídas Travadas: A Crise Silenciosa de Retornos no Venture Capital"
+  },
+  {
+    "id": 148,
+    "slug": "turismo-intencional-viagens-experiencia-bem-estar",
+    "category": "Estilo de Vida & Viagens",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-10-02T18:00:00-03:00",
+    "sources": [
+      "Panrotas",
+      "Melhores Destinos",
+      "Viagem e Turismo (Abril)"
+    ],
+    "title": "Menos Roteiros Corridos, Mais Presença: O Avanço do Turismo Intencional"
   }
 ]
