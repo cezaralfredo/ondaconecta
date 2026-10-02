@@ -96,12 +96,12 @@ export async function submitToIndexNow(urls) {
  */
 export function getRecentSiteUrls(limit = 60) {
   const urls = [
-    `https://${HOST}/`,
-    `https://${HOST}/en/`,
-    `https://${HOST}/es/`,
-    `https://${HOST}/quem-somos/`,
-    `https://${HOST}/ferramentas/`,
-    `https://${HOST}/contato/`
+    `https://${HOST}`,
+    `https://${HOST}/en`,
+    `https://${HOST}/es`,
+    `https://${HOST}/quem-somos`,
+    `https://${HOST}/ferramentas`,
+    `https://${HOST}/contato`
   ]
 
   if (fs.existsSync(BLOG_DIR)) {
@@ -117,11 +117,13 @@ export function getRecentSiteUrls(limit = 60) {
     for (const file of files) {
       const slug = file.replace(/\.(md|mdx)$/, '')
       if (slug.endsWith('-en')) {
-        urls.push(`https://${HOST}/en/blog/${slug}/`)
+        const cleanSlug = slug.replace(/-en$/, '')
+        urls.push(`https://${HOST}/en/blog/${cleanSlug}`)
       } else if (slug.endsWith('-es')) {
-        urls.push(`https://${HOST}/es/blog/${slug}/`)
+        const cleanSlug = slug.replace(/-es$/, '')
+        urls.push(`https://${HOST}/es/blog/${cleanSlug}`)
       } else {
-        urls.push(`https://${HOST}/blog/${slug}/`)
+        urls.push(`https://${HOST}/blog/${slug}`)
       }
     }
   }

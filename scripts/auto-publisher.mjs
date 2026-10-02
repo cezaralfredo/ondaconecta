@@ -439,9 +439,9 @@ async function main() {
   // Notificar motores de busca via IndexNow para as 3 novas URLs geradas
   try {
     const newUrls = [
-      `https://ondaconecta.com.br/blog/${generated.slug}/`,
-      `https://ondaconecta.com.br/en/blog/${generated.slug}-en/`,
-      `https://ondaconecta.com.br/es/blog/${generated.slug}-es/`
+      `https://ondaconecta.com.br/blog/${generated.slug}`,
+      `https://ondaconecta.com.br/en/blog/${generated.slug}`,
+      `https://ondaconecta.com.br/es/blog/${generated.slug}`
     ]
     console.log('⚡ Notificando motores de busca via IndexNow...')
     await submitToIndexNow(newUrls)

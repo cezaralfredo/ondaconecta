@@ -15,7 +15,13 @@ interface Props {
   schema?: Record<string, any>
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+const rawPath = Astro.url.pathname.replace(/\/$/, '') || '/'
+const canonicalURL = new URL(rawPath, Astro.site)
+const baseCleanPath = rawPath.replace(/^\/(en|es)/, '') || '/'
+const cleanPathNoSlash = baseCleanPath === '/' ? '' : baseCleanPath
+const ptCanonical = new URL(baseCleanPath, Astro.site)
+const enCanonical = new URL(`/en${cleanPathNoSlash}`, Astro.site)
+const esCanonical = new URL(`/es${cleanPathNoSlash}`, Astro.site)
 const {
   title,
   description,
@@ -80,10 +86,10 @@ const schemaData = schema || defaultSchema
 
 <!-- Canonical & Hreflang Tags para SEO Multilíngue -->
 <link rel='canonical' href={canonicalURL} />
-<link rel='alternate' hreflang='pt-BR' href={new URL(Astro.url.pathname.replace(/^\/(en|es)/, ''), Astro.site)} />
-<link rel='alternate' hreflang='en' href={new URL(`/en${Astro.url.pathname.replace(/^\/(en|es)/, '')}`, Astro.site)} />
-<link rel='alternate' hreflang='es' href={new URL(`/es${Astro.url.pathname.replace(/^\/(en|es)/, '')}`, Astro.site)} />
-<link rel='alternate' hreflang='x-default' href={new URL(Astro.url.pathname.replace(/^\/(en|es)/, ''), Astro.site)} />
+<link rel='alternate' hreflang='pt-BR' href={ptCanonical} />
+<link rel='alternate' hreflang='en' href={enCanonical} />
+<link rel='alternate' hreflang='es' href={esCanonical} />
+<link rel='alternate' hreflang='x-default' href={ptCanonical} />
 
 <!-- Robots Meta Tags -->
 <meta name='robots' content={robotsContent} />

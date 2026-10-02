@@ -7,6 +7,7 @@ import react from '@astrojs/react'
 
 export default defineConfig({
   site: process.env.SITE_URL || 'https://ondaconecta.com.br',
+  trailingSlash: 'never',
   i18n: {
     defaultLocale: 'pt',
     locales: ['pt', 'en', 'es'],
@@ -24,9 +25,22 @@ export default defineConfig({
     react(),
     mdx(),
     sitemap({
-      filter: page => !page.includes('/admin/') && !page.includes('/private/'),
+      filter: page => {
+        // Exclui áreas restritas e URLs com sufixo duplicado em en/es para evitar canônicas concorrentes
+        if (page.includes('/admin/') || page.includes('/private/')) return false
+        // Exemplo: se já existe /en/blog/meu-post, exclui /en/blog/meu-post-en/
+        if (page.match(/\/blog\/[a-z0-9-]+-(en|es)\/?$/)) return false
+        return true
+      },
       customPages: [],
       serialize(item) {
+        // Garante que a URL não termine com barra (exceto a raiz do domínio se aplicável)
+        const parsed = new URL(item.url)
+        if (parsed.pathname.length > 1 && parsed.pathname.endsWith('/')) {
+          parsed.pathname = parsed.pathname.slice(0, -1)
+          item.url = parsed.toString()
+        }
+
         // Homepage - highest priority
         if (item.url.endsWith('/') && item.url.split('/').filter(Boolean).length === 0) {
           // @ts-expect-error - Valid sitemap changefreq value
