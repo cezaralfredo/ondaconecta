@@ -22,6 +22,7 @@ import WhatsAppBanner from '@/components/astro/WhatsAppBanner.astro'
 import TelegramBanner from '@/components/astro/TelegramBanner.astro'
 import ReadAlso from '@/components/astro/ReadAlso.astro'
 import SocialShareBar from '@/components/astro/SocialShareBar.astro'
+import AdSenseBanner from '@/components/astro/AdSenseBanner.astro'
 
 export async function getStaticPaths() {
   const allEntries = await getCollection('blog')
@@ -284,6 +285,9 @@ const schema = {
               <Content components={{ ReadAlso, WhatsAppBanner, TelegramBanner }} />
               <ArticleDisclaimer category={entry.data.category} lang='en' />
             </article>
+
+            <!-- Google AdSense - Display Horizontal -->
+            <AdSenseBanner />
 
             <!-- Telegram Official Channel Community Banner -->
             <TelegramBanner lang='en' />

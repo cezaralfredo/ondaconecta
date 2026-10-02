@@ -5,6 +5,7 @@ import { getCollection } from 'astro:content'
 import HeroSection from '@/components/blocks/hero-section/hero-section'
 import RecentPosts from '@/components/blocks/recent-posts/recent-posts'
 import Blog from '@/components/blocks/blog-component/blog-component'
+import AdSenseBanner from '@/components/astro/AdSenseBanner.astro'
 
 // Get all blog posts and convert to the format expected by components
 const allPosts = await getCollection('blog')
@@ -54,6 +55,11 @@ const schema = {
 
   {/* LOGO ABAIXO DA HERO: Seção Últimas Atualizações (4 últimos artigos) */}
   <RecentPosts blogData={allBlogPosts} client:load />
+
+  {/* Anúncio Display Google AdSense */}
+  <div class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+    <AdSenseBanner />
+  </div>
 
   {/* Seção Todas as Publicações: Exploração Completa por Categoria e Tendência */}
   <Blog blogData={allBlogPosts} client:load />
