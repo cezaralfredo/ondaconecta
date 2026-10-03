@@ -21,11 +21,11 @@ const {
     Publicidade
   </span>
 
-  <div class='w-full min-h-[90px] sm:min-h-[100px] flex justify-center items-center'>
+  <div class='w-full min-h-[90px] sm:min-h-[100px] flex justify-center items-center overflow-hidden'>
     <!-- Onda Conecta - anúncio display horizontal 01 -->
     <ins
-      class='adsbygoogle'
-      style='display:block'
+      class='adsbygoogle block w-full'
+      style='display:block; width:100%; min-height:90px;'
       data-ad-client={client}
       data-ad-slot={slot}
       data-ad-format='auto'
@@ -35,11 +35,27 @@ const {
 </div>
 
 <script is:inline>
-  (function() {
+  function initAdSenseBanners() {
     try {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
+      // Identifica apenas os blocos de anúncio que ainda não foram processados pelo Google
+      var uninitializedAds = document.querySelectorAll('ins.adsbygoogle:not([data-adsbygoogle-status])');
+      if (uninitializedAds.length > 0) {
+        uninitializedAds.forEach(function() {
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+        });
+      }
     } catch (e) {
-      console.warn('AdSense push error:', e);
+      // Ignora avisos silenciosos se AdBlock estiver ativo ou bloqueio de scripts
     }
-  })();
+  }
+
+  // Executa no primeiro carregamento
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAdSenseBanners);
+  } else {
+    initAdSenseBanners();
+  }
+
+  // Compatibilidade com transições de página do Astro (ClientRouter)
+  document.addEventListener('astro:page-load', initAdSenseBanners);
 </script>
