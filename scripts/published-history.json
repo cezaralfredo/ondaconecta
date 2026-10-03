@@ -646,5 +646,33 @@
       "Viagem e Turismo (Abril)"
     ],
     "title": "Menos Roteiros Corridos, Mais Presença: O Avanço do Turismo Intencional"
+  },
+  {
+    "id": 151,
+    "slug": "nervo-vago-resiliencia-biologica-tonus-vagal",
+    "category": "Saúde & Bem-estar",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-10-03T08:00:00-03:00",
+    "sources": [
+      "Nature Medicine",
+      "Sociedade Brasileira de Cardiologia (SBC)",
+      "Harvard Medical School",
+      "VivaBem UOL"
+    ],
+    "title": "Nervo Vago e Resiliência Biológica: A Nova Fronteira Anti-Estresse"
+  },
+  {
+    "id": 154,
+    "slug": "pix-por-aproximacao-superapps-financas-pessoais",
+    "category": "Finanças Pessoais",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-10-03T18:00:00-03:00",
+    "sources": [
+      "Banco Central do Brasil (Bacen)",
+      "Febraban",
+      "InfoMoney",
+      "Valor Econômico"
+    ],
+    "title": "Pix por Aproximação: A Nova Fronteira Digital que Muda Seu Bolso"
   }
 ]
