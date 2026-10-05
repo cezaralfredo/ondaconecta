@@ -688,5 +688,31 @@
       "Anvisa"
     ],
     "title": "As Funções do Magnésio no Corpo: Por que o Cloreto É Essencial"
+  },
+  {
+    "id": 160,
+    "slug": "revolucao-agentes-autonomos-ia-empresas-governanca",
+    "category": "Inovação & IA",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-10-04T08:00:00-03:00",
+    "sources": [
+      "Deloitte Insights Brasil",
+      "Gartner Research",
+      "Exame Inovação & Negócios"
+    ],
+    "title": "Além dos Chatbots: Por que os Agentes Autônomos de IA Redefinem a Governança das Empresas"
+  },
+  {
+    "id": 163,
+    "slug": "ciencia-sono-profundo-healthspan-longevidade-ativa",
+    "category": "Saúde & Bem-estar",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-10-04T18:00:00-03:00",
+    "sources": [
+      "Ministério da Saúde / Vigitel Brasil",
+      "Nature Medicine",
+      "Sociedade Brasileira do Sono (ABS)"
+    ],
+    "title": "Além do Lifespan: Como a Ciência do Sono Profundo Redefine a Longevidade Saudável"
   }
 ]
