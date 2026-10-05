@@ -714,5 +714,33 @@
       "Sociedade Brasileira do Sono (ABS)"
     ],
     "title": "Além do Lifespan: Como a Ciência do Sono Profundo Redefine a Longevidade Saudável"
+  },
+  {
+    "id": 166,
+    "slug": "fusao-aquisicao-seletividade-capital-rentabilidade-2026",
+    "category": "Mercado & Negócios",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-10-05T08:00:00-03:00",
+    "sources": [
+      "Brazil Journal",
+      "Pipeline Valor",
+      "InfoMoney",
+      "Global Innovation Index"
+    ],
+    "title": "Menos Volume, Mais Cheque Alto: A Nova Disciplina do M&A e Capital de Risco"
+  },
+  {
+    "id": 169,
+    "slug": "sindrome-ckm-medicina-preventiva-longevidade-biomarcadores",
+    "category": "Saúde & Bem-estar",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-10-05T18:00:00-03:00",
+    "sources": [
+      "Ministério da Saúde",
+      "Global Burden of Disease",
+      "Nature Medicine",
+      "American Heart Association"
+    ],
+    "title": "Da Doença à Antecipação: Como o Conceito CKM Transforma a Medicina Preventiva"
   }
 ]
