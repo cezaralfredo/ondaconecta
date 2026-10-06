@@ -1,0 +1,618 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb'
+
+const pageTitle = 'Serviços de Inteligência Artificial & Automação Inteligente | Onda Conecta'
+const pageDescription = 'Agentes de IA autônomos, plataforma de atendimento e agendamento via WhatsApp com PIX, CRM Twenty integrado e automações de processos com n8n para empresas.'
+const pageKeywords = 'inteligência artificial para empresas, agentes autônomos de ia, plataforma atende agenda, chatbot whatsapp ia, twenty crm, hermes agent, automação n8n, rag corporativo, anauê design, onda conecta'
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Serviços de Inteligência Artificial e Automação Corporativa',
+  provider: {
+    '@type': 'Organization',
+    name: 'Onda Conecta & Anauê Design',
+    url: 'https://ondaconecta.com.br',
+    telephone: '+55-85-99627-7707',
+    email: 'contato@anauedesign.com.br',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Rua Firmo Ananias Cardoso, 622',
+      addressLocality: 'Sapiranga, Fortaleza',
+      addressRegion: 'CE',
+      postalCode: '60833-432',
+      addressCountry: 'BR'
+    }
+  },
+  description: pageDescription,
+  url: 'https://ondaconecta.com.br/servicos-ia',
+  serviceType: 'Engenharia de Software, Inteligência Artificial e Automação de Processos',
+  areaServed: 'BR'
+}
+---
+
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} schema={schema}>
+  <!-- Breadcrumbs -->
+  <div class='border-b bg-muted/20 py-3.5'>
+    <div class='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
+      <Breadcrumb>
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink href='/'>Início</BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage>Soluções em Inteligência Artificial</BreadcrumbPage>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class='relative min-h-[85vh] flex items-center justify-center overflow-hidden py-20 lg:py-28 bg-slate-950 text-white'>
+    <!-- Imagem de fundo com overlay cinematográfico -->
+    <div class='absolute inset-0 z-0'>
+      <img
+        src='/images/servicos/hero-ia-bg.webp'
+        alt='Infraestrutura de inteligência artificial corporativa e agentes autônomos'
+        class='w-full h-full object-cover object-center opacity-30 transform scale-105 transition-transform duration-1000'
+        loading='eager'
+      />
+      <div class='absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent'></div>
+      <div class='absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(14,165,233,0.25),rgba(255,255,255,0))]'></div>
+    </div>
+
+    <div class='relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center space-y-8'>
+      <!-- Pill Badge -->
+      <div class='inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 backdrop-blur-md px-4 py-1.5 text-xs sm:text-sm font-semibold text-cyan-300 shadow-[0_0_20px_rgba(6,182,212,0.15)]'>
+        <span class='inline-block w-2 h-2 rounded-full bg-cyan-400 animate-pulse'></span>
+        Engenharia de IA & Automação Inteligente de Processos
+      </div>
+
+      <!-- Título Principal Impactante -->
+      <h1 class='text-4xl font-extrabold tracking-tight sm:text-6xl lg:text-7xl text-balance leading-[1.1]'>
+        Transforme Processos Manuais em <br class='hidden sm:inline' />
+        <span class='bg-gradient-to-r from-cyan-400 via-teal-300 to-indigo-400 bg-clip-text text-transparent'>
+          Operações Autônomas de Alta Escala
+        </span>
+      </h1>
+
+      <!-- Subtítulo Persuasivo -->
+      <p class='text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed text-balance'>
+        Construímos ecossistemas práticos e seguros de Inteligência Artificial sob medida para sua empresa: agentes autônomos com raciocínio multi-etapas, atendimento e agendamento 24/7 no WhatsApp com pagamentos integrados, CRM moderno e fluxos que eliminam tarefas repetitivas.
+      </p>
+
+      <!-- CTAs de Ação -->
+      <div class='flex flex-col sm:flex-row items-center justify-center gap-4 pt-4'>
+        <a
+          href='https://wa.me/5585996277707?text=Ol%C3%A1%2C%20gostaria%20de%20um%20diagn%C3%B3stico%20gratuito%20sobre%20as%20solu%C3%A7%C3%B5es%20de%20IA%20e%20automa%C3%A7%C3%A3o%20para%20minha%20empresa.'
+          target='_blank'
+          rel='noopener noreferrer'
+          class='w-full sm:w-auto inline-flex items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-4 text-base font-bold text-white shadow-lg shadow-cyan-500/25 hover:from-cyan-400 hover:to-blue-500 transition-all hover:scale-[1.02] active:scale-[0.98]'
+        >
+          <svg class='w-5 h-5 fill-current' viewBox='0 0 24 24'>
+            <path d='M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.771.82 2.791.82 3.183 0 5.769-2.586 5.769-5.766.001-3.182-2.585-5.806-5.77-5.806zm8.136 5.767c0 4.498-3.659 8.157-8.157 8.157-1.42 0-2.75-.36-3.92-1l-4.47 1.17 1.19-4.36c-.72-1.23-1.12-2.65-1.12-4.14 0-4.498 3.659-8.157 8.157-8.157s8.32 3.829 8.32 8.33z' />
+          </svg>
+          Solicitar Diagnóstico no WhatsApp
+        </a>
+
+        <a
+          href='#solucoes-principais'
+          class='w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-900/60 backdrop-blur-md px-8 py-4 text-base font-semibold text-slate-200 hover:bg-slate-800/80 hover:text-white transition-all'
+        >
+          Explorar Nossas Soluções
+          <svg class='w-4 h-4' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+            <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7' />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Barra de Métricas & Indicadores -->
+      <div class='pt-12 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 border-t border-slate-800/80 max-w-4xl mx-auto text-left'>
+        <div class='bg-slate-900/40 border border-slate-800 rounded-2xl p-4'>
+          <div class='text-2xl sm:text-3xl font-extrabold text-cyan-400'>+90%</div>
+          <div class='text-xs sm:text-sm text-slate-400 mt-1'>Redução de tarefas manuais repetitivas</div>
+        </div>
+        <div class='bg-slate-900/40 border border-slate-800 rounded-2xl p-4'>
+          <div class='text-2xl sm:text-3xl font-extrabold text-teal-400'>24/7</div>
+          <div class='text-xs sm:text-sm text-slate-400 mt-1'>Atendimento sem fila nem interrupções</div>
+        </div>
+        <div class='bg-slate-900/40 border border-slate-800 rounded-2xl p-4'>
+          <div class='text-2xl sm:text-3xl font-extrabold text-indigo-400'>&lt;100ms</div>
+          <div class='text-xs sm:text-sm text-slate-400 mt-1'>Respostas instantâneas e sem atrito</div>
+        </div>
+        <div class='bg-slate-900/40 border border-slate-800 rounded-2xl p-4'>
+          <div class='text-2xl sm:text-3xl font-extrabold text-emerald-400'>100%</div>
+          <div class='text-xs sm:text-sm text-slate-400 mt-1'>Conformidade LGPD e dados isolados</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÂNCORA DE SOLUÇÕES -->
+  <div id='solucoes-principais' class='scroll-mt-10'></div>
+
+  <!-- SEÇÃO 1: PLATAFORMA ATENDE AGENDA (PRONTA PARA O MERCADO) -->
+  <section class='py-20 lg:py-28 bg-background border-b'>
+    <div class='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16'>
+      <div class='max-w-3xl space-y-4'>
+        <div class='inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3.5 py-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400'>
+          ✦ Solução Pronta para o Mercado
+        </div>
+        <h2 class='text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-foreground'>
+          Plataforma Atende Agenda: <br />
+          <span class='bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent'>
+            Atendimento, Agendamento e Pagamentos com IA
+          </span>
+        </h2>
+        <p class='text-base sm:text-lg text-muted-foreground leading-relaxed'>
+          Uma infraestrutura comercial completa e pronta para operar. Seus clientes são atendidos no WhatsApp por um agente de IA humanizado que consulta agendas em tempo real, previne conflitos de horário e cobra automaticamente via PIX integrado com o gateway Asaas.
+        </p>
+      </div>
+
+      <!-- GRID COM IMAGEM E FUNCIONALIDADES -->
+      <div class='grid grid-cols-1 lg:grid-cols-12 gap-10 items-center'>
+        <!-- Mockup Visual -->
+        <div class='lg:col-span-6 relative group'>
+          <div class='absolute -inset-1 rounded-3xl bg-gradient-to-r from-emerald-500 to-cyan-500 opacity-20 blur-xl group-hover:opacity-30 transition duration-500'></div>
+          <div class='relative overflow-hidden rounded-2xl border bg-card shadow-2xl'>
+            <img
+              src='/images/servicos/atende-agenda-mockup.webp'
+              alt='Interface da Plataforma Atende Agenda com agendamento no WhatsApp e pagamentos PIX'
+              class='w-full h-auto object-cover transform group-hover:scale-[1.01] transition-transform duration-500'
+              loading='lazy'
+            />
+          </div>
+        </div>
+
+        <!-- Destaques Técnicos & Operacionais -->
+        <div class='lg:col-span-6 space-y-6'>
+          <div class='grid grid-cols-1 sm:grid-cols-2 gap-4'>
+            <div class='rounded-xl border bg-card/60 p-5 space-y-2 hover:border-emerald-500/40 transition-colors'>
+              <div class='w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold'>
+                📱
+              </div>
+              <h3 class='font-bold text-foreground text-base'>Agendamento no WhatsApp</h3>
+              <p class='text-xs sm:text-sm text-muted-foreground leading-relaxed'>
+                Busca de cliente por telefone, validação de cadastro e vinculação instantânea sem formulários cansativos.
+              </p>
+            </div>
+
+            <div class='rounded-xl border bg-card/60 p-5 space-y-2 hover:border-emerald-500/40 transition-colors'>
+              <div class='w-10 h-10 rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400 flex items-center justify-center font-bold'>
+                ⏰
+              </div>
+              <h3 class='font-bold text-foreground text-base'>Gestão Dinâmica de Slots</h3>
+              <p class='text-xs sm:text-sm text-muted-foreground leading-relaxed'>
+                Geração automática de horários baseada na duração do serviço, com validação anti-conflito em tempo real.
+              </p>
+            </div>
+
+            <div class='rounded-xl border bg-card/60 p-5 space-y-2 hover:border-emerald-500/40 transition-colors'>
+              <div class='w-10 h-10 rounded-lg bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center font-bold'>
+                💳
+              </div>
+              <h3 class='font-bold text-foreground text-base'>Cobrança Automática Asaas</h3>
+              <p class='text-xs sm:text-sm text-muted-foreground leading-relaxed'>
+                Emissão de PIX (QR Code dinâmico e Copia-e-Cola), Boleto e Cartão com expiração programada de 30 minutos.
+              </p>
+            </div>
+
+            <div class='rounded-xl border bg-card/60 p-5 space-y-2 hover:border-emerald-500/40 transition-colors'>
+              <div class='w-10 h-10 rounded-lg bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-bold'>
+                🔄
+              </div>
+              <h3 class='font-bold text-foreground text-base'>Sincronização por Webhooks</h3>
+              <p class='text-xs sm:text-sm text-muted-foreground leading-relaxed'>
+                Pagamento identificado → agendamento confirmado e notificado na hora sem necessidade de intervenção humana.
+              </p>
+            </div>
+          </div>
+
+          <!-- Box de Protocolo MCP -->
+          <div class='rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-6 space-y-3'>
+            <div class='flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-bold text-sm'>
+              <svg class='w-5 h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 10V3L4 14h7v7l9-11h-7z' />
+              </svg>
+              Suporte Nativo ao Protocolo MCP (Model Context Protocol)
+            </div>
+            <p class='text-xs sm:text-sm text-muted-foreground leading-relaxed'>
+              A plataforma possui um endpoint <code class='px-1.5 py-0.5 rounded bg-muted font-mono text-foreground'>/mcp</code> que expõe ferramentas padronizadas para agentes de IA: consulta de disponibilidade, cadastro de clientes, criação e cancelamento de reservas e emissão de cobranças diretamente na API.
+            </p>
+            <div class='pt-2 flex flex-wrap gap-2 text-xs'>
+              <span class='px-2 py-1 rounded-md bg-muted/80 text-foreground font-mono'>FastAPI</span>
+              <span class='px-2 py-1 rounded-md bg-muted/80 text-foreground font-mono'>PostgreSQL 16</span>
+              <span class='px-2 py-1 rounded-md bg-muted/80 text-foreground font-mono'>SQLAlchemy 2.0</span>
+              <span class='px-2 py-1 rounded-md bg-muted/80 text-foreground font-mono'>Docker Compose</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 2: SERVIÇO DE CRM — TWENTY CRM (A ESCOLHA OPERACIONAL SUPERIOR) -->
+  <section class='py-20 lg:py-28 bg-muted/30 border-b'>
+    <div class='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16'>
+      <div class='max-w-3xl space-y-4'>
+        <div class='inline-flex items-center gap-2 rounded-full border border-indigo-500/20 bg-indigo-500/10 px-3.5 py-1 text-xs font-semibold text-indigo-600 dark:text-indigo-400'>
+          ✦ Gestão Comercial & Pipeline
+        </div>
+        <h2 class='text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-foreground'>
+          Twenty CRM: <br />
+          <span class='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent'>
+            A Solução de CRM Mais Operacional e Moderna do Mercado
+          </span>
+        </h2>
+        <p class='text-base sm:text-lg text-muted-foreground leading-relaxed'>
+          Avaliamos a fundo o ecossistema e implementamos o <strong>Twenty CRM</strong> — a principal alternativa open-source moderna ao Salesforce e HubSpot. Ele oferece uma estrutura de dados infinitamente mais operacional e customizável, perfeitamente integrada aos canais de WhatsApp corporativo.
+        </p>
+      </div>
+
+      <div class='grid grid-cols-1 lg:grid-cols-12 gap-10 items-center'>
+        <!-- Conteúdo Textual / Recursos -->
+        <div class='lg:col-span-6 space-y-6 order-2 lg:order-1'>
+          <div class='space-y-4'>
+            <div class='flex gap-4 items-start'>
+              <div class='w-8 h-8 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-bold text-sm shrink-0 mt-1'>
+                ✓
+              </div>
+              <div>
+                <h3 class='font-bold text-foreground text-base sm:text-lg'>Por que Twenty CRM e não alternativas limitadas?</h3>
+                <p class='text-sm text-muted-foreground leading-relaxed mt-1'>
+                  O Twenty foi construído sobre uma arquitetura moderna com PostgreSQL dedicado e GraphQL, permitindo criar objetos e campos customizados em segundos. Isso garante que a sua operação comercial reflita com perfeição a jornada exata do seu cliente.
+                </p>
+              </div>
+            </div>
+
+            <div class='flex gap-4 items-start'>
+              <div class='w-8 h-8 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-bold text-sm shrink-0 mt-1'>
+                ✓
+              </div>
+              <div>
+                <h3 class='font-bold text-foreground text-base sm:text-lg'>Integração Omnichannel com WhatsApp (Evolution API & n8n)</h3>
+                <p class='text-sm text-muted-foreground leading-relaxed mt-1'>
+                  Cada novo lead atendido pelo chatbot ou agente de IA cria automaticamente uma oportunidade no funil Kanban do Twenty CRM, com transcrição de áudios, resumo cognitivo das necessidades e histórico unificado.
+                </p>
+              </div>
+            </div>
+
+            <div class='flex gap-4 items-start'>
+              <div class='w-8 h-8 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-bold text-sm shrink-0 mt-1'>
+                ✓
+              </div>
+              <div>
+                <h3 class='font-bold text-foreground text-base sm:text-lg'>Controle Granular e Soberania Total de Dados</h3>
+                <p class='text-sm text-muted-foreground leading-relaxed mt-1'>
+                  Sua base de contatos, negócios e faturamento fica hospedada sob o seu controle (Self-Hosted ou Nuvem Privada), eliminando custos astronômicos de licenças por usuário e garantindo sigilo absoluto.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class='pt-2'>
+            <a
+              href='https://wa.me/5585996277707?text=Gostaria%20de%20implantar%20o%20Twenty%20CRM%20integrado%20ao%20WhatsApp%20na%20minha%20empresa.'
+              target='_blank'
+              rel='noopener noreferrer'
+              class='inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-md hover:bg-indigo-500 transition-all'
+            >
+              Implantar Twenty CRM na Minha Empresa ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Mockup Visual Twenty CRM -->
+        <div class='lg:col-span-6 relative group order-1 lg:order-2'>
+          <div class='absolute -inset-1 rounded-3xl bg-gradient-to-r from-purple-500 to-indigo-500 opacity-20 blur-xl group-hover:opacity-30 transition duration-500'></div>
+          <div class='relative overflow-hidden rounded-2xl border bg-card shadow-2xl'>
+            <img
+              src='/images/servicos/twenty-crm-mockup.webp'
+              alt='Dashboard moderno do Twenty CRM com funil Kanban, inteligência de contatos e análise de oportunidades'
+              class='w-full h-auto object-cover transform group-hover:scale-[1.01] transition-transform duration-500'
+              loading='lazy'
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 3: HERMES AGENT (AGENTE AUTÔNOMO DE ENGENHARIA & AÇÃO) -->
+  <section class='py-20 lg:py-28 bg-background border-b'>
+    <div class='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16'>
+      <div class='max-w-3xl space-y-4'>
+        <div class='inline-flex items-center gap-2 rounded-full border border-violet-500/20 bg-violet-500/10 px-3.5 py-1 text-xs font-semibold text-violet-600 dark:text-violet-400'>
+          ✦ Autonomia Agêntica Avançada
+        </div>
+        <h2 class='text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-foreground'>
+          Hermes Agent: <br />
+          <span class='bg-gradient-to-r from-violet-500 via-purple-400 to-cyan-400 bg-clip-text text-transparent'>
+            O Agente Autônomo com Capacidade de Ação no Mundo Real
+          </span>
+        </h2>
+        <p class='text-base sm:text-lg text-muted-foreground leading-relaxed'>
+          Esqueça os assistentes passivos que apenas respondem texto. O <strong>Hermes Agent</strong> possui raciocínio multi-etapas (*multi-step reasoning*) e acesso seguro a ferramentas (*tool-use*), executando fluxos operacionais de ponta a ponta em terminal, APIs e sistemas de negócio.
+        </p>
+      </div>
+
+      <!-- GRID COM OS 4 PERFIS ESPECIALIZADOS -->
+      <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
+        <!-- Perfil 1: Agendador -->
+        <div class='rounded-2xl border bg-card p-6 space-y-4 relative overflow-hidden group hover:border-violet-500/50 hover:shadow-lg transition-all'>
+          <div class='w-12 h-12 rounded-xl bg-violet-500/10 text-violet-500 flex items-center justify-center text-xl font-bold'>
+            🗓️
+          </div>
+          <h3 class='text-lg font-bold text-foreground'>Perfil: Agendador</h3>
+          <p class='text-xs sm:text-sm text-muted-foreground leading-relaxed'>
+            Gerencia o ciclo de reservas, cancelamentos e reagendamentos, dialogando com os clientes e consultando horários livres sem fricção.
+          </p>
+          <div class='text-xs font-mono text-violet-600 dark:text-violet-400 pt-2'>
+            Tools: verificar_horario, criar_reserva
+          </div>
+        </div>
+
+        <!-- Perfil 2: Financeiro -->
+        <div class='rounded-2xl border bg-card p-6 space-y-4 relative overflow-hidden group hover:border-cyan-500/50 hover:shadow-lg transition-all'>
+          <div class='w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-500 flex items-center justify-center text-xl font-bold'>
+            💳
+          </div>
+          <h3 class='text-lg font-bold text-foreground'>Perfil: Financeiro</h3>
+          <p class='text-xs sm:text-sm text-muted-foreground leading-relaxed'>
+            Gera cobranças via Asaas, confere quitações recentes e atualiza o status de pedidos e contas a receber de forma autônoma.
+          </p>
+          <div class='text-xs font-mono text-cyan-600 dark:text-cyan-400 pt-2'>
+            Tools: criar_pix, validar_pagamento
+          </div>
+        </div>
+
+        <!-- Perfil 3: Notificador -->
+        <div class='rounded-2xl border bg-card p-6 space-y-4 relative overflow-hidden group hover:border-emerald-500/50 hover:shadow-lg transition-all'>
+          <div class='w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-xl font-bold'>
+            📲
+          </div>
+          <h3 class='text-lg font-bold text-foreground'>Perfil: Notificador</h3>
+          <p class='text-xs sm:text-sm text-muted-foreground leading-relaxed'>
+            Dispara lembretes prévios contra faltas (no-show), envia comprovantes fiscais e coleta feedbacks de satisfação pós-atendimento.
+          </p>
+          <div class='text-xs font-mono text-emerald-600 dark:text-emerald-400 pt-2'>
+            Tools: enviar_whatsapp, marcar_notificado
+          </div>
+        </div>
+
+        <!-- Perfil 4: Orquestrador -->
+        <div class='rounded-2xl border bg-card p-6 space-y-4 relative overflow-hidden group hover:border-purple-500/50 hover:shadow-lg transition-all'>
+          <div class='w-12 h-12 rounded-xl bg-purple-500/10 text-purple-500 flex items-center justify-center text-xl font-bold'>
+            ⚡
+          </div>
+          <h3 class='text-lg font-bold text-foreground'>Perfil: Orquestrador</h3>
+          <p class='text-xs sm:text-sm text-muted-foreground leading-relaxed'>
+            Coordena a tomada de decisão entre os agentes especializados e aciona colaboradores humanos quando o caso exige aprovação especial.
+          </p>
+          <div class='text-xs font-mono text-purple-600 dark:text-purple-400 pt-2'>
+            Tools: delegar_tarefa, human_escalation
+          </div>
+        </div>
+      </div>
+
+      <!-- Mockup do Hermes Agent -->
+      <div class='relative overflow-hidden rounded-3xl border bg-card shadow-2xl p-4 sm:p-8'>
+        <div class='grid grid-cols-1 lg:grid-cols-12 gap-8 items-center'>
+          <div class='lg:col-span-7 rounded-2xl overflow-hidden border bg-slate-950'>
+            <img
+              src='/images/servicos/hermes-agent-mockup.webp'
+              alt='Hermes Agent orquestrando fluxos em terminal, APIs e ferramentas empresariais'
+              class='w-full h-auto object-cover'
+              loading='lazy'
+            />
+          </div>
+          <div class='lg:col-span-5 space-y-4'>
+            <h3 class='text-2xl font-bold text-foreground'>Governança Rígida e Segurança Garantida</h3>
+            <p class='text-sm text-muted-foreground leading-relaxed'>
+              O Hermes Agent opera sob políticas estritas de contenção (*guardrails*). Toda ação executada é registrada em log de auditoria, e limites financeiros ou operacionais contam com confirmação obrigatória de supervisores humanos (*Human-in-the-Loop*).
+            </p>
+            <ul class='space-y-2 text-xs sm:text-sm text-muted-foreground'>
+              <li class='flex items-center gap-2'>
+                <span class='text-cyan-500 font-bold'>✓</span> Execução rápida com modelos de raciocínio de alta precisão
+              </li>
+              <li class='flex items-center gap-2'>
+                <span class='text-cyan-500 font-bold'>✓</span> Conexão nativa com bancos de dados relacionais e APIs REST
+              </li>
+              <li class='flex items-center gap-2'>
+                <span class='text-cyan-500 font-bold'>✓</span> Tolerância zero a alucinações em dados operacionais
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 4: RESUMO DOS SERVIÇOS ADICIONAIS DE IA (ANAUÊ DESIGN) -->
+  <section class='py-20 lg:py-28 bg-muted/20 border-b'>
+    <div class='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16'>
+      <div class='text-center max-w-3xl mx-auto space-y-4'>
+        <div class='inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3.5 py-1 text-xs font-semibold text-primary'>
+          ✦ Portfólio Completo de Engenharia
+        </div>
+        <h2 class='text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-foreground'>
+          Serviços de IA & Automação para Empresas
+        </h2>
+        <p class='text-base sm:text-lg text-muted-foreground leading-relaxed text-balance'>
+          Projetos desenvolvidos sob medida pela equipe da <strong>Anauê Design & Onda Conecta</strong> para acelerar vendas, elevar a produtividade e integrar suas ferramentas existentes.
+        </p>
+      </div>
+
+      <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8'>
+        <!-- Card 1 -->
+        <div class='rounded-2xl border bg-card p-7 space-y-4 hover:border-primary/40 hover:shadow-lg transition-all'>
+          <div class='w-12 h-12 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center text-2xl font-bold'>
+            🤖
+          </div>
+          <h3 class='text-xl font-bold text-foreground'>Chatbot IA para WhatsApp (SDR Virtual)</h3>
+          <p class='text-sm text-muted-foreground leading-relaxed'>
+            Atendimento humanizado 24/7 conectado à API oficial. Qualifica leads, responde dúvidas técnicas detalhadas sobre seus serviços, agenda reuniões e transfere para consultores humanos com o histórico completo da conversa.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class='rounded-2xl border bg-card p-7 space-y-4 hover:border-primary/40 hover:shadow-lg transition-all'>
+          <div class='w-12 h-12 rounded-xl bg-purple-500/10 text-purple-500 flex items-center justify-center text-2xl font-bold'>
+            ⚡
+          </div>
+          <h3 class='text-xl font-bold text-foreground'>Automação de Processos com n8n & APIs</h3>
+          <p class='text-sm text-muted-foreground leading-relaxed'>
+            Construção de fluxos complexos de automação conectando CRMs (Twenty, RD Station, HubSpot), ERPs corporativos, gateways de pagamento, e-mails e planilhas, eliminando horas de trabalho manual e reduzindo erros a zero.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class='rounded-2xl border bg-card p-7 space-y-4 hover:border-primary/40 hover:shadow-lg transition-all'>
+          <div class='w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-2xl font-bold'>
+            📚
+          </div>
+          <h3 class='text-xl font-bold text-foreground'>RAG Corporativo & Base de Conhecimento</h3>
+          <p class='text-sm text-muted-foreground leading-relaxed'>
+            Implementação de <em>Retrieval-Augmented Generation</em> com busca vetorial (pgvector). Conectamos PDFs, manuais internos, catálogos e políticas para que a IA responda exclusivamente com base nas informações oficiais da sua empresa.
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class='rounded-2xl border bg-card p-7 space-y-4 hover:border-primary/40 hover:shadow-lg transition-all'>
+          <div class='w-12 h-12 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-2xl font-bold'>
+            📄
+          </div>
+          <h3 class='text-xl font-bold text-foreground'>IA Generativa & OCR Inteligente</h3>
+          <p class='text-sm text-muted-foreground leading-relaxed'>
+            Extração cognitiva de dados em contratos, recibos, certidões e relatórios fiscais. Modelos customizados para geração de propostas comerciais personalizadas, síntese de documentos e análise preditiva de negócios.
+          </p>
+        </div>
+
+        <!-- Card 5 -->
+        <div class='rounded-2xl border bg-card p-7 space-y-4 hover:border-primary/40 hover:shadow-lg transition-all'>
+          <div class='w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-500 flex items-center justify-center text-2xl font-bold'>
+            🔒
+          </div>
+          <h3 class='text-xl font-bold text-foreground'>Governança, Segurança & LGPD</h3>
+          <p class='text-sm text-muted-foreground leading-relaxed'>
+            Conformidade regulatória total com a Lei Geral de Proteção de Dados. Opções de implantação em servidores dedicados (Self-Hosted / VPC), guardrails rigorosos e garantia de que suas informações proprietárias nunca treinam IAs públicas.
+          </p>
+        </div>
+
+        <!-- Card 6 -->
+        <div class='rounded-2xl border bg-card p-7 space-y-4 hover:border-primary/40 hover:shadow-lg transition-all'>
+          <div class='w-12 h-12 rounded-xl bg-rose-500/10 text-rose-500 flex items-center justify-center text-2xl font-bold'>
+            🛠️
+          </div>
+          <h3 class='text-xl font-bold text-foreground'>Consultoria de Adoção e Arquitetura</h3>
+          <p class='text-sm text-muted-foreground leading-relaxed'>
+            Diagnóstico prático para identificar gargalos operacionais na sua empresa onde a aplicação de IA gera o maior Retorno Sobre Investimento (ROI) no menor tempo, desenhando a arquitetura técnica ideal antes da implantação.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 5: CASOS DE USO POR SEGMENTO -->
+  <section class='py-20 lg:py-28 bg-background border-b'>
+    <div class='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16'>
+      <div class='max-w-3xl space-y-4'>
+        <div class='inline-flex items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/10 px-3.5 py-1 text-xs font-semibold text-cyan-600 dark:text-cyan-400'>
+          ✦ Aplicação Prática no Mundo Real
+        </div>
+        <h2 class='text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-foreground'>
+          Resultados Reais de IA nos Negócios
+        </h2>
+        <p class='text-base sm:text-lg text-muted-foreground leading-relaxed'>
+          Veja como nossas soluções transformam a rotina de diferentes segmentos empresariais com impacto financeiro tangível.
+        </p>
+      </div>
+
+      <div class='grid grid-cols-1 md:grid-cols-3 gap-8'>
+        <div class='rounded-2xl border bg-card/60 p-6 space-y-4'>
+          <div class='text-xs font-bold uppercase tracking-wider text-primary'>Saúde & Clínicas</div>
+          <h3 class='text-xl font-bold text-foreground'>Triagem e Agendamento 24h sem Espera</h3>
+          <p class='text-sm text-muted-foreground leading-relaxed'>
+            Agente de IA integrado ao sistema de prontuário, qualificando convênios, tirando dúvidas pré-consulta e agendando horários sem sobrecarregar a recepção.
+          </p>
+          <div class='border-t pt-4 text-xs font-semibold text-emerald-600 dark:text-emerald-400'>
+            Redução de 80% no tempo de espera do paciente
+          </div>
+        </div>
+
+        <div class='rounded-2xl border bg-card/60 p-6 space-y-4'>
+          <div class='text-xs font-bold uppercase tracking-wider text-primary'>Imobiliário & Construtoras</div>
+          <h3 class='text-xl font-bold text-foreground'>Qualificação Instantânea de Compradores</h3>
+          <p class='text-sm text-muted-foreground leading-relaxed'>
+            Atendimento imediato aos leads que chegam de campanhas. O agente identifica o perfil de renda, localização desejada e já agenda a visita direto com o corretor responsável no Twenty CRM.
+          </p>
+          <div class='border-t pt-4 text-xs font-semibold text-emerald-600 dark:text-emerald-400'>
+            Aumento de 3x na taxa de conversão de visitas
+          </div>
+        </div>
+
+        <div class='rounded-2xl border bg-card/60 p-6 space-y-4'>
+          <div class='text-xs font-bold uppercase tracking-wider text-primary'>B2B, Jurídico & Consultorias</div>
+          <h3 class='text-xl font-bold text-foreground'>Automação de Contratos e Backoffice</h3>
+          <p class='text-sm text-muted-foreground leading-relaxed'>
+            Fluxo n8n com IA generativa para leitura de minutas contratuais, identificação de cláusulas de risco, emissão automática de cobranças no Asaas e sincronização documental.
+          </p>
+          <div class='border-t pt-4 text-xs font-semibold text-emerald-600 dark:text-emerald-400'>
+            Eliminação de até 15 horas semanais de digitação
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 6: CONFORMIDADE, TRANSPARÊNCIA & GOOGLE ADSENSE COMPLIANCE -->
+  <section class='py-12 bg-muted/40 border-b text-xs sm:text-sm text-muted-foreground'>
+    <div class='mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 space-y-3 text-center'>
+      <div class='font-semibold text-foreground'>Transparência Institucional e Governança Tecnológica</div>
+      <p class='leading-relaxed'>
+        Os serviços apresentados nesta página consistem em consultoria de tecnologia da informação, arquitetura de software e desenvolvimento sob medida prestados pela equipe de engenharia da <strong>Anauê Design & Onda Conecta</strong>. Os resultados operacionais variam conforme o segmento e o volume da sua organização. Todas as soluções implementadas respeitam integralmente os direitos de propriedade intelectual, as diretrizes da LGPD (Lei nº 13.709/2018) e as políticas de qualidade do Google AdSense.
+      </p>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 7: CTA FINAL / CONVERSÃO -->
+  <section class='py-20 lg:py-28 bg-gradient-to-b from-background to-muted/50'>
+    <div class='mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center space-y-8'>
+      <div class='inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-xs sm:text-sm font-semibold text-primary'>
+        ✦ Dê o Próximo Passo na Sua Operação
+      </div>
+
+      <h2 class='text-3xl sm:text-5xl font-black tracking-tight text-foreground text-balance'>
+        Pronto para Colocar a Inteligência Artificial para Trabalhar pelo seu Negócio?
+      </h2>
+
+      <p class='text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed text-balance'>
+        Converse diretamente com o nosso time de engenharia. Vamos analisar a sua operação atual e apresentar uma demonstração funcional dos agentes e automações.
+      </p>
+
+      <div class='flex flex-col sm:flex-row items-center justify-center gap-4 pt-4'>
+        <a
+          href='https://wa.me/5585996277707?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20conversa%20sobre%20as%20solu%C3%A7%C3%B5es%20de%20IA%20e%20automa%C3%A7%C3%A3o.'
+          target='_blank'
+          rel='noopener noreferrer'
+          class='w-full sm:w-auto inline-flex items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 px-8 py-4 text-base font-bold text-white shadow-xl hover:from-cyan-500 hover:to-blue-500 transition-all hover:scale-[1.02] active:scale-[0.98]'
+        >
+          <svg class='w-5 h-5 fill-current' viewBox='0 0 24 24'>
+            <path d='M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.771.82 2.791.82 3.183 0 5.769-2.586 5.769-5.766.001-3.182-2.585-5.806-5.77-5.806zm8.136 5.767c0 4.498-3.659 8.157-8.157 8.157-1.42 0-2.75-.36-3.92-1l-4.47 1.17 1.19-4.36c-.72-1.23-1.12-2.65-1.12-4.14 0-4.498 3.659-8.157 8.157-8.157s8.32 3.829 8.32 8.33z' />
+          </svg>
+          Falar com Cezar Alfredo no WhatsApp
+        </a>
+
+        <a
+          href='/contato'
+          class='w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border bg-card px-8 py-4 text-base font-semibold text-foreground hover:bg-muted transition-all'
+        >
+          Enviar Mensagem por E-mail
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
