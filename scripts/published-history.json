@@ -742,5 +742,33 @@
       "American Heart Association"
     ],
     "title": "Da Doença à Antecipação: Como o Conceito CKM Transforma a Medicina Preventiva"
+  },
+  {
+    "id": 172,
+    "slug": "modelos-pequenos-ia-slm-edge-ai-empresas",
+    "category": "Inovação & IA",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-10-06T08:00:00-03:00",
+    "sources": [
+      "MIT Technology Review",
+      "InfoWorld",
+      "Gartner Research",
+      "TecMundo Inovação"
+    ],
+    "title": "Menos Nuvem, Mais Borda: A Virada dos Modelos Pequenos de IA nas Empresas"
+  },
+  {
+    "id": 175,
+    "slug": "vida-sem-filtro-rejeicao-perfeicao-consumo-2026",
+    "category": "Tendências",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-10-06T18:00:00-03:00",
+    "sources": [
+      "Euromonitor International",
+      "WGSN Insider",
+      "Consumidor Moderno",
+      "Meio & Mensagem"
+    ],
+    "title": "Cansados da Perfeição? Como a 'Vida Sem Filtro' Redefine o Consumo e as Marcas"
   }
 ]
