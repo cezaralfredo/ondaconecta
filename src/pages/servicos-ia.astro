@@ -3,8 +3,8 @@ import Layout from '@/layouts/Layout.astro'
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb'
 
 const pageTitle = 'Serviços de Inteligência Artificial & Automação Inteligente | Onda Conecta'
-const pageDescription = 'Agentes de IA autônomos, plataforma de atendimento e agendamento via WhatsApp com PIX, CRM Twenty integrado e automações de processos com n8n para empresas.'
-const pageKeywords = 'inteligência artificial para empresas, agentes autônomos de ia, plataforma atende agenda, chatbot whatsapp ia, twenty crm, hermes agent, automação n8n, rag corporativo, anauê design, onda conecta'
+const pageDescription = 'RIA360 (Recepcionista de Inteligência Artificial 360°), agentes de IA autônomos, atendimento e agendamento via WhatsApp com PIX, Twenty CRM e automações n8n.'
+const pageKeywords = 'ria360, recepcionista de inteligencia artificial 360 graus, inteligencia artificial para empresas, agentes autonomos de ia, agendamento whatsapp pix, twenty crm, hermes agent, automacao n8n, anaue design, onda conecta'
 
 const schema = {
   '@context': 'https://schema.org',
@@ -134,101 +134,536 @@ const schema = {
   <!-- ÂNCORA DE SOLUÇÕES -->
   <div id='solucoes-principais' class='scroll-mt-10'></div>
 
-  <!-- SEÇÃO 1: PLATAFORMA ATENDE AGENDA (PRONTA PARA O MERCADO) -->
+  <!-- SEÇÃO 1: RIA360 (RECEPCIONISTA DE INTELIGÊNCIA ARTIFICIAL 360 GRAUS) -->
   <section class='py-20 lg:py-28 bg-background border-b'>
-    <div class='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16'>
+    <div class='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-20'>
+      <!-- Header da Seção -->
       <div class='max-w-3xl space-y-4'>
-        <div class='inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3.5 py-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400'>
-          ✦ Solução Pronta para o Mercado
+        <div class='inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400'>
+          ✦ RIA360 · Recepcionista de Inteligência Artificial 360°
         </div>
         <h2 class='text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-foreground'>
-          Plataforma Atende Agenda: <br />
-          <span class='bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent'>
-            Atendimento, Agendamento e Pagamentos com IA
+          RIA360: Uma Recepcionista com IA <br />
+          <span class='bg-gradient-to-r from-emerald-600 via-teal-500 to-cyan-500 bg-clip-text text-transparent'>
+            que Atende no WhatsApp até às 23h
           </span>
         </h2>
         <p class='text-base sm:text-lg text-muted-foreground leading-relaxed'>
-          Uma infraestrutura comercial completa e pronta para operar. Seus clientes são atendidos no WhatsApp por um agente de IA humanizado que consulta agendas em tempo real, previne conflitos de horário e cobra automaticamente via PIX integrado com o gateway Asaas.
+          Feita para <strong>salões de beleza, barbearias, clínicas de estética e negócios que vivem de agenda cheia</strong>. Seu agente de IA conversa naturalmente com a cliente, escolhe o profissional, marca o horário, cobra o sinal por PIX e lembra antes do atendimento. Tudo sincronizado no seu painel administrativo.
         </p>
       </div>
 
-      <!-- GRID COM IMAGEM E FUNCIONALIDADES -->
+      <!-- SHOWCASE SIDE-BY-SIDE: MOCKUP DO PAINEL + SIMULAÇÃO DO WHATSAPP -->
       <div class='grid grid-cols-1 lg:grid-cols-12 gap-10 items-center'>
-        <!-- Mockup Visual -->
+        <!-- Coluna da Esquerda: Mockup do Painel Web -->
         <div class='lg:col-span-6 relative group'>
           <div class='absolute -inset-1 rounded-3xl bg-gradient-to-r from-emerald-500 to-cyan-500 opacity-20 blur-xl group-hover:opacity-30 transition duration-500'></div>
           <div class='relative overflow-hidden rounded-2xl border bg-card shadow-2xl'>
             <img
               src='/images/servicos/atende-agenda-mockup.webp'
-              alt='Interface da Plataforma Atende Agenda com agendamento no WhatsApp e pagamentos PIX'
+              alt='Interface do Painel Administrativo do RIA360 com controle de equipe, agendas e cobranças'
               class='w-full h-auto object-cover transform group-hover:scale-[1.01] transition-transform duration-500'
               loading='lazy'
             />
+            <div class='p-4 bg-muted/40 border-t flex flex-wrap items-center justify-between gap-2 text-xs text-muted-foreground'>
+              <span class='font-medium text-foreground flex items-center gap-1.5'>
+                <span class='w-2 h-2 rounded-full bg-emerald-500 animate-pulse'></span>
+                Painel Administrativo RIA360
+              </span>
+              <span>Agenda por Profissional · PIX Direto</span>
+            </div>
           </div>
         </div>
 
-        <!-- Destaques Técnicos & Operacionais -->
-        <div class='lg:col-span-6 space-y-6'>
-          <div class='grid grid-cols-1 sm:grid-cols-2 gap-4'>
-            <div class='rounded-xl border bg-card/60 p-5 space-y-2 hover:border-emerald-500/40 transition-colors'>
-              <div class='w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold'>
-                📱
+        <!-- Coluna da Direita: Simulação da Conversa no WhatsApp (22h14) -->
+        <div class='lg:col-span-6'>
+          <div class='rounded-3xl border border-emerald-500/30 bg-slate-950 p-4 sm:p-6 shadow-2xl text-slate-100 max-w-lg mx-auto lg:max-w-none'>
+            <!-- Topo do WhatsApp -->
+            <div class='flex items-center justify-between border-b border-slate-800 pb-4 mb-4'>
+              <div class='flex items-center gap-3'>
+                <div class='relative w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center text-white font-bold text-sm shadow-md'>
+                  🤖
+                  <span class='absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-400 border-2 border-slate-950'></span>
+                </div>
+                <div>
+                  <div class='font-bold text-sm text-white flex items-center gap-1.5'>
+                    Recepcionista IA · RIA360
+                    <span class='text-[10px] bg-emerald-500/20 text-emerald-400 px-1.5 py-0.2 rounded font-medium'>Oficial</span>
+                  </div>
+                  <div class='text-xs text-slate-400'>Online agora · Responde em 3 segundos</div>
+                </div>
               </div>
-              <h3 class='font-bold text-foreground text-base'>Agendamento no WhatsApp</h3>
-              <p class='text-xs sm:text-sm text-muted-foreground leading-relaxed'>
-                Busca de cliente por telefone, validação de cadastro e vinculação instantânea sem formulários cansativos.
-              </p>
+              <div class='text-xs text-slate-500 font-mono'>WhatsApp · 22h14</div>
             </div>
 
-            <div class='rounded-xl border bg-card/60 p-5 space-y-2 hover:border-emerald-500/40 transition-colors'>
-              <div class='w-10 h-10 rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400 flex items-center justify-center font-bold'>
-                ⏰
+            <!-- Balões de Diálogo Reais -->
+            <div class='space-y-3.5 text-xs sm:text-sm'>
+              <!-- Mensagem da Cliente -->
+              <div class='flex justify-end'>
+                <div class='bg-emerald-800/80 text-white rounded-2xl rounded-tr-none px-4 py-2.5 max-w-[85%] shadow-sm'>
+                  <p>Oi! Tem horário pra escova no sábado?</p>
+                  <span class='block text-[10px] text-emerald-300/80 text-right mt-1'>22:14</span>
+                </div>
               </div>
-              <h3 class='font-bold text-foreground text-base'>Gestão Dinâmica de Slots</h3>
-              <p class='text-xs sm:text-sm text-muted-foreground leading-relaxed'>
-                Geração automática de horários baseada na duração do serviço, com validação anti-conflito em tempo real.
-              </p>
+
+              <!-- Resposta da IA -->
+              <div class='flex justify-start'>
+                <div class='bg-slate-900 border border-slate-800 text-slate-200 rounded-2xl rounded-tl-none px-4 py-2.5 max-w-[90%] shadow-sm space-y-1'>
+                  <p>Oi, Camila! Tenho sábado às <strong>10h com a Rafa</strong> e às <strong>14h com a Duda</strong>. Qual prefere?</p>
+                  <span class='block text-[10px] text-slate-500 mt-1'>22:14</span>
+                </div>
+              </div>
+
+              <!-- Escolha da Cliente -->
+              <div class='flex justify-end'>
+                <div class='bg-emerald-800/80 text-white rounded-2xl rounded-tr-none px-4 py-2.5 max-w-[85%] shadow-sm'>
+                  <p>10h com a Rafa!</p>
+                  <span class='block text-[10px] text-emerald-300/80 text-right mt-1'>22:15</span>
+                </div>
+              </div>
+
+              <!-- Cobrança do Sinal por PIX -->
+              <div class='flex justify-start'>
+                <div class='bg-slate-900 border border-slate-800 text-slate-200 rounded-2xl rounded-tl-none px-4 py-2.5 max-w-[92%] shadow-sm space-y-1.5'>
+                  <p>Perfeito! Para confirmar seu horário com a Rafa, envio o <strong>PIX do sinal de R$ 30,00</strong>. Assim que compensar, seu horário fica reservado automaticamente na agenda.</p>
+                  <div class='p-2 rounded bg-slate-950 border border-emerald-500/30 text-[11px] font-mono text-emerald-400'>
+                    🔑 Copia e Cola: 00020126580014br.gov.bcb.pix...
+                  </div>
+                  <span class='block text-[10px] text-slate-500'>22:15</span>
+                </div>
+              </div>
+
+              <!-- Confirmação Instantânea -->
+              <div class='flex justify-start'>
+                <div class='bg-emerald-950/60 border border-emerald-500/40 text-emerald-200 rounded-2xl rounded-tl-none px-4 py-2.5 max-w-[92%] shadow-sm space-y-1'>
+                  <p class='font-semibold text-emerald-300 flex items-center gap-1.5'>
+                    <span>✅</span> Pagamento recebido com sucesso!
+                  </p>
+                  <p>Escova com a Rafa agendada para <strong>sábado às 10h</strong>. Te aviso por aqui um dia antes com o lembrete!</p>
+                  <span class='block text-[10px] text-emerald-400/70'>22:16</span>
+                </div>
+              </div>
             </div>
 
-            <div class='rounded-xl border bg-card/60 p-5 space-y-2 hover:border-emerald-500/40 transition-colors'>
-              <div class='w-10 h-10 rounded-lg bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center font-bold'>
-                💳
-              </div>
-              <h3 class='font-bold text-foreground text-base'>Cobrança Automática Asaas</h3>
-              <p class='text-xs sm:text-sm text-muted-foreground leading-relaxed'>
-                Emissão de PIX (QR Code dinâmico e Copia-e-Cola), Boleto e Cartão com expiração programada de 30 minutos.
-              </p>
-            </div>
-
-            <div class='rounded-xl border bg-card/60 p-5 space-y-2 hover:border-emerald-500/40 transition-colors'>
-              <div class='w-10 h-10 rounded-lg bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-bold'>
-                🔄
-              </div>
-              <h3 class='font-bold text-foreground text-base'>Sincronização por Webhooks</h3>
-              <p class='text-xs sm:text-sm text-muted-foreground leading-relaxed'>
-                Pagamento identificado → agendamento confirmado e notificado na hora sem necessidade de intervenção humana.
-              </p>
+            <!-- Rodapé do Card -->
+            <div class='mt-4 pt-3 border-t border-slate-800/80 text-center text-[11px] text-slate-400'>
+              Plataforma individual, com o tom de voz e as regras do seu salão ou clínica.
             </div>
           </div>
+        </div>
+      </div>
 
-          <!-- Box de Protocolo MCP -->
-          <div class='rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-6 space-y-3'>
-            <div class='flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-bold text-sm'>
-              <svg class='w-5 h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 10V3L4 14h7v7l9-11h-7z' />
-              </svg>
-              Suporte Nativo ao Protocolo MCP (Model Context Protocol)
-            </div>
-            <p class='text-xs sm:text-sm text-muted-foreground leading-relaxed'>
-              A plataforma possui um endpoint <code class='px-1.5 py-0.5 rounded bg-muted font-mono text-foreground'>/mcp</code> que expõe ferramentas padronizadas para agentes de IA: consulta de disponibilidade, cadastro de clientes, criação e cancelamento de reservas e emissão de cobranças diretamente na API.
+      <!-- BLOCO: O PROBLEMA (POR QUE SEU ESTABELECIMENTO ESTÁ PERDENDO DINHEIRO) -->
+      <div class='rounded-3xl border border-rose-500/20 bg-gradient-to-b from-rose-500/5 via-background to-background p-6 sm:p-10 lg:p-12 space-y-10'>
+        <div class='max-w-3xl space-y-3'>
+          <div class='text-xs font-bold uppercase tracking-wider text-rose-500'>O Problema Que Ninguém Te Conta</div>
+          <h3 class='text-2xl sm:text-3xl lg:text-4xl font-extrabold text-foreground'>
+            Cada mensagem sem resposta é um horário que vai para o seu concorrente.
+          </h3>
+          <p class='text-base text-muted-foreground leading-relaxed'>
+            A recepção para quando a equipe está atendendo. O WhatsApp dos seus clientes não para.
+          </p>
+        </div>
+
+        <div class='grid grid-cols-1 md:grid-cols-3 gap-6'>
+          <!-- Card Dor 1 -->
+          <div class='rounded-2xl border bg-card p-6 space-y-3 shadow-sm'>
+            <div class='text-2xl'>🌙</div>
+            <h4 class='text-lg font-bold text-foreground'>Mensagens à Noite e no Domingo</h4>
+            <p class='text-sm text-muted-foreground leading-relaxed'>
+              É exatamente quando a cliente para, deita na cama e decide marcar seu horário. Se ninguém responde na hora, ela abre o WhatsApp de outro salão ou clínica e marca lá.
             </p>
-            <div class='pt-2 flex flex-wrap gap-2 text-xs'>
-              <span class='px-2 py-1 rounded-md bg-muted/80 text-foreground font-mono'>FastAPI</span>
-              <span class='px-2 py-1 rounded-md bg-muted/80 text-foreground font-mono'>PostgreSQL 16</span>
-              <span class='px-2 py-1 rounded-md bg-muted/80 text-foreground font-mono'>SQLAlchemy 2.0</span>
-              <span class='px-2 py-1 rounded-md bg-muted/80 text-foreground font-mono'>Docker Compose</span>
-            </div>
           </div>
+
+          <!-- Card Dor 2 -->
+          <div class='rounded-2xl border bg-card p-6 space-y-3 shadow-sm'>
+            <div class='text-2xl'>🚫</div>
+            <h4 class='text-lg font-bold text-foreground'>Faltas e Horários Vazios (No-Show)</h4>
+            <p class='text-sm text-muted-foreground leading-relaxed'>
+              Sem lembrete automático e sem cobrança prévia de sinal, a cliente simplesmente esquece ou desmarca de última hora. Sua cadeira e seu profissional ficam parados dando prejuízo.
+            </p>
+          </div>
+
+          <!-- Card Dor 3 -->
+          <div class='rounded-2xl border bg-card p-6 space-y-3 shadow-sm'>
+            <div class='text-2xl'>📱</div>
+            <h4 class='text-lg font-bold text-foreground'>Equipe Presa no Celular</h4>
+            <p class='text-sm text-muted-foreground leading-relaxed'>
+              Quem deveria estar atendendo clientes e executando serviços passa o dia digitando respostas picadas no celular entre um atendimento e outro, prejudicando a qualidade do serviço.
+            </p>
+          </div>
+        </div>
+
+        <!-- A CONTA SIMPLES DA PERDA (EXTRAÍDO DO PDF) -->
+        <div class='rounded-2xl border border-rose-500/30 bg-slate-950 text-white p-6 sm:p-8 flex flex-col lg:flex-row items-center justify-between gap-6 shadow-xl'>
+          <div class='space-y-2 text-center lg:text-left'>
+            <div class='text-xs font-bold text-rose-400 uppercase tracking-wider'>A Conta Simples (Exemplo Ilustrativo)</div>
+            <div class='text-sm sm:text-base text-slate-300 font-mono'>
+              agendamentos por mês × % de faltas × ticket médio = <strong class='text-white'>quanto você perde por mês</strong>
+            </div>
+            <p class='text-xs text-slate-400'>
+              Um salão ou clínica comum com 15% de faltas e ticket de R$ 80 perde mais de R$ 40 mil por ano em cadeiras desocupadas.
+            </p>
+          </div>
+
+          <div class='bg-rose-950/60 border border-rose-500/40 rounded-xl px-6 py-4 text-center shrink-0'>
+            <div class='text-xs text-rose-300 uppercase font-semibold'>Prejuízo Mensal Evitável</div>
+            <div class='text-2xl sm:text-3xl font-black text-rose-400 mt-1 font-mono'>
+              300 × 15% × R$ 80 = <span class='text-white'>R$ 3.600</span>
+            </div>
+            <div class='text-[11px] text-slate-300 mt-1'>A RIA360 recupera esse valor no 1º mês</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOCO: COMO FUNCIONA (FLUXO EM 4 PASSOS) -->
+      <div class='space-y-10'>
+        <div class='text-center max-w-2xl mx-auto space-y-3'>
+          <div class='text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400'>Fluxo 100% Autônomo</div>
+          <h3 class='text-2xl sm:text-3xl lg:text-4xl font-extrabold text-foreground'>
+            Da primeira mensagem ao horário confirmado, sem ninguém da equipe.
+          </h3>
+        </div>
+
+        <div class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6'>
+          <!-- Passo 1 -->
+          <div class='relative rounded-2xl border bg-card p-6 space-y-4 hover:border-emerald-500/40 transition-colors shadow-sm'>
+            <div class='w-10 h-10 rounded-full bg-emerald-500 text-white font-extrabold flex items-center justify-center text-sm shadow-md'>
+              1
+            </div>
+            <h4 class='text-base font-bold text-foreground'>A Cliente Chama</h4>
+            <p class='text-xs sm:text-sm text-muted-foreground leading-relaxed'>
+              Pelo WhatsApp oficial do seu estabelecimento, a qualquer hora do dia ou da noite, inclusive finais de semana.
+            </p>
+          </div>
+
+          <!-- Passo 2 -->
+          <div class='relative rounded-2xl border bg-card p-6 space-y-4 hover:border-emerald-500/40 transition-colors shadow-sm'>
+            <div class='w-10 h-10 rounded-full bg-teal-500 text-white font-extrabold flex items-center justify-center text-sm shadow-md'>
+              2
+            </div>
+            <h4 class='text-base font-bold text-foreground'>A RIA360 Atende</h4>
+            <p class='text-xs sm:text-sm text-muted-foreground leading-relaxed'>
+              Entende o serviço desejado, consulta os horários livres na agenda e deixa a cliente escolher o profissional favorito.
+            </p>
+          </div>
+
+          <!-- Passo 3 -->
+          <div class='relative rounded-2xl border bg-card p-6 space-y-4 hover:border-emerald-500/40 transition-colors shadow-sm'>
+            <div class='w-10 h-10 rounded-full bg-cyan-500 text-white font-extrabold flex items-center justify-center text-sm shadow-md'>
+              3
+            </div>
+            <h4 class='text-base font-bold text-foreground'>O Sinal Confirma</h4>
+            <p class='text-xs sm:text-sm text-muted-foreground leading-relaxed'>
+              Gera a chave PIX ou link de cartão na conversa. O horário só trava na agenda quando o pagamento cai na sua conta.
+            </p>
+          </div>
+
+          <!-- Passo 4 -->
+          <div class='relative rounded-2xl border bg-card p-6 space-y-4 hover:border-emerald-500/40 transition-colors shadow-sm'>
+            <div class='w-10 h-10 rounded-full bg-indigo-500 text-white font-extrabold flex items-center justify-center text-sm shadow-md'>
+              4
+            </div>
+            <h4 class='text-base font-bold text-foreground'>Você Acompanha</h4>
+            <p class='text-xs sm:text-sm text-muted-foreground leading-relaxed'>
+              Agenda, equipe, clientes e valores atualizados instantaneamente no seu painel administrativo web.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOCO: O QUE VOCÊ LEVA (OS 6 PILARES DE GESTÃO) -->
+      <div class='space-y-10'>
+        <div class='max-w-2xl space-y-3'>
+          <div class='text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400'>O Que Você Leva</div>
+          <h3 class='text-2xl sm:text-3xl lg:text-4xl font-extrabold text-foreground'>
+            Atendimento, agenda, pagamento e gestão em um só lugar.
+          </h3>
+        </div>
+
+        <div class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
+          <div class='rounded-2xl border bg-card p-6 space-y-3 shadow-sm hover:border-emerald-500/40 transition-all'>
+            <div class='text-2xl'>👥</div>
+            <h4 class='text-lg font-bold text-foreground'>Agenda por Profissional</h4>
+            <p class='text-xs sm:text-sm text-muted-foreground leading-relaxed'>
+              Cada profissional com seus serviços, horários de atendimento e duração específica. Zero conflito de horários.
+            </p>
+          </div>
+
+          <div class='rounded-2xl border bg-card p-6 space-y-3 shadow-sm hover:border-emerald-500/40 transition-all'>
+            <div class='text-2xl'>💳</div>
+            <h4 class='text-lg font-bold text-foreground'>Pagamento Online & Sinal</h4>
+            <p class='text-xs sm:text-sm text-muted-foreground leading-relaxed'>
+              Sinal ou valor total por PIX ou cartão, caindo direto na conta do seu negócio (nós não ficamos com seu dinheiro).
+            </p>
+          </div>
+
+          <div class='rounded-2xl border bg-card p-6 space-y-3 shadow-sm hover:border-emerald-500/40 transition-all'>
+            <div class='text-2xl'>🔔</div>
+            <h4 class='text-lg font-bold text-foreground'>Lembretes Automáticos</h4>
+            <p class='text-xs sm:text-sm text-muted-foreground leading-relaxed'>
+              A cliente é avisada antes do horário marcado no próprio WhatsApp, reduzindo faltas e cancelamentos a quase zero.
+            </p>
+          </div>
+
+          <div class='rounded-2xl border bg-card p-6 space-y-3 shadow-sm hover:border-emerald-500/40 transition-all'>
+            <div class='text-2xl'>📊</div>
+            <h4 class='text-lg font-bold text-foreground'>Painel Administrativo Completo</h4>
+            <p class='text-xs sm:text-sm text-muted-foreground leading-relaxed'>
+              Equipe, serviços, catálogo, comissões, agenda e financeiro em uma página web limpa, intuitiva e sem complicação.
+            </p>
+          </div>
+
+          <div class='rounded-2xl border bg-card p-6 space-y-3 shadow-sm hover:border-emerald-500/40 transition-all'>
+            <div class='text-2xl'>🎨</div>
+            <h4 class='text-lg font-bold text-foreground'>Com a Cara do Seu Estabelecimento</h4>
+            <p class='text-xs sm:text-sm text-muted-foreground leading-relaxed'>
+              Tom de voz, regras de atendimento, políticas de tolerância e serviços totalmente configurados para a sua marca.
+            </p>
+          </div>
+
+          <div class='rounded-2xl border bg-card p-6 space-y-3 shadow-sm hover:border-emerald-500/40 transition-all'>
+            <div class='text-2xl'>🛡️</div>
+            <h4 class='text-lg font-bold text-foreground'>Canal com Contingência</h4>
+            <p class='text-xs sm:text-sm text-muted-foreground leading-relaxed'>
+              Conexão oficial da Meta (Cloud API), com segundo caminho de contingência de prontidão caso o principal oscile.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOCO: TABELA COMPARATIVA (POR QUE NÃO SÓ UMA AGENDA?) -->
+      <div class='rounded-3xl border bg-card p-6 sm:p-10 space-y-8 shadow-sm'>
+        <div class='max-w-2xl space-y-2'>
+          <div class='text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400'>Por Que Não Só Uma Agenda?</div>
+          <h3 class='text-2xl sm:text-3xl font-extrabold text-foreground'>
+            Agenda comum espera a cliente. A RIA360 vai até ela.
+          </h3>
+          <p class='text-sm text-muted-foreground'>
+            Veja a diferença prática entre ferramentas passivas e a inteligência ativa da RIA360:
+          </p>
+        </div>
+
+        <div class='overflow-x-auto'>
+          <table class='w-full text-left text-xs sm:text-sm border-collapse'>
+            <thead>
+              <tr class='border-b'>
+                <th class='py-3.5 px-4 font-bold text-muted-foreground'>O que você precisa</th>
+                <th class='py-3.5 px-4 font-bold text-muted-foreground'>Agenda Comum</th>
+                <th class='py-3.5 px-4 font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/5 rounded-t-lg'>Recepcionista IA (RIA360)</th>
+              </tr>
+            </thead>
+            <tbody class='divide-y'>
+              <tr>
+                <td class='py-4 px-4 font-semibold text-foreground'>Responde a cliente no WhatsApp</td>
+                <td class='py-4 px-4 text-muted-foreground'>Você ou sua equipe manualmente</td>
+                <td class='py-4 px-4 font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/5'>✅ Automático, 24 horas por dia</td>
+              </tr>
+              <tr>
+                <td class='py-4 px-4 font-semibold text-foreground'>Oferece horários e profissionais</td>
+                <td class='py-4 px-4 text-muted-foreground'>Cliente precisa abrir um link externo</td>
+                <td class='py-4 px-4 font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/5'>✅ Na própria conversa, sem sair do WhatsApp</td>
+              </tr>
+              <tr>
+                <td class='py-4 px-4 font-semibold text-foreground'>Cobra o sinal antecipado</td>
+                <td class='py-4 px-4 text-muted-foreground'>Depende de cobrança manual ou não cobra</td>
+                <td class='py-4 px-4 font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/5'>✅ PIX ou cartão na conversa, trava na hora</td>
+              </tr>
+              <tr>
+                <td class='py-4 px-4 font-semibold text-foreground'>Adaptada ao seu estabelecimento</td>
+                <td class='py-4 px-4 text-muted-foreground'>Modelo engessado e padrão</td>
+                <td class='py-4 px-4 font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/5 rounded-b-lg'>✅ Individual e 100% personalizável</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- BLOCO: PLANOS POR TAMANHO DA EQUIPE -->
+      <div class='space-y-10'>
+        <div class='text-center max-w-2xl mx-auto space-y-3'>
+          <div class='text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400'>Planos Flexíveis</div>
+          <h3 class='text-2xl sm:text-3xl lg:text-4xl font-extrabold text-foreground'>
+            Escolha pelo tamanho da sua equipe.
+          </h3>
+          <p class='text-sm text-muted-foreground'>
+            Implantação e mensalidade sob medida para seu volume. Peça uma proposta e receba valores para o seu caso.
+          </p>
+        </div>
+
+        <div class='grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8'>
+          <!-- Plano 1: Essencial -->
+          <div class='rounded-3xl border bg-card p-8 space-y-6 flex flex-col justify-between shadow-sm hover:border-emerald-500/40 transition-all'>
+            <div class='space-y-4'>
+              <div class='space-y-1'>
+                <h4 class='text-xl font-extrabold text-foreground'>Essencial</h4>
+                <p class='text-xs text-muted-foreground'>Para 1 a 3 profissionais.</p>
+              </div>
+              <ul class='space-y-3 text-xs sm:text-sm text-muted-foreground'>
+                <li class='flex items-center gap-2'>
+                  <span class='text-emerald-500 font-bold'>✓</span> Agente de IA no WhatsApp
+                </li>
+                <li class='flex items-center gap-2'>
+                  <span class='text-emerald-500 font-bold'>✓</span> Agenda por profissional
+                </li>
+                <li class='flex items-center gap-2'>
+                  <span class='text-emerald-500 font-bold'>✓</span> Pagamento online via PIX
+                </li>
+                <li class='flex items-center gap-2'>
+                  <span class='text-emerald-500 font-bold'>✓</span> Painel administrativo web
+                </li>
+              </ul>
+            </div>
+            <a
+              href='https://wa.me/5585996277707?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Plano%20Essencial%20do%20RIA360.'
+              target='_blank'
+              rel='noopener noreferrer'
+              class='w-full inline-flex items-center justify-center rounded-xl border border-input bg-background py-3 text-sm font-semibold text-foreground hover:bg-muted transition-colors'
+            >
+              Pedir proposta
+            </a>
+          </div>
+
+          <!-- Plano 2: Profissional (Destaque) -->
+          <div class='relative rounded-3xl border-2 border-emerald-500 bg-card p-8 space-y-6 flex flex-col justify-between shadow-xl'>
+            <div class='absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-emerald-500 text-white px-3 py-0.5 text-[11px] font-bold uppercase tracking-wider'>
+              Mais Escolhido
+            </div>
+            <div class='space-y-4'>
+              <div class='space-y-1'>
+                <h4 class='text-xl font-extrabold text-foreground'>Profissional</h4>
+                <p class='text-xs text-muted-foreground'>Para 4 a 8 profissionais ou clínicas.</p>
+              </div>
+              <ul class='space-y-3 text-xs sm:text-sm text-muted-foreground'>
+                <li class='flex items-center gap-2 text-foreground font-semibold'>
+                  <span class='text-emerald-500 font-bold'>✓</span> Tudo do Essencial
+                </li>
+                <li class='flex items-center gap-2'>
+                  <span class='text-emerald-500 font-bold'>✓</span> Fluxos e regras personalizados
+                </li>
+                <li class='flex items-center gap-2'>
+                  <span class='text-emerald-500 font-bold'>✓</span> Lembretes e confirmações automáticas
+                </li>
+                <li class='flex items-center gap-2'>
+                  <span class='text-emerald-500 font-bold'>✓</span> Acompanhamento de métricas e resultados
+                </li>
+              </ul>
+            </div>
+            <a
+              href='https://wa.me/5585996277707?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Plano%20Profissional%20do%20RIA360.'
+              target='_blank'
+              rel='noopener noreferrer'
+              class='w-full inline-flex items-center justify-center rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white py-3 text-sm font-bold shadow-lg shadow-emerald-500/25 transition-all'
+            >
+              Pedir proposta
+            </a>
+          </div>
+
+          <!-- Plano 3: Sob Medida -->
+          <div class='rounded-3xl border bg-card p-8 space-y-6 flex flex-col justify-between shadow-sm hover:border-emerald-500/40 transition-all'>
+            <div class='space-y-4'>
+              <div class='space-y-1'>
+                <h4 class='text-xl font-extrabold text-foreground'>Sob Medida</h4>
+                <p class='text-xs text-muted-foreground'>Várias unidades ou necessidades próprias.</p>
+              </div>
+              <ul class='space-y-3 text-xs sm:text-sm text-muted-foreground'>
+                <li class='flex items-center gap-2'>
+                  <span class='text-emerald-500 font-bold'>✓</span> Projeto e arquitetura individual
+                </li>
+                <li class='flex items-center gap-2'>
+                  <span class='text-emerald-500 font-bold'>✓</span> Integrações e módulos extras (ERP/CRM)
+                </li>
+                <li class='flex items-center gap-2'>
+                  <span class='text-emerald-500 font-bold'>✓</span> Identidade e tom de voz exclusivos
+                </li>
+                <li class='flex items-center gap-2'>
+                  <span class='text-emerald-500 font-bold'>✓</span> Suporte e acompanhamento prioritário
+                </li>
+              </ul>
+            </div>
+            <a
+              href='https://wa.me/5585996277707?text=Ol%C3%A1%2C%20gostaria%20de%20conversar%20sobre%20o%20Plano%20Sob%20Medida%20do%20RIA360.'
+              target='_blank'
+              rel='noopener noreferrer'
+              class='w-full inline-flex items-center justify-center rounded-xl border border-input bg-background py-3 text-sm font-semibold text-foreground hover:bg-muted transition-colors'
+            >
+              Falar comigo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOCO: DÚVIDAS FREQUENTES (O QUE OS DONOS MAIS PERGUNTAM) -->
+      <div class='rounded-3xl border bg-muted/20 p-6 sm:p-10 space-y-8'>
+        <div class='max-w-2xl space-y-2'>
+          <div class='text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400'>Dúvidas Frequentes</div>
+          <h3 class='text-2xl sm:text-3xl font-extrabold text-foreground'>
+            O que os donos de salão e clínicas mais perguntam.
+          </h3>
+        </div>
+
+        <div class='grid grid-cols-1 md:grid-cols-2 gap-6'>
+          <div class='space-y-2'>
+            <h4 class='text-base font-bold text-foreground flex items-center gap-2'>
+              <span class='text-emerald-500'>▶</span> A IA substitui a minha equipe?
+            </h4>
+            <p class='text-xs sm:text-sm text-muted-foreground leading-relaxed pl-5'>
+              <strong>Não.</strong> Ela cuida do atendimento repetitivo, das mensagens no WhatsApp e da conferência de horários, para que sua equipe fique 100% livre e focada em quem está na cadeira ou maca.
+            </p>
+          </div>
+
+          <div class='space-y-2'>
+            <h4 class='text-base font-bold text-foreground flex items-center gap-2'>
+              <span class='text-emerald-500'>▶</span> Posso personalizar serviços, preços e tom de voz?
+            </h4>
+            <p class='text-xs sm:text-sm text-muted-foreground leading-relaxed pl-5'>
+              <strong>Sim.</strong> A plataforma é individual: configuramos seus serviços, durações, profissionais, comissões, preços e a forma exata como a sua marca se comunica.
+            </p>
+          </div>
+
+          <div class='space-y-2'>
+            <h4 class='text-base font-bold text-foreground flex items-center gap-2'>
+              <span class='text-emerald-500'>▶</span> Como recebo os pagamentos?
+            </h4>
+            <p class='text-xs sm:text-sm text-muted-foreground leading-relaxed pl-5'>
+              Os pagamentos online caem direto na conta bancária do seu salão ou clínica. <strong>Nós não retemos nem ficamos com o seu dinheiro.</strong>
+            </p>
+          </div>
+
+          <div class='space-y-2'>
+            <h4 class='text-base font-bold text-foreground flex items-center gap-2'>
+              <span class='text-emerald-500'>▶</span> Funciona para clínica de estética e consultórios?
+            </h4>
+            <p class='text-xs sm:text-sm text-muted-foreground leading-relaxed pl-5'>
+              <strong>Sim!</strong> Inclusive com sinal financeiro obrigatório para procedimentos mais longos, blindando o seu faturamento de faltas e horários ociosos.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- BOX DE TESTE INTERATIVO DA RIA360 (CALL TO ACTION) -->
+      <div class='rounded-3xl border border-emerald-500/40 bg-gradient-to-r from-emerald-950 via-slate-950 to-teal-950 text-white p-8 sm:p-12 text-center space-y-6 shadow-2xl'>
+        <div class='max-w-2xl mx-auto space-y-3'>
+          <h3 class='text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white'>
+            Teste agora: mande uma mensagem e veja o agendamento acontecer.
+          </h3>
+          <p class='text-sm sm:text-base text-slate-300 leading-relaxed'>
+            Converse com a recepcionista IA como se fosse uma cliente. Em poucos minutos você entende na prática tudo o que ela faz pelo seu negócio.
+          </p>
+        </div>
+
+        <div class='pt-2'>
+          <a
+            href='https://wa.me/5585996277707?text=Ol%C3%A1%2C%20gostaria%20de%20testar%20a%20recepcionista%20IA%20do%20RIA360.'
+            target='_blank'
+            rel='noopener noreferrer'
+            class='inline-flex items-center justify-center gap-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold px-8 py-4 text-base shadow-xl shadow-emerald-500/25 transition-all hover:scale-105 active:scale-95'
+          >
+            <svg class='w-5 h-5 fill-current' viewBox='0 0 24 24'>
+              <path d='M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.771.82 2.791.82 3.183 0 5.769-2.586 5.769-5.766.001-3.182-2.585-5.806-5.77-5.806zm8.136 5.767c0 4.498-3.659 8.157-8.157 8.157-1.42 0-2.75-.36-3.92-1l-4.47 1.17 1.19-4.36c-.72-1.23-1.12-2.65-1.12-4.14 0-4.498 3.659-8.157 8.157-8.157s8.32 3.829 8.32 8.33z' />
+            </svg>
+            Quero testar no WhatsApp
+          </a>
         </div>
       </div>
     </div>
@@ -603,7 +1038,7 @@ const schema = {
           <svg class='w-5 h-5 fill-current' viewBox='0 0 24 24'>
             <path d='M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.771.82 2.791.82 3.183 0 5.769-2.586 5.769-5.766.001-3.182-2.585-5.806-5.77-5.806zm8.136 5.767c0 4.498-3.659 8.157-8.157 8.157-1.42 0-2.75-.36-3.92-1l-4.47 1.17 1.19-4.36c-.72-1.23-1.12-2.65-1.12-4.14 0-4.498 3.659-8.157 8.157-8.157s8.32 3.829 8.32 8.33z' />
           </svg>
-          Falar com Cezar Alfredo no WhatsApp
+          Falar com especialista
         </a>
 
         <a
@@ -612,6 +1047,70 @@ const schema = {
         >
           Enviar Mensagem por E-mail
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 8: ASSINATURA DA EMPRESA PRESTADORA DE SERVIÇOS (ANAUÊ DESIGN) -->
+  <section class='py-16 bg-slate-950 text-white border-t border-slate-800 relative overflow-hidden'>
+    <!-- Efeito luminoso de fundo -->
+    <div class='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none'></div>
+
+    <div class='relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
+      <div class='rounded-3xl border border-slate-800 bg-slate-900/70 backdrop-blur-xl p-8 sm:p-12 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8'>
+        
+        <div class='flex flex-col sm:flex-row items-center sm:items-start gap-6 text-center sm:text-left max-w-3xl'>
+          <!-- Badge/Logo estilizado Anauê Design -->
+          <div class='w-16 h-16 rounded-2xl bg-gradient-to-tr from-cyan-500 via-teal-400 to-indigo-500 p-0.5 shadow-lg shadow-cyan-500/20 shrink-0'>
+            <div class='w-full h-full bg-slate-950 rounded-[14px] flex items-center justify-center'>
+              <span class='text-2xl font-black bg-gradient-to-r from-cyan-400 to-teal-300 bg-clip-text text-transparent'>AD</span>
+            </div>
+          </div>
+
+          <div class='space-y-2'>
+            <div class='inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-xs font-semibold text-cyan-300'>
+              <span class='w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse'></span>
+              Empresa Prestadora dos Serviços de Tecnologia & IA
+            </div>
+            
+            <h3 class='text-2xl sm:text-3xl font-extrabold text-white tracking-tight'>
+              Desenvolvido & Implementado por Anauê Design
+            </h3>
+            
+            <p class='text-sm sm:text-base text-slate-300 leading-relaxed text-balance'>
+              A <strong>Anauê Design</strong> é a agência e consultoria de tecnologia responsável pela engenharia de software, desenvolvimento do aplicativo <strong>RIA360</strong>, implementação de agentes autônomos, infraestrutura de CRM Twenty e automações corporativas da <strong>Onda Conecta</strong>.
+            </p>
+
+            <div class='pt-2 flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs text-slate-400'>
+              <span class='flex items-center gap-1.5'>
+                <svg class='w-4 h-4 text-cyan-400' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z'/><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M15 11a3 3 0 11-6 0 3 3 0 016 0z'/></svg>
+                Fortaleza, CE · Brasil
+              </span>
+              <span class='text-slate-600'>•</span>
+              <span class='flex items-center gap-1.5'>
+                <svg class='w-4 h-4 text-teal-400' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'/></svg>
+                Engenharia de Software, Design & IA
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botão com Link de Redirecionamento -->
+        <div class='shrink-0 w-full lg:w-auto text-center'>
+          <a
+            href='https://anauedesign.com.br'
+            target='_blank'
+            rel='noopener noreferrer'
+            class='w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold px-7 py-4 text-sm shadow-xl shadow-cyan-500/25 transition-all hover:scale-105 active:scale-95 group'
+          >
+            <span>Visitar Anauê Design</span>
+            <svg class='w-4 h-4 transform group-hover:translate-x-0.5 transition-transform' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+              <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14' />
+            </svg>
+          </a>
+          <span class='block text-[11px] text-slate-500 mt-2 font-mono'>anauedesign.com.br</span>
+        </div>
+
       </div>
     </div>
   </section>
