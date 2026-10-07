@@ -32,16 +32,7 @@ export async function getStaticPaths() {
   const seenSlugs = new Set<string>()
 
   for (const entry of enEntries) {
-    // 1. Slugs com sufixo (ex: criptografia-...-en)
-    if (!seenSlugs.has(entry.id)) {
-      paths.push({
-        params: { slug: entry.id },
-        props: { entry }
-      })
-      seenSlugs.add(entry.id)
-    }
-
-    // 2. Slugs limpos canônicos (ex: criptografia-...)
+    // Slugs canônicos limpos oficiais (ex: /en/blog/open-investment-...)
     const baseSlug = entry.data.translationOf || entry.id.replace(/-en$/, '')
     if (baseSlug && !seenSlugs.has(baseSlug)) {
       paths.push({
@@ -161,6 +152,7 @@ const schema = {
 ---
 
 <Layout
+  canonical={`/en/blog/${baseSlug}`}
   title={entry.data.title}
   description={entry.data.description}
   image={entry.data.imageUrl}

@@ -38,7 +38,19 @@ const schema = {
 }
 ---
 
-<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} schema={schema}>
+<Layout
+  canonical='/en/categories'
+  title={pageTitle}
+  description={pageDescription}
+  keywords={pageKeywords}
+  schema={schema}
+  alternateLinks={{
+    pt: '/#categories',
+    en: '/en/categories',
+    es: '/es/categorias',
+    default: '/en/categories'
+  }}
+>
   <div class='border-b bg-muted/20 py-4'>
     <div class='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
       <Breadcrumb>

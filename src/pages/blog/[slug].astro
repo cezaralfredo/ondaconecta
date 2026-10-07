@@ -26,7 +26,9 @@ import AdSenseBanner from '@/components/astro/AdSenseBanner.astro'
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection('blog')
-  return blogEntries.map(entry => ({
+  // No portal Onda Conecta, a rota /blog/[slug] pertence exclusivamente aos artigos em Português
+  const ptEntries = blogEntries.filter(entry => (entry.data.lang || 'pt') === 'pt')
+  return ptEntries.map(entry => ({
     params: { slug: entry.id },
     props: { entry }
   }))
@@ -138,6 +140,7 @@ const schema = {
 ---
 
 <Layout
+  canonical={`/blog/${baseSlug}`}
   title={entry.data.title}
   description={entry.data.description}
   image={entry.data.imageUrl}

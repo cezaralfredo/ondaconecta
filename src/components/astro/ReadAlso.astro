@@ -37,8 +37,8 @@ if (slug) {
   const allPosts = await getCollection('blog')
   const found = allPosts.find(p => p.id === slug || p.data.slug === slug)
   if (found) {
-    postTitle = postTitle || found.data.title
-    postUrl = postUrl || (isEn ? `/en/blog/${found.id}` : isEs ? `/es/blog/${found.id}` : `/blog/${found.id}`)
+    const cleanFoundSlug = found.data.translationOf || found.data.slug?.replace(/-(en|es)$/, '') || found.id.replace(/-(en|es)$/, '')
+    postUrl = postUrl || (isEn ? `/en/blog/${cleanFoundSlug}` : isEs ? `/es/blog/${cleanFoundSlug}` : `/blog/${cleanFoundSlug}`)
     postReadTime = postReadTime || found.data.readTime
     postCategory = postCategory || found.data.category
     postImage = found.data.imageUrl || ''

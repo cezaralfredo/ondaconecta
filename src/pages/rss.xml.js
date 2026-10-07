@@ -78,7 +78,8 @@ export async function GET(context) {
       <atom:link href="${siteUrl}/rss.xml" rel="self" type="application/rss+xml" />
     `.trim(),
     items: sortedPosts.map(post => {
-      const postUrl = `${siteUrl}/blog/${post.id}/`
+      const cleanSlug = post.data.slug || post.id.replace(/-(en|es)$/, '')
+      const postUrl = `${siteUrl}/blog/${cleanSlug}`
       const imageUrl = post.data.imageUrl
         ? (post.data.imageUrl.startsWith('http') ? post.data.imageUrl : `${siteUrl}${post.data.imageUrl}`)
         : null

@@ -2,6 +2,7 @@
 import { SITE_METADATA } from '@/consts'
 
 interface Props {
+  canonical?: string
   title?: string
   description?: string
   image?: string
@@ -21,10 +22,8 @@ interface Props {
   } | false
 }
 
-const rawPath = Astro.url.pathname.replace(/\/$/, '') || '/'
-const canonicalURL = new URL(rawPath, Astro.site)
-
 const {
+  canonical,
   title,
   description,
   image,
@@ -39,6 +38,11 @@ const {
   alternateLinks
 } = Astro.props
 
+const rawPath = Astro.url.pathname.replace(/\/$/, '') || '/'
+const canonicalURL = canonical
+  ? new URL(canonical.replace(/\/$/, '') || '/', Astro.site)
+  : new URL(rawPath, Astro.site)
+
 // Páginas institucionais que só existem em Português (não possuem versão /en nem /es)
 const isPtOnlyStaticPage = [
   '/quem-somos',
@@ -46,7 +50,7 @@ const isPtOnlyStaticPage = [
   '/termos-de-uso',
   '/privacidade',
   '/404',
-  '/ferramentas'
+  '/servicos-ia'
 ].includes(rawPath)
 
 // Configuração de Hreflang: se alternateLinks for false ou página pt-only, não emite hreflang enganoso
