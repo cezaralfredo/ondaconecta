@@ -770,5 +770,33 @@
       "Meio & Mensagem"
     ],
     "title": "Cansados da Perfeição? Como a 'Vida Sem Filtro' Redefine o Consumo e as Marcas"
+  },
+  {
+    "id": 178,
+    "slug": "open-investment-carteiras-automatizadas-dividendos",
+    "category": "Finanças Pessoais",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-10-07T08:00:00-03:00",
+    "sources": [
+      "Banco Central do Brasil",
+      "InfoMoney",
+      "Valor Investe",
+      "E-Investidor Estadão"
+    ],
+    "title": "A Virada do Open Investment: Como Carteiras Automatizadas e Algoritmos Redefinem a Caça a Dividendos"
+  },
+  {
+    "id": 181,
+    "slug": "neurocosmeticos-conexao-mente-pele-estresse-facial",
+    "category": "Estética & Beleza",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-10-07T18:00:00-03:00",
+    "sources": [
+      "Journal of Cosmetic Dermatology",
+      "Vogue Beleza",
+      "Allure",
+      "Sociedade Brasileira de Dermatologia (SBD)"
+    ],
+    "title": "Além dos Cremes Comuns: Como os Neurocosméticos Usam a Conexão Mente-Pele Contra o Estresse Facial"
   }
 ]
