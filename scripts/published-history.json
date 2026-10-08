@@ -798,5 +798,33 @@
       "Sociedade Brasileira de Dermatologia (SBD)"
     ],
     "title": "Além dos Cremes Comuns: Como os Neurocosméticos Usam a Conexão Mente-Pele Contra o Estresse Facial"
+  },
+  {
+    "id": 184,
+    "slug": "embodied-ai-robotica-modelos-vla-industria-brasil",
+    "category": "Inovação & IA",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-10-08T08:00:00-03:00",
+    "sources": [
+      "Gartner Research",
+      "MIT Technology Review",
+      "MIT CSAIL",
+      "TecMundo Inovação"
+    ],
+    "title": "Além dos Humanoides: Por que a Embodied AI nos Negócios Prioriza Robôs Polifuncionais"
+  },
+  {
+    "id": 187,
+    "slug": "regulamentacao-sbce-mercado-regulado-carbono-brasil",
+    "category": "Sustentabilidade",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-10-08T18:00:00-03:00",
+    "sources": [
+      "Ministério da Fazenda (SEMC)",
+      "Lei nº 15.042/2024",
+      "CNN Brasil Economia",
+      "Capital Reset"
+    ],
+    "title": "Adeus ESG de Fachada: Como a Regulamentação do SBCE Obriga 17 Setores a Auditar Emissões"
   }
 ]
