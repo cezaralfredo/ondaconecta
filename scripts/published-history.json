@@ -826,5 +826,33 @@
       "Capital Reset"
     ],
     "title": "Adeus ESG de Fachada: Como a Regulamentação do SBCE Obriga 17 Setores a Auditar Emissões"
+  },
+  {
+    "id": 190,
+    "slug": "fidcs-financiamento-startups-credito-estruturado-brasil",
+    "category": "Mercado & Negócios",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-10-09T08:00:00-03:00",
+    "sources": [
+      "NeoFeed",
+      "Brazil Journal",
+      "CVM",
+      "Startups.com.br"
+    ],
+    "title": "Adeus à Diluição Precoce: Como os FIDCs Redefinem o Financiamento de Startups no Brasil"
+  },
+  {
+    "id": 193,
+    "slug": "minas-gerais-conde-nast-traveler-melhores-destinos-2026",
+    "category": "Estilo de Vida & Viagens",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-10-09T18:00:00-03:00",
+    "sources": [
+      "Condé Nast Traveler",
+      "Melhores Destinos",
+      "Embratur",
+      "Instituto Inhotim"
+    ],
+    "title": "Mais Alma, Menos Massa: Por que a Condé Nast Traveler Elegeu Minas Gerais Entre os Melhores do Mundo"
   }
 ]
