@@ -854,5 +854,31 @@
       "Instituto Inhotim"
     ],
     "title": "Mais Alma, Menos Massa: Por que a Condé Nast Traveler Elegeu Minas Gerais Entre os Melhores do Mundo"
+  },
+  {
+    "id": 196,
+    "slug": "brasil-lidera-virada-ia-agentica-empresas",
+    "category": "Inovação & IA",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-10-10T08:00:00-03:00",
+    "sources": [
+      "Deloitte Insights Brasil",
+      "MIT Technology Review Brasil",
+      "Exame Inovação"
+    ],
+    "title": "42% Contra 34%: Por Que o Brasil Lidera a Virada da IA Agêntica nas Empresas"
+  },
+  {
+    "id": 199,
+    "slug": "menos-ostentacao-mais-valor-real-microconquistas-consumo",
+    "category": "Comportamento",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-10-10T18:00:00-03:00",
+    "sources": [
+      "Consumidor Moderno",
+      "E-Commerce Brasil",
+      "WGSN Insider"
+    ],
+    "title": "Menos Ostentação, Mais Valor Real: A Era das Microconquistas no Consumo"
   }
 ]
