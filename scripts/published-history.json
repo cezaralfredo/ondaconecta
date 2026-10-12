@@ -921,5 +921,33 @@
       "Glacier Express"
     ],
     "title": "O Charme dos Trilhos: Como as Viagens de Trem Panorâmico Viraram o Novo Luxo Lento"
+  },
+  {
+    "id": 211,
+    "slug": "mercado-secundario-startups-liquidez-family-offices-brasil",
+    "category": "Mercado & Negócios",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-10-12T08:00:00-03:00",
+    "sources": [
+      "Brazil Journal",
+      "NeoFeed",
+      "Startups.com.br",
+      "B3"
+    ],
+    "title": "O Boom dos Secundários: Como a Venda de Participações em Startups Destrava Liquidez no Brasil"
+  },
+  {
+    "id": 214,
+    "slug": "debentures-incentivadas-fi-infra-renda-passiva-isencao-ir",
+    "category": "Finanças Pessoais",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-10-12T18:00:00-03:00",
+    "sources": [
+      "Anbima",
+      "InfoMoney",
+      "Valor Investe",
+      "B3"
+    ],
+    "title": "IPCA+ 8% Sem Imposto de Renda: A Corrida Pelas Debêntures Incentivadas e FI-Infra"
   }
 ]
