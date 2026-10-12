@@ -880,5 +880,46 @@
       "WGSN Insider"
     ],
     "title": "Menos Ostentação, Mais Valor Real: A Era das Microconquistas no Consumo"
+  },
+  {
+    "id": 202,
+    "slug": "calm-tech-dispositivos-monotarefa-telas-e-ink-consumo",
+    "category": "Tendências",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-10-11T08:00:00-03:00",
+    "sources": [
+      "WGSN Consumer Trends",
+      "Fast Company",
+      "Consumidor Moderno"
+    ],
+    "title": "A Virada da 'Calm Tech': Por Que Telas E-Ink e Dispositivos Monotarefa Viraram Febre"
+  },
+  {
+    "id": 205,
+    "slug": "testes-epigeneticos-idade-biologica-medicina-preventiva",
+    "category": "Saúde & Bem-estar",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-10-11T14:00:00-03:00",
+    "sources": [
+      "Duke University",
+      "Columbia University",
+      "Nature Medicine",
+      "Anvisa"
+    ],
+    "title": "Idade Biológica no Laboratório: A Revolução dos Testes Epigenéticos no Brasil"
+  },
+  {
+    "id": 208,
+    "slug": "viagens-de-trem-panoramico-turismo-ferroviario-luxo-lento",
+    "category": "Estilo de Vida & Viagens",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-10-11T18:00:00-03:00",
+    "sources": [
+      "Condé Nast Traveler",
+      "WTTC",
+      "Serra Verde Express",
+      "Glacier Express"
+    ],
+    "title": "O Charme dos Trilhos: Como as Viagens de Trem Panorâmico Viraram o Novo Luxo Lento"
   }
 ]

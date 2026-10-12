@@ -99,7 +99,7 @@ const EDITORIAL_SCHEDULE = {
   4: { morning: 'Inovação & IA', evening: 'Sustentabilidade' },
   5: { morning: 'Mercado & Negócios', evening: 'Estilo de Vida & Viagens' },
   6: { morning: 'Inovação & IA', evening: 'Comportamento' },
-  0: { morning: 'Tendências', evening: 'Estilo de Vida & Viagens' }
+  0: { morning: 'Tendências', afternoon: 'Saúde & Bem-estar', evening: 'Estilo de Vida & Viagens' }
 }
 
 const BLOG_DIR = path.resolve('src/content/blog')
@@ -307,12 +307,18 @@ function getScheduledCategory(overrideArg) {
   const dayOfWeek = brDate.getDay() // 0=Domingo, 1=Segunda, ..., 6=Sábado
   const hour = brDate.getHours()
 
-  // Se for antes das 14h BRT, executa a edição da manhã (08h); após as 14h, a edição da tarde (18h)
-  const period = hour < 14 ? 'morning' : 'evening'
+  // Para domingo (3 postagens), divide em manhã (<12h), tarde (<16h) e noite (>=16h); nos demais dias divide em manhã e noite
+  let period = hour < 14 ? 'morning' : 'evening'
+  if (dayOfWeek === 0) {
+    if (hour < 12) period = 'morning'
+    else if (hour < 16) period = 'afternoon'
+    else period = 'evening'
+  }
   const daySchedule = EDITORIAL_SCHEDULE[dayOfWeek] || EDITORIAL_SCHEDULE[1]
   const targetCategoryName = daySchedule[period] || 'Tendências'
 
-  console.log(`📅 Agenda Editorial Ativa: Dia ${dayOfWeek} (${['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'][dayOfWeek]}), Período: ${period === 'morning' ? 'Manhã (08h BRT)' : 'Tarde (18h BRT)'} -> Categoria: "${targetCategoryName}"`)
+  const periodLabel = period === 'morning' ? 'Manhã (08h BRT)' : period === 'afternoon' ? 'Tarde (14h BRT)' : 'Noite (18h BRT)'
+  console.log(`📅 Agenda Editorial Ativa: Dia ${dayOfWeek} (${['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'][dayOfWeek]}), Período: ${periodLabel} -> Categoria: "${targetCategoryName}"`)
 
   return CATEGORIES.find(c => c.name.toLowerCase() === targetCategoryName.toLowerCase()) || CATEGORIES[0]
 }
