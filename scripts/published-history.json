@@ -963,5 +963,33 @@
       "WHO"
     ],
     "title": "Além dos Antidepressivos: Como os Psicobióticos e o Eixo Intestino-Cérebro Tratam a Ansiedade"
+  },
+  {
+    "id": 220,
+    "slug": "protocolos-a2a-comunicacao-agentes-ia-negocios",
+    "category": "Inovação & IA",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-10-13T08:00:00-03:00",
+    "sources": [
+      "MIT Technology Review",
+      "Wired",
+      "TecMundo",
+      "Brazil Journal"
+    ],
+    "title": "Quando Máquinas Negociam com Máquinas: A Ascensão dos Protocolos Agent-to-Agent (A2A) nos Negócios"
+  },
+  {
+    "id": 223,
+    "slug": "run-clubs-novo-happy-hour-socializacao-corrida-urbana",
+    "category": "Tendências",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-10-13T18:00:00-03:00",
+    "sources": [
+      "WGSN Consumer Trends",
+      "Fast Company",
+      "Consumidor Moderno",
+      "Strava Year in Sport"
+    ],
+    "title": "O Fim da Mesa de Bar? Como os Run Clubs Viraram o Novo Happy Hour e Espaço de Conexão Urbana"
   }
 ]
