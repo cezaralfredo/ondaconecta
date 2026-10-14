@@ -89,17 +89,20 @@ const CATEGORIES = [
   }
 ]
 
-// Grade Semanal de Publicações Automatizadas (2x ao dia)
+// Grade Semanal Balanceada e Acelerada (3x ao dia = 21 posts/semana)
 // Dias: 0=Domingo, 1=Segunda, 2=Terça, 3=Quarta, 4=Quinta, 5=Sexta, 6=Sábado
-// Períodos: 'morning' (08:00 BRT) e 'evening' (18:00 BRT)
+// Períodos: 'morning' (08:00 BRT), 'afternoon' (14:00 BRT) e 'evening' (18:00 BRT)
+// Distribuição calibrada para nivelar as categorias com menor volume de matérias:
+// Comportamento (3x), Sustentabilidade (3x), Estética & Beleza (3x), Finanças Pessoais (3x),
+// Mercado & Negócios (2x), Inovação & IA (2x), Tendências (2x), Estilo de Vida & Viagens (2x), Saúde & Bem-estar (1x)
 const EDITORIAL_SCHEDULE = {
-  1: { morning: 'Mercado & Negócios', evening: 'Saúde & Bem-estar' },
-  2: { morning: 'Inovação & IA', evening: 'Tendências' },
-  3: { morning: 'Finanças Pessoais', evening: 'Estética & Beleza' },
-  4: { morning: 'Inovação & IA', evening: 'Sustentabilidade' },
-  5: { morning: 'Mercado & Negócios', evening: 'Estilo de Vida & Viagens' },
-  6: { morning: 'Inovação & IA', evening: 'Comportamento' },
-  0: { morning: 'Tendências', afternoon: 'Saúde & Bem-estar', evening: 'Estilo de Vida & Viagens' }
+  1: { morning: 'Finanças Pessoais', afternoon: 'Comportamento', evening: 'Inovação & IA' },
+  2: { morning: 'Mercado & Negócios', afternoon: 'Sustentabilidade', evening: 'Tendências' },
+  3: { morning: 'Finanças Pessoais', afternoon: 'Estética & Beleza', evening: 'Estilo de Vida & Viagens' },
+  4: { morning: 'Mercado & Negócios', afternoon: 'Sustentabilidade', evening: 'Comportamento' },
+  5: { morning: 'Finanças Pessoais', afternoon: 'Estética & Beleza', evening: 'Inovação & IA' },
+  6: { morning: 'Estética & Beleza', afternoon: 'Comportamento', evening: 'Estilo de Vida & Viagens' },
+  0: { morning: 'Tendências', afternoon: 'Sustentabilidade', evening: 'Saúde & Bem-estar' }
 }
 
 const BLOG_DIR = path.resolve('src/content/blog')
@@ -307,12 +310,14 @@ function getScheduledCategory(overrideArg) {
   const dayOfWeek = brDate.getDay() // 0=Domingo, 1=Segunda, ..., 6=Sábado
   const hour = brDate.getHours()
 
-  // Para domingo (3 postagens), divide em manhã (<12h), tarde (<16h) e noite (>=16h); nos demais dias divide em manhã e noite
-  let period = hour < 14 ? 'morning' : 'evening'
-  if (dayOfWeek === 0) {
-    if (hour < 12) period = 'morning'
-    else if (hour < 16) period = 'afternoon'
-    else period = 'evening'
+  // Divisão em 3 períodos diários (Manhã < 12h, Tarde < 16h, Noite >= 16h) para todos os dias
+  let period = 'morning'
+  if (hour < 12) {
+    period = 'morning'
+  } else if (hour < 16) {
+    period = 'afternoon'
+  } else {
+    period = 'evening'
   }
   const daySchedule = EDITORIAL_SCHEDULE[dayOfWeek] || EDITORIAL_SCHEDULE[1]
   const targetCategoryName = daySchedule[period] || 'Tendências'

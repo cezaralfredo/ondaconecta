@@ -1,9 +1,10 @@
 name: Auto News Cron Publisher (Onda Conecta)
 
 on:
-  # Agendamento Cron: roda todos os dias às 08:00 e às 18:00 (Horário de Brasília = 11:00 e 21:00 UTC)
+  # Agendamento Cron: roda todos os dias às 08:00, 14:00 e 18:00 (Horário de Brasília = 11:00, 17:00 e 21:00 UTC)
   schedule:
     - cron: '0 11 * * *'
+    - cron: '0 17 * * *'
     - cron: '0 21 * * *'
   # Permite acionar manualmente a qualquer momento pela aba Actions no GitHub
   workflow_dispatch:

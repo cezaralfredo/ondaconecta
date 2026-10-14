@@ -1005,5 +1005,45 @@
       "VivaBem UOL"
     ],
     "title": "O Santo Graal da Recuperação: Por Que a Variabilidade da Frequência Cardíaca (HRV) Redefine a Saúde Preventiva"
+  },
+  {
+    "id": 229,
+    "slug": "contas-globais-renda-fixa-dolar-blindagem-patrimonial",
+    "category": "Finanças Pessoais",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-10-14T08:00:00-03:00",
+    "sources": [
+      "Banco Central do Brasil",
+      "Anbima",
+      "SIPC",
+      "FDIC"
+    ],
+    "title": "Além do Dólar Turismo: Como as Contas Globais e a Renda Fixa em Dólar Blindam o Patrimônio"
+  },
+  {
+    "id": 232,
+    "slug": "estetica-regenerativa-quiet-beauty-bioestimuladores-anvisa",
+    "category": "Estética & Beleza",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-10-14T14:00:00-03:00",
+    "sources": [
+      "Anvisa",
+      "Sociedade Brasileira de Dermatologia",
+      "Harvard Health Publishing"
+    ],
+    "title": "Menos Volume, Mais Célula: A Virada da Estética Regenerativa e o Alerta da Anvisa"
+  },
+  {
+    "id": 235,
+    "slug": "turismo-farm-to-table-rotas-regenerativas-brasil",
+    "category": "Estilo de Vida & Viagens",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-10-14T18:00:00-03:00",
+    "sources": [
+      "Embratur",
+      "Slow Food Brasil",
+      "Condé Nast Traveler"
+    ],
+    "title": "Do Campo Para a Mesa: A Força do Turismo Farm-to-Table e as Rotas Regenerativas no Brasil"
   }
 ]
