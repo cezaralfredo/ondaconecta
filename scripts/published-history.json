@@ -1045,5 +1045,47 @@
       "Condé Nast Traveler"
     ],
     "title": "Do Campo Para a Mesa: A Força do Turismo Farm-to-Table e as Rotas Regenerativas no Brasil"
+  },
+  {
+    "id": 238,
+    "slug": "agri-deeptechs-biossolucoes-agro-inovacao-brasil",
+    "category": "Mercado & Negócios",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-10-15T08:00:00-03:00",
+    "sources": [
+      "Embrapa",
+      "Brazil Journal",
+      "ABVCAP",
+      "Nature Biotechnology"
+    ],
+    "title": "Além das Commodities: Como as Agri-Deeptechs e Biossoluções Atraem Bilhões ao Brasil"
+  },
+  {
+    "id": 241,
+    "slug": "litio-verde-jequitinhonha-minerais-criticos-esg-brasil",
+    "category": "Sustentabilidade",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-10-15T14:00:00-03:00",
+    "sources": [
+      "Ministério de Minas e Energia (MME)",
+      "Exame ESG",
+      "BloombergNEF",
+      "European Commission Environment"
+    ],
+    "title": "O Ouro Branco Sustentável: Como o Lítio Verde do Jequitinhonha Conquista a Europa"
+  },
+  {
+    "id": 244,
+    "slug": "movimento-jomo-retiros-silencio-descompressao-digital",
+    "category": "Comportamento",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-10-15T18:00:00-03:00",
+    "sources": [
+      "Wired Magazine",
+      "Estadão Comportamento",
+      "Nature Human Behaviour",
+      "World Economic Forum"
+    ],
+    "title": "Menos Notificações, Mais Presença: A Ascensão do Movimento JOMO e o Luxo do Silêncio"
   }
 ]
