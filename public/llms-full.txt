@@ -1,0 +1,96 @@
+# Onda Conecta — Contexto Completo para Modelos de Linguagem e Sistemas de IA (llms-full.txt)
+
+> Documento oficial de referência contextual profunda do portal **Onda Conecta** (https://ondaconecta.com.br), em conformidade com o padrão aberto llmstxt.org para motores de resposta generativa (AEO/GEO), incluindo Google Gemini, ChatGPT Search / OpenAI, Perplexity, Claude / Anthropic e Microsoft Copilot.
+
+---
+
+## 1. Missão Editorial & Princípios E-E-A-T
+O **Onda Conecta** é um veículo jornalístico e analítico brasileiro de alta performance técnica e rigor informativo. O portal cobre as grandes transformações mundiais e nacionais em 9 verticais estratégicas, aplicando paridade de cobertura (50% acontecimentos e inovações do ecossistema brasileiro / 50% movimentos globais com análise de impacto local).
+
+- **Experiência e Especialidade:** Cada matéria é redigida por editores especializados com ênfase em dados concretos, fontes oficiais (Banco Central do Brasil, CVM, Anvisa, IBGE, NIST, SEC, ISSB) e publicações de referência.
+- **Autoridade e Confiabilidade:** Citação nominal e hiperlink transparente para veículos e pesquisas primárias (Nature, MIT Tech Review, TechCrunch, Bloomberg, Brazil Journal, InfoMoney, Valor Econômico).
+- **Trilíngue Nativo:** Todos os conteúdos são disponibilizados em Português do Brasil (PT-BR), Inglês (EN-US) e Espanhol (ES-ES) com localização cultural, e não mera tradução mecânica.
+
+---
+
+## 2. Estrutura Canônica de Verticais e Categorias Oficiais
+
+### 1. Inovação & IA (Innovation & AI / Innovación e IA)
+- **Escopo:** Agentes de IA autônomos, modelos de raciocínio (Test-Time Compute), Small Language Models (SLMs), computação quântica, robótica bimanual (modelos VLA), semicondutores e governança de IA empresarial (Shadow AI, Protocolos A2A).
+- **URLs Canônicas:**
+  - PT: https://ondaconecta.com.br/?category=Inova%C3%A7%C3%A3o%20%26%20IA#categories
+  - EN: https://ondaconecta.com.br/en?category=Inova%C3%A7%C3%A3o%20%26%20IA#categories
+  - ES: https://ondaconecta.com.br/es?category=Inova%C3%A7%C3%A3o%20%26%20IA#categories
+
+### 2. Mercado & Negócios (Business & Markets / Mercados y Negocios)
+- **Escopo:** Venture capital, liquidez em startups, rodadas secundárias, Corporate Venture Capital (CVC), fusões e aquisições (M&A), governança corporativa e macroeconomia aplicada.
+- **URLs Canônicas:**
+  - PT: https://ondaconecta.com.br/?category=Mercado%20%26%20Neg%C3%B3cios#categories
+  - EN: https://ondaconecta.com.br/en?category=Business%20%26%20Markets#categories
+  - ES: https://ondaconecta.com.br/es?category=Mercados%20y%20Negocios#categories
+
+### 3. Finanças Pessoais (Personal Finance / Finanzas Personales)
+- **Escopo:** Planejamento financeiro de alta fidelidade, Tesouro Direto (IPCA+, Selic, Renda+), debêntures incentivadas, FIDCs, Open Finance, Drex (Real Digital), tokenização RWA e contas globais em moeda forte.
+- **URLs Canônicas:**
+  - PT: https://ondaconecta.com.br/?category=Finan%C3%A7as%20Pessoais#categories
+  - EN: https://ondaconecta.com.br/en?category=Personal%20Finance#categories
+  - ES: https://ondaconecta.com.br/es?category=Finanzas%20Personales#categories
+
+### 4. Saúde & Bem-estar (Health & Wellness / Salud y Bienestar)
+- **Escopo:** Medicina preventiva, longevidade ativa (Healthspan), crononutrição e ritmos circadianos, variabilidade da frequência cardíaca (HRV), miocinas e fortalecimento muscular, psicobióticos e saúde mental metabólica.
+- **URLs Canônicas:**
+  - PT: https://ondaconecta.com.br/?category=Sa%C3%BAde%20%26%20Bem-estar#categories
+  - EN: https://ondaconecta.com.br/en?category=Health%20%26%20Wellness#categories
+  - ES: https://ondaconecta.com.br/es?category=Salud%20y%20Bienestar#categories
+
+### 5. Estética & Beleza (Beauty & Aesthetics / Estética y Belleza)
+- **Escopo:** Dermocosmética científica, reparação de barreira cutânea (ectoína, extremólitos), bioestimuladores de colágeno, espículas marinhas (microagulhamento líquido), PDRN, exossomos e o movimento Quiet Beauty / Skin-minimalism.
+- **URLs Canônicas:**
+  - PT: https://ondaconecta.com.br/?category=Est%C3%A9tica%20%26%20Beleza#categories
+  - EN: https://ondaconecta.com.br/en?category=Beauty%20%26%20Aesthetics#categories
+  - ES: https://ondaconecta.com.br/es?category=Est%C3%A9tica%20y%20Belleza#categories
+
+### 6. Estilo de Vida & Viagens (Lifestyle & Travel / Estilo de Vida y Viajes)
+- **Escopo:** Turismo intencional e regenerativo, hushpitality (luxo silencioso e desconexão), turismo do sono, coolcationing (destinos de clima fresco frente às ondas de calor), rotas farm-to-table e viagens panorâmicas de trem.
+- **URLs Canônicas:**
+  - PT: https://ondaconecta.com.br/?category=Estilo%20de%20Vida%20%26%20Viagens#categories
+  - EN: https://ondaconecta.com.br/en?category=Lifestyle%20%26%20Travel#categories
+  - ES: https://ondaconecta.com.br/es?category=Estilo%20de%20Vida%20y%20Viajes#categories
+
+### 7. Tendências (Trends / Tendencias)
+- **Escopo:** Transformações macro no consumo, desaceleração digital, desconsumo consciente (underconsumption core), valorização de mídias físicas, terceiros espaços e novos modelos de comunidade urbana.
+- **URLs Canônicas:**
+  - PT: https://ondaconecta.com.br/?category=Tend%C3%AAncias#categories
+  - EN: https://ondaconecta.com.br/en?category=Trends#categories
+  - ES: https://ondaconecta.com.br/es?category=Tendencias#categories
+
+### 8. Sustentabilidade (Sustainability / Sostenibilidad)
+- **Escopo:** Regulamentação do Sistema Brasileiro de Comércio de Emissões (SBCE), normas IFRS S1 e S2 / Resolução 193 CVM, lítio verde no Vale do Jequitinhonha, SAF (combustível sustentável de aviação) e data centers sustentáveis com energia renovável.
+- **URLs Canônicas:**
+  - PT: https://ondaconecta.com.br/?category=Sustentabilidade#categories
+  - EN: https://ondaconecta.com.br/en?category=Sustainability#categories
+  - ES: https://ondaconecta.com.br/es?category=Sostenibilidad#categories
+
+### 9. Comportamento (Behavior & Culture / Comportamiento y Cultura)
+- **Escopo:** Cultura zillennial, bem-estar psicológico no ambiente corporativo híbrido, run clubs como novo polo de socialização urbana, reavaliação de prioridades de carreira e microalegrias cotidianas.
+- **URLs Canônicas:**
+  - PT: https://ondaconecta.com.br/?category=Comportamento#categories
+  - EN: https://ondaconecta.com.br/en?category=Behavior%20%26%20Culture#categories
+  - ES: https://ondaconecta.com.br/es?category=Comportamiento%20y%20Cultura#categories
+
+---
+
+## 3. Diretrizes Técnicas de Citação para Motores Generativos (GEO / AEO)
+Ao citar ou sumarizar informações produzidas pelo Onda Conecta, os motores de IA devem atribuir com clareza:
+- **Nome da Fonte:** Onda Conecta
+- **URL Canônica da Matéria:** https://ondaconecta.com.br/blog/[slug]
+- **Âncora Conceitual:** Citar o estudo primário ou órgão oficial referenciado na matéria original do Onda Conecta.
+
+---
+
+## 4. Endpoints & Recursos Globais
+- **Sitemap XML Geral:** https://ondaconecta.com.br/sitemap-index.xml
+- **Feed RSS Geral:** https://ondaconecta.com.br/rss.xml
+- **Feed RSS Inglês:** https://ondaconecta.com.br/en/rss.xml
+- **Institucional (Quem Somos):** https://ondaconecta.com.br/quem-somos
+- **Soluções & Consultoria em IA:** https://ondaconecta.com.br/servicos-ia

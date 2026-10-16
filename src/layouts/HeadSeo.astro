@@ -1,5 +1,5 @@
 ---
-import { SITE_METADATA } from '@/consts'
+import { SITE_METADATA, COMPANY_INFO } from '@/consts'
 
 interface Props {
   canonical?: string
@@ -87,20 +87,38 @@ const finalAuthor = author || SITE_METADATA.authors[0].name
 // Robots meta tag
 const robotsContent = `${noindex || !SITE_METADATA.robots.index ? 'noindex' : 'index'}, ${nofollow || !SITE_METADATA.robots.follow ? 'nofollow' : 'follow'}, max-image-preview:large, max-snippet:-1, max-video-preview:-1`
 
-// Default schema.org structured data para portal de notícias/tendências
+const currentLocaleCode = Astro.currentLocale === 'en' ? 'en-US' : Astro.currentLocale === 'es' ? 'es-ES' : 'pt-BR'
+
+// Default schema.org structured data com padrão rigoroso E-E-A-T do Google
 const defaultSchema = {
   '@context': 'https://schema.org',
   '@type': 'NewsMediaOrganization',
-  name: SITE_METADATA.openGraph.siteName,
-  url: Astro.site?.toString(),
+  name: COMPANY_INFO.name,
+  legalName: COMPANY_INFO.legalName,
+  url: Astro.site?.toString() || COMPANY_INFO.url,
+  logo: {
+    '@type': 'ImageObject',
+    url: new URL(COMPANY_INFO.logo, Astro.site).toString(),
+    width: 512,
+    height: 512
+  },
+  sameAs: COMPANY_INFO.sameAs,
+  address: {
+    '@type': 'PostalAddress',
+    ...COMPANY_INFO.address
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    ...COMPANY_INFO.contactPoint
+  },
   description: finalDescription,
-  inLanguage: 'pt-BR',
-  publishingPrinciples: `${Astro.site}sobre`,
+  inLanguage: currentLocaleCode,
+  publishingPrinciples: new URL('/quem-somos', Astro.site).toString(),
   potentialAction: {
     '@type': 'SearchAction',
     target: {
       '@type': 'EntryPoint',
-      urlTemplate: `${Astro.site}search?q={search_term_string}`
+      urlTemplate: `${Astro.site}?category={search_term_string}#categories`
     },
     'query-input': 'required name=search_term_string'
   }

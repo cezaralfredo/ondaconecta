@@ -211,45 +211,72 @@ function getNextId() {
   return maxId + 1
 }
 
-// Redação via Gemini API
+// Redação via Gemini API com conformidade total ao Google Search Console e GEO (Generative Engine Optimization)
 async function generateArticleWithGemini(newsItem, category, apiKey) {
   const prompt = `
-Você é o editor-chefe do portal "Onda Conecta" (portal focado em tendências, novidades e inovação mundial com alto foco no público e mercado brasileiro).
+Você é o editor-chefe e estrategista de SEO sênior do portal "Onda Conecta" (portal focado em tendências, novidades e inovação mundial com alto foco no público e mercado brasileiro).
 
 Notícia base:
 Título: "${newsItem.title}"
 Fonte/Link: ${newsItem.link}
 Categoria: ${category.name}
 
-Gere um conteúdo jornalístico profundo, agradável, dinâmico e otimizado para TOP 1 NO GOOGLE.
-A notícia deve analisar o acontecimento e explicar:
-- O que está acontecendo no cenário mundial ou nacional.
-- Por que isso é uma grande tendência ou influência.
-- Como isso impacta diretamente empresas, profissionais e o mercado no Brasil.
-- Citar nominalmente a fonte de apuração com hiperlink Markdown apontando para "${newsItem.link}".
-- Incluir no final do corpo uma seção explícita "### 🔗 Fontes & Referências Consultadas:" com o link da notícia original [${newsItem.title}](${newsItem.link}).
+Gere um conteúdo jornalístico e analítico profundo, agradável, dinâmico e rigorosamente em conformidade com as DIRETRIZES DO GOOGLE SEARCH CONSOLE (E-E-A-T, Conteúdo Útil, Anti-Thin Content) e de MOTORES DE IA GENERATIVA (AEO / GEO para Google Gemini, SearchGPT, Perplexity e Claude).
 
-Gere a resposta EXATAMENTE no seguinte formato JSON (sem markdown de formatação ao redor, apenas o JSON puro):
+REGRAS EDITORIAIS E ESTRUTURAIS MANDATÓRIAS:
+1. EXTENSÃO E PROFUNDIDADE (ANTI-THIN CONTENT):
+   - Cada versão (PT, EN, ES) deve ter entre 800 e 1.200 palavras no corpo do texto.
+   - Nada de texto genérico ou superficial. Analise o acontecimento, o contexto histórico, os desdobramentos práticos e os dados estatísticos.
+2. BLOCO DE ABERTURA AEO / GEO "KEY TAKEAWAYS" (IMEDIATAMENTE APÓS OS 2 PRIMEIROS PARÁGRAFOS):
+   - Em PT:
+     > **Em Poucas Linhas (Key Takeaways):**
+     > - **O Fato:** [Síntese objetiva com dado numérico ou magnitude do evento].
+     > - **Impacto no Brasil:** [Como isso atinge empresas, profissionais ou consumidores no país].
+     > - **Visão de Futuro:** [Tendência para os próximos meses ou horizonte estratégico].
+   - Em EN: use "> **Key Takeaways:**" com bullets equivalentes adaptados.
+   - Em ES: use "> **Puntos Clave:**" com bullets equivalentes adaptados.
+3. CRITÉRIOS DE E-E-A-T E CITABILIDADE:
+   - Cite nominalmente a fonte de apuração com hiperlink Markdown apontando para "${newsItem.link}".
+   - Cite entidades exatas (nomes de empresas, órgãos reguladores, leis ou institutos de pesquisa).
+4. SEÇÃO OBRIGATÓRIA DE FAQ (FORMATO ESTREITO PARA SCHEMA.ORG E RESPOSTAS POR IA):
+   - No final do texto, antes das referências, inclua 2 a 3 perguntas frequentes no formato exato:
+     Em PT:
+     ## Perguntas Frequentes
+
+     ### [Pergunta frequente 1 em tom de busca comum]?
+     [Resposta direta e concisa em 2 a 3 frases bem estruturadas].
+
+     ### [Pergunta frequente 2 em tom de busca comum]?
+     [Resposta direta e concisa em 2 a 3 frases bem estruturadas].
+
+     Em EN: use "## Frequently Asked Questions" com "### [Question]?"
+     Em ES: use "## Preguntas Frecuentes" com "### [Pregunta]?"
+5. SEÇÃO DE FONTES:
+   - Termine com:
+     ### 🔗 Fontes & Referências Consultadas:
+     - [${newsItem.title}](${newsItem.link}) — *Reportagem e dados originais de apuração.*
+
+Gere a resposta EXATAMENTE no seguinte formato JSON (sem blocos de markdown no início/fim, apenas o JSON puro):
 
 {
   "slug": "slug-amigavel-separado-por-hifens-sem-acentos",
   "pt": {
-    "title": "Título magnético em português (max 65 caracteres)",
+    "title": "Título magnético em português (50-65 caracteres)",
     "description": "Meta description persuasiva com verbo de ação e benefício (130-155 caracteres)",
     "category": "${category.name}",
-    "body": "Corpo completo em Markdown (com H2, H3, bullets, citações e síntese da tendência ao final)"
+    "body": "Corpo completo em Markdown contendo introdução, bloco Key Takeaways, subtítulos H2 e H3, análise E-E-A-T, seção ## Perguntas Frequentes com ### [Pergunta]?, síntese final e referências"
   },
   "en": {
-    "title": "Engaging title in English (max 65 chars)",
+    "title": "Engaging title in English (50-65 chars)",
     "description": "Compelling meta description in English (130-155 chars)",
     "category": "${category.enName}",
-    "body": "Complete body in English formatted in Markdown"
+    "body": "Complete body in English formatted in Markdown with Key Takeaways, H2/H3 analysis, ## Frequently Asked Questions, and References"
   },
   "es": {
-    "title": "Título atractivo en español (max 65 caracteres)",
+    "title": "Título atractivo en español (50-65 caracteres)",
     "description": "Meta descripción persuasiva en español (130-155 caracteres)",
     "category": "${category.esName}",
-    "body": "Cuerpo completo en español formateado en Markdown"
+    "body": "Cuerpo completo en español formateado en Markdown con Puntos Clave, análisis H2/H3, ## Preguntas Frecuentes y Referencias"
   }
 }
 `

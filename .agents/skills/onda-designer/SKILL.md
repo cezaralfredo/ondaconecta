@@ -13,7 +13,7 @@ Esta skill atua como o **diretor de arte editorial** do portal **Onda Conecta**.
 
 Todas as capas do Onda Conecta devem seguir rigorosamente os seguintes pilares visuais:
 
-- **Proporção Obrigatória:** `16:9` (proporção padrão para web, redes sociais e cards do Astro).
+- **Proporção Obrigatória:** `16:9` (proporção padrão para web, redes sociais e cards do Astro, com largura mínima de **1200px** para atender aos critérios de Rich Results do Google Search Console e Google Discover).
 - **Regra de Ouro:** **NUNCA incluir texto renderizado dentro da imagem**. A inteligência artificial de imagem não deve tentar escrever palavras, títulos ou logotipos na imagem, pois gera letras deformadas e prejudica a estética.
 - **Estilo Visual por Vertical:**
   - **Inovação, IA & Tech:** Fotografia minimalista com iluminação volumétrica, arte conceitual 3D limpa, circuitos orgânicos ou estética biomórfica de alta tecnologia. Sem clichês óbvios (evitar "robôs azuis genéricos").

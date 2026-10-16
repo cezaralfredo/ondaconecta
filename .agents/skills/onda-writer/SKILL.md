@@ -90,9 +90,21 @@ Para garantir que cada matéria domine a SERP tradicional e seja citada por moto
    - Incluir pelo menos 1 link contextual no corpo do texto para outra matéria relevante do portal.
    - **Box Visual de Retenção:** Inserir o componente `<ReadAlso slug="slug-do-artigo-relacionado" />` estrategicamente entre o 3º e 4º subtítulo (H2), convidando o leitor a continuar explorando o portal antes que ele decida sair da página (aumentando o tempo de permanência, o CTR interno e multiplicando as impressões de anúncios do Google AdSense).
 
-### C. Fechamento para "Featured Snippets", Conversão & Credibilidade:
-7. **Seção de Perguntas Frequentes (`FAQ / People Also Ask`):**
-   - 2 a 3 perguntas frequentes que o leitor pesquisa no Google sobre o tema, com respostas diretas e precisas de até 3 linhas (formato ideal para a "posição zero" da busca).
+### C. Fechamento para "Featured Snippets", Motores de IA (GEO/AEO) & Schema.org:
+7. **Seção Obrigatória de Perguntas Frequentes (FAQ / People Also Ask & GEO):**
+   - Para ativar o rich snippet no Google Search Console e a extração do JSON-LD `FAQPage` em `src/utils/blog.ts`, o bloco deve seguir **rigorosamente a sintaxe**:
+     - **Em Português (`pt`):**
+       ```markdown
+       ## Perguntas Frequentes
+
+       ### [Pergunta frequente 1 em tom de busca comum]?
+       [Resposta direta, factual e concisa em 2 a 3 frases, sem enrolação].
+
+       ### [Pergunta frequente 2 em tom de busca comum]?
+       [Resposta direta, factual e concisa em 2 a 3 frases, sem enrolação].
+       ```
+     - **Em Inglês (`en`):** Subtítulo `## Frequently Asked Questions` seguido por `### [Question]?`.
+     - **Em Espanhol (`es`):** Subtítulo `## Preguntas Frecuentes` seguido por `### [Pregunta]?`.
 8. **Síntese da Tendência & Pergunta de Engajamento:**
    - Fechamento com lição prática e pergunta aberta estimulando comentários e compartilhamento nas redes.
 9. **Bloco Padronizado: Fontes & Referências Consultadas:**
@@ -105,18 +117,24 @@ Para garantir que cada matéria domine a SERP tradicional e seja citada por moto
      - [Nome do Veículo 2](URL_da_Fonte_2) — *Contexto breve da matéria ou estudo*
      ```
 
-### D. Blindagem Google AdSense, Diretrizes YMYL e Transparência Comercial:
-10. **Conformidade Estrita com as Políticas do Google AdSense:**
-    - **Extensão Mínima Anti-Thin Content:** Todo artigo deve ter extensão substantiva de **800 a 1.500+ palavras**, eliminando qualquer risco de penalização por *"Conteúdo de baixo valor"*.
+### D. Diretrizes Google Search Console, E-E-A-T & Otimização para IAs (GEO/AEO):
+10. **Conformidade Estrita com Google Search Essentials & Search Console:**
+    - **Extensão Mínima Anti-Thin Content:** Todo artigo deve ter extensão substantiva de **800 a 1.500+ palavras**, eliminando qualquer risco de penalização por *"Conteúdo de baixo valor"* ou classificação como thin content no Search Console.
+    - **Demonstração E-E-A-T (Experiência, Especialidade, Autoridade e Confiabilidade):**
+      - Nunca fazer afirmações vagas ou sem base factual. Toda tese deve ser ancorada em dados numéricos, percentuais, órgãos oficiais ou estudos comprovados.
+      - **Named Entity Recognition (NER):** Citar nomes próprios completos de entidades (empresas, leis, resoluções, universidades, personalidades e tecnologias) para indexação no Google Knowledge Graph e nos grafos de conhecimento das IAs.
+    - **Hierarquia de Cabeçalhos Semântica e Perfeita:**
+      - Apenas um `H1` por página (renderizado pelo layout).
+      - No corpo, usar estritamente `H2` para pilares macro e `H3` para subseções. **Nunca pular níveis de cabeçalho** (ex: ir de H2 direto para H4).
+    - **Links Internos Semânticos:**
+      - O texto deve incorporar links internos para outros artigos do portal com textos-âncora descritivos (ex: `veja nossa análise sobre [agentes de IA no mercado financeiro](/blog/agentes-ia-open-finance-pagamentos-autonomos-2026)`), proibindo âncoras vazias como "clique aqui" ou "leia mais".
     - **Segurança Editorial YMYL (Your Money or Your Life):**
       - **Saúde & Estética (`Saúde & Bem-estar`, `Estética & Beleza`):** Proibido fazer alegações médicas de cura milagrosa, promessas irreais de transformação biológica ou prescrições categóricas. Todo conteúdo deve ser embasado em literatura médica/científica reconhecida (NIH, Anvisa, Harvard, etc.). O layout do site injeta automaticamente o box `<ArticleDisclaimer />` com aviso de isenção médica.
       - **Finanças & Investimentos (`Finanças Pessoais`, `Mercado & Negócios`):** Proibido prometer "retorno garantido" ou indicar compra de ativos específicos como ordem imperativa. O tom deve ser puramente analítico e educacional. O layout do site injeta automaticamente o box `<ArticleDisclaimer />` com aviso de isenção financeira.
-    - **Links Comerciais e de Afiliados (Shopee, Amazon, etc.):**
-      - Caso a matéria apresente recomendações de produtos físicos ou digitais, os links externos de compra **devem obrigatoriamente** conter o atributo de segurança:
-        `rel="nofollow sponsored noopener noreferrer"`
+    - **Links Comerciais e de Afiliados:**
+      - Caso a matéria apresente recomendações de produtos físicos ou digitais, os links externos de compra **devem obrigatoriamente** conter o atributo de segurança: `rel="nofollow sponsored noopener noreferrer"`.
       - Imediatamente após a vitrine ou lista de produtos, inserir a nota de transparência:
         `*Transparência editorial: Os links acima são links de afiliados. Caso você decida adquirir através deles, poderemos receber uma comissão sem qualquer custo adicional para você.*`
-        (Adaptando a nota com fluência natural para inglês em `en` e espanhol em `es`).
 
 ---
 

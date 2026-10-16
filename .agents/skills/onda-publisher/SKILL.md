@@ -76,11 +76,16 @@ Cada versão idiomática deve receber a data formatada de acordo com os padrões
 - O artigo original em português recebe `featured: true` apenas se for a principal matéria da categoria na semana (ou com `urgency_score >= 8`).
 - As versões em inglês e espanhol acompanham o mesmo valor da flag da versão principal.
 
-### E. Validação Prévia de Monetização e AdSense (Compliance Check):
-Antes de gerar o build e comitar, a skill deve verificar os 3 pilares de monetização:
+### E. Validação Prévia de Ranqueamento, Google Search Console e GEO (Compliance Audit Check):
+Antes de gerar o build e comitar, a skill deve verificar os 5 pilares de conformidade com os motores de busca e IAs:
 1. **Auditoria de Categoria Ativa:** Certificar-se de que a `category` pertence às 9 categorias oficiais permitidas. Jamais aceitar a categoria obsoleta `"Tecnologia"` (se vier com esse valor, converter automaticamente para `"Inovação & IA"`).
-2. **Checagem Anti-Thin Content:** Validar se o artigo tem extensão substantiva (mínimo de 700 a 800 palavras no corpo do texto). Artigos superficiais devem ser rejeitados para reescrita antes de entrar na esteira de publicação.
-3. **Segurança de Links Comerciais:** Se o artigo contiver links externos de afiliados ou parceiros de e-commerce (ex: Shopee, Amazon, etc.), verificar se possuem obrigatoriamente `rel="nofollow sponsored noopener noreferrer"` e a nota de transparência editorial.
+2. **Checagem Anti-Thin Content (Google Search Console):** Validar se o artigo tem extensão substantiva (mínimo de 800 palavras no corpo do texto). Artigos superficiais devem ser rejeitados para reescrita antes de entrar na esteira de publicação.
+3. **Checagem Estrutural GEO/AEO (Key Takeaways & FAQ):**
+   - Confirmar a presença do bloco "Em Poucas Linhas" (Key Takeaways) na introdução.
+   - Confirmar a presença da seção `## Perguntas Frequentes` (ou `## Frequently Asked Questions` em EN, `## Preguntas Frecuentes` em ES) com perguntas em `### [Pergunta]?` para garantir a geração automática do schema `FAQPage` e rich snippets no Google.
+4. **Validação de Imagem & Acessibilidade (Google Imagens):**
+   - Confirmar se o frontmatter possui `imageAlt` descritivo e semântico (nunca vazio ou idêntico ao título sem contexto).
+5. **Segurança de Links Comerciais:** Se o artigo contiver links externos de afiliados ou parceiros de e-commerce (ex: Shopee, Amazon, etc.), verificar se possuem obrigatoriamente `rel="nofollow sponsored noopener noreferrer"` e a nota de transparência editorial.
 
 ---
 

@@ -57,10 +57,11 @@ Antes de aprovar qualquer pauta:
 
 ---
 
-## 3. Critérios E-E-A-T & Verificação de Fatos
-
+## 3. Critérios E-E-A-T & Verificação de Fatos para Google Search Console e IAs
 - Pelo menos **2 fontes de alta autoridade** devem corroborar os fatos.
 - Pelo menos **1 dado estatístico ou número comprovado** (ex: porcentagens de crescimento, valores de aportes, dados de pesquisas científicas ou órgãos oficiais como IBGE, Anvisa, SEC, etc.).
+- **Mapeamento de Entidades Nomeadas (NER):** Identificar os nomes próprios exatos de instituições, leis/resoluções, empresas e tecnologias envolvidas para indexação no Google Knowledge Graph e RAGs de IA.
+- **Mapeamento de Dúvidas Comuns (People Also Ask):** Mapear 2 a 3 perguntas que usuários fazem no Google sobre o tema para estruturar a seção de FAQ da redação.
 - Janela de atualidade: acontecimentos das últimas **24 a 48 horas** (ou no máximo 72h para análises de tendências aprofundadas).
 
 ---
@@ -75,12 +76,20 @@ O resultado final do trabalho da `onda-researcher` deve ser entregue estritament
   "category": "<Uma das categorias válidas do portal>",
   "urgency_score": <1 a 10, onde 10 é furo urgente>,
   "national_relevance_angle": "<Explicação de 2-3 frases sobre o impacto direto para o Brasil ou leitor brasileiro>",
+  "named_entities": [
+    "<Entidade/Órgão 1>",
+    "<Empresa/Lei 2>"
+  ],
   "primary_sources": [
     { "name": "<Nome do Veículo>", "url": "<URL ou referência da matéria>" }
   ],
   "key_data_points": [
     "<Dado quantitativo ou estatística 1>",
     "<Dado quantitativo ou estatística 2>"
+  ],
+  "common_questions_paa": [
+    "<Pergunta 1 que os usuários pesquisam no Google>",
+    "<Pergunta 2 que os usuários pesquisam no Google>"
   ],
   "target_keywords": [
     "<palavra-chave 1>",

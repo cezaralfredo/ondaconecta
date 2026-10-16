@@ -1,6 +1,8 @@
 # Onda Conecta — Portal Editorial de Tendências e Inovação
 
 > Portal de notícias e análises aprofundadas sobre inovação tecnológica, inteligência artificial, mercado financeiro, sustentabilidade, estilo de vida contemporâneo e bem-estar para o público brasileiro e internacional (PT, EN, ES).
+> 
+> - Versão Completa / Full Context: https://ondaconecta.com.br/llms-full.txt
 
 ## Sobre o Portal
 Onda Conecta é um veículo de comunicação digital fundado no Brasil com cobertura trilíngue (Português do Brasil, Inglês e Espanhol). Publica diariamente matérias investigativas, guias estratégicos e ensaios analíticos com foco em E-E-A-T (Experiência, Especialidade, Autoridade e Confiabilidade), citando dados de órgãos oficiais (CVM, Banco Central, IBGE, Anvisa, NIST, ISSB) e publicações de referência econômica e tecnológica.

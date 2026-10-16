@@ -57,6 +57,10 @@ Sempre que esta skill for invocada sob demanda ou disparada via timer/cron (`/sc
 
 ### 5. Validação Técnica, Deploy e Rollback (`onda-publisher`)
 - Aciona a skill `onda-publisher` passando o lote de arquivos.
+- **Auditoria Prévia de SEO & GEO (Google Search Console Check):**
+  - Checagem anti-thin content (mínimo de 800 palavras por artigo).
+  - Verificação de metadados de imagem (`imageAlt` semântico).
+  - Confirmação de presença do bloco Key Takeaways e FAQ estruturada para geração do schema `FAQPage` e `BreadcrumbList`.
 - Executa a sanitização do YAML, cálculo do `readTime` real e teste de compilação: `npm run build`.
 - **Protocolo de Rollback (Circuit Breaker):**
   - Se o build falhar, a skill cancela o lote (`git checkout -- .`), registra o erro no log e avisa o usuário, garantindo que código quebrado **nunca seja commitado**.
@@ -92,8 +96,9 @@ Ao finalizar o ciclo com sucesso, o `onda-cron-agent` apresenta um resumo execut
   - 🇧🇷 `src/content/blog/<slug>.mdx` (PT)
   - 🇺🇸 `src/content/blog/<slug>-en.mdx` (EN)
   - 🇪🇸 `src/content/blog/<slug>-es.mdx` (ES)
-- **Capa Visual:** `public/images/blog-post/<slug>.webp` (16:9 WebP)
+- **Capa Visual:** `public/images/blog-post/<slug>.webp` (16:9 WebP, min 1200px)
 - **Tempo de Leitura:** [X] min | **Fontes Citadas:** [Fonte 1, Fonte 2]
+- **Conformidade Search Console & IAs:** ✅ E-E-A-T validado | Schemas NewsArticle, BreadcrumbList e FAQPage ativos
 - **Status do Deploy:** ✅ Build Astro validado | Commit enviado para a branch `main`.
 ```
 

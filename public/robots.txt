@@ -1,5 +1,5 @@
 # robots.txt for Onda Conecta
-# Production-ready configuration for search engine crawlers & GEO (Generative Engine Optimization)
+# Production-ready configuration for search engines, Google Search Console, and GEO (Generative Engine Optimization)
 
 # Allow all major search engines full access
 User-agent: *
@@ -9,16 +9,32 @@ Allow: /
 Disallow: /admin/
 Disallow: /private/
 
-# Disallow search result pages
+# Disallow search query parameters
 Disallow: /search?
 Disallow: /*?q=
 
-# Allow CSS and JS files for rendering
+# Allow CSS and JS files for complete rendering (Core Web Vitals & Googlebot Rendering)
 Allow: /*.css$
 Allow: /*.js$
 
-# Sitemap & LLMs resources
+# Explicit access for AI documentation
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+# Sitemaps & Discovery
 Sitemap: https://ondaconecta.com.br/sitemap-index.xml
+
+# -------------------------------------------------------------
+# Google Search & Google Extended (Gemini, AI Overviews)
+# -------------------------------------------------------------
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Mediapartners-Google
+Allow: /
 
 # -------------------------------------------------------------
 # GEO (Generative Engine Optimization) & AI Search Crawlers
@@ -33,14 +49,6 @@ User-agent: ChatGPT-User
 Allow: /
 
 User-agent: OAI-SearchBot
-Allow: /
-
-# Google Gemini, AI Overviews & Search
-User-agent: Googlebot
-Crawl-delay: 0
-Allow: /
-
-User-agent: Google-Extended
 Allow: /
 
 # Perplexity AI
@@ -59,7 +67,6 @@ Allow: /
 
 # Microsoft Copilot & Bing
 User-agent: Bingbot
-Crawl-delay: 0
 Allow: /
 
 User-agent: Copilot
@@ -72,9 +79,23 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-# Google AdSense Crawler
-User-agent: Mediapartners-Google
-Crawl-delay: 0
+# Meta AI & Llama Web Search
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# Amazon AI & Rufus
+User-agent: Amazonbot
+Allow: /
+
+# DuckDuckGo AI
+User-agent: DuckAssistBot
+Allow: /
+
+# Cohere AI
+User-agent: cohere-ai
 Allow: /
 
 # -------------------------------------------------------------
