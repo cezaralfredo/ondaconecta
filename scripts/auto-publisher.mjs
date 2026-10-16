@@ -89,20 +89,21 @@ const CATEGORIES = [
   }
 ]
 
-// Grade Semanal Balanceada e Acelerada (3x ao dia = 21 posts/semana)
+// Grade Semanal de Nivelamento Acelerado (3x ao dia = 21 posts/semana)
 // Dias: 0=Domingo, 1=Segunda, 2=Terça, 3=Quarta, 4=Quinta, 5=Sexta, 6=Sábado
 // Períodos: 'morning' (08:00 BRT), 'afternoon' (14:00 BRT) e 'evening' (18:00 BRT)
-// Distribuição calibrada para nivelar as categorias com menor volume de matérias:
-// Comportamento (3x), Sustentabilidade (3x), Estética & Beleza (3x), Finanças Pessoais (3x),
-// Mercado & Negócios (2x), Inovação & IA (2x), Tendências (2x), Estilo de Vida & Viagens (2x), Saúde & Bem-estar (1x)
+// Distribuição calibrada para acelerar intensamente categorias com acervo <= 7 matérias:
+// Comportamento (5x), Sustentabilidade (4x), Estética & Beleza (4x),
+// Finanças Pessoais (2x), Tendências (2x), Mercado & Negócios (1x),
+// Estilo de Vida & Viagens (1x), Saúde & Bem-estar (1x), Inovação & IA (1x)
 const EDITORIAL_SCHEDULE = {
-  1: { morning: 'Finanças Pessoais', afternoon: 'Comportamento', evening: 'Inovação & IA' },
-  2: { morning: 'Mercado & Negócios', afternoon: 'Sustentabilidade', evening: 'Tendências' },
-  3: { morning: 'Finanças Pessoais', afternoon: 'Estética & Beleza', evening: 'Estilo de Vida & Viagens' },
-  4: { morning: 'Mercado & Negócios', afternoon: 'Sustentabilidade', evening: 'Comportamento' },
-  5: { morning: 'Finanças Pessoais', afternoon: 'Estética & Beleza', evening: 'Inovação & IA' },
-  6: { morning: 'Estética & Beleza', afternoon: 'Comportamento', evening: 'Estilo de Vida & Viagens' },
-  0: { morning: 'Tendências', afternoon: 'Sustentabilidade', evening: 'Saúde & Bem-estar' }
+  1: { morning: 'Sustentabilidade', afternoon: 'Comportamento', evening: 'Estética & Beleza' },
+  2: { morning: 'Finanças Pessoais', afternoon: 'Estética & Beleza', evening: 'Comportamento' },
+  3: { morning: 'Sustentabilidade', afternoon: 'Tendências', evening: 'Comportamento' },
+  4: { morning: 'Mercado & Negócios', afternoon: 'Estética & Beleza', evening: 'Sustentabilidade' },
+  5: { morning: 'Finanças Pessoais', afternoon: 'Comportamento', evening: 'Inovação & IA' },
+  6: { morning: 'Estética & Beleza', afternoon: 'Sustentabilidade', evening: 'Estilo de Vida & Viagens' },
+  0: { morning: 'Tendências', afternoon: 'Comportamento', evening: 'Saúde & Bem-estar' }
 }
 
 const BLOG_DIR = path.resolve('src/content/blog')
