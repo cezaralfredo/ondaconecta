@@ -1087,5 +1087,47 @@
       "World Economic Forum"
     ],
     "title": "Menos Notificações, Mais Presença: A Ascensão do Movimento JOMO e o Luxo do Silêncio"
+  },
+  {
+    "id": 247,
+    "slug": "nova-lei-previdencia-privada-pgbl-vgbl-planejamento-ir",
+    "category": "Finanças Pessoais",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-10-16T08:00:00-03:00",
+    "sources": [
+      "Receita Federal",
+      "Fenaprevi",
+      "Planalto",
+      "Valor Investe"
+    ],
+    "title": "12% a Menos no Imposto de Renda: A Corrida para o PGBL com a Nova Lei da Previdência"
+  },
+  {
+    "id": 250,
+    "slug": "espiculas-marinhas-microagulhamento-liquido-cica-reedle-skincare",
+    "category": "Estética & Beleza",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-10-16T14:00:00-03:00",
+    "sources": [
+      "Journal of Cosmetic Dermatology",
+      "SBD",
+      "Anvisa",
+      "Cosmetics & Toiletries"
+    ],
+    "title": "O Fim das Agulhas Clínicas? Por que as Espículas Marinhas e o Microagulhamento Líquido Viraram Febre"
+  },
+  {
+    "id": 253,
+    "slug": "test-time-compute-modelos-raciocinio-ia-empresas",
+    "category": "Inovação & IA",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-10-16T18:00:00-03:00",
+    "sources": [
+      "MIT Technology Review",
+      "Nature Machine Intelligence",
+      "OpenAI Research",
+      "Brazil Journal"
+    ],
+    "title": "A Era do Raciocínio Deliberado: Por que o Test-Time Compute é a Nova Fronteira da IA"
   }
 ]
