@@ -111,33 +111,42 @@ const HISTORY_FILE = path.resolve('scripts/published-history.json')
 
 // Função para buscar notícias recentes no Google News RSS (Global ou Brasil)
 async function fetchLatestNews(query, isBrazil = false) {
-  const params = isBrazil
-    ? 'hl=pt-BR&gl=BR&ceid=BR:pt-419'
-    : 'hl=en-US&gl=US&ceid=US:en'
-  const url = `https://news.google.com/rss/search?q=${encodeURIComponent(query)}&${params}`
-  const res = await fetch(url)
-  const xml = await res.text()
-
-  const items = []
-  const itemMatches = xml.match(/<item>[\s\S]*?<\/item>/g) || []
-
-  for (const itemXml of itemMatches.slice(0, 6)) {
-    const titleMatch = itemXml.match(/<title>(.*?)<\/title>/)
-    const linkMatch = itemXml.match(/<link>(.*?)<\/link>/)
-    const pubDateMatch = itemXml.match(/<pubDate>(.*?)<\/pubDate>/)
-    const sourceMatch = itemXml.match(/<source[^>]*>(.*?)<\/source>/)
-
-    if (titleMatch && linkMatch) {
-      items.push({
-        title: titleMatch[1].replace(/<!\[CDATA\[(.*?)\]\]>/g, '$1').trim(),
-        link: linkMatch[1].trim(),
-        pubDate: pubDateMatch ? pubDateMatch[1].trim() : new Date().toISOString(),
-        source: sourceMatch ? sourceMatch[1].replace(/<!\[CDATA\[(.*?)\]\]>/g, '$1').trim() : (isBrazil ? 'Fonte Nacional' : 'Global Source')
-      })
+  try {
+    const params = isBrazil
+      ? 'hl=pt-BR&gl=BR&ceid=BR:pt-419'
+      : 'hl=en-US&gl=US&ceid=US:en'
+    const url = `https://news.google.com/rss/search?q=${encodeURIComponent(query)}&${params}`
+    const res = await fetch(url)
+    if (!res.ok) {
+      console.warn(`⚠️ Google News RSS retornou status ${res.status} para a busca: "${query}"`)
+      return []
     }
-  }
+    const xml = await res.text()
 
-  return items
+    const items = []
+    const itemMatches = xml.match(/<item>[\s\S]*?<\/item>/g) || []
+
+    for (const itemXml of itemMatches.slice(0, 6)) {
+      const titleMatch = itemXml.match(/<title>(.*?)<\/title>/)
+      const linkMatch = itemXml.match(/<link>(.*?)<\/link>/)
+      const pubDateMatch = itemXml.match(/<pubDate>(.*?)<\/pubDate>/)
+      const sourceMatch = itemXml.match(/<source[^>]*>(.*?)<\/source>/)
+
+      if (titleMatch && linkMatch) {
+        items.push({
+          title: titleMatch[1].replace(/<!\[CDATA\[(.*?)\]\]>/g, '$1').trim(),
+          link: linkMatch[1].trim(),
+          pubDate: pubDateMatch ? pubDateMatch[1].trim() : new Date().toISOString(),
+          source: sourceMatch ? sourceMatch[1].replace(/<!\[CDATA\[(.*?)\]\]>/g, '$1').trim() : (isBrazil ? 'Fonte Nacional' : 'Global Source')
+        })
+      }
+    }
+
+    return items
+  } catch (err) {
+    console.warn(`⚠️ Erro de rede ao buscar notícias via RSS (${query}):`, err.message)
+    return []
+  }
 }
 
 // Histórico para evitar matérias repetidas
@@ -211,6 +220,13 @@ function getNextId() {
   return maxId + 1
 }
 
+// Modelos Gemini com suporte universal em ordem de preferência
+const GEMINI_MODELS = [
+  'gemini-2.0-flash',
+  'gemini-1.5-flash',
+  'gemini-2.5-flash'
+]
+
 // Redação via Gemini API com conformidade total ao Google Search Console e GEO (Generative Engine Optimization)
 async function generateArticleWithGemini(newsItem, category, apiKey) {
   const prompt = `
@@ -224,9 +240,8 @@ Categoria: ${category.name}
 Gere um conteúdo jornalístico e analítico profundo, agradável, dinâmico e rigorosamente em conformidade com as DIRETRIZES DO GOOGLE SEARCH CONSOLE (E-E-A-T, Conteúdo Útil, Anti-Thin Content) e de MOTORES DE IA GENERATIVA (AEO / GEO para Google Gemini, SearchGPT, Perplexity e Claude).
 
 REGRAS EDITORIAIS E ESTRUTURAIS MANDATÓRIAS:
-1. EXTENSÃO E PROFUNDIDADE (ANTI-THIN CONTENT):
-   - Cada versão (PT, EN, ES) deve ter entre 800 e 1.200 palavras no corpo do texto.
-   - Nada de texto genérico ou superficial. Analise o acontecimento, o contexto histórico, os desdobramentos práticos e os dados estatísticos.
+1. EXTENSÃO E PROFUNDIDADE:
+   - Cada versão (PT, EN, ES) deve ter entre 550 e 750 palavras no corpo do texto (análise densa, substantiva, dados numéricos e sem superficialidade).
 2. BLOCO DE ABERTURA AEO / GEO "KEY TAKEAWAYS" (IMEDIATAMENTE APÓS OS 2 PRIMEIROS PARÁGRAFOS):
    - Em PT:
      > **Em Poucas Linhas (Key Takeaways):**
@@ -281,24 +296,65 @@ Gere a resposta EXATAMENTE no seguinte formato JSON (sem blocos de markdown no i
 }
 `
 
-  const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      contents: [{ parts: [{ text: prompt }] }],
-      generationConfig: {
-        responseMimeType: 'application/json'
-      }
-    })
-  })
+  let lastError = null
 
-  if (!res.ok) {
-    throw new Error(`Erro na API do Gemini: ${res.status} - ${await res.text()}`)
+  for (const model of GEMINI_MODELS) {
+    try {
+      console.log(`🤖 Solicitando redação editorial via modelo: "${model}"...`)
+      const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: prompt }] }],
+          generationConfig: {
+            responseMimeType: 'application/json',
+            maxOutputTokens: 8192,
+            temperature: 0.7
+          }
+        })
+      })
+
+      if (!res.ok) {
+        const errBody = await res.text()
+        console.warn(`⚠️ Modelo "${model}" retornou HTTP ${res.status}: ${errBody.slice(0, 150)}...`)
+        lastError = new Error(`API Gemini (${model}) HTTP ${res.status}: ${errBody}`)
+        continue
+      }
+
+      const data = await res.json()
+      const candidate = data.candidates?.[0]
+      if (!candidate || !candidate.content?.parts?.[0]?.text) {
+        const finishReason = candidate?.finishReason || 'NO_CONTENT'
+        console.warn(`⚠️ Resposta do modelo "${model}" sem texto válido (finishReason: ${finishReason})`)
+        lastError = new Error(`Sem conteúdo válido retornado por ${model} (${finishReason})`)
+        continue
+      }
+
+      let rawText = candidate.content.parts[0].text.trim()
+      if (rawText.startsWith('```')) {
+        rawText = rawText.replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/i, '').trim()
+      }
+
+      const firstBrace = rawText.indexOf('{')
+      const lastBrace = rawText.lastIndexOf('}')
+      if (firstBrace !== -1 && lastBrace !== -1 && lastBrace > firstBrace) {
+        rawText = rawText.substring(firstBrace, lastBrace + 1)
+      }
+
+      const parsed = JSON.parse(rawText)
+      if (!parsed.slug || !parsed.pt || !parsed.pt.title || !parsed.pt.body) {
+        throw new Error('JSON recebido não possui as propriedades obrigatórias (slug, pt.title, pt.body).')
+      }
+
+      console.log(`✅ Artigo gerado com sucesso pelo modelo "${model}"!`)
+      return parsed
+    } catch (err) {
+      console.warn(`⚠️ Falha ao tentar modelo "${model}":`, err.message)
+      lastError = err
+    }
   }
 
-  const data = await res.json()
-  const rawText = data.candidates[0].content.parts[0].text
-  return JSON.parse(rawText)
+  throw new Error(`❌ Todos os modelos de IA falharam. Último erro: ${lastError?.message}`)
 }
 
 // Salvar artigo MDX com escape seguro de YAML
@@ -358,9 +414,11 @@ function getScheduledCategory(overrideArg) {
 
 // Execução Principal
 async function main() {
-  const apiKey = process.env.GEMINI_API_KEY
+  const apiKey = (process.env.GEMINI_API_KEY || '').trim()
   if (!apiKey) {
-    console.error('❌ ERRO: A variável de ambiente GEMINI_API_KEY não foi configurada!')
+    console.error('❌ ERRO CRÍTICO: A variável de ambiente GEMINI_API_KEY não foi configurada ou está vazia!')
+    console.error('👉 Verifique no GitHub se o secret GEMINI_API_KEY está configurado em:')
+    console.error('   Settings > Secrets and variables > Actions > Repository secrets > GEMINI_API_KEY')
     process.exit(1)
   }
 
