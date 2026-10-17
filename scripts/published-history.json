@@ -1129,5 +1129,47 @@
       "Brazil Journal"
     ],
     "title": "A Era do Raciocínio Deliberado: Por que o Test-Time Compute é a Nova Fronteira da IA"
+  },
+  {
+    "id": 256,
+    "slug": "urolitina-a-mitofagia-reciclagem-celular-longevidade",
+    "category": "Saúde & Bem-estar",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-10-17T08:00:00-03:00",
+    "sources": [
+      "Nature Metabolism",
+      "Cell Metabolism",
+      "Sociedade Brasileira de Geriatria e Gerontologia (SBGG)",
+      "Anvisa"
+    ],
+    "title": "Além dos Antioxidantes: Como a Urolitina A e a Mitofagia Redefinem a Longevidade Celular"
+  },
+  {
+    "id": 259,
+    "slug": "terapia-de-contraste-social-wellness-clubs-sauna-gelo",
+    "category": "Tendências",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-10-17T14:00:00-03:00",
+    "sources": [
+      "WGSN Consumer Trends",
+      "Fast Company Brasil",
+      "Exame",
+      "American Journal of Medicine"
+    ],
+    "title": "O Fim do Happy Hour com Álcool? A Ascensão dos Social Wellness Clubs e da Terapia de Contraste"
+  },
+  {
+    "id": 262,
+    "slug": "astroturismo-dark-sky-parques-noturnos-chapada-veadeiros",
+    "category": "Estilo de Vida & Viagens",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-10-17T18:00:00-03:00",
+    "sources": [
+      "DarkSky International",
+      "Condé Nast Traveler",
+      "Embratur",
+      "Ministério do Turismo"
+    ],
+    "title": "Mais Céu, Menos Tela: Como o Astroturismo e os Parques Dark Sky Redefinem o Ecoturismo de Luxo"
   }
 ]
