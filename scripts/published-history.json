@@ -1171,5 +1171,47 @@
       "Ministério do Turismo"
     ],
     "title": "Mais Céu, Menos Tela: Como o Astroturismo e os Parques Dark Sky Redefinem o Ecoturismo de Luxo"
+  },
+  {
+    "id": 265,
+    "slug": "search-funds-sucessao-empresarial-pmes-investimentos",
+    "category": "Mercado & Negócios",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-10-18T08:00:00-03:00",
+    "sources": [
+      "Stanford Graduate School of Business",
+      "Insper",
+      "Brazil Journal",
+      "Bloomberg Línea"
+    ],
+    "title": "A Era dos Search Funds: Por que Jovens Executivos Compram Empresas Tradicionais em Vez de Criar Startups"
+  },
+  {
+    "id": 268,
+    "slug": "saf-combustivel-sustentavel-aviacao-etanol-descarbonizacao",
+    "category": "Sustentabilidade",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-10-18T14:00:00-03:00",
+    "sources": [
+      "Ministério de Minas e Energia (MME)",
+      "ICAO",
+      "UNICA",
+      "IATA"
+    ],
+    "title": "A Corrida do SAF: Por que as Aéreas Globais Apostam no Etanol Brasileiro para Descarbonizar os Céus"
+  },
+  {
+    "id": 271,
+    "slug": "chronoworking-cronotrabalho-ritmo-circadiano-produtividade",
+    "category": "Comportamento",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-10-18T18:00:00-03:00",
+    "sources": [
+      "Harvard Medical School",
+      "Nature Human Behaviour",
+      "Associação Brasileira do Sono (ABS)",
+      "Fast Company Brasil"
+    ],
+    "title": "O Fim das 9 às 17h? Como o Chronoworking Adapta o Trabalho ao Relógio Biológico e Vence o Burnout"
   }
 ]
