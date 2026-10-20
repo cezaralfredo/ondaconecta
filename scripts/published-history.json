@@ -1256,5 +1256,47 @@
       "FGV Direito Rio"
     ],
     "title": "Além do Algoritmo: Como o Marco Legal da IA (PL 2338) Transforma Empresas"
+  },
+  {
+    "id": 283,
+    "slug": "envelhecimento-orgaos-proteomica-medicina-preventiva",
+    "category": "Saúde & Bem-estar",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-10-20T08:00:00-03:00",
+    "sources": [
+      "Nature Medicine",
+      "Stanford Medicine",
+      "Hospital Israelita Albert Einstein",
+      "National Institutes of Health (NIH)"
+    ],
+    "title": "Nem Todo o Seu Corpo Tem a Mesma Idade: Como a Proteômica de Órgãos Transforma a Medicina Preventiva"
+  },
+  {
+    "id": 286,
+    "slug": "semana-de-4-dias-brasil-resultados-fgv-produtividade",
+    "category": "Tendências",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-10-20T14:00:00-03:00",
+    "sources": [
+      "FGV EAESP",
+      "4 Day Week Global",
+      "Reconnect Happiness at Work",
+      "International Stress Management Association (Isma-BR)"
+    ],
+    "title": "Trabalhar Menos e Faturar Mais? Os Resultados Reais da Semana de 4 Dias no Brasil segundo a FGV"
+  },
+  {
+    "id": 289,
+    "slug": "servico-invisivel-luxo-silencioso-hotelaria-boutique",
+    "category": "Estilo de Vida & Viagens",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-10-20T18:00:00-03:00",
+    "sources": [
+      "Skift",
+      "Condé Nast Traveler",
+      "Hospitality Net",
+      "Associação Brasileira da Hotelaria de Luxo (BLTA)"
+    ],
+    "title": "Menos Excesso, Menos Ruído: Por Que o Serviço Invisível e o Luxo Silencioso Redefinem a Hotelaria de Alto Padrão"
   }
 ]
