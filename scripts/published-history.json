@@ -1313,5 +1313,34 @@
       "NeoFeed"
     ],
     "title": "A Venda a Descoberto Chegou ao Crédito: Como o Short de Debêntures Revoluciona as Empresas na B3"
+  },
+  {
+    "id": 295,
+    "slug": "cbam-taxa-carbono-fronteira-ue-exportacoes-brasil",
+    "category": "Sustentabilidade",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-10-21T14:00:00-03:00",
+    "sources": [
+      "Comissão Europeia",
+      "MDIC",
+      "Capital Reset",
+      "Exame ESG",
+      "Instituto Aço Brasil"
+    ],
+    "title": "A Fronteira Verde da Europa: Como o CBAM e a Taxa de Carbono Impactam as Exportações Brasileiras"
+  },
+  {
+    "id": 298,
+    "slug": "fadiga-do-algoritmo-microcomunidades-redes-sociais-brasil",
+    "category": "Comportamento",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-10-21T18:00:00-03:00",
+    "sources": [
+      "WGSN",
+      "Meio & Mensagem",
+      "Consumidor Moderno",
+      "Nielsen Brasil"
+    ],
+    "title": "O Fim do Feed Público? Como a Fadiga do Algoritmo Fez os Brasileiros Migrarem para Microcomunidades Fechadas"
   }
 ]
