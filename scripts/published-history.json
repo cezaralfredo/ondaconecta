@@ -1342,5 +1342,47 @@
       "Nielsen Brasil"
     ],
     "title": "O Fim do Feed Público? Como a Fadiga do Algoritmo Fez os Brasileiros Migrarem para Microcomunidades Fechadas"
+  },
+  {
+    "id": 301,
+    "slug": "ouro-reservas-mundiais-bancos-centrais-protecao-patrimonial",
+    "category": "Finanças Pessoais",
+    "focus": "Global com Impacto Nacional (50/50)",
+    "publishedAt": "2026-10-22T08:00:00-03:00",
+    "sources": [
+      "Banco Central Europeu (BCE)",
+      "World Gold Council (WGC)",
+      "Banco Central do Brasil (BCB)",
+      "Bloomberg News"
+    ],
+    "title": "27% das Reservas Globais: Por Que o Ouro Bateu os Títulos Americanos e Como Blindar seu Patrimônio"
+  },
+  {
+    "id": 304,
+    "slug": "peptideos-de-cobre-ghk-cu-colageno-skincare-regenerativo",
+    "category": "Estética & Beleza",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-10-22T14:00:00-03:00",
+    "sources": [
+      "NCBI (PubMed)",
+      "Journal of Cosmetic Dermatology",
+      "Sociedade Brasileira de Dermatologia (SBD)",
+      "Vogue Brasil"
+    ],
+    "title": "A Revolução Azul do Colágeno: Como os Peptídeos de Cobre (GHK-Cu) Redefinem o Skincare Sem Irritação"
+  },
+  {
+    "id": 307,
+    "slug": "agentes-ia-computer-use-telas-navegadores-automacao-empresas",
+    "category": "Inovação & IA",
+    "focus": "Global com Impacto Nacional (50/50)",
+    "publishedAt": "2026-10-22T18:00:00-03:00",
+    "sources": [
+      "MIT Technology Review",
+      "Gartner Research",
+      "Anthropic Research",
+      "TechCrunch Enterprise"
+    ],
+    "title": "Quando a IA Assume o Teclado: A Ascensão dos Agentes de Navegador e Telas nas Empresas"
   }
 ]
