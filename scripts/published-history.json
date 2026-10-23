@@ -1384,5 +1384,47 @@
       "TechCrunch Enterprise"
     ],
     "title": "Quando a IA Assume o Teclado: A Ascensão dos Agentes de Navegador e Telas nas Empresas"
+  },
+  {
+    "id": 310,
+    "slug": "vacina-dengue-butantan-dose-unica-nature-medicine-sus",
+    "category": "Saúde & Bem-estar",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-10-23T08:00:00-03:00",
+    "sources": [
+      "Nature Medicine",
+      "Instituto Butantan",
+      "Anvisa",
+      "Ministério da Saúde"
+    ],
+    "title": "Dose Única e 80,5% de Proteção: Como a Vacina Brasileira do Butantan na Nature Medicine Revoluciona o Combate à Dengue"
+  },
+  {
+    "id": 313,
+    "slug": "silent-reading-parties-clubes-leitura-sem-celular-desconexao",
+    "category": "Tendências",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-10-23T14:00:00-03:00",
+    "sources": [
+      "Silent Book Club Global",
+      "WGSN Lifestyle & Culture",
+      "Consumidor Moderno",
+      "The New York Times"
+    ],
+    "title": "O Fim da Rolagem Infinita? Por Que as Silent Reading Parties e os Encontros Sem Celular Viraram o Novo Luxo Urbano"
+  },
+  {
+    "id": 316,
+    "slug": "barcos-boutique-expedicoes-rio-negro-amazonia-turismo-regenerativo",
+    "category": "Estilo de Vida & Viagens",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-10-23T18:00:00-03:00",
+    "sources": [
+      "Associação Brasileira de Ecoturismo (ABETA)",
+      "ICMBio",
+      "Viagem e Turismo (Abril)",
+      "Condé Nast Traveler"
+    ],
+    "title": "Navegar Sem Pressa: Como os Barcos Boutique e a Energia Solar Redefinem o Ecoturismo de Luxo no Rio Negro"
   }
 ]
