@@ -1426,5 +1426,47 @@
       "Condé Nast Traveler"
     ],
     "title": "Navegar Sem Pressa: Como os Barcos Boutique e a Energia Solar Redefinem o Ecoturismo de Luxo no Rio Negro"
+  },
+  {
+    "id": 319,
+    "slug": "credito-privado-data-centers-infraestrutura-digital-brasil",
+    "category": "Mercado & Negócios",
+    "focus": "Global com Impacto Nacional (50/50)",
+    "publishedAt": "2026-10-24T08:00:00-03:00",
+    "sources": [
+      "Financial Times",
+      "Bloomberg News",
+      "S&P Global Market Intelligence",
+      "CFA Institute"
+    ],
+    "title": "A Virada do Crédito Privado: Como Fundos Globais Financiam a Corrida de Data Centers no Brasil"
+  },
+  {
+    "id": 322,
+    "slug": "combustivel-sustentavel-aviacao-saf-etanol-probioqav-brasil",
+    "category": "Sustentabilidade",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-10-24T14:00:00-03:00",
+    "sources": [
+      "Governo Federal do Brasil",
+      "Agência Nacional do Petróleo (ANP)",
+      "Agência Nacional de Aviação Civil (ANAC)",
+      "Organização da Aviação Civil Internacional (OACI/ICAO)"
+    ],
+    "title": "Do Campo para as Nuvens: Como o SAF de Etanol e o ProBioQAV Lideram a Aviação Verde"
+  },
+  {
+    "id": 325,
+    "slug": "micro-aposentadorias-pausas-sabaticas-geracao-z-millennials-carreira",
+    "category": "Comportamento",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-10-24T18:00:00-03:00",
+    "sources": [
+      "Associação Brasileira das Entidades Fechadas de Previdência Complementar (Abrapp)",
+      "Forbes Brasil",
+      "Gallup Workplace",
+      "WGSN Lifestyle"
+    ],
+    "title": "O Fim da Espera dos 40 Anos: Por Que Jovens Trocam a Aposentadoria Velha por Micro-Pausas"
   }
 ]
