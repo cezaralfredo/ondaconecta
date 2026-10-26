@@ -1468,5 +1468,47 @@
       "WGSN Lifestyle"
     ],
     "title": "O Fim da Espera dos 40 Anos: Por Que Jovens Trocam a Aposentadoria Velha por Micro-Pausas"
+  },
+  {
+    "id": 328,
+    "slug": "agentes-de-codigo-engenharia-software-ia-startups",
+    "category": "Inovação & IA",
+    "focus": "Global com Impacto Nacional (50/50)",
+    "publishedAt": "2026-10-25T08:00:00-03:00",
+    "sources": [
+      "GitHub Octoverse",
+      "MIT Technology Review",
+      "Brazil Journal",
+      "Gartner Research"
+    ],
+    "title": "A Virada do Desenvolvedor de IA: Como Agentes de Código Criam Unicórnios com Menos de 10 Pessoas"
+  },
+  {
+    "id": 331,
+    "slug": "terapia-de-luz-vermelha-fotobiomodulacao-longevidade-mitocondrias",
+    "category": "Saúde & Bem-estar",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-10-25T14:00:00-03:00",
+    "sources": [
+      "Journal of Photochemistry and Photobiology",
+      "National Institutes of Health (NIH / PubMed)",
+      "Sociedade Brasileira de Dermatologia (SBD)",
+      "Harvard Health Publishing"
+    ],
+    "title": "Muito Além da Estética: Por Que a Terapia de Luz Vermelha Virou o Novo Pilar de Longevidade Celular"
+  },
+  {
+    "id": 334,
+    "slug": "itcmd-progressivo-reforma-tributaria-holding-familiar-planejamento-sucessorio",
+    "category": "Finanças Pessoais",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-10-25T18:00:00-03:00",
+    "sources": [
+      "Constituição Federal do Brasil (Reforma Tributária)",
+      "Colégio Notarial do Brasil (CNB)",
+      "Valor Econômico / Valor Investe",
+      "InfoMoney"
+    ],
+    "title": "ITCMD a 8% e Herança Mais Cara: O Guia Definitivo de Planejamento Sucessório com Holdings Familiares"
   }
 ]
