@@ -1,7 +1,7 @@
 ---
 /**
- * Onda Conecta — Bloco de Anúncio Google AdSense (Display Horizontal 01)
- * Renderiza o anúncio oficial aprovado pelo Google AdSense com suporte responsivo.
+ * Onda Conecta — Bloco de Anúncio Google AdSense (Display Responsivo)
+ * Renderiza anúncio oficial com colapso elegante quando não preenchido.
  */
 interface Props {
   slot?: string
@@ -16,28 +16,31 @@ const {
 } = Astro.props
 ---
 
-<div class={`not-prose my-8 flex w-full flex-col items-center justify-center overflow-hidden rounded-xl bg-muted/20 p-2 sm:p-4 text-center ${className}`}>
-  <span class='mb-2 text-[10px] font-medium tracking-wider text-muted-foreground uppercase opacity-70'>
-    Publicidade
-  </span>
-
-  <div class='w-full min-h-[90px] sm:min-h-[100px] flex justify-center items-center overflow-hidden'>
-    <!-- Onda Conecta - anúncio display horizontal 01 -->
-    <ins
-      class='adsbygoogle block w-full'
-      style='display:block; width:100%; min-height:90px;'
-      data-ad-client={client}
-      data-ad-slot={slot}
-      data-ad-format='auto'
-      data-full-width-responsive='true'
-    ></ins>
-  </div>
+<div class={`adsense-container not-prose my-6 flex w-full flex-col items-center justify-center overflow-hidden text-center ${className}`}>
+  <!-- Onda Conecta - anúncio display horizontal -->
+  <ins
+    class='adsbygoogle block w-full text-center'
+    style='display:block; width:100%; text-align:center;'
+    data-ad-client={client}
+    data-ad-slot={slot}
+    data-ad-format='auto'
+    data-full-width-responsive='true'
+  ></ins>
 </div>
+
+<style>
+  /* Evita caixas vazias ou espaços em branco antes da aprovação do Google AdSense */
+  ins.adsbygoogle[data-ad-status='unfilled'] {
+    display: none !important;
+  }
+  .adsense-container:has(ins[data-ad-status='unfilled']) {
+    display: none !important;
+  }
+</style>
 
 <script is:inline>
   function initAdSenseBanners() {
     try {
-      // Identifica apenas os blocos de anúncio que ainda não foram processados pelo Google
       var uninitializedAds = document.querySelectorAll('ins.adsbygoogle:not([data-adsbygoogle-status])');
       if (uninitializedAds.length > 0) {
         uninitializedAds.forEach(function() {
@@ -45,17 +48,15 @@ const {
         });
       }
     } catch (e) {
-      // Ignora avisos silenciosos se AdBlock estiver ativo ou bloqueio de scripts
+      // Ignora silenciosamente
     }
   }
 
-  // Executa no primeiro carregamento
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initAdSenseBanners);
   } else {
     initAdSenseBanners();
   }
 
-  // Compatibilidade com transições de página do Astro (ClientRouter)
   document.addEventListener('astro:page-load', initAdSenseBanners);
 </script>
