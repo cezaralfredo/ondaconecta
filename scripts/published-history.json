@@ -41,7 +41,7 @@
   {
     "id": 18,
     "slug": "agentes-autonomos-compras-futuro-consumo-2026",
-    "category": "Inovação & IA",
+    "category": "Comportamento",
     "focus": "Global com impacto no Brasil (50/50)",
     "publishedAt": "2026-09-12T08:00:00-03:00",
     "sources": [
@@ -132,7 +132,7 @@
   {
     "id": 39,
     "slug": "agentes-ia-open-finance-pagamentos-autonomos-2026",
-    "category": "Inovação & IA",
+    "category": "Finanças Pessoais",
     "focus": "Nacional & Global (50/50)",
     "publishedAt": "2026-09-15T08:00:00-03:00",
     "sources": [
@@ -184,7 +184,7 @@
   {
     "id": 49,
     "slug": "criptografia-pos-quantica-seguranca-ciberseguranca-2026",
-    "category": "Tecnologia",
+    "category": "Inovação & IA",
     "focus": "Global com impacto no Brasil (50/50)",
     "publishedAt": "2026-09-17T08:00:00-03:00",
     "sources": [
@@ -330,7 +330,7 @@
   {
     "id": 82,
     "slug": "crononutricao-ritmo-circadiano-saude-metabolica",
-    "category": "Saúde & Bem-estar",
+    "category": "Tendências",
     "focus": "Nacional & Global (50/50)",
     "publishedAt": "2026-09-21T18:00:00-03:00",
     "sources": [
@@ -454,7 +454,7 @@
   {
     "id": 109,
     "slug": "shadow-ai-agentes-autonomos-empresas-seguranca",
-    "category": "Inovação & IA",
+    "category": "Comportamento",
     "focus": "Nacional & Global (50/50)",
     "publishedAt": "2026-09-26T08:00:00-03:00",
     "sources": [
@@ -540,7 +540,7 @@
   {
     "id": 127,
     "slug": "colaboradores-digitais-ia-equipes-hibridas-trabalho",
-    "category": "Inovação & IA",
+    "category": "Comportamento",
     "focus": "Nacional & Global (50/50)",
     "publishedAt": "2026-09-29T08:00:00-03:00",
     "sources": [
@@ -802,7 +802,7 @@
   {
     "id": 184,
     "slug": "embodied-ai-robotica-modelos-vla-industria-brasil",
-    "category": "Inovação & IA",
+    "category": "Tendências",
     "focus": "Global com impacto no Brasil (50/50)",
     "publishedAt": "2026-10-08T08:00:00-03:00",
     "sources": [
@@ -1036,7 +1036,7 @@
   {
     "id": 235,
     "slug": "turismo-farm-to-table-rotas-regenerativas-brasil",
-    "category": "Estilo de Vida & Viagens",
+    "category": "Sustentabilidade",
     "focus": "Nacional & Global (50/50)",
     "publishedAt": "2026-10-14T18:00:00-03:00",
     "sources": [
@@ -1049,7 +1049,7 @@
   {
     "id": 238,
     "slug": "agri-deeptechs-biossolucoes-agro-inovacao-brasil",
-    "category": "Mercado & Negócios",
+    "category": "Sustentabilidade",
     "focus": "Nacional & Global (50/50)",
     "publishedAt": "2026-10-15T08:00:00-03:00",
     "sources": [
@@ -1133,7 +1133,7 @@
   {
     "id": 256,
     "slug": "urolitina-a-mitofagia-reciclagem-celular-longevidade",
-    "category": "Saúde & Bem-estar",
+    "category": "Estética & Beleza",
     "focus": "Nacional & Global (50/50)",
     "publishedAt": "2026-10-17T08:00:00-03:00",
     "sources": [
@@ -1274,7 +1274,7 @@
   {
     "id": 286,
     "slug": "semana-de-4-dias-brasil-resultados-fgv-produtividade",
-    "category": "Tendências",
+    "category": "Comportamento",
     "focus": "Nacional (50/50)",
     "publishedAt": "2026-10-20T14:00:00-03:00",
     "sources": [
@@ -1416,7 +1416,7 @@
   {
     "id": 316,
     "slug": "barcos-boutique-expedicoes-rio-negro-amazonia-turismo-regenerativo",
-    "category": "Estilo de Vida & Viagens",
+    "category": "Sustentabilidade",
     "focus": "Nacional (50/50)",
     "publishedAt": "2026-10-23T18:00:00-03:00",
     "sources": [
@@ -1486,7 +1486,7 @@
   {
     "id": 331,
     "slug": "terapia-de-luz-vermelha-fotobiomodulacao-longevidade-mitocondrias",
-    "category": "Saúde & Bem-estar",
+    "category": "Estética & Beleza",
     "focus": "Global com impacto no Brasil (50/50)",
     "publishedAt": "2026-10-25T14:00:00-03:00",
     "sources": [
@@ -1556,7 +1556,7 @@
   {
     "id": 346,
     "slug": "guardian-design-seguranca-urbana-moda-funcional",
-    "category": "Tendências",
+    "category": "Estética & Beleza",
     "focus": "Global com impacto no Brasil (50/50)",
     "publishedAt": "2026-10-27T08:15:00-03:00",
     "sources": [
@@ -1596,5 +1596,3 @@
     "title": "O Fim dos Apps de Paquera? A Virada do Slow Dating e dos Jantares Offline"
   }
 ]
-
-
