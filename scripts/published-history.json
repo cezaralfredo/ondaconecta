@@ -1653,5 +1653,50 @@
       "CNN Brasil Lifestyle"
     ],
     "title": "O Fim das Férias com Ressaca? A Ascensão do 'Dry Tripping' no Brasil"
+  },
+  {
+    "id": 367,
+    "slug": "data-centers-ia-energia-limpa-brasil-topo-global",
+    "category": "Inovação & IA",
+    "focus": "Nacional com impacto global (50/50)",
+    "publishedAt": "2026-10-29T08:30:00-03:00",
+    "sources": [
+      "Ministério de Minas e Energia (MME)",
+      "Empresa de Pesquisa Energética (EPE)",
+      "International Energy Agency (IEA)",
+      "ABRADETI (Associação Brasileira de Data Centers)",
+      "BloombergNEF"
+    ],
+    "title": "A Meca dos Data Centers de IA: Como a Energia Limpa Colocou o Brasil no Topo Global"
+  },
+  {
+    "id": 370,
+    "slug": "alem-da-selic-ouro-dolar-blindagem-patrimonio-investimentos",
+    "category": "Finanças Pessoais",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-10-29T14:00:00-03:00",
+    "sources": [
+      "World Gold Council (WGC)",
+      "Banco Central do Brasil (BCB)",
+      "ANBIMA",
+      "Comissão de Valores Mobiliários (CVM)",
+      "Bloomberg Markets"
+    ],
+    "title": "Além da Selic: Por Que o Rali do Ouro e do Dólar Redefine a Blindagem de Patrimônio"
+  },
+  {
+    "id": 373,
+    "slug": "fim-do-crescimento-a-qualquer-custo-ma-lucro-startups-brasil",
+    "category": "Mercado & Negócios",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-10-29T18:00:00-03:00",
+    "sources": [
+      "PwC Brasil",
+      "KPMG Brasil",
+      "Brazil Journal",
+      "Conselho Administrativo de Defesa Econômica (CADE)",
+      "B3 (Brasil, Bolsa, Balcão)"
+    ],
+    "title": "O Fim do Crescimento a Qualquer Custo: A Nova Era de M&A e Lucro Real no Brasil"
   }
 ]
