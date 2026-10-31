@@ -1740,5 +1740,47 @@
       "Sociedade Brasileira de Geriatria e Gerontologia (SBGG)"
     ],
     "title": "O Fim das Células Zumbis: Como os Senolíticos e a Fisetina Redefinem a Limpeza Celular e a Longevidade"
+  },
+  {
+    "id": 385,
+    "slug": "turismo-regenerativo-fazendas-cafe-mantiqueira-hotelaria-imersao",
+    "category": "Estilo de Vida & Viagens",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-10-31T10:30:00-03:00",
+    "sources": [
+      "Specialty Coffee Association (SCA)",
+      "Associação Roteiros de Charme",
+      "Embrapa Café",
+      "Viagem e Turismo (Abril)"
+    ],
+    "title": "Do Café Commodity ao Turismo Regenerativo: Como as Fazendas da Mantiqueira Redefinem a Hotelaria no Brasil"
+  },
+  {
+    "id": 388,
+    "slug": "arquitetura-sensorial-conforto-acustico-casas-silenciosas-tendencia",
+    "category": "Tendências",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-10-31T14:00:00-03:00",
+    "sources": [
+      "WGSN Interiors & Lifestyle",
+      "Architectural Digest",
+      "Academia Brasileira de Neuroarquitetura (NeuroAU)",
+      "ProAcústica"
+    ],
+    "title": "O Fim das Casas Barulhentas? Como a Arquitetura Sensorial e a Acústica Viraram o Novo Luxo"
+  },
+  {
+    "id": 391,
+    "slug": "recommerce-garimpo-vintage-moda-circular-consumo-jovem-brasil",
+    "category": "Comportamento",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-10-31T18:00:00-03:00",
+    "sources": [
+      "Boston Consulting Group (BCG)",
+      "Sebrae Nacional",
+      "Consumidor Moderno",
+      "The Business of Fashion (BoF)"
+    ],
+    "title": "O Fim do Preconceito com o Usado? Como o Recommerce Redefine o Consumo Jovem no Brasil"
   }
 ]
