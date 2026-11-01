@@ -1782,5 +1782,50 @@
       "The Business of Fashion (BoF)"
     ],
     "title": "O Fim do Preconceito com o Usado? Como o Recommerce Redefine o Consumo Jovem no Brasil"
+  },
+  {
+    "id": 394,
+    "slug": "agentes-de-voz-ia-tempo-real-atendimento-fim-das-uras-brasil",
+    "category": "Inovação & IA",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-11-01T09:30:00-03:00",
+    "sources": [
+      "Associação Brasileira de Telesserviços (ABT)",
+      "Gartner Research",
+      "MIT Technology Review",
+      "Consumidor Moderno",
+      "Retell AI & OpenAI Research"
+    ],
+    "title": "O Fim do Digite 1 para Atendimento? Como os Agentes de Voz em Tempo Real Enterram as URAs no Brasil"
+  },
+  {
+    "id": 397,
+    "slug": "tesouro-renda-mais-educa-mais-aposentadoria-planejamento-brasil",
+    "category": "Finanças Pessoais",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-11-01T14:00:00-03:00",
+    "sources": [
+      "Tesouro Nacional (Ministério da Fazenda)",
+      "B3 (Brasil, Bolsa, Balcão)",
+      "ANBIMA",
+      "InfoMoney & Valor Investe",
+      "Instituto Brasileiro de Geografia e Estatística (IBGE)"
+    ],
+    "title": "O Fim das Taxas Abusivas de Previdência? Como o Tesouro RendA+ e Educa+ Viraram a Espinha Dorsal da Aposentadoria no Brasil"
+  },
+  {
+    "id": 400,
+    "slug": "venture-debt-startups-credito-estruturado-nao-dilutivo-brasil",
+    "category": "Mercado & Negócios",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-11-01T18:00:00-03:00",
+    "sources": [
+      "PitchBook Data",
+      "ANBIMA",
+      "Brazil Journal & Startups.com.br",
+      "B3 (Brasil, Bolsa, Balcão)",
+      "Harvard Business Review"
+    ],
+    "title": "O Fim da Diluição Precoce? Como o Venture Debt Virou a Alternativa Predileta das Startups no Brasil"
   }
 ]
