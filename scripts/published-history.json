@@ -1827,5 +1827,50 @@
       "Harvard Business Review"
     ],
     "title": "O Fim da Diluição Precoce? Como o Venture Debt Virou a Alternativa Predileta das Startups no Brasil"
+  },
+  {
+    "id": 403,
+    "slug": "jambu-cacay-biotecnologia-dermocosmeticos-biodiversidade-brasil",
+    "category": "Estética & Beleza",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-11-02T09:30:00-03:00",
+    "sources": [
+      "Instituto de Química da Unicamp",
+      "Sociedade Brasileira de Dermatologia (SBD)",
+      "Journal of Cosmetic Dermatology",
+      "Vogue Brasil Beleza",
+      "Revista Brasileira de Farmacognosia"
+    ],
+    "title": "O 'Botox e Retinol da Amazônia'? Como o Jambu e o Cacay Lideram a Biotecnologia de Alta Performance no Brasil"
+  },
+  {
+    "id": 406,
+    "slug": "litio-verde-vale-jequitinhonha-baterias-veiculos-eletricos-brasil",
+    "category": "Sustentabilidade",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-11-02T14:00:00-03:00",
+    "sources": [
+      "Agência Internacional de Energia (IEA)",
+      "Ministério de Minas e Energia (MME)",
+      "Exame ESG & Negócios",
+      "BloombergNEF",
+      "Agência Nacional de Mineração (ANM)"
+    ],
+    "title": "Do Jequitinhonha aos Carros Elétricos: Como o 'Lítio Verde' do Brasil Conquista a Corrida Global de Baterias"
+  },
+  {
+    "id": 409,
+    "slug": "farmacogenomica-testes-geneticos-antidepressivos-saude-mental-brasil",
+    "category": "Saúde & Bem-estar",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-11-02T18:00:00-03:00",
+    "sources": [
+      "Associação Brasileira de Psiquiatria (ABP)",
+      "Sociedade Brasileira de Genética Médica e Genômica (SBGM)",
+      "The Lancet Psychiatry",
+      "Clinical Pharmacogenetics Implementation Consortium (CPIC)",
+      "Fleury Medicina e Saúde"
+    ],
+    "title": "O Fim da Tentativa e Erro? Como a Farmacogenômica Redefine o Tratamento da Depressão no Brasil"
   }
 ]
