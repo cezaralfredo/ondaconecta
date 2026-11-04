@@ -1917,5 +1917,50 @@
       "Bloomberg Línea Brasil"
     ],
     "title": "O Fim do 'Fingir que Dá Conta'? Como o 'Loud Budgeting' e a Transparência Financeira Redefinem o Consumo Jovem no Brasil"
+  },
+  {
+    "id": 421,
+    "slug": "supercomputador-santos-dumont-plano-brasileiro-ia-soberana",
+    "category": "Inovação & IA",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-11-04T09:30:00-03:00",
+    "sources": [
+      "Ministério da Ciência, Tecnologia e Inovação (MCTI)",
+      "Laboratório Nacional de Computação Científica (LNCC)",
+      "Finep",
+      "Sociedade Brasileira de Computação (SBC)",
+      "MIT Technology Review Brasil"
+    ],
+    "title": "O Fim da Dependência Estrangeira? Como o Supercomputador Santos Dumont e o Plano Brasileiro de IA Impulsionam Modelos Soberanos"
+  },
+  {
+    "id": 424,
+    "slug": "contas-globais-dolarizacao-digital-reserva-valor-investimentos-brasil",
+    "category": "Finanças Pessoais",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-11-04T14:00:00-03:00",
+    "sources": [
+      "Banco Central do Brasil (Bacen)",
+      "ANBIMA",
+      "Receita Federal do Brasil",
+      "Bloomberg Línea Brasil",
+      "U.S. Securities and Exchange Commission (SEC)"
+    ],
+    "title": "O Fim do Spread Abusivo? Como as Contas Globais e a Dolarização Digital Viraram a Nova Reserva de Valor da Classe Média no Brasil"
+  },
+  {
+    "id": 427,
+    "slug": "fi-infra-fundos-infraestrutura-isentos-debentures-incentivadas-b3-brasil",
+    "category": "Mercado & Negócios",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-11-04T18:00:00-03:00",
+    "sources": [
+      "B3 (Brasil, Bolsa, Balcão)",
+      "ANBIMA",
+      "Ministério dos Transportes",
+      "Agência Nacional de Águas e Saneamento Básico (ANA)",
+      "Valor Econômico / Exame Negócios"
+    ],
+    "title": "A Era de Ouro do FI-Infra: Como os Fundos de Infraestrutura Isentos Viraram o Maior Canal de Financiamento Privado na B3"
   }
 ]
