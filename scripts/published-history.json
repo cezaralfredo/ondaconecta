@@ -1962,5 +1962,50 @@
       "Valor Econômico / Exame Negócios"
     ],
     "title": "A Era de Ouro do FI-Infra: Como os Fundos de Infraestrutura Isentos Viraram o Maior Canal de Financiamento Privado na B3"
+  },
+  {
+    "id": 430,
+    "slug": "exossomos-biotecnologicos-regeneracao-celular-pele-cabelo-brasil",
+    "category": "Estética & Beleza",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-11-05T09:30:00-03:00",
+    "sources": [
+      "Sociedade Brasileira de Dermatologia (SBD)",
+      "American Academy of Dermatology (AAD)",
+      "Journal of Cosmetic Dermatology",
+      "Anvisa",
+      "Vogue Brasil Beleza"
+    ],
+    "title": "O Fim dos Procedimentos Invasivos? Como os Exossomos Biotecnológicos Redefinem a Regeneração da Pele e dos Cabelos no Brasil"
+  },
+  {
+    "id": 433,
+    "slug": "aco-verde-descarbonizacao-siderurgia-biomassa-brasil",
+    "category": "Sustentabilidade",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-11-05T14:00:00-03:00",
+    "sources": [
+      "Instituto Aço Brasil",
+      "Ministério do Desenvolvimento, Indústria, Comércio e Serviços (MDIC)",
+      "Agência Internacional de Energia (IEA)",
+      "BloombergNEF",
+      "Exame ESG"
+    ],
+    "title": "Do Eucalipto Plantado à Indústria Global: Como o 'Aço Verde' do Brasil Lidera a Corrida da Descarbonização Pesada"
+  },
+  {
+    "id": 436,
+    "slug": "coolcationing-turismo-clima-ameno-fuga-calor-viagens-brasil",
+    "category": "Estilo de Vida & Viagens",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-11-05T18:00:00-03:00",
+    "sources": [
+      "Condé Nast Traveler",
+      "Virtuoso Luxury Travel Network",
+      "Booking.com Travel Predictions",
+      "Melhores Destinos",
+      "Folha de S.Paulo Turismo"
+    ],
+    "title": "O Fim das Férias no Calor Escaldante? Como o 'Coolcationing' e o Turismo de Clima Ameno Redefinem as Viagens no Brasil"
   }
 ]
