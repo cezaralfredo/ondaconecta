@@ -2007,5 +2007,50 @@
       "Folha de S.Paulo Turismo"
     ],
     "title": "O Fim das Férias no Calor Escaldante? Como o 'Coolcationing' e o Turismo de Clima Ameno Redefinem as Viagens no Brasil"
+  },
+  {
+    "id": 439,
+    "slug": "microbioma-brasileiro-nutricao-precisao-saude-metabolica",
+    "category": "Saúde & Bem-estar",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-11-06T09:30:00-03:00",
+    "sources": [
+      "Hospital Israelita Albert Einstein",
+      "Faculdade de Medicina da USP (FMUSP)",
+      "Sociedade Brasileira de Gastroenterologia (SBG)",
+      "The Lancet Gastroenterology & Hepatology",
+      "Fiocruz"
+    ],
+    "title": "O Fim da Dieta Genérica? Como o Mapeamento do Microbioma Brasileiro Redefine a Nutrição e a Saúde Metabólica"
+  },
+  {
+    "id": 442,
+    "slug": "smart-rings-tecnologia-screen-free-biometria-bem-estar-brasil",
+    "category": "Tendências",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-11-06T14:00:00-03:00",
+    "sources": [
+      "Wired",
+      "MIT Technology Review",
+      "Consumidor Moderno",
+      "Gartner Research",
+      "Forbes Tech"
+    ],
+    "title": "O Fim das Telas no Pulso? Como os 'Smart Rings' e a Tecnologia Screen-Free Viraram a Nova Fronteira do Bem-Estar no Brasil"
+  },
+  {
+    "id": 445,
+    "slug": "semana-de-4-dias-trabalho-produtividade-burnout-empresas-brasil",
+    "category": "Comportamento",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-11-06T18:00:00-03:00",
+    "sources": [
+      "Fundação Getulio Vargas (FGV EAESP)",
+      "4 Day Week Global Brasil",
+      "Consumidor Moderno",
+      "Valor Econômico",
+      "InfoMoney Carreira"
+    ],
+    "title": "O Fim da Semana Exaustiva? Como a 'Semana de 4 Dias' e a Produtividade sem Horas Extras Avançam nas Empresas no Brasil"
   }
 ]
