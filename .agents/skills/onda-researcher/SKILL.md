@@ -19,41 +19,52 @@ A curadoria deve manter um equilíbrio rigoroso de relevância entre os mercados
 - **Pioneirismo & Tendências Nacionais:**
   - Identificar inovações, tendências comportamentais e marcos regulatórios brasileiros com potencial de destaque internacional ou relevância imediata.
 
-### Verticais Monitoradas e Fontes de Autoridade Primárias:
+### Verticais Monitoradas e Fontes de Autoridade Primárias (Incluindo Radares de Vanguarda):
 
-1. **Inovação, Tecnologia & IA:**
+1. **Inovação & IA:**
    - *Nacionais:* TecMundo, Canaltech, Olhar Digital, Época Negócios Tech, Exame Inovação, Startups.com.br, Manual do Usuário.
-   - *Globais:* TechCrunch, MIT Technology Review, The Verge, Wired, Ars Technica, The Information.
-2. **Mercado, Startups & Negócios:**
+   - *Radares & Newsletters:* **The Brief**, **TechDrop**, **Distrito Insights**.
+   - *Globais & Think Tanks:* TechCrunch, MIT Technology Review, The Verge, Wired, Ars Technica, The Information, **Stratechery (Ben Thompson)**, **TLDR AI**, **Semafor Tech**.
+2. **Mercado & Negócios:**
    - *Nacionais:* Brazil Journal, NeoFeed, StartSe, Pipeline Valor, InfoMoney Negócios, Revista PEGN, Finsiders Brasil.
-   - *Globais:* Bloomberg, Financial Times, Forbes, Fortune, Wall Street Journal.
-3. **Finanças Pessoais & Investimentos:**
-   - *Nacionais:* InfoMoney, Valor Investe, E-Investidor (Estadão), Inteligência Financeira, Bora Investir (B3).
-   - *Globais:* MarketWatch, CNBC, Bloomberg Wealth.
-4. **Saúde, Bem-estar & Longevidade:**
+   - *Radares & Newsletters:* **DealflowBR**, **Endeavor Brasil**.
+   - *Globais:* Bloomberg, Financial Times, Forbes, Fortune, Wall Street Journal, **PitchBook News**, **CB Insights**.
+3. **Finanças Pessoais:**
+   - *Nacionais:* InfoMoney, Valor Investe, E-Investidor (Estadão), Inteligência Financeira, Bora Investir (B3), Suno Notícias.
+   - *Radares & Newsletters:* **Finsiders Brasil (Open Finance/Fintechs)**, **FlipMilhas**, **Cartão e Milhas**.
+   - *Globais:* MarketWatch, CNBC, Bloomberg Wealth, **Fintech Nexus**.
+4. **Saúde & Bem-estar:**
    - *Nacionais:* Saúde Abril, VivaBem (UOL), Eu Atleta (ge.globo), Portal Drauzio Varella, CNN Brasil Saúde.
-   - *Globais:* Healthline, Psychology Today, Nature Medicine, BBC Health.
-5. **Estética, Beleza & Dermocosmética:**
+   - *Radares & Medicina Preventiva:* **Dr. Peter Attia (The Drive)**, **FoundMyFitness (Dra. Rhonda Patrick)**.
+   - *Globais & Biotecnologia:* Healthline, Psychology Today, Nature Medicine, BBC Health, **Longevity.Technology**, **STAT News**, **Endpoints News**.
+5. **Estética & Beleza:**
    - *Nacionais:* Vogue Brasil Beleza, Marie Claire Beleza, Glamour Beleza, Lilian Pacce, Cosmopolitan Brasil, Beleza na Web Editorial.
-   - *Globais:* Allure, Cosmetics & Toiletries, Business of Fashion (Beauty), Byrdie, WWD (Women's Wear Daily).
+   - *Radares & Tendências:* **Bits to Brands (Beatriz Guarezi)**, **Noor Skin**.
+   - *Globais & Big Data:* Allure, Cosmetics & Toiletries, Business of Fashion (Beauty), Byrdie, WWD, **BeautyMatter**, **Spate NYC (Big Data de Busca)**, **Global Wellness Summit (GWS)**.
 6. **Estilo de Vida & Viagens:**
    - *Nacionais:* Viagem e Turismo (Abril), Melhores Destinos, Guia Viajar Melhor, GQ Brasil, Casa Vogue, Forbes Life Brasil.
-   - *Globais:* Condé Nast Traveler, Lonely Planet, Travel + Leisure, Afar Magazine.
-7. **Tendências, Comportamento & Futuro do Trabalho:**
+   - *Radares & Inteligência de Viagem:* **Skift (Daily Briefing & Trends)**, **Robb Report**, **Afar Magazine**, **Luxury Travel Intelligence (LTI)**.
+   - *Globais:* Condé Nast Traveler, Lonely Planet, Travel + Leisure.
+7. **Tendências:**
    - *Nacionais:* Consumidor Moderno, Fast Company Brasil, Meio & Mensagem, StartSe.
-   - *Globais:* Fast Company, WGSN Insider, Wired Culture.
-8. **Sustentabilidade, ESG & Futuro:**
+   - *Radares & Macrotendências:* **VOX Insights Weekly**, **WGSN Insider**, **TrendWatching**, **Springwise**.
+   - *Globais:* Fast Company, Wired Culture, **Puck News**, **Canvas8**.
+8. **Comportamento:**
+   - *Nacionais:* Consumidor Moderno (Comportamento), Folha Cotidiano, Estadão Comportamento, The Shift (B9).
+   - *Radares & Mudança Social:* **VOX Insights**, **GWI (GlobalWebIndex)**, **Pew Research**.
+   - *Globais:* The Atlantic (Culture), Vox Media, Dazed, BBC Worklife.
+9. **Sustentabilidade:**
    - *Nacionais:* Capital Reset, Exame ESG, Um Só Planeta (Globo), Página 22.
-   - *Globais:* CleanTechnica, ESG Today, Reuters Sustainable Business.
+   - *Radares & Transição Ecológica:* **CleanTechnica**, **ESG Today**, **Reuters Sustainable Business**, **Bloomberg Green**.
 
 ---
 
-## 2. Filtro Anti-Duplicidade e Recorrência
+## 2. Fila Estratégica de Pautas & Filtro Anti-Duplicidade
 
-Antes de aprovar qualquer pauta:
-1. Consulte o arquivo `scripts/published-history.json`.
-2. Verifique se o tema central, as palavras-chave principais ou o ângulo já foram abordados nos últimos **30 dias**.
-3. Rejeite temas repetitivos; se for uma evolução de um caso anterior, destaque o **novo fato** como gancho obrigatório.
+Antes de aprovar ou formular qualquer nova pauta:
+1. **Consulte a Fila Estratégica de Pautas:** Verifique o arquivo `scripts/editorial-queue.json` para inspecionar pautas prioritárias já validadas e em espera por categoria.
+2. **Consulte o Histórico Publicado:** Leia `scripts/published-history.json` para verificar se o tema central, as palavras-chave principais ou o ângulo já foram abordados nos últimos **30 dias**.
+3. **Rejeite temas repetitivos:** Se for uma evolução de um caso anterior, destaque o **novo fato** como gancho obrigatório.
 
 ---
 

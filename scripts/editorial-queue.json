@@ -1,0 +1,204 @@
+{
+  "updatedAt": "2026-11-07T09:55:00-03:00",
+  "description": "Fila estratégica de pautas prioritárias de alta conversão e audiência popular para o Onda Conecta, alimentadas por radares de vanguarda e inteligência de dados.",
+  "categories": {
+    "Inovação & IA": [
+      {
+        "id": "QUEUE-IA-01",
+        "topic": "World Models e IA Espacial 3D: Como a Geração de Mundos Físicos Revoluciona a Arquitetura, Games e o Varejo no Brasil",
+        "focus": "Global com impacto no Brasil (50/50)",
+        "radarSources": ["Stratechery", "The Information", "MIT Technology Review", "The Brief"],
+        "conversionAngle": "Adoção de simulações físicas e gêmeos digitais por escritórios de engenharia, arquitetura e estúdios criativos nacionais.",
+        "targetKeywords": ["world models", "ia espacial", "simulação 3d", "gêmeos digitais", "inteligência artificial brasil"],
+        "suggestedSlug": "world-models-ia-espacial-3d-simulacao-arquitetura-varejo-brasil",
+        "status": "queued"
+      },
+      {
+        "id": "QUEUE-IA-02",
+        "topic": "A Corrida dos 'Small Language Models' (SLMs) e Chips NPU: Por Que a IA On-Device e Offline Virou a Prioridade Corporativa",
+        "focus": "Nacional (50/50)",
+        "radarSources": ["TLDR AI", "TechDrop", "Distrito Insights", "Canaltech"],
+        "conversionAngle": "Privacidade corporativa, conformidade com LGPD e redução de custos de nuvem rodando modelos compactos em notebooks e servidores locais.",
+        "targetKeywords": ["slm", "small language models", "npu", "ia offline", "ia on-device brasil"],
+        "suggestedSlug": "small-language-models-slm-npu-ia-offline-empresas-brasil",
+        "status": "queued"
+      }
+    ],
+    "Mercado & Negócios": [
+      {
+        "id": "QUEUE-MN-01",
+        "topic": "A Onda do 'Bootstrapping Turbinado': Como Startups Brasileiras Faturam Milhões Sem Diluição de Venture Capital",
+        "focus": "Nacional (50/50)",
+        "radarSources": ["DealflowBR", "The Brief", "Endeavor Brasil", "Brazil Journal"],
+        "conversionAngle": "Empreendedores trocam o modelo de hipercrescimento com queima de caixa por lucratividade imediata apoiada em agentes de IA e eficiência enxuta.",
+        "targetKeywords": ["bootstrapping brasil", "startups rentáveis", "venture capital alternativo", "lucro real startups"],
+        "suggestedSlug": "bootstrapping-startups-rentabilidade-sem-venture-capital-brasil",
+        "status": "queued"
+      },
+      {
+        "id": "QUEUE-MN-02",
+        "topic": "Data Centers Verdes e Crédito de Carbono Corporativo: A Batalha dos Gigantes Globais de Nuvem pela Energia Limpa do Brasil",
+        "focus": "Global com impacto no Brasil (50/50)",
+        "radarSources": ["Bloomberg", "Financial Times", "Pipeline Valor", "PitchBook News"],
+        "conversionAngle": "Fundos soberanos e hyperscalers (Microsoft, AWS, Google) aportam dezenas de bilhões de reais para erguer clusters computacionais no Brasil.",
+        "targetKeywords": ["data centers verdes brasil", "infraestrutura computacional", "energia limpa ia", "investimento estrangeiro"],
+        "suggestedSlug": "data-centers-verdes-clusters-ia-energia-limpa-brasil",
+        "status": "queued"
+      }
+    ],
+    "Finanças Pessoais": [
+      {
+        "id": "QUEUE-FP-01",
+        "topic": "A Carteira Antifrágil de Dividendos: Como Viver de Renda com Fundos Imobiliários e Fiagros Isentos de IR em 2026",
+        "focus": "Nacional (50/50)",
+        "radarSources": ["Bora Investir (B3)", "InfoMoney", "Finsiders Brasil", "Suno Notícias"],
+        "conversionAngle": "Altíssima conversão: o sonho do leitor de gerar fluxo de caixa mensal isento na conta bancária para cobrir o custo de vida fixo.",
+        "targetKeywords": ["viver de renda", "fundos imobiliarios fiis", "dividendos mensais", "fiagro isento ir"],
+        "suggestedSlug": "carteira-antifragil-dividendos-fiis-fiagro-renda-passiva-brasil",
+        "status": "queued"
+      },
+      {
+        "id": "QUEUE-FP-02",
+        "topic": "A Revolução dos Cartões Ultra Premium: Estratégias Reais para Isentar Anuidade de Cartões Black e Desbloquear Salas VIP Ilimitadas",
+        "focus": "Global com impacto no Brasil (50/50)",
+        "radarSources": ["FlipMilhas", "Cartão e Milhas", "Melhores Destinos", "Fintech Nexus"],
+        "conversionAngle": "Forte atração comercial e cliques em comparativos: como acumular até 4 pontos por dólar e viajar de executiva gastando no padrão de vida habitual.",
+        "targetKeywords": ["cartoes black isencao", "salas vip ilimitadas", "visa infinite privilege", "milhas aereas"],
+        "suggestedSlug": "cartoes-ultra-premium-isencao-anuidade-salas-vip-milhas-brasil",
+        "status": "queued"
+      }
+    ],
+    "Saúde & Bem-estar": [
+      {
+        "id": "QUEUE-SB-01",
+        "topic": "Além do Ozempic: A Chegada dos GLP-1 Orais e a Batalha Nutricional Contra a Sarcopenia e Perda de Músculo no Brasil",
+        "focus": "Global com impacto no Brasil (50/50)",
+        "radarSources": ["STAT News", "Endpoints News", "Dr. Peter Attia (The Drive)", "Portal Drauzio Varella"],
+        "conversionAngle": "Pauta de maior volume de busca no país: a evolução dos análogos de GLP-1 para comprimidos diários e os protocolos para preservar tônus muscular e metabolismo.",
+        "targetKeywords": ["glp 1 oral", "semaglutida comprimido", "sarcopenia emagrecimento", "preservacao muscular ozempic"],
+        "suggestedSlug": "glp-1-oral-semaglutida-pilula-prevencao-sarcopenia-brasil",
+        "status": "queued"
+      },
+      {
+        "id": "QUEUE-SB-02",
+        "topic": "A Engenharia do Sono Profundo: O Protocolo Circadiano de Suplementação de Precisão e Higiene Luminosa para Zerar a Névoa Mental",
+        "focus": "Nacional (50/50)",
+        "radarSources": ["FoundMyFitness (Dra. Rhonda Patrick)", "Longevity.Technology", "VivaBem (UOL)"],
+        "conversionAngle": "Resolução de dor crônica: como profissionais eliminam insônia e fadiga cognitiva usando apigenina, magnésio treonato e bloqueio de luz azul.",
+        "targetKeywords": ["sono profundo rem", "higiene circadiana", "suplementacao sono", "nevoa mental"],
+        "suggestedSlug": "engenharia-sono-profundo-protocolo-circadiano-suplementacao-brasil",
+        "status": "queued"
+      }
+    ],
+    "Estética & Beleza": [
+      {
+        "id": "QUEUE-EB-01",
+        "topic": "O Fenômeno do PDRN e DNA de Salmão: Por Que a Biorregeneração Celular Substitui os Preenchimentos Artificiais no Brasil",
+        "focus": "Global com impacto no Brasil (50/50)",
+        "radarSources": ["BeautyMatter", "Spate NYC", "Noor Skin", "Vogue Brasil Beleza"],
+        "conversionAngle": "Maior tendência estética de 2026: regeneração extrema da barreira cutânea e estímulo natural de colágeno sem inchar ou desfigurar o rosto.",
+        "targetKeywords": ["pdrn brasil", "dna de salmao pele", "biorregeneracao cutanea", "skinbooster celular"],
+        "suggestedSlug": "pdrn-dna-salmao-biorregeneracao-celular-estetica-pele-brasil",
+        "status": "queued"
+      },
+      {
+        "id": "QUEUE-EB-02",
+        "topic": "Skinimalism Clínico (Cleanical Beauty): Como Criar uma Rotina Antissinais Potente com Apenas 3 Ativos Multifuncionais",
+        "focus": "Nacional (50/50)",
+        "radarSources": ["Bits to Brands", "Global Wellness Summit", "Marie Claire Beleza"],
+        "conversionAngle": "Fim do desperdício com rotinas de 10 passos: como peptídeos biomiméticos, niacinamida pura e retinoides microencapsulados entregam eficácia clínica superior.",
+        "targetKeywords": ["skinimalism clinico", "cleanical beauty", "rotina facial minimalista", "ativos multifuncionais"],
+        "suggestedSlug": "skinimalism-clinico-rotina-antissinais-ativos-multifuncionais-brasil",
+        "status": "queued"
+      }
+    ],
+    "Estilo de Vida & Viagens": [
+      {
+        "id": "QUEUE-EV-01",
+        "topic": "O Guia Definitivo do 'Stopover' Inteligente: Como Conhecer Dois Destinos Globais Pagando Apenas Uma Passagem Aérea",
+        "focus": "Global com impacto no Brasil (50/50)",
+        "radarSources": ["Skift Daily Briefing", "Melhores Destinos", "Afar Magazine"],
+        "conversionAngle": "Dica prática de altíssima conversão de viagens: programas de conexão gratuita de companhias na Europa, Oriente Médio e América do Norte.",
+        "targetKeywords": ["stopover inteligente", "duas cidades uma passagem", "dicas viagem internacional", "economia passagens"],
+        "suggestedSlug": "guia-stopover-inteligente-duas-cidades-uma-passagem-aerea",
+        "status": "queued"
+      },
+      {
+        "id": "QUEUE-EV-02",
+        "topic": "A Rota dos Lodges de Altitude no Brasil: Vinícolas Boutiques e Retiros Sustentáveis na Mantiqueira e Serra Catarinense",
+        "focus": "Nacional (50/50)",
+        "radarSources": ["Luxury Travel Intelligence", "Robb Report", "Casa Vogue Brasil", "Viagem e Turismo"],
+        "conversionAngle": "Ecoturismo de luxo acessível e viagens de bem-estar: destinos que combinam gastronomia de terroir, arquitetura biofílica e silêncio.",
+        "targetKeywords": ["lodges de altitude brasil", "vinicolas mantiqueira", "serra catarinense luxo", "turismo experiencia"],
+        "suggestedSlug": "lodges-altitude-vinicolas-mantiqueira-serra-catarinense-brasil",
+        "status": "queued"
+      }
+    ],
+    "Tendências": [
+      {
+        "id": "QUEUE-TE-01",
+        "topic": "A Ascensão do 'Loud Budgeting': Por Que Falar Abertamente Sobre Limites Financeiros Virou Símbolo de Maturidade e Status",
+        "focus": "Global com impacto no Brasil (50/50)",
+        "radarSources": ["VOX Insights Weekly", "WGSN Insider", "TrendWatching", "Consumidor Moderno"],
+        "conversionAngle": "Mudança radical de consumo: a Geração Z e Millennials enterram a ostentação por aparência e celebram a disciplina financeira aberta nas redes sociais.",
+        "targetKeywords": ["loud budgeting brasil", "tendencias de consumo", "fim da ostentacao", "disciplina financeira jovem"],
+        "suggestedSlug": "loud-budgeting-tendencia-consumo-limites-financeiros-brasil",
+        "status": "queued"
+      },
+      {
+        "id": "QUEUE-TE-02",
+        "topic": "Micro-Aposentadorias e Sabáticos Recorrentes: A Nova Filosofia de Carreira Que Substitui a Espera Pelos 65 Anos",
+        "focus": "Nacional (50/50)",
+        "radarSources": ["Fast Company Brasil", "Meio & Mensagem", "Canvas8"],
+        "conversionAngle": "Identificação profunda do leitor profissional: como planejar pausas remuneradas de 3 a 6 meses a cada ciclo de 5 anos de carreira corporativa.",
+        "targetKeywords": ["micro aposentadorias", "ano sabatico planejamento", "carreira flexivel", "futuro do trabalho"],
+        "suggestedSlug": "micro-aposentadorias-pausas-sabaticas-planejamento-carreira-brasil",
+        "status": "queued"
+      }
+    ],
+    "Comportamento": [
+      {
+        "id": "QUEUE-CO-01",
+        "topic": "O Renascimento dos 'Terceiros Lugares' (Third Places): Por Que Cafés Analógicos e Clubes Manuais Viraram Refúgio Contra a Solidão Digital",
+        "focus": "Nacional (50/50)",
+        "radarSources": ["VOX Insights", "GWI (GlobalWebIndex)", "The Shift (B9)", "Folha Cotidiano"],
+        "conversionAngle": "Comportamento urbano: a fuga da tela para ateliês de cerâmica, marcenaria, cafés do livro e clubes de corrida presenciais.",
+        "targetKeywords": ["terceiros lugares", "third places brasil", "solidao digital", "encontros presenciais urbanos"],
+        "suggestedSlug": "terceiros-lugares-third-places-cafes-oficinas-convivio-brasil",
+        "status": "queued"
+      },
+      {
+        "id": "QUEUE-CO-02",
+        "topic": "A Era da Desintoxicação Dopaminérgica: O Movimento Pelos Finais de Semana 'Dumbphone' e Monotarefa no Brasil",
+        "focus": "Global com impacto no Brasil (50/50)",
+        "radarSources": ["The Atlantic Culture", "Pew Research", "Consumidor Moderno"],
+        "conversionAngle": "Saúde mental e comportamento: como jovens e profissionais estão trocando smartphones por celulares básicos aos fins de semana para recuperar foco e presença.",
+        "targetKeywords": ["desintoxicacao dopaminergica", "dumbphone brasil", "monotarefa foco", "desconexao digital"],
+        "suggestedSlug": "desintoxicacao-dopaminergica-dumbphone-finais-de-semana-brasil",
+        "status": "queued"
+      }
+    ],
+    "Sustentabilidade": [
+      {
+        "id": "QUEUE-SU-01",
+        "topic": "O Vale do Lítio Verde e o Hidrogênio Renovável: Como o Brasil Lidera os Insumos Críticos da Nova Economia Global",
+        "focus": "Nacional (50/50)",
+        "radarSources": ["Capital Reset", "Exame ESG", "Bloomberg Green", "CleanTechnica"],
+        "conversionAngle": "Geopolítica verde: mineração sustentável com reaproveitamento hídrico e os projetos de exportação de amônia verde no Nordeste.",
+        "targetKeywords": ["litio verde jequitinhonha", "hidrogenio verde brasil", "transicao energetica esg", "mineracao sustentavel"],
+        "suggestedSlug": "litio-verde-hidrogenio-renovavel-insumos-criticos-brasil",
+        "status": "queued"
+      },
+      {
+        "id": "QUEUE-SU-02",
+        "topic": "Arquitetura Biofílica e Madeira Engenheirada (CLT): Por Que os Novos Edifícios Sustentáveis Brasileiros Abandonam o Concreto Puro",
+        "focus": "Global com impacto no Brasil (50/50)",
+        "radarSources": ["ESG Today", "Reuters Sustainable Business", "Casa Vogue Brasil", "Página 22"],
+        "conversionAngle": "Inovação na construção civil: prédios erguidos com madeira de reflorestamento rastreada que sequestram carbono e oferecem isolamento térmico natural.",
+        "targetKeywords": ["madeira engenheirada clt", "arquitetura biofilica brasil", "construcao descarbonizada", "edificios sustentaveis"],
+        "suggestedSlug": "arquitetura-biofilica-madeira-engenheirada-clt-construcao-brasil",
+        "status": "queued"
+      }
+    ]
+  }
+}
