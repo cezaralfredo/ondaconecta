@@ -2052,5 +2052,53 @@
       "InfoMoney Carreira"
     ],
     "title": "O Fim da Semana Exaustiva? Como a 'Semana de 4 Dias' e a Produtividade sem Horas Extras Avançam nas Empresas no Brasil"
+  },
+  {
+    "id": 448,
+    "slug": "agentic-commerce-agentes-ia-compras-autonomas-ecommerce-brasil",
+    "category": "Inovação & IA",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-11-07T09:30:00-03:00",
+    "sources": [
+      "MIT Technology Review",
+      "Wired",
+      "Okta Research",
+      "Global Payments",
+      "StartSe",
+      "E-Commerce Brasil"
+    ],
+    "title": "A Era do 'Agentic Commerce': Quando Agentes de IA Compram e Negociam Diretamente com Marcas no Brasil"
+  },
+  {
+    "id": 451,
+    "slug": "open-finance-investimentos-inteligencia-artificial-rebalanceamento-brasil",
+    "category": "Finanças Pessoais",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-11-07T14:00:00-03:00",
+    "sources": [
+      "Banco Central do Brasil (Bacen)",
+      "Open Finance Brasil",
+      "Anbima",
+      "B3",
+      "InfoMoney",
+      "Valor Investe"
+    ],
+    "title": "O Fim das Carteiras Espalhadas? Como o Open Finance e a IA Autônoma Redefinem a Gestão de Investimentos no Brasil"
+  },
+  {
+    "id": 454,
+    "slug": "friendshoring-verde-cadeias-globais-suprimentos-investimento-brasil",
+    "category": "Mercado & Negócios",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-11-07T18:00:00-03:00",
+    "sources": [
+      "Banco Interamericano de Desenvolvimento (BID)",
+      "Financial Times",
+      "Bloomberg",
+      "Confederação Nacional da Indústria (CNI)",
+      "MDIC",
+      "Pipeline Valor"
+    ],
+    "title": "A Rota do 'Friendshoring' Verde: Como a Reconfiguração das Cadeias Globais de Suprimentos Destrava Bilhões para o Brasil"
   }
 ]
