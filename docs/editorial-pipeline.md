@@ -25,3 +25,4 @@ Este documento organiza a **fila estruturada de pautas prioritárias de alta con
 1. **Seleção Round-Robin:** O orquestrador `onda-cron-agent` identifica a categoria com maior defasagem de publicação.
 2. **Consulta Imediata à Fila:** Em vez de partir do zero, a `onda-researcher` consulta [editorial-queue.json](file:///e:/Projetos/onda%20conecta/scripts/editorial-queue.json), validando o frescor factual das últimas 24h e o ângulo 50/50.
 3. **Consumo e Atualização:** Quando uma pauta da fila é redigida e publicada, ela é transferida automaticamente para o [published-history.json](file:///e:/Projetos/onda%20conecta/scripts/published-history.json), e uma nova pauta é reposta no topo da fila.
+
