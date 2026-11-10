@@ -22,17 +22,17 @@ A curadoria deve manter um equilíbrio rigoroso de relevância entre os mercados
 ### Verticais Monitoradas e Fontes de Autoridade Primárias (Incluindo Radares de Vanguarda):
 
 1. **Inovação & IA:**
-   - *Nacionais:* TecMundo, Canaltech, Olhar Digital, Época Negócios Tech, Exame Inovação, Startups.com.br, Manual do Usuário.
-   - *Radares & Newsletters:* **The Brief**, **TechDrop**, **Distrito Insights**.
-   - *Globais & Think Tanks:* TechCrunch, MIT Technology Review, The Verge, Wired, Ars Technica, The Information, **Stratechery (Ben Thompson)**, **TLDR AI**, **Semafor Tech**.
+   - *Nacionais & Centros de Pesquisa:* C4AI (USP / IBM / FAPESP), CeIA (UFG / EMBRAPII), TecMundo, Canaltech, Olhar Digital, Época Negócios Tech, Exame Inovação, Startups.com.br, Manual do Usuário.
+   - *Radares & Newsletters Técnicas:* **The Brief**, **TechDrop**, **Distrito Insights**, **Latent Space (swyx & Alessio)**, **Interconnects (Nathan Lambert)**.
+   - *Globais & Think Tanks de Silício/Modelos:* **SemiAnalysis (Dylan Patel — Semicondutores & TCO)**, **Stanford HAI (AI Index Report)**, TechCrunch, MIT Technology Review, The Verge, Wired, Ars Technica, The Information, **Stratechery (Ben Thompson)**, **TLDR AI**, **Semafor Tech**.
 2. **Mercado & Negócios:**
-   - *Nacionais:* Brazil Journal, NeoFeed, StartSe, Pipeline Valor, InfoMoney Negócios, Revista PEGN, Finsiders Brasil.
-   - *Radares & Newsletters:* **DealflowBR**, **Endeavor Brasil**.
-   - *Globais:* Bloomberg, Financial Times, Forbes, Fortune, Wall Street Journal, **PitchBook News**, **CB Insights**.
+   - *Nacionais & Escolas de Gestão:* **Fundação Dom Cabral (FDC — Núcleo de Estratégia e Negócios)**, **JOTA Negócios (Regulação, Tributário e Concorrência)**, Brazil Journal, NeoFeed, StartSe, Pipeline Valor, InfoMoney Negócios, Revista PEGN, Finsiders Brasil.
+   - *Radares, Bootstrapping & Newsletters:* **DealflowBR (Guilherme Lima)**, **Endeavor Brasil**, **MicroConf & State of Independent SaaS**.
+   - *Globais & Product-Led Growth:* **Lenny's Newsletter (Product Growth & Monetização)**, **OpenView PLG**, **BCG Henderson Institute**, **McKinsey Global Institute (MGI)**, Bloomberg, Financial Times, Forbes, Fortune, Wall Street Journal, **PitchBook News**, **CB Insights**.
 3. **Finanças Pessoais:**
-   - *Nacionais:* InfoMoney, Valor Investe, E-Investidor (Estadão), Inteligência Financeira, Bora Investir (B3), Suno Notícias.
-   - *Radares & Newsletters:* **Finsiders Brasil (Open Finance/Fintechs)**, **FlipMilhas**, **Cartão e Milhas**.
-   - *Globais:* MarketWatch, CNBC, Bloomberg Wealth, **Fintech Nexus**.
+   - *Nacionais, Índices & Previdência:* **Bora Investir (B3)**, **FGV IBRE (Poder de Compra & IPC)**, **ABRAPP (Previdência Fechada & Longevidade Financeira)**, InfoMoney, Valor Investe, E-Investidor (Estadão), Inteligência Financeira, Suno Notícias.
+   - *Radares de Cartões, Milhas & Fintechs:* **The Points Guy (TPG) Analytics**, **Upgraded Points**, **Finsiders Brasil (Open Finance/Fintechs)**, **FlipMilhas**, **Cartão e Milhas**.
+   - *Globais & Alocação de Ativos:* **Vanguard Center for Investor Research**, **Morningstar Direct Insights**, MarketWatch, CNBC, Bloomberg Wealth, **Fintech Nexus**.
 4. **Saúde & Bem-estar:**
    - *Nacionais:* Saúde Abril, VivaBem (UOL), Eu Atleta (ge.globo), Portal Drauzio Varella, CNN Brasil Saúde.
    - *Radares & Medicina Preventiva:* **Dr. Peter Attia (The Drive)**, **FoundMyFitness (Dra. Rhonda Patrick)**.

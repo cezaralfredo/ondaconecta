@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-10T08:30:00.000Z",
+  "updatedAt": "2026-11-10T08:52:00.000Z",
   "description": "Fila estratégica de pautas prioritárias de alta conversão e audiência popular para o Onda Conecta, alimentadas por radares de vanguarda e inteligência de dados.",
   "categories": {
     "Inovação & IA": [
@@ -44,6 +44,48 @@
         ],
         "suggestedSlug": "small-language-models-slm-npu-ia-offline-empresas-brasil",
         "status": "published"
+      },
+      {
+        "id": "QUEUE-IA-03",
+        "topic": "A Economia Real dos Tokens e o TCO dos Datacenters: Por Que a Eficiência Energética de Silício Superou a Corrida por Parâmetros Brutos",
+        "focus": "Global com impacto no Brasil (50/50)",
+        "radarSources": [
+          "SemiAnalysis (Dylan Patel)",
+          "Stanford HAI (AI Index Report)",
+          "C4AI (USP/IBM)",
+          "MIT Technology Review"
+        ],
+        "conversionAngle": "Análise econômica detalhada do custo total de propriedade (TCO) para empresas nacionais: por que otimizar largura de banda de memória e clusters de energia limpa é o verdadeiro divisor de águas da IA.",
+        "targetKeywords": [
+          "tco datacenters",
+          "economia de tokens ia",
+          "semianalysis brasil",
+          "eficiencia energetica silicio",
+          "chips ia"
+        ],
+        "suggestedSlug": "economia-tokens-tco-datacenters-silicio-eficiencia-ia-brasil",
+        "status": "queued"
+      },
+      {
+        "id": "QUEUE-IA-04",
+        "topic": "A Batalha dos Modelos Fundacionais Soberanos: Como Centros Brasileiros Criam IAs em Português para Blindar a Cultura e Dados Nacionais",
+        "focus": "Nacional (50/50)",
+        "radarSources": [
+          "C4AI (USP/IBM/FAPESP)",
+          "CeIA (UFG/EMBRAPII)",
+          "MCTI",
+          "Sociedade Brasileira de Computação (SBC)"
+        ],
+        "conversionAngle": "O avanço de modelos pré-treinados no português nativo brasileiro que superam o viés cultural anglo-saxão e protegem a propriedade intelectual de empresas nacionais.",
+        "targetKeywords": [
+          "ia soberana brasil",
+          "c4ai usp",
+          "modelos em portugues",
+          "pln brasil",
+          "inteligencia artificial nacional"
+        ],
+        "suggestedSlug": "modelos-fundacionais-soberanos-ia-portugues-centros-pesquisa-brasil",
+        "status": "queued"
       }
     ],
     "Mercado & Negócios": [
@@ -85,6 +127,48 @@
           "investimento estrangeiro"
         ],
         "suggestedSlug": "data-centers-verdes-clusters-ia-energia-limpa-brasil",
+        "status": "queued"
+      },
+      {
+        "id": "QUEUE-MN-03",
+        "topic": "O Playbook do 'Product-Led Growth' (PLG): Como Startups Enxutas Escalam Vendas Corporativas Sem Exércitos de SDRs e Vendedores",
+        "focus": "Global com impacto no Brasil (50/50)",
+        "radarSources": [
+          "Lenny's Newsletter (Lenny Rachitsky)",
+          "OpenView PLG",
+          "DealflowBR",
+          "MicroConf"
+        ],
+        "conversionAngle": "A estratégia dos fundadores que transformam o próprio software na máquina de aquisição de clientes corporativos, reduzindo o CAC a quase zero e acelerando a conversão orgânica.",
+        "targetKeywords": [
+          "product-led growth brasil",
+          "plg saas",
+          "reducao cac",
+          "lennys newsletter brasil",
+          "vendas self service"
+        ],
+        "suggestedSlug": "product-led-growth-plg-startups-vendas-software-sem-vendedores-brasil",
+        "status": "queued"
+      },
+      {
+        "id": "QUEUE-MN-04",
+        "topic": "A Nova Dança do M&A Silencioso: Como a Reforma Tributária e o CADE Aceleram a Consolidação de Empresas Médias e Familiares no Brasil",
+        "focus": "Nacional (50/50)",
+        "radarSources": [
+          "Fundação Dom Cabral (FDC)",
+          "JOTA Negócios & Tributário",
+          "Brazil Journal",
+          "Pipeline Valor"
+        ],
+        "conversionAngle": "Análise profunda de mercado: como a simplificação do IVA duplo e novas regras de planejamento sucessório estão gerando uma corrida sem precedentes por fusões e aquisições de médias empresas no interior do país.",
+        "targetKeywords": [
+          "fusões e aquisições brasil",
+          "ma empresas familiares",
+          "fundacao dom cabral m&a",
+          "reforma tributaria cade",
+          "consolidacao setor privado"
+        ],
+        "suggestedSlug": "fusao-aquisicao-ma-empresas-familiares-reforma-tributaria-brasil",
         "status": "queued"
       }
     ],
@@ -128,6 +212,48 @@
         ],
         "suggestedSlug": "cartoes-ultra-premium-isencao-anuidade-salas-vip-milhas-brasil",
         "status": "published"
+      },
+      {
+        "id": "QUEUE-FP-03",
+        "topic": "A Regra dos 4% Revisitada para o Brasil: Como Calcular a Taxa Real de Retirada Segura para Aposentadoria com Juros Altos e Inflação",
+        "focus": "Nacional (50/50)",
+        "radarSources": [
+          "Vanguard Center for Investor Research",
+          "FGV IBRE",
+          "Bora Investir (B3)",
+          "ABRAPP"
+        ],
+        "conversionAngle": "O guia definitivo para independência financeira: como adaptar o estudo clássico de Trinity para a realidade brasileira de Selic de dois dígitos e inflação de serviços.",
+        "targetKeywords": [
+          "regra dos 4 por cento",
+          "aposentadoria independente",
+          "taxa de retirada segura brasil",
+          "viver de renda fixa",
+          "fgv ibre"
+        ],
+        "suggestedSlug": "regra-dos-4-por-cento-taxa-retirada-segura-aposentadoria-brasil",
+        "status": "queued"
+      },
+      {
+        "id": "QUEUE-FP-04",
+        "topic": "A Arbitragem de Milhas Internacionais: Estratégias Avançadas para Voar em Primeira Classe Pagando Menos que a Tarifa Econômica",
+        "focus": "Global com impacto no Brasil (50/50)",
+        "radarSources": [
+          "The Points Guy (TPG) Analytics",
+          "Upgraded Points",
+          "FlipMilhas",
+          "Fintech Nexus"
+        ],
+        "conversionAngle": "Guia prático para viajantes frequentes: como explorar tabelas fixas de companhias aéreas internacionais parceiras de bancos brasileiros e maximizar o valor real de cada milha.",
+        "targetKeywords": [
+          "arbitragem de milhas",
+          "tabelas fixas companhias aereas",
+          "primeira classe com milhas",
+          "the points guy brasil",
+          "passagens baratas executiva"
+        ],
+        "suggestedSlug": "arbitragem-milhas-tabelas-fixas-voos-primeira-classe-brasil",
+        "status": "queued"
       }
     ],
     "Saúde & Bem-estar": [
