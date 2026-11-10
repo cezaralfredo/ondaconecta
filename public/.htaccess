@@ -16,13 +16,23 @@
   RewriteRule ^us/(.*)$ /en/$1 [R=301,L]
   RewriteRule ^us/?$ /en/ [R=301,L]
 
-  # 3. Redirecionamento 301 de URLs legadas com sufixo -en ou -es para as rotas canônicas limpas
+  # 3. Redirecionamento 301 definitivo de rotas institucionais legadas
+  RewriteRule ^about/?$ /quem-somos [R=301,L]
+  RewriteRule ^sobre/?$ /quem-somos [R=301,L]
+  RewriteRule ^contact/?$ /contato [R=301,L]
+  RewriteRule ^contact-us/?$ /contato [R=301,L]
+  RewriteRule ^privacy/?$ /privacidade [R=301,L]
+  RewriteRule ^terms/?$ /termos-de-uso [R=301,L]
+  RewriteRule ^inteligencia-artificial/?$ /servicos-ia [R=301,L]
+  RewriteRule ^solucoes-ia/?$ /servicos-ia [R=301,L]
+
+  # 4. Redirecionamento 301 de URLs legadas com sufixo -en ou -es para as rotas canônicas limpas
   RewriteRule ^blog/(.+)-en/?$ /en/blog/$1 [R=301,L]
   RewriteRule ^blog/(.+)-es/?$ /es/blog/$1 [R=301,L]
   RewriteRule ^en/blog/(.+)-en/?$ /en/blog/$1 [R=301,L]
   RewriteRule ^es/blog/(.+)-es/?$ /es/blog/$1 [R=301,L]
 
-  # 4. Redirecionamento 301 para rotas de categorias e ferramentas multilíngues
+  # 5. Redirecionamento 301 para rotas de categorias e ferramentas multilíngues
   RewriteRule ^categories/?$ /en/categories [R=301,L]
   RewriteRule ^categorias/?$ /es/categorias [R=301,L]
   RewriteRule ^tools/?$ /en/tools [R=301,L]
