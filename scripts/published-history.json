@@ -2184,5 +2184,47 @@
       "Consumidor Moderno"
     ],
     "title": "Desintoxicação Dopaminérgica: Por Que os Fins de Semana 'Dumbphone' Viraram o Novo Refúgio Mental no Brasil"
+  },
+  {
+    "id": 475,
+    "slug": "small-language-models-slm-npu-ia-offline-empresas-brasil",
+    "category": "Inovação & IA",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-11-10T08:00:00-03:00",
+    "sources": [
+      "MIT Technology Review",
+      "IEEE Spectrum",
+      "Associação Brasileira das Empresas de Software (ABES)",
+      "Autoridade Nacional de Proteção de Dados (ANPD)"
+    ],
+    "title": "A Corrida dos 'Small Language Models' (SLMs) e Chips NPU: Por Que a IA On-Device e Offline Virou a Prioridade Corporativa no Brasil"
+  },
+  {
+    "id": 478,
+    "slug": "cartoes-ultra-premium-isencao-anuidade-salas-vip-milhas-brasil",
+    "category": "Finanças Pessoais",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-11-10T14:00:00-03:00",
+    "sources": [
+      "Banco Central do Brasil (BCB)",
+      "Associação Brasileira das Empresas de Cartões de Crédito e Serviços (ABECS)",
+      "Fintech Nexus Insights",
+      "Bloomberg Línea Brasil"
+    ],
+    "title": "A Revolução dos Cartões Ultra Premium: Estratégias Reais para Isentar Anuidade Black e Acessar Salas VIP Ilimitadas"
+  },
+  {
+    "id": 481,
+    "slug": "bootstrapping-startups-rentabilidade-sem-venture-capital-brasil",
+    "category": "Mercado & Negócios",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-11-10T18:00:00-03:00",
+    "sources": [
+      "Brazil Journal",
+      "Endeavor Brasil",
+      "Distrito Insights",
+      "The Brief Newsletter"
+    ],
+    "title": "A Onda do 'Bootstrapping Turbinado': Como Startups Brasileiras Faturam Milhões com Lucratividade Real Sem Diluição de Venture Capital"
   }
 ]

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-09T11:43:53.684Z",
+  "updatedAt": "2026-11-10T08:30:00.000Z",
   "description": "Fila estratégica de pautas prioritárias de alta conversão e audiência popular para o Onda Conecta, alimentadas por radares de vanguarda e inteligência de dados.",
   "categories": {
     "Inovação & IA": [
@@ -43,7 +43,7 @@
           "ia on-device brasil"
         ],
         "suggestedSlug": "small-language-models-slm-npu-ia-offline-empresas-brasil",
-        "status": "queued"
+        "status": "published"
       }
     ],
     "Mercado & Negócios": [
@@ -65,7 +65,7 @@
           "lucro real startups"
         ],
         "suggestedSlug": "bootstrapping-startups-rentabilidade-sem-venture-capital-brasil",
-        "status": "queued"
+        "status": "published"
       },
       {
         "id": "QUEUE-MN-02",
@@ -127,7 +127,7 @@
           "milhas aereas"
         ],
         "suggestedSlug": "cartoes-ultra-premium-isencao-anuidade-salas-vip-milhas-brasil",
-        "status": "queued"
+        "status": "published"
       }
     ],
     "Saúde & Bem-estar": [
