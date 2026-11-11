@@ -2226,5 +2226,45 @@
       "The Brief Newsletter"
     ],
     "title": "A Onda do 'Bootstrapping Turbinado': Como Startups Brasileiras Faturam Milhões com Lucratividade Real Sem Diluição de Venture Capital"
+  },
+  {
+    "id": 484,
+    "slug": "pdrn-dna-salmao-biorregeneracao-celular-estetica-pele-brasil",
+    "category": "Estética & Beleza",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-11-11T09:30:00-03:00",
+    "sources": [
+      "Sociedade Brasileira de Dermatologia (SBD)",
+      "BeautyMatter",
+      "Agência Nacional de Vigilância Sanitária (Anvisa)"
+    ],
+    "title": "O Fenômeno do PDRN: Por Que o DNA de Salmão Substitui Preenchimentos Artificiais"
+  },
+  {
+    "id": 487,
+    "slug": "litio-verde-hidrogenio-renovavel-insumos-criticos-brasil",
+    "category": "Sustentabilidade",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-11-11T14:00:00-03:00",
+    "sources": [
+      "Exame ESG",
+      "Bloomberg Green",
+      "Agência Nacional de Mineração (ANM)",
+      "BNDES"
+    ],
+    "title": "O Vale do Lítio Verde e o Hidrogênio: Como o Brasil Lidera a Nova Economia Limpa"
+  },
+  {
+    "id": 490,
+    "slug": "guia-stopover-inteligente-duas-cidades-uma-passagem-aerea",
+    "category": "Estilo de Vida & Viagens",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-11-11T18:00:00-03:00",
+    "sources": [
+      "Melhores Destinos",
+      "Skift Hospitality Insights",
+      "Associação Internacional de Transportes Aéreos (IATA)"
+    ],
+    "title": "O Guia do Stopover Inteligente: Como Conhecer Dois Países com Uma Passagem"
   }
 ]
