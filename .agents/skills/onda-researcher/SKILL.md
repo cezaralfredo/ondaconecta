@@ -38,13 +38,13 @@ A curadoria deve manter um equilíbrio rigoroso de relevância entre os mercados
    - *Radares & Medicina Preventiva:* **Dr. Peter Attia (The Drive)**, **FoundMyFitness (Dra. Rhonda Patrick)**.
    - *Globais & Biotecnologia:* Healthline, Psychology Today, Nature Medicine, BBC Health, **Longevity.Technology**, **STAT News**, **Endpoints News**.
 5. **Estética & Beleza:**
-   - *Nacionais:* Vogue Brasil Beleza, Marie Claire Beleza, Glamour Beleza, Lilian Pacce, Cosmopolitan Brasil, Beleza na Web Editorial.
+   - *Nacionais & Sociedades Médicas:* Sociedade Brasileira de Dermatologia (SBD), Vogue Brasil Beleza, Marie Claire Beleza, Glamour Beleza, Lilian Pacce, Cosmopolitan Brasil, Beleza na Web Editorial.
    - *Radares & Tendências:* **Bits to Brands (Beatriz Guarezi)**, **Noor Skin**.
-   - *Globais & Big Data:* Allure, Cosmetics & Toiletries, Business of Fashion (Beauty), Byrdie, WWD, **BeautyMatter**, **Spate NYC (Big Data de Busca)**, **Global Wellness Summit (GWS)**.
+   - *Globais, Periódicos & Big Data:* **JEADV (Journal of the European Academy of Dermatology and Venereology)**, **American Academy of Dermatology (AAD)**, Allure, Cosmetics & Toiletries, Business of Fashion (Beauty), Byrdie, WWD, **BeautyMatter**, **Spate NYC (Big Data de Busca)**, **Global Wellness Summit (GWS)**.
 6. **Estilo de Vida & Viagens:**
-   - *Nacionais:* Viagem e Turismo (Abril), Melhores Destinos, Guia Viajar Melhor, GQ Brasil, Casa Vogue, Forbes Life Brasil.
-   - *Radares & Inteligência de Viagem:* **Skift (Daily Briefing & Trends)**, **Robb Report**, **Afar Magazine**, **Luxury Travel Intelligence (LTI)**.
-   - *Globais:* Condé Nast Traveler, Lonely Planet, Travel + Leisure.
+   - *Nacionais & Associações:* **Associação Brasileira de Ecoturismo e Turismo de Aventura (ABETA)**, Embratur, Viagem e Turismo (Abril), Melhores Destinos, Guia Viajar Melhor, GQ Brasil, Casa Vogue, Forbes Life Brasil.
+   - *Radares & Inteligência de Viagem:* **Skift (Daily Briefing & Trends)**, **Robb Report**, **Afar Magazine**, **Luxury Travel Intelligence (LTI)**, **DarkSky International (Astroturismo & Noctourism)**.
+   - *Globais:* Condé Nast Traveler, Lonely Planet, Travel + Leisure, National Geographic Travel.
 7. **Tendências:**
    - *Nacionais:* Consumidor Moderno, Fast Company Brasil, Meio & Mensagem, StartSe.
    - *Radares & Macrotendências:* **VOX Insights Weekly**, **WGSN Insider**, **TrendWatching**, **Springwise**.
@@ -54,8 +54,8 @@ A curadoria deve manter um equilíbrio rigoroso de relevância entre os mercados
    - *Radares & Mudança Social:* **VOX Insights**, **GWI (GlobalWebIndex)**, **Pew Research**.
    - *Globais:* The Atlantic (Culture), Vox Media, Dazed, BBC Worklife.
 9. **Sustentabilidade:**
-   - *Nacionais:* Capital Reset, Exame ESG, Um Só Planeta (Globo), Página 22.
-   - *Radares & Transição Ecológica:* **CleanTechnica**, **ESG Today**, **Reuters Sustainable Business**, **Bloomberg Green**.
+   - *Nacionais, Regulação & Energia:* **Agência Nacional do Petróleo, Gás Natural e Biocombustíveis (ANP / ProBioQAV)**, **Empresa de Pesquisa Energética (EPE)**, Capital Reset, Exame ESG, Um Só Planeta (Globo), Página 22.
+   - *Radares, Transição Ecológica & Baterias:* **BloombergNEF (BNEF - Energy Storage & Clean Energy)**, **CleanTechnica**, **ESG Today**, **Reuters Sustainable Business**, **Bloomberg Green**, **IATA Sustainability (Sustainable Aviation Fuel - SAF)**.
 
 ---
 

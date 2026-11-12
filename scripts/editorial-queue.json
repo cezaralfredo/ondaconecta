@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-11T18:45:00.000Z",
+  "updatedAt": "2026-11-12T12:56:53.982Z",
   "description": "Fila estratégica de pautas prioritárias de alta conversão e audiência popular para o Onda Conecta, alimentadas por radares de vanguarda e inteligência de dados.",
   "categories": {
     "Inovação & IA": [
@@ -294,7 +294,7 @@
           "nevoa mental"
         ],
         "suggestedSlug": "engenharia-sono-profundo-protocolo-circadiano-suplementacao-brasil",
-        "status": "queued"
+        "status": "published"
       }
     ],
     "Estética & Beleza": [
@@ -336,6 +336,50 @@
         ],
         "suggestedSlug": "skinimalism-clinico-rotina-antissinais-ativos-multifuncionais-brasil",
         "status": "published"
+      },
+      {
+        "id": "QUEUE-EB-03",
+        "topic": "Neurocosméticos e Psicodermatologia: Como a Conexão Cérebro-Pele Combate o Envelhecimento por Cortisol no Brasil",
+        "focus": "Global com impacto no Brasil (50/50)",
+        "radarSources": [
+          "Sociedade Brasileira de Dermatologia (SBD)",
+          "BeautyMatter",
+          "Spate NYC",
+          "JEADV (Journal of European Academy of Dermatology)",
+          "Vogue Brasil Beleza"
+        ],
+        "conversionAngle": "A nova fronteira da beleza funcional: como o estresse crônico urbano degrada o colágeno e por que ativos adaptógenos, neuropeptídeos tópicos e canabinoides não psicoativos lideram as formulações de ponta.",
+        "targetKeywords": [
+          "neurocosmeticos brasil",
+          "psicodermatologia",
+          "envelhecimento por cortisol",
+          "estresse na pele",
+          "neuropeptideos cutaneos"
+        ],
+        "suggestedSlug": "neurocosmeticos-psicodermatologia-conexao-cerebro-pele-cortisol-brasil",
+        "status": "queued"
+      },
+      {
+        "id": "QUEUE-EB-04",
+        "topic": "Peptídeos de Cobre (GHK-Cu) e Ectoína: O Novo Padrão Ouro da Barreira Cutânea Sem Efeitos Colaterais no Brasil",
+        "focus": "Global com impacto no Brasil (50/50)",
+        "radarSources": [
+          "British Journal of Dermatology",
+          "American Academy of Dermatology (AAD)",
+          "Cosmetics & Toiletries",
+          "Marie Claire Beleza",
+          "Noor Skin"
+        ],
+        "conversionAngle": "O cansaço da irritação e descamação do retinol em climas tropicais faz crescer a prescrição de ectoína e peptídeos biomiméticos de cobre para regeneração celular diurna profunda.",
+        "targetKeywords": [
+          "peptideos de cobre pele",
+          "ghk cu brasil",
+          "ectoina dermocosmeticos",
+          "reparacao barreira cutanea",
+          "alternativa ao retinol"
+        ],
+        "suggestedSlug": "peptideos-cobre-ghk-cu-ectoina-barreira-cutanea-brasil",
+        "status": "queued"
       }
     ],
     "Estilo de Vida & Viagens": [
@@ -377,6 +421,50 @@
         ],
         "suggestedSlug": "lodges-altitude-vinicolas-mantiqueira-serra-catarinense-brasil",
         "status": "published"
+      },
+      {
+        "id": "QUEUE-EV-03",
+        "topic": "O Fenômeno dos \"Destination Dupes\" (Destinos Espelho): Como Fugir do Turismo de Massa e Economizar até 60% em Roteiros de Luxo",
+        "focus": "Global com impacto no Brasil (50/50)",
+        "radarSources": [
+          "Skift (Daily Trends)",
+          "Condé Nast Traveler",
+          "Melhores Destinos",
+          "Afar Magazine",
+          "Luxury Travel Intelligence (LTI)"
+        ],
+        "conversionAngle": "A reação contra o overtourism e taxas turísticas abusivas na Europa e Américas: como viajantes experientes substituem pontos saturados por cidades-irmãs autênticas com conforto superior e menor custo.",
+        "targetKeywords": [
+          "destination dupes",
+          "destinos espelho",
+          "turismo sem multidoes",
+          "alternativas a veneza e amalfi",
+          "viagens inteligentes 2026"
+        ],
+        "suggestedSlug": "destination-dupes-destinos-espelho-turismo-massa-economia-viagens",
+        "status": "queued"
+      },
+      {
+        "id": "QUEUE-EV-04",
+        "topic": "Astroturismo e \"Noctourism\": A Corrida Pelos Parques de Céu Escuro e a Nova Hotelaria Estelar no Brasil",
+        "focus": "Nacional & Global (50/50)",
+        "radarSources": [
+          "DarkSky International",
+          "Embratur",
+          "ABETA (Associação Brasileira de Ecoturismo)",
+          "National Geographic Travel",
+          "Robb Report"
+        ],
+        "conversionAngle": "A fuga da poluição luminosa das metrópoles transforma a observação celeste no novo luxo do ecoturismo: o pioneirismo do Parque Estadual do Desengano e glampings estelares na Chapada e no sertão nordestino.",
+        "targetKeywords": [
+          "astroturismo brasil",
+          "dark sky park",
+          "turismo noturno noctourism",
+          "parque estadual do desengano",
+          "glamping estelar"
+        ],
+        "suggestedSlug": "astroturismo-noctourism-parques-ceu-escuro-hotelaria-estelar-brasil",
+        "status": "queued"
       }
     ],
     "Tendências": [
@@ -398,7 +486,7 @@
           "disciplina financeira jovem"
         ],
         "suggestedSlug": "loud-budgeting-tendencia-consumo-limites-financeiros-brasil",
-        "status": "queued"
+        "status": "published"
       },
       {
         "id": "QUEUE-TE-02",
@@ -439,7 +527,7 @@
           "encontros presenciais urbanos"
         ],
         "suggestedSlug": "terceiros-lugares-third-places-cafes-oficinas-convivio-brasil",
-        "status": "queued"
+        "status": "published"
       },
       {
         "id": "QUEUE-CO-02",
@@ -501,6 +589,50 @@
         ],
         "suggestedSlug": "arquitetura-biofilica-madeira-engenheirada-clt-construcao-brasil",
         "status": "published"
+      },
+      {
+        "id": "QUEUE-SU-03",
+        "topic": "A Lei do Combustível do Futuro e o SAF: Como o Brasil se Torna o Hub Global do Querosene Sustentável de Aviação",
+        "focus": "Nacional & Global (50/50)",
+        "radarSources": [
+          "Agência Nacional do Petróleo (ANP)",
+          "IATA (International Air Transport Association)",
+          "Ministério de Minas e Energia (MME)",
+          "Bloomberg Green",
+          "Capital Reset"
+        ],
+        "conversionAngle": "A obrigatoriedade de SAF a partir de 2027 com o programa ProBioQAV e o modelo Book & Claim (CS-SAF): como o agro nacional e biorrefinarias atraem mais de R$ 25 bilhões para descarbonizar a aviação.",
+        "targetKeywords": [
+          "combustivel do futuro brasil",
+          "saf querosene sustentavel",
+          "probioqav",
+          "descarbonizacao aviacao",
+          "book and claim cs saf"
+        ],
+        "suggestedSlug": "lei-combustivel-futuro-saf-brasil-hub-querosene-sustentavel-aviacao",
+        "status": "queued"
+      },
+      {
+        "id": "QUEUE-SU-04",
+        "topic": "Baterias de Sódio-Íon (Sodium-Ion) e Armazenamento Estacionário BESS: A Revolução Sem Minérios Raros que Barateia a Energia Solar no Brasil",
+        "focus": "Global com impacto no Brasil (50/50)",
+        "radarSources": [
+          "BloombergNEF (BNEF)",
+          "CleanTechnica",
+          "EPE (Empresa de Pesquisa Energética)",
+          "Reuters Sustainable Business",
+          "Exame ESG"
+        ],
+        "conversionAngle": "Superação dos gargalos do lítio com células à base de sal: como os sistemas de armazenamento em baterias (BESS) viabilizam a estabilidade das usinas solares e eólicas no Nordeste sem dependência de cadeias asiáticas críticas.",
+        "targetKeywords": [
+          "baterias de sodio ion brasil",
+          "armazenamento de energia bess",
+          "baterias sodium ion",
+          "transicao energetica solar",
+          "bloombergnef brasil"
+        ],
+        "suggestedSlug": "baterias-sodio-ion-armazenamento-bess-energia-solar-brasil",
+        "status": "queued"
       }
     ]
   }

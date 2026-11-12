@@ -2266,5 +2266,47 @@
       "Associação Internacional de Transportes Aéreos (IATA)"
     ],
     "title": "O Guia do Stopover Inteligente: Como Conhecer Dois Países com Uma Passagem"
+  },
+  {
+    "id": 493,
+    "slug": "engenharia-sono-profundo-protocolo-circadiano-suplementacao-brasil",
+    "category": "Saúde & Bem-estar",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-11-12T09:30:00-03:00",
+    "sources": [
+      "Associação Brasileira do Sono (ABS)",
+      "FoundMyFitness (Dra. Rhonda Patrick)",
+      "National Institutes of Health (NIH)",
+      "VivaBem UOL"
+    ],
+    "title": "O Fim da Névoa Mental: Como a Engenharia do Sono Profundo Redefine a Produtividade no Brasil"
+  },
+  {
+    "id": 496,
+    "slug": "loud-budgeting-tendencia-consumo-limites-financeiros-brasil",
+    "category": "Tendências",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-11-12T14:00:00-03:00",
+    "sources": [
+      "Consumidor Moderno",
+      "WGSN Insider",
+      "TrendWatching",
+      "Serasa Experian"
+    ],
+    "title": "A Ascensão do 'Loud Budgeting': Por Que Dizer Não a Gastos Virou Símbolo de Status e Maturidade"
+  },
+  {
+    "id": 499,
+    "slug": "terceiros-lugares-third-places-cafes-oficinas-convivio-brasil",
+    "category": "Comportamento",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-11-12T18:00:00-03:00",
+    "sources": [
+      "GWI (GlobalWebIndex)",
+      "Sociedade Brasileira de Sociologia (SBS)",
+      "American Psychological Association (APA)",
+      "Folha Cotidiano"
+    ],
+    "title": "O Renascimento dos 'Terceiros Lugares': Por Que Cafés Analógicos e Oficinas Manuais Viraram Refúgio Contra a Solidão Digital"
   }
 ]
