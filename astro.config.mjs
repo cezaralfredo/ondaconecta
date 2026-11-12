@@ -37,8 +37,7 @@ export default defineConfig({
     '/us/blog/[slug]': '/en/blog/[slug]',
     '/inteligencia-artificial': '/servicos-ia',
     '/solucoes-ia': '/servicos-ia',
-    '/categories': '/en/categories',
-    '/categorias': '/es/categorias'
+    '/categories': '/en/categories'
   },
   integrations: [
     react(),

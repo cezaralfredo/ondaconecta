@@ -168,9 +168,9 @@ const schemaData = schema || defaultSchema
 {SITE_METADATA.verification.pinterest && <meta name='p:domain_verify' content={SITE_METADATA.verification.pinterest} />}
 <meta name='pinterest-rich-pin' content='true' />
 
-<!-- Google AdSense Tags (Verificação & Ativação de Anúncios) -->
+<!-- Google AdSense Tags (Verificação & Ativação de Anúncios em Páginas com Conteúdo) -->
 {
-  SITE_METADATA.adsense?.clientId && (
+  SITE_METADATA.adsense?.clientId && !noindex && rawPath !== '/404' && rawPath !== '/404.html' && (
     <>
       <meta name='google-adsense-account' content={SITE_METADATA.adsense.clientId} />
       <script
@@ -187,8 +187,8 @@ const schemaData = schema || defaultSchema
 <meta http-equiv='content-language' content={Astro.currentLocale || 'pt-BR'} />
 
 <!-- Favicon and Icons -->
-<link rel='icon' type='image/webp' href='/favicon.webp' />
-<link rel='icon' type='image/x-icon' href='/favicon.ico' />
+<link rel='icon' type='image/webp' href='/favicon/favicon.webp' />
+<link rel='icon' type='image/x-icon' href='/favicon/favicon.ico' />
 {SITE_METADATA.icons.icon.map(icon => <link rel='icon' type={icon.type} sizes={icon.sizes} href={icon.url} />)}
 {SITE_METADATA.icons.apple.map(icon => <link rel='apple-touch-icon' sizes={icon.sizes} href={icon.url} />)}
 {SITE_METADATA.icons.shortcut.map(icon => <link rel='shortcut icon' href={icon.url} />)}

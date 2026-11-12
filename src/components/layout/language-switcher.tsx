@@ -38,6 +38,34 @@ export const LanguageSwitcher = () => {
     // Se estiver em um post de blog, normaliza removendo sufixos legados (-en ou -es)
     cleanPath = cleanPath.replace(/(\/blog\/[^\/]+)-(en|es)(\/|$)/, '$1$3')
 
+    // Mapeamento de rotas de categorias
+    if (cleanPath.startsWith('/categories') || cleanPath.startsWith('/categorias')) {
+      if (targetCode === 'en') {
+        window.location.href = '/en/categories'
+        return
+      } else if (targetCode === 'es') {
+        window.location.href = '/es/categorias'
+        return
+      } else {
+        window.location.href = '/categorias'
+        return
+      }
+    }
+
+    // Mapeamento de rotas de ferramentas
+    if (cleanPath.startsWith('/tools') || cleanPath.startsWith('/herramientas') || cleanPath.startsWith('/ferramentas')) {
+      if (targetCode === 'en') {
+        window.location.href = '/en/tools'
+        return
+      } else if (targetCode === 'es') {
+        window.location.href = '/es/herramientas'
+        return
+      } else {
+        window.location.href = '/ferramentas'
+        return
+      }
+    }
+
     let newUrl = cleanPath
     if (targetCode === 'en') {
       newUrl = `/en${cleanPath.startsWith('/') ? cleanPath : '/' + cleanPath}`

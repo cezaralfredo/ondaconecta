@@ -253,7 +253,9 @@ const schema = {
                   <AuthorMetadata client:load avatarUrl={entry.data.avatarUrl} author={entry.data.author} />
                   <div class='flex flex-col gap-1'>
                     <span class='text-muted-foreground text-sm'>Published by</span>
-                    <span class='text-foreground text-sm font-medium'>{entry.data.author}</span>
+                    <a href='/quem-somos#diretrizes-editoriais' class='text-foreground text-sm font-medium hover:text-primary transition-colors hover:underline'>
+                      {entry.data.author} · Editorial Board
+                    </a>
                   </div>
                 </div>
                 <div class='flex flex-col gap-1.5'>
@@ -325,6 +327,22 @@ const schema = {
             <article id='content' class='prose dark:prose-invert max-w-none'>
               <Content components={{ ReadAlso, WhatsAppBanner, TelegramBanner }} />
               <ArticleDisclaimer category={entry.data.category} lang='en' />
+
+              <!-- E-E-A-T Editorial Review & Human Oversight Box -->
+              <div class='not-prose my-8 rounded-2xl border bg-muted/20 p-5 sm:p-6 flex flex-col sm:flex-row items-center sm:items-start gap-4 shadow-sm'>
+                <div class='h-12 w-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-bold text-lg shrink-0'>
+                  OC
+                </div>
+                <div class='space-y-1 text-center sm:text-left'>
+                  <div class='flex flex-wrap items-center justify-center sm:justify-start gap-2'>
+                    <h4 class='text-sm sm:text-base font-bold text-foreground'>Onda Conecta Editorial Team</h4>
+                    <span class='text-[10px] font-semibold uppercase tracking-wider rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 px-2 py-0.5 border border-emerald-500/20'>Human Supervised</span>
+                  </div>
+                  <p class='text-xs sm:text-sm text-muted-foreground leading-relaxed'>
+                    Researched and audited under the editorial supervision of Cezar Alfredo and Bernardo Neto. Our reporting adheres strictly to <a href='/quem-somos#diretrizes-editoriais' class='text-primary hover:underline font-medium'>primary source verification and E-E-A-T guidelines</a>.
+                  </p>
+                </div>
+              </div>
             </article>
 
             <!-- Google AdSense - Display Horizontal -->
