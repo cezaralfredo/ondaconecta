@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-12T12:56:53.982Z",
+  "updatedAt": "2026-11-15T12:45:00.000Z",
   "description": "Fila estratégica de pautas prioritárias de alta conversão e audiência popular para o Onda Conecta, alimentadas por radares de vanguarda e inteligência de dados.",
   "categories": {
     "Inovação & IA": [
@@ -22,7 +22,7 @@
           "inteligência artificial brasil"
         ],
         "suggestedSlug": "world-models-ia-espacial-3d-simulacao-arquitetura-varejo-brasil",
-        "status": "queued"
+        "status": "published"
       },
       {
         "id": "QUEUE-IA-02",
@@ -127,7 +127,7 @@
           "investimento estrangeiro"
         ],
         "suggestedSlug": "data-centers-verdes-clusters-ia-energia-limpa-brasil",
-        "status": "queued"
+        "status": "published"
       },
       {
         "id": "QUEUE-MN-03",
@@ -191,7 +191,7 @@
           "fiagro isento ir"
         ],
         "suggestedSlug": "carteira-antifragil-dividendos-fiis-fiagro-renda-passiva-brasil",
-        "status": "queued"
+        "status": "published"
       },
       {
         "id": "QUEUE-FP-02",

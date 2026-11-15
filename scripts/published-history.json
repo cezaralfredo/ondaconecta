@@ -2308,5 +2308,44 @@
       "Folha Cotidiano"
     ],
     "title": "O Renascimento dos 'Terceiros Lugares': Por Que Cafés Analógicos e Oficinas Manuais Viraram Refúgio Contra a Solidão Digital"
+  },
+  {
+    "id": 502,
+    "slug": "world-models-ia-espacial-3d-simulacao-arquitetura-varejo-brasil",
+    "category": "Inovação & IA",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-11-13T09:30:00-03:00",
+    "sources": [
+      "MIT Technology Review Brasil",
+      "Stratechery",
+      "The Information"
+    ],
+    "title": "World Models e IA Espacial: Como a Simulação 3D Revoluciona Empresas no Brasil"
+  },
+  {
+    "id": 505,
+    "slug": "carteira-antifragil-dividendos-fiis-fiagro-renda-passiva-brasil",
+    "category": "Finanças Pessoais",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-11-13T14:00:00-03:00",
+    "sources": [
+      "Bora Investir (B3)",
+      "InfoMoney",
+      "Suno Notícias"
+    ],
+    "title": "A Carteira Antifrágil de Dividendos: Como Viver de Renda com FIIs e Fiagros"
+  },
+  {
+    "id": 508,
+    "slug": "data-centers-verdes-clusters-ia-energia-limpa-brasil",
+    "category": "Mercado & Negócios",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-11-13T18:00:00-03:00",
+    "sources": [
+      "Bloomberg",
+      "Financial Times",
+      "Pipeline Valor"
+    ],
+    "title": "Data Centers Verdes e IA: A Corrida Bilionária pela Energia Limpa do Brasil"
   }
 ]
