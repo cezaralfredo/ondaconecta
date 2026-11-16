@@ -2425,5 +2425,44 @@
       "Meio & Mensagem"
     ],
     "title": "A Fadiga dos Algoritmos e o Renascimento da Curadoria Humana: Por Que Valorizamos o Olhar Pessoal"
+  },
+  {
+    "id": 529,
+    "slug": "modelos-fundacionais-soberanos-ia-portugues-centros-pesquisa-brasil",
+    "category": "Inovação & IA",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-11-16T09:30:00-03:00",
+    "sources": [
+      "Centro de Inteligência Artificial (C4AI - USP/IBM/FAPESP)",
+      "CeIA (UFG/EMBRAPII)",
+      "MIT Technology Review Brasil"
+    ],
+    "title": "A Batalha dos Modelos Soberanos: Como o Brasil Constrói IAs Nativas em Português"
+  },
+  {
+    "id": 532,
+    "slug": "arbitragem-milhas-tabelas-fixas-voos-primeira-classe-brasil",
+    "category": "Finanças Pessoais",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-11-16T14:00:00-03:00",
+    "sources": [
+      "The Points Guy (TPG) Analytics",
+      "Bora Investir (B3)",
+      "Upgraded Points"
+    ],
+    "title": "A Arbitragem de Milhas Internacionais: Como Viajar em Primeira Classe Pagando Menos"
+  },
+  {
+    "id": 535,
+    "slug": "fusao-aquisicao-ma-empresas-familiares-reforma-tributaria-brasil",
+    "category": "Mercado & Negócios",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-11-16T18:00:00-03:00",
+    "sources": [
+      "Pipeline Valor",
+      "Fundação Dom Cabral (FDC)",
+      "JOTA Negócios & Tributário"
+    ],
+    "title": "A Nova Dança do M&A Silencioso: Como a Reforma Tributária Acelera Fusões no Brasil"
   }
 ]
