@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-15T12:45:00.000Z",
+  "updatedAt": "2026-11-16T15:15:40.117Z",
   "description": "Fila estratégica de pautas prioritárias de alta conversão e audiência popular para o Onda Conecta, alimentadas por radares de vanguarda e inteligência de dados.",
   "categories": {
     "Inovação & IA": [
@@ -295,6 +295,25 @@
         ],
         "suggestedSlug": "engenharia-sono-profundo-protocolo-circadiano-suplementacao-brasil",
         "status": "published"
+      },
+      {
+        "id": "QUEUE-SB-03",
+        "topic": "Relógios Epigenéticos e Metilação do DNA: Como a Idade Biológica Entra na Rotina Clínica no Brasil",
+        "focus": "Global com impacto no Brasil (50/50)",
+        "radarSources": [
+          "Nature Aging",
+          "SBGG",
+          "Cell Metabolism"
+        ],
+        "conversionAngle": "A migração da longevidade molecular para a prática clínica preventiva no Brasil.",
+        "targetKeywords": [
+          "relogio epigenetico",
+          "metilacao do dna",
+          "idade biologica brasil",
+          "dunedinpace longevidade"
+        ],
+        "suggestedSlug": "biomarcadores-metilacao-dna-relogio-epigenetico-idade-biologica-brasil",
+        "status": "published"
       }
     ],
     "Estética & Beleza": [
@@ -357,7 +376,7 @@
           "neuropeptideos cutaneos"
         ],
         "suggestedSlug": "neurocosmeticos-psicodermatologia-conexao-cerebro-pele-cortisol-brasil",
-        "status": "queued"
+        "status": "published"
       },
       {
         "id": "QUEUE-EB-04",
@@ -442,7 +461,7 @@
           "viagens inteligentes 2026"
         ],
         "suggestedSlug": "destination-dupes-destinos-espelho-turismo-massa-economia-viagens",
-        "status": "queued"
+        "status": "published"
       },
       {
         "id": "QUEUE-EV-04",
@@ -506,6 +525,25 @@
         ],
         "suggestedSlug": "micro-aposentadorias-pausas-sabaticas-planejamento-carreira-brasil",
         "status": "published"
+      },
+      {
+        "id": "QUEUE-TE-03",
+        "topic": "Slow Living Urbano e a Economia do Silêncio: Como Espaços sem Telas Conquistam Capitais no Brasil",
+        "focus": "Nacional (50/50)",
+        "radarSources": [
+          "WGSN Consumer Trends",
+          "The Shift (B9)",
+          "Euromonitor International"
+        ],
+        "conversionAngle": "A monetização da tranquilidade acústica e da desconexão em centros urbanos.",
+        "targetKeywords": [
+          "slow living urbano",
+          "economia do silencio brasil",
+          "cafes sem telas",
+          "desintoxicacao digital sao paulo"
+        ],
+        "suggestedSlug": "slow-living-urbano-economia-do-silencio-desconexao-brasil",
+        "status": "published"
       }
     ],
     "Comportamento": [
@@ -546,6 +584,25 @@
           "desconexao digital"
         ],
         "suggestedSlug": "desintoxicacao-dopaminergica-dumbphone-finais-de-semana-brasil",
+        "status": "published"
+      },
+      {
+        "id": "QUEUE-CO-03",
+        "topic": "A Fadiga dos Algoritmos e o Renascimento da Curadoria Humana: Por Que Valorizamos o Olhar Pessoal",
+        "focus": "Global com impacto no Brasil (50/50)",
+        "radarSources": [
+          "The Atlantic Culture",
+          "GWI",
+          "Meio & Mensagem"
+        ],
+        "conversionAngle": "A rejeição do conteúdo sintético de IA em favor do discernimento e da voz autoral.",
+        "targetKeywords": [
+          "fadiga dos algoritmos",
+          "curadoria humana",
+          "newsletters autorais brasil",
+          "clubes analogicos"
+        ],
+        "suggestedSlug": "fadiga-algoritmos-curadoria-humana-newsletters-clubes-analogicos-brasil",
         "status": "published"
       }
     ],
@@ -610,7 +667,7 @@
           "book and claim cs saf"
         ],
         "suggestedSlug": "lei-combustivel-futuro-saf-brasil-hub-querosene-sustentavel-aviacao",
-        "status": "queued"
+        "status": "published"
       },
       {
         "id": "QUEUE-SU-04",

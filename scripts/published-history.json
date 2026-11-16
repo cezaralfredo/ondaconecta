@@ -2347,5 +2347,83 @@
       "Pipeline Valor"
     ],
     "title": "Data Centers Verdes e IA: A Corrida Bilionária pela Energia Limpa do Brasil"
+  },
+  {
+    "id": 511,
+    "slug": "neurocosmeticos-psicodermatologia-conexao-cerebro-pele-cortisol-brasil",
+    "category": "Estética & Beleza",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-11-14T09:30:00-03:00",
+    "sources": [
+      "British Journal of Dermatology",
+      "Sociedade Brasileira de Dermatologia (SBD)",
+      "BeautyMatter"
+    ],
+    "title": "Neurocosméticos e Psicodermatologia: Como a Conexão Cérebro-Pele Combate o Envelhecimento por Cortisol no Brasil"
+  },
+  {
+    "id": 514,
+    "slug": "lei-combustivel-futuro-saf-brasil-hub-querosene-sustentavel-aviacao",
+    "category": "Sustentabilidade",
+    "focus": "Nacional & Global (50/50)",
+    "publishedAt": "2026-11-14T14:00:00-03:00",
+    "sources": [
+      "Ministério de Minas e Energia (MME)",
+      "CleanTechnica",
+      "Bloomberg Green"
+    ],
+    "title": "A Lei do Combustível do Futuro e o SAF: Como o Brasil se Torna o Hub Global do Querosene Sustentável"
+  },
+  {
+    "id": 517,
+    "slug": "destination-dupes-destinos-espelho-turismo-massa-economia-viagens",
+    "category": "Estilo de Vida & Viagens",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-11-14T18:00:00-03:00",
+    "sources": [
+      "Skift Global Tourism",
+      "Viagem e Turismo",
+      "Robb Report Travel"
+    ],
+    "title": "Destination Dupes: Como Fugir do Turismo de Massa e Economizar até 60% em Roteiros de Charme"
+  },
+  {
+    "id": 520,
+    "slug": "biomarcadores-metilacao-dna-relogio-epigenetico-idade-biologica-brasil",
+    "category": "Saúde & Bem-estar",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-11-15T09:30:00-03:00",
+    "sources": [
+      "Nature Aging",
+      "Sociedade Brasileira de Geriatria e Gerontologia (SBGG)",
+      "Cell Metabolism"
+    ],
+    "title": "Relógios Epigenéticos e Metilação do DNA: Como a Idade Biológica Entra na Rotina Clínica no Brasil"
+  },
+  {
+    "id": 523,
+    "slug": "slow-living-urbano-economia-do-silencio-desconexao-brasil",
+    "category": "Tendências",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-11-15T14:00:00-03:00",
+    "sources": [
+      "WGSN Consumer Trends",
+      "The Shift (B9)",
+      "Euromonitor International"
+    ],
+    "title": "Slow Living Urbano e a Economia do Silêncio: Como Espaços sem Telas Conquistam Capitais no Brasil"
+  },
+  {
+    "id": 526,
+    "slug": "fadiga-algoritmos-curadoria-humana-newsletters-clubes-analogicos-brasil",
+    "category": "Comportamento",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-11-15T18:00:00-03:00",
+    "sources": [
+      "The Atlantic Culture",
+      "GWI (GlobalWebIndex)",
+      "Meio & Mensagem"
+    ],
+    "title": "A Fadiga dos Algoritmos e o Renascimento da Curadoria Humana: Por Que Valorizamos o Olhar Pessoal"
   }
 ]
