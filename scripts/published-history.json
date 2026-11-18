@@ -2506,5 +2506,47 @@
       "National Geographic Travel"
     ],
     "title": "A Arte de Olhar para Cima: Por Que o Astroturismo e a Hotelaria Noturna São o Novo Luxo no Brasil"
+  },
+  {
+    "id": 547,
+    "slug": "lipoproteina-a-lpa-apob-infarto-precoce-consenso-cardiologia-brasil",
+    "category": "Saúde & Bem-estar",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-11-18T09:30:00-03:00",
+    "sources": [
+      "Sociedade Brasileira de Cardiologia (SBC)",
+      "G1 Saúde & Bem-Estar (Globo)",
+      "Folha de S.Paulo (Equilíbrio & Saúde)",
+      "JAMA Network Open"
+    ],
+    "title": "Além do Colesterol Tradicional: O Novo Consenso da SBC sobre Lipoproteína(a) e ApoB para Evitar Infartos Precoces"
+  },
+  {
+    "id": 550,
+    "slug": "evtol-carros-voadores-eve-embraer-vertiportos-anac-brasil",
+    "category": "Tendências",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-11-18T14:00:00-03:00",
+    "sources": [
+      "ANAC (Agência Nacional de Aviação Civil)",
+      "Eve Air Mobility / Embraer",
+      "Época Negócios & Exame",
+      "Valor Econômico"
+    ],
+    "title": "A Revolução Silenciosa dos eVTOLs: Como a Fábrica da Eve e os Vertiportos de São Paulo Criam a Nova Malha de Trânsito Aéreo"
+  },
+  {
+    "id": 553,
+    "slug": "lei-proibicao-celulares-escolas-recreio-socializacao-alunos-brasil",
+    "category": "Comportamento",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-11-18T18:00:00-03:00",
+    "sources": [
+      "Ministério da Educação (MEC) & Agência Senado",
+      "UOL Notícias & VivaBem",
+      "Nexo Jornal",
+      "Folha Cotidiano"
+    ],
+    "title": "O Recreio Sem Telas: Como a Lei Federal nº 15.100 Redesenha a Socialização, o Foco e a Convivência nas Escolas Brasileiras"
   }
 ]

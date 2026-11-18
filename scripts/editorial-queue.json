@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T11:42:59.830Z",
+  "updatedAt": "2026-11-18T12:24:47.602Z",
   "description": "Fila estratégica de pautas prioritárias de alta conversão e audiência popular para o Onda Conecta, alimentadas por radares de vanguarda e inteligência de dados.",
   "categories": {
     "Inovação & IA": [
@@ -314,6 +314,28 @@
         ],
         "suggestedSlug": "biomarcadores-metilacao-dna-relogio-epigenetico-idade-biologica-brasil",
         "status": "published"
+      },
+      {
+        "id": "QUEUE-SB-04",
+        "topic": "Além do Colesterol Tradicional: O Novo Consenso da Sociedade Brasileira de Cardiologia sobre Lipoproteína(a) e ApoB para Evitar Infartos Precoces",
+        "focus": "Nacional (50/50)",
+        "radarSources": [
+          "Sociedade Brasileira de Cardiologia (SBC)",
+          "G1 Saúde & Bem-Estar (Globo)",
+          "Folha de S.Paulo (Equilíbrio & Saúde)",
+          "BBC News Brasil (Saúde & Ciência)",
+          "SOCESP"
+        ],
+        "conversionAngle": "A mudança de paradigma na cardiologia preventiva brasileira: a nova recomendação de dosar a Lp(a) pelo menos uma vez na vida para mapear o risco genético oculto que independe de dieta ou exercício.",
+        "targetKeywords": [
+          "lipoproteina a lp a brasil",
+          "apob colesterol infarto",
+          "diretriz sociedade brasileira cardiologia",
+          "infarto precoce genetica",
+          "prevencao cardiovascular sbc"
+        ],
+        "suggestedSlug": "lipoproteina-a-lpa-apob-infarto-precoce-consenso-cardiologia-brasil",
+        "status": "published"
       }
     ],
     "Estética & Beleza": [
@@ -544,6 +566,28 @@
         ],
         "suggestedSlug": "slow-living-urbano-economia-do-silencio-desconexao-brasil",
         "status": "published"
+      },
+      {
+        "id": "QUEUE-TE-04",
+        "topic": "A Revolução Silenciosa dos eVTOLs: Como a Fábrica da Eve e os Vertiportos de São Paulo Criam a Nova Malha de Trânsito Aéreo",
+        "focus": "Global com impacto no Brasil (50/50)",
+        "radarSources": [
+          "ANAC (Agência Nacional de Aviação Civil)",
+          "Eve Air Mobility / Embraer",
+          "Época Negócios & Exame",
+          "Wired & Gizmodo Brasil",
+          "Valor Econômico"
+        ],
+        "conversionAngle": "O Brasil na vanguarda da mobilidade aérea urbana global: o avanço da fábrica em Taubaté para 480 aeronaves/ano, o sandbox de vertiportos em SP e as regras de certificação da ANAC.",
+        "targetKeywords": [
+          "evtol brasil embraer eve",
+          "carros voadores taubate anac",
+          "vertiportos sao paulo mobilidade aerea",
+          "transito aereo urbano eve",
+          "futuro da aviacao brasil"
+        ],
+        "suggestedSlug": "evtol-carros-voadores-eve-embraer-vertiportos-anac-brasil",
+        "status": "published"
       }
     ],
     "Comportamento": [
@@ -603,6 +647,28 @@
           "clubes analogicos"
         ],
         "suggestedSlug": "fadiga-algoritmos-curadoria-humana-newsletters-clubes-analogicos-brasil",
+        "status": "published"
+      },
+      {
+        "id": "QUEUE-CO-04",
+        "topic": "O Recreio Sem Telas: Como a Lei Federal nº 15.100 Redesenha a Socialização, o Foco e a Convivência nas Escolas Brasileiras",
+        "focus": "Nacional (50/50)",
+        "radarSources": [
+          "Ministério da Educação (MEC) & Agência Senado",
+          "UOL Notícias & VivaBem",
+          "Nexo Jornal / Piauí",
+          "Folha Cotidiano & Tab UOL",
+          "Le Monde Diplomatique Brasil"
+        ],
+        "conversionAngle": "A transformação da convivência infanto-juvenil no país: o impacto prático do banimento nacional de celulares nos intervalos, a volta das brincadeiras analógicas e o ganho comprovado de atenção em 92% das escolas.",
+        "targetKeywords": [
+          "lei 15100 celulares escolas brasil",
+          "proibicao celular recreio alunos",
+          "socializacao sem telas escolas mec",
+          "comportamento jovens recreio analogico",
+          "saude mental estudantes brasil"
+        ],
+        "suggestedSlug": "lei-proibicao-celulares-escolas-recreio-socializacao-alunos-brasil",
         "status": "published"
       }
     ],

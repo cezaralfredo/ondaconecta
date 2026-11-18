@@ -35,8 +35,15 @@ A curadoria deve manter um equilíbrio rigoroso de relevância entre os mercados
    - *Globais & Alocação de Ativos:* **Vanguard Center for Investor Research**, **Morningstar Direct Insights**, MarketWatch, CNBC, Bloomberg Wealth, **Fintech Nexus**.
 4. **Saúde & Bem-estar:**
    - *Nacionais:* Saúde Abril, VivaBem (UOL), Eu Atleta (ge.globo), Portal Drauzio Varella, CNN Brasil Saúde.
+   - *Matrizes Populares de Grande Alcance & Autoridade (+5):*
+     1. **G1 Saúde & Bem-Estar (Globo / Fantástico / Bem Estar):** O maior portal de notícias do Brasil, pautando o cotidiano de milhões com saúde pública, novos tratamentos e hábitos saudáveis.
+     2. **Folha de S.Paulo (Equilíbrio & Saúde):** Jornalismo de referência nacional em saúde mental, longevidade e medicina preventiva com colunistas médicos renomados.
+     3. **BBC News Brasil (Saúde & Ciência):** Grande alcance popular e rigor investigativo, desmistificando temas médicos e pesquisas complexas em linguagem acessível.
+     4. **Estadão Saúde & Bem-Estar:** Cobertura de ponta sobre inovações hospitalares, SUS e guias práticos de saúde familiar e prevenção.
+     5. **Veja Saúde (Editora Abril):** O ecossistema de jornalismo de saúde mais tradicional e popular do país, cobrindo rotinas, medicamentos e exames.
+   - *Sociedades Médicas & Clínicas Especializadas:* **Sociedade Brasileira de Cardiologia (SBC)**, **SOCESP**, **SBEM**, **SBD**, **Incor**, **Hospital Israelita Albert Einstein**, **Hospital Sírio-Libanês**.
    - *Radares & Medicina Preventiva:* **Dr. Peter Attia (The Drive)**, **FoundMyFitness (Dra. Rhonda Patrick)**.
-   - *Globais & Biotecnologia:* Healthline, Psychology Today, Nature Medicine, BBC Health, **Longevity.Technology**, **STAT News**, **Endpoints News**.
+   - *Globais & Biotecnologia:* The Lancet, JAMA Network, Healthline, Psychology Today, Nature Medicine, BBC Health, **Longevity.Technology**, **STAT News**, **Endpoints News**.
 5. **Estética & Beleza:**
    - *Nacionais & Sociedades Médicas:* Sociedade Brasileira de Dermatologia (SBD), Vogue Brasil Beleza, Marie Claire Beleza, Glamour Beleza, Lilian Pacce, Cosmopolitan Brasil, Beleza na Web Editorial.
    - *Radares & Tendências:* **Bits to Brands (Beatriz Guarezi)**, **Noor Skin**.
@@ -47,10 +54,24 @@ A curadoria deve manter um equilíbrio rigoroso de relevância entre os mercados
    - *Globais:* Condé Nast Traveler, Lonely Planet, Travel + Leisure, National Geographic Travel.
 7. **Tendências:**
    - *Nacionais:* Consumidor Moderno, Fast Company Brasil, Meio & Mensagem, StartSe.
+   - *Matrizes Populares de Grande Alcance & Autoridade (+5):*
+     1. **Época Negócios & Exame Tendências:** Os maiores veículos populares de tendências corporativas, novos mercados e futuro do trabalho no Brasil.
+     2. **Wired & Gizmodo Brasil:** Gigantes da cultura pop e tecnologia de massa, traduzindo grandes inovações e novos hábitos de consumo para o grande público.
+     3. **Google Trends & Think with Google Brasil:** A maior matriz de inteligência de busca em tempo real do planeta, revelando os reais interesses e intenções da população brasileira.
+     4. **StartSe & Meio & Mensagem:** Cobertura de massa do varejo, publicidade, startups e novos produtos que chegam ao mercado brasileiro.
+     5. **Fast Company (Global & Brasil):** Um dos maiores veículos de inovação do mundo, conectando tendências de consumo, marcas transformadoras e design de vida.
+   - *Radares de Indústria, Mobilidade & Vanguarda:* **ANAC & IATA (Aviação/eVTOLs)**, **Eve Air Mobility / Embraer**, **Embrapa (Bioeconomia e Sintéticos)**, **IEEE Spectrum**, **MIT Technology Review Pro**.
    - *Radares & Macrotendências:* **VOX Insights Weekly**, **WGSN Insider**, **TrendWatching**, **Springwise**.
    - *Globais:* Fast Company, Wired Culture, **Puck News**, **Canvas8**.
 8. **Comportamento:**
    - *Nacionais:* Consumidor Moderno (Comportamento), Folha Cotidiano, Estadão Comportamento, The Shift (B9).
+   - *Matrizes Populares de Grande Alcance & Autoridade (+5):*
+     1. **UOL Notícias & VivaBem Comportamento:** O portal horizontal de maior tráfego do Brasil, captando o pulso dos costumes, dilemas de relacionamento e vida cotidiana.
+     2. **Tab UOL / Canal Futura (Fundação Roberto Marinho):** Jornalismo premiado de juventude, cultura urbana, transformações sociais e comportamento de massa no Brasil.
+     3. **Nexo Jornal / Piauí (Comportamento & Sociedade):** Jornalismo de contexto, dados e narrativas sobre mudanças geracionais, novos formatos de família e convivência.
+     4. **The Atlantic & Vox (Culture & Society):** Gigantes do jornalismo cultural de massa global, antecipando conversas sobre trabalho, comunidade e relações sociais.
+     5. **Consumidor Moderno & Instituto Datafolha / Ipec:** As maiores matrizes de pesquisas de opinião pública e pesquisas por amostragem populacional do Brasil.
+   - *Demografia, Políticas Públicas & Leis:* **Censo IBGE & PNAD Contínua**, **Ministério da Educação (MEC)**, **Agência Senado / Legislação Federal**, **IPEA & FGV Social**.
    - *Radares & Mudança Social:* **VOX Insights**, **GWI (GlobalWebIndex)**, **Pew Research**.
    - *Globais:* The Atlantic (Culture), Vox Media, Dazed, BBC Worklife.
 9. **Sustentabilidade:**
