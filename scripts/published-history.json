@@ -2548,5 +2548,50 @@
       "Folha Cotidiano"
     ],
     "title": "O Recreio Sem Telas: Como a Lei Federal nº 15.100 Redesenha a Socialização, o Foco e a Convivência nas Escolas Brasileiras"
+  },
+  {
+    "id": 556,
+    "slug": "biometria-facial-deepfake-voz-fraude-bancos-zero-trust-brasil",
+    "category": "Inovação & IA",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-11-19T09:30:00-03:00",
+    "sources": [
+      "Febraban Tech",
+      "Banco Central do Brasil (BCB)",
+      "Anatel",
+      "G1 Tecnologia",
+      "Wired Magazine"
+    ],
+    "title": "A Queda da Biometria Facial: Como Bancos e o Banco Central Enfrentam a Epidemia de Deepfakes de Voz e Vídeo no Brasil"
+  },
+  {
+    "id": 559,
+    "slug": "teto-rotativo-cartao-credito-portabilidade-dividas-familias-brasil",
+    "category": "Finanças Pessoais",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-11-19T14:00:00-03:00",
+    "sources": [
+      "Banco Central do Brasil (BCB)",
+      "Conselho Monetário Nacional (CMN)",
+      "Serasa Experian",
+      "G1 Economia",
+      "Folha de S.Paulo Finanças"
+    ],
+    "title": "O Fim da Bola de Neve? O Impacto do Teto de 100% no Rotativo do Cartão e a Nova Portabilidade de Dívidas no Bolso dos Brasileiros"
+  },
+  {
+    "id": 562,
+    "slug": "retail-media-commerce-media-varejo-publicidade-mercado-livre-brasil",
+    "category": "Mercado & Negócios",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-11-19T18:00:00-03:00",
+    "sources": [
+      "Mercado Ads / Mercado Livre",
+      "Meio & Mensagem",
+      "Valor Econômico",
+      "Kantar Ibope Media (AdInsights)",
+      "Revista PEGN"
+    ],
+    "title": "Além do Banner Tradicional: O Boom do 'Commerce Media' e Como os Grandes Varejistas Faturam Bilhões com Publicidade"
   }
 ]

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-18T12:24:47.602Z",
+  "updatedAt": "2026-11-19T11:49:20.648Z",
   "description": "Fila estratégica de pautas prioritárias de alta conversão e audiência popular para o Onda Conecta, alimentadas por radares de vanguarda e inteligência de dados.",
   "categories": {
     "Inovação & IA": [
@@ -46,27 +46,6 @@
         "status": "published"
       },
       {
-        "id": "QUEUE-IA-03",
-        "topic": "A Economia Real dos Tokens e o TCO dos Datacenters: Por Que a Eficiência Energética de Silício Superou a Corrida por Parâmetros Brutos",
-        "focus": "Global com impacto no Brasil (50/50)",
-        "radarSources": [
-          "SemiAnalysis (Dylan Patel)",
-          "Stanford HAI (AI Index Report)",
-          "C4AI (USP/IBM)",
-          "MIT Technology Review"
-        ],
-        "conversionAngle": "Análise econômica detalhada do custo total de propriedade (TCO) para empresas nacionais: por que otimizar largura de banda de memória e clusters de energia limpa é o verdadeiro divisor de águas da IA.",
-        "targetKeywords": [
-          "tco datacenters",
-          "economia de tokens ia",
-          "semianalysis brasil",
-          "eficiencia energetica silicio",
-          "chips ia"
-        ],
-        "suggestedSlug": "economia-tokens-tco-datacenters-silicio-eficiencia-ia-brasil",
-        "status": "queued"
-      },
-      {
         "id": "QUEUE-IA-04",
         "topic": "A Batalha dos Modelos Fundacionais Soberanos: Como Centros Brasileiros Criam IAs em Português para Blindar a Cultura e Dados Nacionais",
         "focus": "Nacional (50/50)",
@@ -85,6 +64,28 @@
           "inteligencia artificial nacional"
         ],
         "suggestedSlug": "modelos-fundacionais-soberanos-ia-portugues-centros-pesquisa-brasil",
+        "status": "published"
+      },
+      {
+        "id": "QUEUE-IA-03",
+        "topic": "A Queda da Biometria Facial e a Nova Muralha Zero Trust: Como Bancos e o Banco Central Enfrentam a Epidemia de Deepfakes de Voz e Vídeo no Brasil",
+        "focus": "Global com impacto no Brasil (50/50)",
+        "radarSources": [
+          "Febraban Tech & Banco Central",
+          "G1 Tecnologia & Anatel",
+          "Wired Magazine (AI & Security)",
+          "MIT Technology Review Brasil",
+          "Núcleo Jornalismo"
+        ],
+        "conversionAngle": "A crise da autenticação digital clássica: criminosos usam clones de voz e deepfakes de prova de vida para burlar bancos, forçando o setor financeiro a adotar telemetria comportamental e biometria Zero Trust.",
+        "targetKeywords": [
+          "deepfake voz fraude brasil",
+          "biometria facial golpe bancos",
+          "febraban seguranca ia",
+          "zero trust banco central",
+          "clonagem de voz seguranca"
+        ],
+        "suggestedSlug": "biometria-facial-deepfake-voz-fraude-bancos-zero-trust-brasil",
         "status": "published"
       }
     ],
@@ -130,27 +131,6 @@
         "status": "published"
       },
       {
-        "id": "QUEUE-MN-03",
-        "topic": "O Playbook do 'Product-Led Growth' (PLG): Como Startups Enxutas Escalam Vendas Corporativas Sem Exércitos de SDRs e Vendedores",
-        "focus": "Global com impacto no Brasil (50/50)",
-        "radarSources": [
-          "Lenny's Newsletter (Lenny Rachitsky)",
-          "OpenView PLG",
-          "DealflowBR",
-          "MicroConf"
-        ],
-        "conversionAngle": "A estratégia dos fundadores que transformam o próprio software na máquina de aquisição de clientes corporativos, reduzindo o CAC a quase zero e acelerando a conversão orgânica.",
-        "targetKeywords": [
-          "product-led growth brasil",
-          "plg saas",
-          "reducao cac",
-          "lennys newsletter brasil",
-          "vendas self service"
-        ],
-        "suggestedSlug": "product-led-growth-plg-startups-vendas-software-sem-vendedores-brasil",
-        "status": "queued"
-      },
-      {
         "id": "QUEUE-MN-04",
         "topic": "A Nova Dança do M&A Silencioso: Como a Reforma Tributária e o CADE Aceleram a Consolidação de Empresas Médias e Familiares no Brasil",
         "focus": "Nacional (50/50)",
@@ -169,6 +149,28 @@
           "consolidacao setor privado"
         ],
         "suggestedSlug": "fusao-aquisicao-ma-empresas-familiares-reforma-tributaria-brasil",
+        "status": "published"
+      },
+      {
+        "id": "QUEUE-MN-03",
+        "topic": "Além do Banner Tradicional: O Boom do Commerce Media e Como os Grandes Varejistas Brasileiros Faturam Bilhões Virando Veículos de Publicidade",
+        "focus": "Global com impacto no Brasil (50/50)",
+        "radarSources": [
+          "Mercado Ads / Mercado Livre",
+          "Meio & Mensagem (Estratégia & Mídia)",
+          "Valor Econômico & Revista PEGN",
+          "Kantar Ibope Media (AdInsights)",
+          "Exame Negócios & CNI"
+        ],
+        "conversionAngle": "A maior corrida por receitas de alta margem no varejo nacional: marketplaces como Mercado Livre, Magalu e redes de farmácia transformam dados reais de compra na nova mídia que desafia o duopólio de Google e Meta.",
+        "targetKeywords": [
+          "retail media brasil",
+          "commerce media mercado livre",
+          "mercado ads publicidade varejo",
+          "kantar ibope adinsights",
+          "monetizacao ecommerce publicidade"
+        ],
+        "suggestedSlug": "retail-media-commerce-media-varejo-publicidade-mercado-livre-brasil",
         "status": "published"
       }
     ],
@@ -214,27 +216,6 @@
         "status": "published"
       },
       {
-        "id": "QUEUE-FP-03",
-        "topic": "A Regra dos 4% Revisitada para o Brasil: Como Calcular a Taxa Real de Retirada Segura para Aposentadoria com Juros Altos e Inflação",
-        "focus": "Nacional (50/50)",
-        "radarSources": [
-          "Vanguard Center for Investor Research",
-          "FGV IBRE",
-          "Bora Investir (B3)",
-          "ABRAPP"
-        ],
-        "conversionAngle": "O guia definitivo para independência financeira: como adaptar o estudo clássico de Trinity para a realidade brasileira de Selic de dois dígitos e inflação de serviços.",
-        "targetKeywords": [
-          "regra dos 4 por cento",
-          "aposentadoria independente",
-          "taxa de retirada segura brasil",
-          "viver de renda fixa",
-          "fgv ibre"
-        ],
-        "suggestedSlug": "regra-dos-4-por-cento-taxa-retirada-segura-aposentadoria-brasil",
-        "status": "queued"
-      },
-      {
         "id": "QUEUE-FP-04",
         "topic": "A Arbitragem de Milhas Internacionais: Estratégias Avançadas para Voar em Primeira Classe Pagando Menos que a Tarifa Econômica",
         "focus": "Global com impacto no Brasil (50/50)",
@@ -253,6 +234,28 @@
           "passagens baratas executiva"
         ],
         "suggestedSlug": "arbitragem-milhas-tabelas-fixas-voos-primeira-classe-brasil",
+        "status": "published"
+      },
+      {
+        "id": "QUEUE-FP-03",
+        "topic": "O Fim da Bola de Neve? O Impacto do Teto de 100% no Rotativo do Cartão e a Nova Portabilidade de Dívidas no Bolso dos Brasileiros",
+        "focus": "Nacional (50/50)",
+        "radarSources": [
+          "Banco Central do Brasil (BCB) & CMN",
+          "G1 Economia & Folha Finanças",
+          "Idec (Defesa do Consumidor)",
+          "Serasa Experian / SPC Brasil",
+          "Anbima (Raio-X do Investidor)"
+        ],
+        "conversionAngle": "O guia prático para estancar a dívida mais cara do país: como funciona o teto que impede juros de superarem 100% do saldo devedor e a regra da portabilidade gratuita de faturas entre instituições financeiras.",
+        "targetKeywords": [
+          "teto juros rotativo cartao",
+          "limite 100 por cento divida cartao",
+          "portabilidade divida cartao credito",
+          "banco central desenrola familias",
+          "renegociacao juros abusivos serasa"
+        ],
+        "suggestedSlug": "teto-rotativo-cartao-credito-portabilidade-dividas-familias-brasil",
         "status": "published"
       }
     ],

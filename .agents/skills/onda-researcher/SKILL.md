@@ -22,15 +22,42 @@ A curadoria deve manter um equilíbrio rigoroso de relevância entre os mercados
 ### Verticais Monitoradas e Fontes de Autoridade Primárias (Incluindo Radares de Vanguarda):
 
 1. **Inovação & IA:**
-   - *Nacionais & Centros de Pesquisa:* C4AI (USP / IBM / FAPESP), CeIA (UFG / EMBRAPII), TecMundo, Canaltech, Olhar Digital, Época Negócios Tech, Exame Inovação, Startups.com.br, Manual do Usuário.
+   - *Nacionais & Centros de Pesquisa:* C4AI (USP / IBM / FAPESP), CeIA (UFG / EMBRAPII), Época Negócios Tech, Exame Inovação, Startups.com.br, Manual do Usuário.
+   - *Matrizes Populares de Grande Alcance & Autoridade (+8):*
+     1. **G1 Tecnologia (Globo):** O canal de massa de maior alcance do país em segurança digital, ferramentas populares, regulação e impacto cotidiano da tecnologia.
+     2. **MIT Technology Review Brasil:** A maior autoridade global em jornalismo de tecnologia profunda traduzido para a tomada de decisão corporativa e acadêmica no Brasil.
+     3. **Canaltech & TecMundo:** Gigantes da cobertura de tecnologia para o consumidor geral e profissionais no Brasil, com foco em produtos, testes e IA aplicada.
+     4. **The Verge & Ars Technica (Global):** Referências globais de grande alcance em jornalismo investigativo de tecnologia, ecossistemas de software e impacto social da computação.
+     5. **IEEE Spectrum & ACM TechNews:** Autoridade máxima em engenharia de sistemas, robótica física, chips e arquiteturas de telecomunicações.
+     6. **Wired Magazine (Global / AI & Cybersecurity):** A maior referência mundial em jornalismo cultural e investigativo de tecnologia, cibersegurança e impactos geopolíticos da IA.
+     7. **VentureBeat (AI Beat):** O principal portal internacional de IA empresarial, cobrindo casos reais de uso de MLOps, governança de modelos e computação em nuvem corporativa.
+     8. **Núcleo Jornalismo (Brasil):** Referência em jornalismo investigativo de tecnologia, transparência algorítmica, privacidade de dados e impacto social de plataformas no Brasil.
    - *Radares & Newsletters Técnicas:* **The Brief**, **TechDrop**, **Distrito Insights**, **Latent Space (swyx & Alessio)**, **Interconnects (Nathan Lambert)**.
-   - *Globais & Think Tanks de Silício/Modelos:* **SemiAnalysis (Dylan Patel — Semicondutores & TCO)**, **Stanford HAI (AI Index Report)**, TechCrunch, MIT Technology Review, The Verge, Wired, Ars Technica, The Information, **Stratechery (Ben Thompson)**, **TLDR AI**, **Semafor Tech**.
+   - *Globais & Think Tanks de Silício/Modelos:* **SemiAnalysis (Dylan Patel — Semicondutores & TCO)**, **Stanford HAI (AI Index Report)**, TechCrunch, The Information, **Stratechery (Ben Thompson)**, **TLDR AI**, **Semafor Tech**.
 2. **Mercado & Negócios:**
-   - *Nacionais & Escolas de Gestão:* **Fundação Dom Cabral (FDC — Núcleo de Estratégia e Negócios)**, **JOTA Negócios (Regulação, Tributário e Concorrência)**, Brazil Journal, NeoFeed, StartSe, Pipeline Valor, InfoMoney Negócios, Revista PEGN, Finsiders Brasil.
+   - *Nacionais & Escolas de Gestão:* **Fundação Dom Cabral (FDC — Núcleo de Estratégia e Negócios)**, **JOTA Negócios (Regulação, Tributário e Concorrência)**, Brazil Journal, NeoFeed, Pipeline Valor, InfoMoney Negócios, Finsiders Brasil.
+   - *Matrizes Populares de Grande Alcance & Autoridade (+8):*
+     1. **Revista PEGN (Pequenas Empresas & Grandes Negócios - Globo):** O veículo de maior alcance popular para o ecossistema de PMEs, varejo, franquias e serviços no Brasil.
+     2. **Valor Econômico (Empresas & Setores):** O principal jornal de economia e negócios do país, referência em infraestrutura, indústria pesada, agronegócio e concessões.
+     3. **Associação Brasileira de Franchising (ABF) & Mundo do Franchising:** Autoridade máxima em inteligência e números do setor de franquias, um dos maiores motores do PIB e do emprego nacional.
+     4. **Agência Sebrae de Notícias (Sebrae Nacional):** A maior rede de dados sobre micro e pequenas empresas, setores mais resilientes e tendências de formalização de negócios.
+     5. **Bloomberg Línea & Financial Times Brasil:** Cobertura de negócios corporativos da América Latina, fluxos de comércio exterior e cadeias de suprimentos globais.
+     6. **Exame Negócios & ESG:** Um dos maiores ecossistemas de negócios e gestão do Brasil, com análises profundas sobre estratégia empresarial, governança e novos modelos de mercado.
+     7. **Meio & Mensagem (Estratégia & Mercado):** A principal autoridade em inteligência de marcas, mídia, comportamento de consumo e verbas publicitárias das grandes empresas no Brasil.
+     8. **Confederação Nacional da Indústria (CNI) & Fiesp:** A maior base de dados e estudos econômicos sobre manufatura, logística, produtividade industrial e competitividade real no Brasil.
    - *Radares, Bootstrapping & Newsletters:* **DealflowBR (Guilherme Lima)**, **Endeavor Brasil**, **MicroConf & State of Independent SaaS**.
    - *Globais & Product-Led Growth:* **Lenny's Newsletter (Product Growth & Monetização)**, **OpenView PLG**, **BCG Henderson Institute**, **McKinsey Global Institute (MGI)**, Bloomberg, Financial Times, Forbes, Fortune, Wall Street Journal, **PitchBook News**, **CB Insights**.
 3. **Finanças Pessoais:**
-   - *Nacionais, Índices & Previdência:* **Bora Investir (B3)**, **FGV IBRE (Poder de Compra & IPC)**, **ABRAPP (Previdência Fechada & Longevidade Financeira)**, InfoMoney, Valor Investe, E-Investidor (Estadão), Inteligência Financeira, Suno Notícias.
+   - *Nacionais, Índices & Previdência:* **Bora Investir (B3)**, **FGV IBRE (Poder de Compra & IPC)**, **ABRAPP (Previdência Fechada & Longevidade Financeira)**, InfoMoney, Valor Investe, Inteligência Financeira, Suno Notícias.
+   - *Matrizes Populares de Grande Alcance & Autoridade (+8):*
+     1. **G1 Economia & 'Dicas de Economia' (Globo):** O maior portal de orientação financeira popular, orçamentos domésticos, direitos do consumidor e combate ao superendividamento.
+     2. **Folha de S.Paulo (Mercado & Finanças Pessoais):** Jornalismo analítico e acessível de tributos, financiamento imobiliário, custos de vida e planejamento financeiro da família.
+     3. **Estadão E-Investidor & Broadcast:** Cobertura de referência do mercado financeiro brasileiro para pessoas físicas, comparando rentabilidade, debêntures e fundos.
+     4. **Serasa Experian / SPC Brasil (Indicadores de Crédito & Inadimplência):** Autoridade em dados demográficos sobre comportamento de dívidas, score de crédito, renegociação e consumo popular.
+     5. **Senacon / Procons & Reclame Aqui Insights:** Inteligência de massa sobre proteção contra fraudes financeiras digitais, abusos bancários e direitos econômicos reais do consumidor.
+     6. **Idec (Instituto Brasileiro de Defesa do Consumidor):** A maior autoridade independente do país em análise crítica de tarifas bancárias, crédito justo, seguros e direitos econômicos dos cidadãos.
+     7. **Anbima (Educação Financeira & Raio-X do Investidor):** A associação dos mercados financeiro e de capitais, com o maior mapeamento demográfico sobre hábitos de poupança e investimento do brasileiro.
+     8. **Nexo Finanças & Políticas Públicas:** Jornalismo de dados de alto prestígio e infográficos explicativos que traduzem inflação, juros, poder de compra e orçamentos domésticos.
    - *Radares de Cartões, Milhas & Fintechs:* **The Points Guy (TPG) Analytics**, **Upgraded Points**, **Finsiders Brasil (Open Finance/Fintechs)**, **FlipMilhas**, **Cartão e Milhas**.
    - *Globais & Alocação de Ativos:* **Vanguard Center for Investor Research**, **Morningstar Direct Insights**, MarketWatch, CNBC, Bloomberg Wealth, **Fintech Nexus**.
 4. **Saúde & Bem-estar:**
