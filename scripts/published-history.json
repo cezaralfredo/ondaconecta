@@ -2593,5 +2593,50 @@
       "Revista PEGN"
     ],
     "title": "Além do Banner Tradicional: O Boom do 'Commerce Media' e Como os Grandes Varejistas Faturam Bilhões com Publicidade"
+  },
+  {
+    "id": 565,
+    "slug": "tricologia-clinica-saude-couro-cabeludo-beleza-capilar-brasil",
+    "category": "Estética & Beleza",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-11-20T09:30:00-03:00",
+    "sources": [
+      "ABIHPEC",
+      "Sociedade Brasileira de Dermatologia (SBD)",
+      "Sociedade Brasileira do Cabelo (SBC)",
+      "G1 Beleza",
+      "Euromonitor International"
+    ],
+    "title": "A Era da Tricologia Clínica: Por Que o Couro Cabeludo Virou a Nova Fronteira da Beleza e da Ciência Capilar no Brasil"
+  },
+  {
+    "id": 568,
+    "slug": "onibus-eletricos-capitais-eletrificacao-transporte-publico-wri-brasil",
+    "category": "Sustentabilidade",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-11-20T14:00:00-03:00",
+    "sources": [
+      "WRI Brasil",
+      "ABVE (Associação Brasileira de Veículos Elétricos)",
+      "BNDES / Novo PAC",
+      "G1 Meio Ambiente & CNN Brasil",
+      "Diário do Transporte"
+    ],
+    "title": "Além da Fumaça do Diesel: Como São Paulo Ultrapassa 1.700 Ônibus Elétricos e Lidera a Eletrificação do Transporte no Brasil"
+  },
+  {
+    "id": 571,
+    "slug": "etias-ees-biometria-europa-regras-viagem-brasileiros-passaporte",
+    "category": "Estilo de Vida & Viagens",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-11-20T18:00:00-03:00",
+    "sources": [
+      "G1 Turismo e Viagem",
+      "Viagem e Turismo (Abril)",
+      "Folha de S.Paulo Turismo",
+      "União Europeia (ETIAS / EES Oficial)",
+      "Melhores Destinos"
+    ],
+    "title": "Adeus ao Carimbo no Passaporte: Como o EES Biométrico e a Chegada do ETIAS de 20 Euros Mudam a Viagem dos Brasileiros à Europa"
   }
 ]

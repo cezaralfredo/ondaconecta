@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-19T11:49:20.648Z",
+  "updatedAt": "2026-11-20T10:34:14.460Z",
   "description": "Fila estratégica de pautas prioritárias de alta conversão e audiência popular para o Onda Conecta, alimentadas por radares de vanguarda e inteligência de dados.",
   "categories": {
     "Inovação & IA": [
@@ -424,6 +424,28 @@
         ],
         "suggestedSlug": "peptideos-cobre-ghk-cu-ectoina-barreira-cutanea-brasil",
         "status": "published"
+      },
+      {
+        "id": "QUEUE-EB-05",
+        "topic": "A Era da Tricologia Clínica: Por Que o Couro Cabeludo Virou a Nova Fronteira da Beleza e da Ciência Capilar no Brasil",
+        "focus": "Nacional (50/50)",
+        "radarSources": [
+          "ABIHPEC",
+          "Sociedade Brasileira de Dermatologia (SBD)",
+          "Sociedade Brasileira do Cabelo (SBC)",
+          "G1 Beleza",
+          "Euromonitor International"
+        ],
+        "conversionAngle": "O Brasil como 3º maior mercado global de beleza (R$ 200 bilhões) migrando para a skinification do couro cabeludo, tricoscopia e prevenção clínica da queda capilar.",
+        "targetKeywords": [
+          "tricologia clinica brasil",
+          "saude do couro cabeludo scalp care",
+          "queda capilar alopecia sbd",
+          "abihpec mercado capilar",
+          "skinification of hair"
+        ],
+        "suggestedSlug": "tricologia-clinica-saude-couro-cabeludo-beleza-capilar-brasil",
+        "status": "published"
       }
     ],
     "Estilo de Vida & Viagens": [
@@ -508,6 +530,28 @@
           "glamping estelar"
         ],
         "suggestedSlug": "astroturismo-noctourism-parques-ceu-escuro-hotelaria-estelar-brasil",
+        "status": "published"
+      },
+      {
+        "id": "QUEUE-EV-05",
+        "topic": "Adeus ao Carimbo no Passaporte: Como o EES Biométrico e a Chegada do ETIAS de 20 Euros Mudam a Viagem dos Brasileiros à Europa",
+        "focus": "Global com impacto no Brasil (50/50)",
+        "radarSources": [
+          "G1 Turismo e Viagem",
+          "Viagem e Turismo (Abril)",
+          "Folha de S.Paulo Turismo",
+          "União Europeia (ETIAS / EES Oficial)",
+          "Melhores Destinos"
+        ],
+        "conversionAngle": "Guia prático e urgente para quem planeja viajar ao Espaço Schengen: entenda a diferença entre o EES já ativo nas fronteiras e a autorização eletrônica ETIAS de 20 euros.",
+        "targetKeywords": [
+          "etias europa brasileiros 2026",
+          "ees biometria passaporte europa",
+          "autorizacao viagem espaco schengen",
+          "taxa 20 euros etias",
+          "regras entrada europa brasileiros"
+        ],
+        "suggestedSlug": "etias-ees-biometria-europa-regras-viagem-brasileiros-passaporte",
         "status": "published"
       }
     ],
@@ -758,6 +802,28 @@
           "bloombergnef brasil"
         ],
         "suggestedSlug": "baterias-sodio-ion-armazenamento-bess-energia-solar-brasil",
+        "status": "published"
+      },
+      {
+        "id": "QUEUE-SU-05",
+        "topic": "Além da Fumaça do Diesel: Como São Paulo Ultrapassa 1.700 Ônibus Elétricos e Lidera a Eletrificação do Transporte Público no Brasil",
+        "focus": "Nacional (50/50)",
+        "radarSources": [
+          "WRI Brasil",
+          "ABVE (Associação Brasileira de Veículos Elétricos)",
+          "BNDES / Novo PAC",
+          "G1 Meio Ambiente & CNN Brasil",
+          "Diário do Transporte"
+        ],
+        "conversionAngle": "A revolução silenciosa nos corredores urbanos: fabricação nacional de chassis elétricos (80-90% do mercado) e planos de transição para frotas limpas em SP, Curitiba, Salvador e Rio.",
+        "targetKeywords": [
+          "onibus eletricos sao paulo frota",
+          "eletrificacao transporte publico brasil",
+          "wri brasil mobilidade limpa",
+          "bndes financiamento onibus eletrico",
+          "descarbonizacao urbana capitais"
+        ],
+        "suggestedSlug": "onibus-eletricos-capitais-eletrificacao-transporte-publico-wri-brasil",
         "status": "published"
       }
     ]

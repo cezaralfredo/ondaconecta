@@ -73,10 +73,32 @@ A curadoria deve manter um equilíbrio rigoroso de relevância entre os mercados
    - *Globais & Biotecnologia:* The Lancet, JAMA Network, Healthline, Psychology Today, Nature Medicine, BBC Health, **Longevity.Technology**, **STAT News**, **Endpoints News**.
 5. **Estética & Beleza:**
    - *Nacionais & Sociedades Médicas:* Sociedade Brasileira de Dermatologia (SBD), Vogue Brasil Beleza, Marie Claire Beleza, Glamour Beleza, Lilian Pacce, Cosmopolitan Brasil, Beleza na Web Editorial.
+   - *Matrizes Populares de Grande Alcance, Indústria & Ciência (+10):*
+     1. **ABIHPEC (Associação Brasileira da Indústria de Higiene Pessoal, Perfumaria e Cosméticos):** Dados oficiais de mercado, exportações e comportamento de consumo da beleza no Brasil.
+     2. **Anvisa (Regulação de Cosméticos & Estética):** Autoridade sanitária federal para aprovações de novos ativos, restrições e segurança em procedimentos estéticos.
+     3. **Steal The Look & Ela (O Globo):** Portais de enorme alcance popular em tendências acessíveis, beleza cotidiana e movimentos de consumo jovem.
+     4. **SBCP (Sociedade Brasileira de Cirurgia Plástica):** Autoridade médica nacional para estatísticas e diretrizes de procedimentos estéticos e segurança clínica.
+     5. **Sociedade Brasileira do Cabelo (SBC / ABT - Tricologia):** Fontes de ponta sobre saúde capilar, tratamentos para alopecia, transplantes e cuidados com fios naturais.
+     6. **G1 Beleza & Universa (UOL):** Cobertura massiva sobre autoestima, rotinas reais de cuidados, debates sobre padrões estéticos e consumo consciente.
+     7. **Harper's Bazaar Brasil & Elle Brasil (Beleza):** Referências editoriais em perfumaria de nicho, clean beauty e movimentos internacionais de estética.
+     8. **Mintel Beauty & Personal Care:** Instituto global de inteligência de consumo mapeando lançamentos e preferências reais de compra em massa.
+     9. **Euromonitor International (Beauty & Fashion):** Dados estatísticos globais e regionais sobre crescimento de categorias como nutricosméticos e beleza masculina.
+     10. **Journal of Cosmetic Dermatology (Wiley) & PubMed Estética:** Periódicos internacionais revisados por pares para validar a eficácia científica real de ingredientes e dispositivos.
    - *Radares & Tendências:* **Bits to Brands (Beatriz Guarezi)**, **Noor Skin**.
    - *Globais, Periódicos & Big Data:* **JEADV (Journal of the European Academy of Dermatology and Venereology)**, **American Academy of Dermatology (AAD)**, Allure, Cosmetics & Toiletries, Business of Fashion (Beauty), Byrdie, WWD, **BeautyMatter**, **Spate NYC (Big Data de Busca)**, **Global Wellness Summit (GWS)**.
 6. **Estilo de Vida & Viagens:**
    - *Nacionais & Associações:* **Associação Brasileira de Ecoturismo e Turismo de Aventura (ABETA)**, Embratur, Viagem e Turismo (Abril), Melhores Destinos, Guia Viajar Melhor, GQ Brasil, Casa Vogue, Forbes Life Brasil.
+   - *Matrizes Populares de Grande Alcance, Cultura & Mobilidade (+10):*
+     1. **G1 Turismo e Viagem & Globo Repórter:** O maior canal de massa sobre roteiros nacionais, vistos, direitos do passageiro aéreo e tendências de viagem no Brasil.
+     2. **Folha de S.Paulo (Turismo & Ilustrada):** Cobertura de referência em viagens culturais, gastronomia, moradia e transformações no estilo de vida urbano.
+     3. **Estadão (Viagem & Casa e Decoração):** Guia consolidado de destinos, hotelaria, arquitetura cotidiana e design residencial no país.
+     4. **ANAC & Ministério do Turismo:** Dados oficiais sobre abertura de rotas aéreas diretas, fluxo de passageiros e políticas de turismo sustentável.
+     5. **Casa e Jardim (Globo) & ArchDaily Brasil:** As maiores autoridades de alcance popular em arquitetura, moradia contemporânea, coliving e design de interiores.
+     6. **Paladar (Estadão) & Prazeres da Mesa:** Referências máximas em cultura gastronômica, ingredientes brasileiros, agricultura familiar e hospitalidade afetiva.
+     7. **Kayak Trends & Skyscanner Travel Insights:** Big data de buscas aéreas revelando em tempo real para onde os brasileiros estão viajando.
+     8. **Airbnb Newsroom & Booking.com Travel Predictions:** Relatórios globais baseados em bilhões de reservas sobre trabalho remoto, nômades digitais e formatos de hospedagem.
+     9. **Wallpaper\* & Architectural Digest (Global):** Principais vitrines globais de estilo de vida, arquitetura inovadora e design de espaços inspiradores.
+     10. **Time Out (Global & Brasil):** Referência mundial em cultura de rua, bairros em ascensão, gastronomia urbana e roteiros autênticos fora do óbvio.
    - *Radares & Inteligência de Viagem:* **Skift (Daily Briefing & Trends)**, **Robb Report**, **Afar Magazine**, **Luxury Travel Intelligence (LTI)**, **DarkSky International (Astroturismo & Noctourism)**.
    - *Globais:* Condé Nast Traveler, Lonely Planet, Travel + Leisure, National Geographic Travel.
 7. **Tendências:**
@@ -103,6 +125,17 @@ A curadoria deve manter um equilíbrio rigoroso de relevância entre os mercados
    - *Globais:* The Atlantic (Culture), Vox Media, Dazed, BBC Worklife.
 9. **Sustentabilidade:**
    - *Nacionais, Regulação & Energia:* **Agência Nacional do Petróleo, Gás Natural e Biocombustíveis (ANP / ProBioQAV)**, **Empresa de Pesquisa Energética (EPE)**, Capital Reset, Exame ESG, Um Só Planeta (Globo), Página 22.
+   - *Matrizes Populares de Grande Alcance, Clima, Cidades & Economia Circular (+10):*
+     1. **G1 Meio Ambiente & Fantástico (Globo):** O maior canal de alcance popular no país para eventos climáticos, soluções urbanas, reciclagem e impactos ambientais no cotidiano.
+     2. **Folha de S.Paulo (Ambiente & Clima):** Cobertura jornalística de referência sobre políticas ambientais, transição energética, COPs e infraestrutura verde.
+     3. **BBC News Brasil (Meio Ambiente & Ciência):** Reportagens explicativas de grande alcance sobre inovações ecológicas globais, crise hídrica e soluções climáticas práticas.
+     4. **Conexão Planeta & CicloVivo:** Portais brasileiros líderes junto ao grande público sobre economia circular, cidades sustentáveis, agroecologia e consumo consciente.
+     5. **Instituto Ethos & Pacto Global da ONU (Rede Brasil):** Principais referências corporativas em governança socioambiental (ESG), metas climáticas empresariais e economia regenerativa.
+     6. **MapBiomas & Observatório do Clima:** Autoridade científica e geoespacial de classe mundial sobre uso da terra, restauração florestal, carbono e biomas brasileiros.
+     7. **Embrapa Meio Ambiente & Embrapa Florestas:** Autoridade máxima em agricultura regenerativa, fixação de carbono no solo, bioinsumos e manejo sustentável no campo.
+     8. **WRI Brasil (World Resources Institute):** Think tank focado em mobilidade urbana limpa (ônibus elétricos), planejamento de cidades resilientes ao calor e infraestrutura hídrica.
+     9. **Ellen MacArthur Foundation (Economia Circular):** A maior referência global em economia circular, redesign de embalagens, redução de plásticos e reutilização industrial.
+     10. **Yale Environment 360 & Mongabay Brasil:** Jornalismo ambiental investigativo de prestígio internacional sobre biodiversidade, conservação e novas tecnologias ecológicas.
    - *Radares, Transição Ecológica & Baterias:* **BloombergNEF (BNEF - Energy Storage & Clean Energy)**, **CleanTechnica**, **ESG Today**, **Reuters Sustainable Business**, **Bloomberg Green**, **IATA Sustainability (Sustainable Aviation Fuel - SAF)**.
 
 ---
