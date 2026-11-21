@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T10:34:14.460Z",
+  "updatedAt": "2026-11-21T09:47:00-03:00",
   "description": "Fila estratégica de pautas prioritárias de alta conversão e audiência popular para o Onda Conecta, alimentadas por radares de vanguarda e inteligência de dados.",
   "categories": {
     "Inovação & IA": [
@@ -87,6 +87,48 @@
         ],
         "suggestedSlug": "biometria-facial-deepfake-voz-fraude-bancos-zero-trust-brasil",
         "status": "published"
+      },
+      {
+        "id": "QUEUE-IA-05",
+        "topic": "IA Agêntica nas Empresas e Governança de Dados Auditável: O Que Muda na Segurança Corporativa e na LGPD no Brasil",
+        "focus": "Global com impacto no Brasil (50/50)",
+        "radarSources": [
+          "VentureBeat (AI Beat)",
+          "Wired Magazine (AI & Security)",
+          "MIT Technology Review Brasil",
+          "Núcleo Jornalismo",
+          "C4AI (USP / IBM / FAPESP)"
+        ],
+        "conversionAngle": "Com agentes autônomos acessando sistemas internos, rastreabilidade de dados e auditoria algorítmica viram exigência crítica nas empresas.",
+        "targetKeywords": [
+          "ia agentica governanca dados",
+          "seguranca ia corporativa lgpd",
+          "auditoria algoritmos brasil",
+          "mlops empresas"
+        ],
+        "suggestedSlug": "ia-agentica-governanca-dados-seguranca-corporativa-lgpd-brasil",
+        "status": "pending"
+      },
+      {
+        "id": "QUEUE-IA-06",
+        "topic": "R$ 3 Bilhões em IA nos Bancos e na B3: Como Agentes Inteligentes Já Operam Crédito, Bolsa e Prevenção a Fraudes no Brasil",
+        "focus": "Nacional (50/50)",
+        "radarSources": [
+          "G1 Tecnologia (Globo)",
+          "Canaltech & TecMundo",
+          "Época Negócios Tech",
+          "Febraban Tech",
+          "Núcleo Jornalismo"
+        ],
+        "conversionAngle": "Os bastidores da maior onda de automação do sistema financeiro nacional: análise de risco em tempo real e atendimento hiperpersonalizado.",
+        "targetKeywords": [
+          "ia bancos brasil febraban",
+          "b3 agentes inteligencia artificial",
+          "prevencao fraudes ia financas",
+          "inovacao sistema financeiro"
+        ],
+        "suggestedSlug": "bancos-b3-bilhoes-ia-credito-prevencao-fraudes-brasil",
+        "status": "pending"
       }
     ],
     "Mercado & Negócios": [
@@ -172,6 +214,48 @@
         ],
         "suggestedSlug": "retail-media-commerce-media-varejo-publicidade-mercado-livre-brasil",
         "status": "published"
+      },
+      {
+        "id": "QUEUE-MN-05",
+        "topic": "Reindustrialização e Nearshoring na América Latina: Onde a Indústria Brasileira Ganha Espaço nas Cadeias Globais",
+        "focus": "Global com impacto no Brasil (50/50)",
+        "radarSources": [
+          "CNI & Fiesp",
+          "Valor Econômico (Empresas & Setores)",
+          "Bloomberg Línea & Financial Times Brasil",
+          "BCG Henderson Institute",
+          "Exame Negócios & ESG"
+        ],
+        "conversionAngle": "A reorganização das cadeias produtivas mundiais abre janela estratégica para manufatura verde, agroindústria e tecnologia no Brasil.",
+        "targetKeywords": [
+          "nearshoring brasil america latina",
+          "reindustrializacao cni fiesp",
+          "cadeias globais suprimentos",
+          "competitividade industrial brasil"
+        ],
+        "suggestedSlug": "reindustrializacao-nearshoring-industria-brasileira-cadeias-globais",
+        "status": "pending"
+      },
+      {
+        "id": "QUEUE-MN-06",
+        "topic": "Franquias Enxutas e Microfranquias Digitais: Os Setores Mais Resilientes para Empreender no Brasil Segundo ABF e Sebrae",
+        "focus": "Nacional (50/50)",
+        "radarSources": [
+          "Revista PEGN (Globo)",
+          "Associação Brasileira de Franchising (ABF)",
+          "Agência Sebrae de Notícias",
+          "Exame Negócios",
+          "Endeavor Brasil"
+        ],
+        "conversionAngle": "Modelos de baixo investimento inicial, operação home-based e retorno acelerado ganham tração entre novos empreendedores no país.",
+        "targetKeywords": [
+          "franquias enxutas microfranquias brasil",
+          "abf setores resilientes franchising",
+          "sebrae pequenos negocios 2026",
+          "pegn empreendedorismo"
+        ],
+        "suggestedSlug": "franquias-enxutas-microfranquias-setores-resilientes-abf-sebrae-brasil",
+        "status": "pending"
       }
     ],
     "Finanças Pessoais": [
@@ -257,6 +341,48 @@
         ],
         "suggestedSlug": "teto-rotativo-cartao-credito-portabilidade-dividas-familias-brasil",
         "status": "published"
+      },
+      {
+        "id": "QUEUE-FP-05",
+        "topic": "Superendividamento e Golpes Financeiros Digitais: O Guia Prático de Direitos do Consumidor com Serasa, Senacon e Idec",
+        "focus": "Nacional (50/50)",
+        "radarSources": [
+          "G1 Economia & Dicas de Economia",
+          "Serasa Experian / SPC Brasil",
+          "Senacon / Procons & Reclame Aqui Insights",
+          "Idec",
+          "Nexo Finanças"
+        ],
+        "conversionAngle": "Como contestar cobranças indevidas, usar a Lei do Superendividamento e blindar contas contra fraudes digitais no dia a dia.",
+        "targetKeywords": [
+          "lei superendividamento brasil",
+          "golpes financeiros digitais direitos",
+          "idec senacon bancos",
+          "renegociacao dividas serasa"
+        ],
+        "suggestedSlug": "superendividamento-golpes-digitais-direitos-consumidor-serasa-idec-brasil",
+        "status": "pending"
+      },
+      {
+        "id": "QUEUE-FP-06",
+        "topic": "Nova Faixa de Isenção do IR e Inflação de Serviços: Como Rebalancear o Orçamento Doméstico e a Reserva em 2026",
+        "focus": "Global com impacto no Brasil (50/50)",
+        "radarSources": [
+          "Folha de S.Paulo (Mercado & Finanças Pessoais)",
+          "Anbima (Raio-X do Investidor)",
+          "FGV IBRE",
+          "Estadão E-Investidor",
+          "Vanguard Center for Investor Research"
+        ],
+        "conversionAngle": "Como transformar alívio tributário em poupança real e proteger o poder de compra diante da persistência da inflação de serviços.",
+        "targetKeywords": [
+          "isencao imposto de renda 2026",
+          "orcamento domestico inflacao servicos",
+          "fgv ibre poder de compra",
+          "anbima reserva emergencia"
+        ],
+        "suggestedSlug": "isencao-ir-inflacao-servicos-rebalancear-orcamento-reserva-brasil",
+        "status": "pending"
       }
     ],
     "Saúde & Bem-estar": [
@@ -339,6 +465,48 @@
         ],
         "suggestedSlug": "lipoproteina-a-lpa-apob-infarto-precoce-consenso-cardiologia-brasil",
         "status": "published"
+      },
+      {
+        "id": "QUEUE-SB-05",
+        "topic": "Resistência Antimicrobiana e Superbactérias no Brasil: O Novo Plano Integrado de Vigilância da Fiocruz, Anvisa e Hospitais de Ponta",
+        "focus": "Nacional (50/50)",
+        "radarSources": [
+          "Fiocruz",
+          "Anvisa",
+          "Hospital Israelita Albert Einstein",
+          "G1 Saúde & Bem-Estar (Globo)",
+          "BBC News Brasil (Saúde & Ciência)"
+        ],
+        "conversionAngle": "Por que infecções comuns estão ficando mais difíceis de tratar e como protocolos de controle hospitalar e uso racional de antibióticos protegem o paciente.",
+        "targetKeywords": [
+          "resistencia antimicrobiana brasil",
+          "superbacterias vigilancia fiocruz",
+          "uso racional antibioticos anvisa",
+          "controle infeccoes hospitalares"
+        ],
+        "suggestedSlug": "resistencia-antimicrobiana-superbacterias-vigilancia-fiocruz-anvisa-brasil",
+        "status": "published"
+      },
+      {
+        "id": "QUEUE-SB-06",
+        "topic": "Saúde Única (One Health) e Clima Extremo: Como Ondas de Calor e Mudanças Ambientais Redesenham a Medicina Preventiva no Brasil",
+        "focus": "Global com impacto no Brasil (50/50)",
+        "radarSources": [
+          "The Lancet",
+          "Fiocruz",
+          "Folha de S.Paulo (Equilíbrio & Saúde)",
+          "Veja Saúde",
+          "Estadão Saúde & Bem-Estar"
+        ],
+        "conversionAngle": "O impacto direto do estresse térmico e das alterações ambientais sobre doenças cardiovasculares, respiratórias e surtos urbanos no país.",
+        "targetKeywords": [
+          "saude unica one health brasil",
+          "ondas de calor saude cardiovascular",
+          "medicina preventiva clima extremo",
+          "fiocruz saude ambiental"
+        ],
+        "suggestedSlug": "saude-unica-one-health-clima-extremo-medicina-preventiva-brasil",
+        "status": "pending"
       }
     ],
     "Estética & Beleza": [
@@ -446,6 +614,48 @@
         ],
         "suggestedSlug": "tricologia-clinica-saude-couro-cabeludo-beleza-capilar-brasil",
         "status": "published"
+      },
+      {
+        "id": "QUEUE-EB-06",
+        "topic": "Beleza da Biodiversidade Brasileira: Como Ativos da Amazônia e da Mata Atlântica Conquistam a Indústria Global de Cosméticos",
+        "focus": "Nacional (50/50)",
+        "radarSources": [
+          "ABIHPEC",
+          "Anvisa",
+          "G1 Beleza & Universa (UOL)",
+          "Harper's Bazaar Brasil",
+          "Euromonitor International"
+        ],
+        "conversionAngle": "A valorização científica de bioativos nativos rastreados transforma o Brasil de fornecedor de matéria-prima em criador de marcas globais.",
+        "targetKeywords": [
+          "biodiversidade cosmeticos brasil",
+          "abihpec bioativos amazonia",
+          "clean beauty brasileira",
+          "exportacao beleza natural"
+        ],
+        "suggestedSlug": "beleza-biodiversidade-ativos-amazonia-industria-cosmeticos-brasil",
+        "status": "pending"
+      },
+      {
+        "id": "QUEUE-EB-07",
+        "topic": "Beleza Masculina e Nutricosméticos: Os Dois Segmentos Que Mais Crescem nas Farmácias e Clínicas do Brasil",
+        "focus": "Global com impacto no Brasil (50/50)",
+        "radarSources": [
+          "Euromonitor International (Beauty & Fashion)",
+          "Mintel Beauty & Personal Care",
+          "Steal The Look & Ela (O Globo)",
+          "Journal of Cosmetic Dermatology",
+          "Sociedade Brasileira de Dermatologia (SBD)"
+        ],
+        "conversionAngle": "Mudança cultural e eficácia clínica: homens adotam rotinas de skincare e suplementos orais para colágeno e barreira cutânea.",
+        "targetKeywords": [
+          "beleza masculina skincare brasil",
+          "nutricosmeticos colageno eficacia",
+          "euromonitor beleza masculina",
+          "tendencias dermocosmeticos"
+        ],
+        "suggestedSlug": "beleza-masculina-nutricosmeticos-crescimento-farmacias-clinicas-brasil",
+        "status": "pending"
       }
     ],
     "Estilo de Vida & Viagens": [
@@ -553,6 +763,48 @@
         ],
         "suggestedSlug": "etias-ees-biometria-europa-regras-viagem-brasileiros-passaporte",
         "status": "published"
+      },
+      {
+        "id": "QUEUE-EV-06",
+        "topic": "Rotas Aéreas Regionais e Direitos do Passageiro: Para Onde os Brasileiros Estão Viajando e Como Evitar Armadilhas nos Voos",
+        "focus": "Nacional (50/50)",
+        "radarSources": [
+          "G1 Turismo e Viagem",
+          "ANAC & Ministério do Turismo",
+          "Kayak Trends & Skyscanner Travel Insights",
+          "Folha de S.Paulo (Turismo)",
+          "Melhores Destinos"
+        ],
+        "conversionAngle": "Com alta nas buscas por destinos domésticos fora do eixo óbvio, conheça os corredores em expansão e as regras de remarcação e reembolso.",
+        "targetKeywords": [
+          "rotas aereas regionais brasil",
+          "direitos passageiro aereo anac",
+          "kayak trends destinos brasileiros",
+          "viagens nacionais 2026"
+        ],
+        "suggestedSlug": "rotas-aereas-regionais-direitos-passageiro-anac-viagens-brasil",
+        "status": "pending"
+      },
+      {
+        "id": "QUEUE-EV-07",
+        "topic": "O Fenômeno Glowmads e o Turismo Gastronômico: Como Farmácias Locais, Spas e Sabores Regionais Redefinem Roteiros de Viagem",
+        "focus": "Global com impacto no Brasil (50/50)",
+        "radarSources": [
+          "Airbnb Newsroom & Booking.com Travel Predictions",
+          "Paladar (Estadão) & Prazeres da Mesa",
+          "Time Out (Global & Brasil)",
+          "Casa e Jardim (Globo)",
+          "Condé Nast Traveler"
+        ],
+        "conversionAngle": "Viajantes trocam pontos turísticos padronizados por rituais locais de bem-estar, compras em farmácias autênticas e gastronomia afetiva.",
+        "targetKeywords": [
+          "glowmads turismo beleza",
+          "turismo gastronomico brasil",
+          "booking travel predictions 2026",
+          "experiencias culturais viagem"
+        ],
+        "suggestedSlug": "glowmads-turismo-gastronomico-bem-estar-roteiros-viagem-brasil",
+        "status": "pending"
       }
     ],
     "Tendências": [
@@ -635,6 +887,48 @@
         ],
         "suggestedSlug": "evtol-carros-voadores-eve-embraer-vertiportos-anac-brasil",
         "status": "published"
+      },
+      {
+        "id": "QUEUE-TE-05",
+        "topic": "Busca Sem Fricção e Zero-Click Commerce: Como a IA Visual e os Vídeos Curtos Encurtaram o Funil de Compras no Brasil",
+        "focus": "Global com impacto no Brasil (50/50)",
+        "radarSources": [
+          "Google Trends & Think with Google Brasil",
+          "Wired & Gizmodo Brasil",
+          "Fast Company Brasil",
+          "Época Negócios",
+          "StartSe"
+        ],
+        "conversionAngle": "O fim da jornada linear de compra: consumidores brasileiros descobrem, validam avaliações por vídeo e concluem transações no mesmo fluxo.",
+        "targetKeywords": [
+          "zero click commerce brasil",
+          "think with google jornada compra",
+          "busca visual ia varejo",
+          "tendencias ecommerce 2026"
+        ],
+        "suggestedSlug": "busca-sem-friccao-zero-click-commerce-ia-visual-brasil",
+        "status": "published"
+      },
+      {
+        "id": "QUEUE-TE-06",
+        "topic": "Economia Prateada e Consumo 60+: Por Que o Público Sênior Lidera os Novos Mercados de Moradia, Serviços e Varejo no Brasil",
+        "focus": "Nacional (50/50)",
+        "radarSources": [
+          "IBGE",
+          "Época Negócios & Exame Tendências",
+          "Meio & Mensagem",
+          "Consumidor Moderno",
+          "WGSN Insider"
+        ],
+        "conversionAngle": "A virada demográfica brasileira: como o crescimento da população acima de 60 anos cria oportunidades em saúde ativa, lazer e tecnologia acessível.",
+        "targetKeywords": [
+          "economia prateada brasil",
+          "consumo 60 mais ibge",
+          "mercado senior tendencias",
+          "envelhecimento ativo varejo"
+        ],
+        "suggestedSlug": "economia-prateada-consumo-60-mais-novos-mercados-brasil",
+        "status": "pending"
       }
     ],
     "Comportamento": [
@@ -717,6 +1011,48 @@
         ],
         "suggestedSlug": "lei-proibicao-celulares-escolas-recreio-socializacao-alunos-brasil",
         "status": "published"
+      },
+      {
+        "id": "QUEUE-CO-05",
+        "topic": "Carrinhos Menores e Mais Idas às Compras: Como a Cautela Pragmática Redesenhou a Rotina de Consumo das Famílias Brasileiras",
+        "focus": "Nacional (50/50)",
+        "radarSources": [
+          "Censo IBGE & PNAD Contínua",
+          "Consumidor Moderno & Datafolha",
+          "UOL Notícias & VivaBem Comportamento",
+          "IPEA & FGV Social",
+          "Nexo Jornal"
+        ],
+        "conversionAngle": "Radiografia prática do novo orçamento doméstico: menos itens por compra, maior frequência de reposição e rejeição a supérfluos.",
+        "targetKeywords": [
+          "comportamento consumidor brasil 2026",
+          "cautela pragmatica compras",
+          "orcamento familiar ibge",
+          "habitos consumo supermercado"
+        ],
+        "suggestedSlug": "carrinhos-menores-cautela-pragmatica-consumo-familias-brasil",
+        "status": "published"
+      },
+      {
+        "id": "QUEUE-CO-06",
+        "topic": "Amizade na Vida Adulta e Micro-Comunidades: A Resposta Prática ao Isolamento Urbano nas Metrópoles Brasileiras",
+        "focus": "Global com impacto no Brasil (50/50)",
+        "radarSources": [
+          "The Atlantic & Vox (Culture & Society)",
+          "Tab UOL",
+          "GWI (GlobalWebIndex)",
+          "Pew Research",
+          "Folha Cotidiano"
+        ],
+        "conversionAngle": "Como clubes de bairro, grupos de hobbies manuais e encontros recorrentes estão reconstruindo vínculos presenciais fora das telas.",
+        "targetKeywords": [
+          "amizade vida adulta solidao",
+          "micro comunidades urbanas brasil",
+          "convivio presencial metropoles",
+          "isolamento digital comportamento"
+        ],
+        "suggestedSlug": "amizade-vida-adulta-micro-comunidades-isolamento-urbano-brasil",
+        "status": "pending"
       }
     ],
     "Sustentabilidade": [
@@ -825,6 +1161,48 @@
         ],
         "suggestedSlug": "onibus-eletricos-capitais-eletrificacao-transporte-publico-wri-brasil",
         "status": "published"
+      },
+      {
+        "id": "QUEUE-SU-06",
+        "topic": "Economia Circular de Embalagens e Fim dos Descartáveis: As Novas Metas Industriais Que Já Mudam as Prateleiras no Brasil",
+        "focus": "Global com impacto no Brasil (50/50)",
+        "radarSources": [
+          "Ellen MacArthur Foundation",
+          "Conexão Planeta & CicloVivo",
+          "Instituto Ethos & Pacto Global da ONU",
+          "Folha de S.Paulo (Ambiente & Clima)",
+          "ESG Today"
+        ],
+        "conversionAngle": "Redesign de embalagens, refis inteligentes e logística reversa deixam de ser marketing verde para virar padrão obrigatório de mercado.",
+        "targetKeywords": [
+          "economia circular embalagens brasil",
+          "ellen macarthur foundation plastico",
+          "logistica reversa industria",
+          "consumo consciente descartaveis"
+        ],
+        "suggestedSlug": "economia-circular-embalagens-logistica-reversa-industria-brasil",
+        "status": "pending"
+      },
+      {
+        "id": "QUEUE-SU-07",
+        "topic": "Monitoramento por Satélite e Agro Regenerativo: Como MapBiomas e Embrapa Transformam a Rastreabilidade Climática no Brasil",
+        "focus": "Nacional (50/50)",
+        "radarSources": [
+          "MapBiomas & Observatório do Clima",
+          "Embrapa Meio Ambiente",
+          "BBC News Brasil (Meio Ambiente & Ciência)",
+          "G1 Meio Ambiente",
+          "Yale Environment 360"
+        ],
+        "conversionAngle": "Geotecnologia de alta precisão e bioinsumos no campo comprovam captura de carbono e abrem portas para exportações premium.",
+        "targetKeywords": [
+          "mapbiomas rastreabilidade climatica",
+          "agro regenerativo embrapa bioinsumos",
+          "carbono solo agricultura brasil",
+          "monitoramento ambiental satelite"
+        ],
+        "suggestedSlug": "monitoramento-satelite-agro-regenerativo-mapbiomas-embrapa-brasil",
+        "status": "pending"
       }
     ]
   }

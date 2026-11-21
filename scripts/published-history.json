@@ -2638,5 +2638,47 @@
       "Melhores Destinos"
     ],
     "title": "Adeus ao Carimbo no Passaporte: Como o EES Biométrico e a Chegada do ETIAS de 20 Euros Mudam a Viagem dos Brasileiros à Europa"
+  },
+  {
+    "id": 574,
+    "slug": "resistencia-antimicrobiana-superbacterias-vigilancia-fiocruz-anvisa-brasil",
+    "category": "Saúde & Bem-estar",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-11-21T09:30:00-03:00",
+    "sources": [
+      "Ministério da Saúde (PAN-BR)",
+      "Anvisa (PNPCIRAS 2026–2030)",
+      "Fiocruz",
+      "Organização Mundial da Saúde (OMS / GLASS)"
+    ],
+    "title": "34 Mil Mortes por Ano: Como o Brasil Combate as Superbactérias"
+  },
+  {
+    "id": 577,
+    "slug": "busca-sem-friccao-zero-click-commerce-ia-visual-brasil",
+    "category": "Tendências",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-11-21T14:00:00-03:00",
+    "sources": [
+      "Think with Google Brasil",
+      "Ipsos / Meio & Mensagem",
+      "Época Negócios",
+      "Fast Company Brasil"
+    ],
+    "title": "O Fim da Palavra-Chave? Como a IA Visual e os Vídeos Curtos Encurtam as Compras no Brasil"
+  },
+  {
+    "id": 580,
+    "slug": "carrinhos-menores-cautela-pragmatica-consumo-familias-brasil",
+    "category": "Comportamento",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-11-21T18:00:00-03:00",
+    "sources": [
+      "Kantar / Worldpanel",
+      "NIQ (NielsenIQ)",
+      "Agência Sebrae de Notícias",
+      "IBGE"
+    ],
+    "title": "70% dos Lares em Alerta: Como a Cautela Pragmática Redesenhou as Compras no Brasil"
   }
 ]
