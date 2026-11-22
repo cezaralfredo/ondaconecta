@@ -2680,5 +2680,47 @@
       "IBGE"
     ],
     "title": "70% dos Lares em Alerta: Como a Cautela Pragmática Redesenhou as Compras no Brasil"
+  },
+  {
+    "id": 583,
+    "slug": "ia-agentica-governanca-dados-seguranca-corporativa-lgpd-brasil",
+    "category": "Inovação & IA",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-11-22T09:30:00-03:00",
+    "sources": [
+      "ANPD",
+      "VentureBeat (AI Beat)",
+      "MIT Technology Review Brasil",
+      "Wired Magazine"
+    ],
+    "title": "Quando os Agentes Têm Acesso Total: A Nova Regra de Governança de IA e LGPD no Brasil"
+  },
+  {
+    "id": 586,
+    "slug": "superendividamento-golpes-digitais-direitos-consumidor-serasa-idec-brasil",
+    "category": "Finanças Pessoais",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-11-22T14:00:00-03:00",
+    "sources": [
+      "Banco Central do Brasil (BCB)",
+      "Serasa Experian",
+      "Idec",
+      "G1 Economia"
+    ],
+    "title": "80% Endividados e R$ 10 Mil por Golpe: Como Proteger seu Bolso no Brasil"
+  },
+  {
+    "id": 589,
+    "slug": "reindustrializacao-nearshoring-industria-brasileira-cadeias-globais",
+    "category": "Mercado & Negócios",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-11-22T18:00:00-03:00",
+    "sources": [
+      "CNI",
+      "Fiesp",
+      "ABDI / Nova Indústria Brasil",
+      "Valor Econômico"
+    ],
+    "title": "R$ 755 Bilhões na Fábrica: Onde o Brasil Ganha Espaço na Reindustrialização e no Nearshoring"
   }
 ]

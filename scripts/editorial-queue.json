@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T09:47:00-03:00",
+  "updatedAt": "2026-11-22T17:34:00-03:00",
   "description": "Fila estratégica de pautas prioritárias de alta conversão e audiência popular para o Onda Conecta, alimentadas por radares de vanguarda e inteligência de dados.",
   "categories": {
     "Inovação & IA": [
@@ -107,7 +107,7 @@
           "mlops empresas"
         ],
         "suggestedSlug": "ia-agentica-governanca-dados-seguranca-corporativa-lgpd-brasil",
-        "status": "pending"
+        "status": "published"
       },
       {
         "id": "QUEUE-IA-06",
@@ -234,7 +234,7 @@
           "competitividade industrial brasil"
         ],
         "suggestedSlug": "reindustrializacao-nearshoring-industria-brasileira-cadeias-globais",
-        "status": "pending"
+        "status": "published"
       },
       {
         "id": "QUEUE-MN-06",
@@ -361,7 +361,7 @@
           "renegociacao dividas serasa"
         ],
         "suggestedSlug": "superendividamento-golpes-digitais-direitos-consumidor-serasa-idec-brasil",
-        "status": "pending"
+        "status": "published"
       },
       {
         "id": "QUEUE-FP-06",
