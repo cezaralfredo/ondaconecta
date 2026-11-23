@@ -130,24 +130,59 @@ export function parsePubDate(dateStr: string | Date | undefined): Date {
 }
 
 /**
+ * Seleciona os posts exibidos na Home (últimos N gerais + até K por categoria) para evitar HTML inchado e preservar Core Web Vitals
+ */
+export function selectHomeBlogPosts<T extends { id: number; category: string }>(
+  posts: T[],
+  maxPerCategory = 4,
+  minLatest = 18
+): T[] {
+  const sorted = [...posts].sort((a, b) => b.id - a.id)
+  const selectedIds = new Set<number>()
+  const categoryCounts = new Map<string, number>()
+
+  for (const post of sorted.slice(0, minLatest)) {
+    selectedIds.add(post.id)
+    categoryCounts.set(post.category, (categoryCounts.get(post.category) || 0) + 1)
+  }
+
+  for (const post of sorted) {
+    const count = categoryCounts.get(post.category) || 0
+    if (count < maxPerCategory) {
+      selectedIds.add(post.id)
+      categoryCounts.set(post.category, count + 1)
+    }
+  }
+
+  return sorted.filter(post => selectedIds.has(post.id))
+}
+
+/**
  * Extrai perguntas e respostas da seção FAQ do Markdown/MDX para dados estruturados GEO / FAQPage
  */
 export function extractFaqFromContent(content: string | undefined): Array<{ question: string; answer: string }> {
   if (!content) return []
 
   const faqs: Array<{ question: string; answer: string }> = []
-  // Procura por blocos de FAQ: ### [Pergunta]? seguido por parágrafos de resposta
-  const faqSectionMatch = content.match(/##\s+(?:Perguntas Frequentes|Frequently Asked Questions|Preguntas Frecuentes)[\s\S]*?(?=\n##\s+|$)/i)
-  
-  const textToScan = faqSectionMatch ? faqSectionMatch[0] : content
-  const regex = /###\s+([^?\n]+(?:\?|:))\s*\n+([\s\S]*?)(?=\n###|\n##|$)/g
-  
+  // Isola estritamente a seção FAQ e encerra antes de separadores horizontais, bloco de Fontes ou próximo H2
+  const faqSectionMatch = content.match(
+    /##\s+(?:Perguntas Frequentes|Frequently Asked Questions|Preguntas Frecuentes)\b[\s\S]*?(?=\n---|\n###\s*(?:🔗|Fontes|Sources|Fuentes)|\n##\s+|$)/i
+  )
+
+  if (!faqSectionMatch) return []
+
+  const textToScan = faqSectionMatch[0]
+  const regex = /###\s+([^\n?]+\?)\s*\n+([\s\S]*?)(?=\n###|\n##|\n---|$)/g
+
   let match
   while ((match = regex.exec(textToScan)) !== null) {
     const question = match[1].replace(/^[#\s]+/, '').trim()
+    if (/^(?:🔗|Fontes|Sources|Fuentes)/i.test(question)) continue
+
     const answer = match[2]
       .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // remove links markdown
       .replace(/[*_`]/g, '') // remove formatações simples
+      .replace(/\s+/g, ' ')
       .trim()
 
     if (question && answer && answer.length > 10) {

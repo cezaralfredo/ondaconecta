@@ -77,7 +77,7 @@ if (alternateLinks !== false && !isPtOnlyStaticPage) {
 }
 
 // Use site metadata defaults if not provided
-const finalTitle = title ? `${title} | Onda Conecta` : SITE_METADATA.title.default
+const finalTitle = title ? (title.includes('Onda Conecta') ? title : `${title} | Onda Conecta`) : SITE_METADATA.title.default
 const finalDescription = description || SITE_METADATA.description
 const finalKeywords = keywords || SITE_METADATA.keywords.join(', ')
 const finalImage = image || SITE_METADATA.openGraph.images[0].url

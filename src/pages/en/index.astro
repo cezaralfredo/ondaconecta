@@ -6,6 +6,7 @@ import HeroSection from '@/components/blocks/hero-section/hero-section'
 import RecentPosts from '@/components/blocks/recent-posts/recent-posts'
 import Blog from '@/components/blocks/blog-component/blog-component'
 import AdSenseBanner from '@/components/astro/AdSenseBanner.astro'
+import { selectHomeBlogPosts } from '@/utils/blog'
 
 // Get all posts for English (or fallback to all if en posts are still being populated)
 const allPosts = await getCollection('blog')
@@ -29,6 +30,9 @@ const allBlogPosts = postsToShow
   }))
   .sort((a, b) => b.id - a.id)
 
+const latestFourPosts = allBlogPosts.slice(0, 4)
+const homeBlogPosts = selectHomeBlogPosts(allBlogPosts)
+
 const pageTitle = 'Global Trends, Breaking News & Market Innovations'
 const pageDescription =
   'Stay updated with global trends, breaking news, technological advancements, and insights shaping markets and industries worldwide.'
@@ -50,17 +54,16 @@ const schema = {
     title={pageTitle}
     subtitle={pageDescription}
     badgeText='Global Trends & Market Intelligence'
-    blogData={allBlogPosts}
     client:load
   />
 
   {/* Latest Updates Section (4 latest posts) */}
-  <RecentPosts blogData={allBlogPosts} lang='en' client:load />
+  <RecentPosts blogData={latestFourPosts} lang='en' client:load />
 
   {/* Google AdSense Display Banner */}
   <div class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
     <AdSenseBanner />
   </div>
 
-  <Blog blogData={allBlogPosts} lang='en' client:load />
+  <Blog blogData={homeBlogPosts} lang='en' archiveHref='/en/categories' client:load />
 </Layout>

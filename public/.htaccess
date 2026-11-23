@@ -9,8 +9,9 @@
   RewriteRule ^(.*)$ https://ondaconecta.com.br/$1 [L,R=301]
 
   # 1. Normalização de Trailing Slash para URLs sem barra (alinhado com Astro trailingSlash: 'never')
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^(.*)/$ /$1 [R=301,L]
+  # Usa THE_REQUEST para redirecionar requisições externas com / final mesmo em diretórios estáticos do Astro sem causar loop
+  RewriteCond %{THE_REQUEST} \s/+([^?\s]+?)/+(?:\?[^\s]*)?\s [NC]
+  RewriteRule ^ https://ondaconecta.com.br/%1 [R=301,L]
 
   # 2. Redirecionamento 301 definitivo de /us para /en
   RewriteRule ^us/(.*)$ /en/$1 [R=301,L]

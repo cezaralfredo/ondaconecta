@@ -6,6 +6,7 @@ import HeroSection from '@/components/blocks/hero-section/hero-section'
 import RecentPosts from '@/components/blocks/recent-posts/recent-posts'
 import Blog from '@/components/blocks/blog-component/blog-component'
 import AdSenseBanner from '@/components/astro/AdSenseBanner.astro'
+import { selectHomeBlogPosts } from '@/utils/blog'
 
 // Get all posts for Spanish (or fallback to all if es posts are still being populated)
 const allPosts = await getCollection('blog')
@@ -29,6 +30,9 @@ const allBlogPosts = postsToShow
   }))
   .sort((a, b) => b.id - a.id)
 
+const latestFourPosts = allBlogPosts.slice(0, 4)
+const homeBlogPosts = selectHomeBlogPosts(allBlogPosts)
+
 const pageTitle = 'Tendencias Globales, Noticias e Innovaciones del Mercado'
 const pageDescription =
   'Descubre las últimas noticias, tendencias globales, innovaciones tecnológicas y análisis de mercado que están transformando el panorama actual.'
@@ -50,17 +54,16 @@ const schema = {
     title={pageTitle}
     subtitle={pageDescription}
     badgeText='Radar de Tendencias e Inteligencia de Mercado'
-    blogData={allBlogPosts}
     client:load
   />
 
   {/* Últimas Actualizaciones (4 últimos artículos) */}
-  <RecentPosts blogData={allBlogPosts} lang='es' client:load />
+  <RecentPosts blogData={latestFourPosts} lang='es' client:load />
 
   {/* Anuncio Display Google AdSense */}
   <div class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
     <AdSenseBanner />
   </div>
 
-  <Blog blogData={allBlogPosts} lang='es' client:load />
+  <Blog blogData={homeBlogPosts} lang='es' archiveHref='/es/categorias' client:load />
 </Layout>

@@ -38,6 +38,7 @@ if (slug) {
   const found = allPosts.find(p => p.id === slug || p.data.slug === slug)
   if (found) {
     const cleanFoundSlug = found.data.translationOf || found.data.slug?.replace(/-(en|es)$/, '') || found.id.replace(/-(en|es)$/, '')
+    postTitle = postTitle || found.data.title
     postUrl = postUrl || (isEn ? `/en/blog/${cleanFoundSlug}` : isEs ? `/es/blog/${cleanFoundSlug}` : `/blog/${cleanFoundSlug}`)
     postReadTime = postReadTime || found.data.readTime
     postCategory = postCategory || found.data.category

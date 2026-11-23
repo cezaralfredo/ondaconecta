@@ -37,6 +37,7 @@ export type BlogPost = {
 interface BlogProps {
   blogData?: BlogPost[]
   lang?: string
+  archiveHref?: string
 }
 
 const BlogGrid = ({
@@ -145,6 +146,8 @@ const blogI18n: Record<
     comingSoon: 'Novos artigos em breve em',
     comingSoonDesc: 'Nossa redação está apurando novidades, tendências e análises aprofundadas para esta editoria.',
     viewAll: 'Ver todas as publicações',
+    loadMore: 'Carregar mais artigos',
+    viewFullArchive: 'Explorar acervo completo por categoria',
     homeHref: '/#categories'
   },
   en: {
@@ -157,6 +160,8 @@ const blogI18n: Record<
     comingSoon: 'New articles coming soon in',
     comingSoonDesc: 'Our editorial team is curating the latest news, market trends, and in-depth analyses.',
     viewAll: 'View all publications',
+    loadMore: 'Load more articles',
+    viewFullArchive: 'Explore full category archive',
     homeHref: '/en#categories'
   },
   es: {
@@ -169,13 +174,18 @@ const blogI18n: Record<
     comingSoon: 'Nuevos artículos próximamente en',
     comingSoonDesc: 'Nuestra redacción está investigando novedades, tendencias y análisis para esta sección.',
     viewAll: 'Ver todas las publicaciones',
+    loadMore: 'Cargar más artículos',
+    viewFullArchive: 'Explorar archivo completo por categoría',
     homeHref: '/es#categories'
   }
 }
 
-const Blog = ({ blogData = [], lang = 'pt' }: BlogProps) => {
+const PAGE_SIZE = 12
+
+const Blog = ({ blogData = [], lang = 'pt', archiveHref }: BlogProps) => {
   const [selectedTab, setSelectedTab] = useState('All')
   const [searchQuery, setSearchQuery] = useState('')
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE)
 
   const labels = blogI18n[lang] || blogI18n.pt
 
@@ -203,6 +213,7 @@ const Blog = ({ blogData = [], lang = 'pt' }: BlogProps) => {
 
   const handleTabChange = (tab: string) => {
     setSelectedTab(tab)
+    setVisibleCount(PAGE_SIZE)
   }
 
   // Filtragem de posts por termo de busca
@@ -338,22 +349,70 @@ const Blog = ({ blogData = [], lang = 'pt' }: BlogProps) => {
 
           {/* All Posts Tab */}
           <TabsContent value='All'>
-            {filterBySearch(displayPosts).length > 0 ? (
-              <BlogGrid posts={filterBySearch(displayPosts)} onCategoryClick={handleTabChange} lang={lang} />
-            ) : (
-              <div className='py-12 text-center text-muted-foreground'>
-                {labels.noArticlesFound} "{searchQuery}".
-              </div>
-            )}
+            {(() => {
+              const filteredAll = filterBySearch(displayPosts)
+              const visibleAll = filteredAll.slice(0, visibleCount)
+              const hasMore = visibleAll.length < filteredAll.length
+              return filteredAll.length > 0 ? (
+                <div className='space-y-10'>
+                  <BlogGrid posts={visibleAll} onCategoryClick={handleTabChange} lang={lang} />
+                  {(hasMore || archiveHref) && (
+                    <div className='flex flex-wrap items-center justify-center gap-4 pt-2'>
+                      {hasMore && (
+                        <Button variant='outline' size='lg' onClick={() => setVisibleCount(c => c + PAGE_SIZE)}>
+                          {labels.loadMore}
+                        </Button>
+                      )}
+                      {archiveHref && (
+                        <Button asChild size='lg'>
+                          <a href={archiveHref}>
+                            {labels.viewFullArchive}
+                            <ArrowRightIcon className='ml-2 size-4' />
+                          </a>
+                        </Button>
+                      )}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <div className='py-12 text-center text-muted-foreground'>
+                  {labels.noArticlesFound} "{searchQuery}".
+                </div>
+              )
+            })()}
           </TabsContent>
 
-          {/* Category-specific Tabs */}
+          {/* Category-specific Tabs (renderiza apenas a aba ativa para manter DOM leve) */}
           {PROJECT_CATEGORIES.map((category, index) => {
+            if (selectedTab !== category) {
+              return <TabsContent key={index} value={category} />
+            }
             const categoryPosts = filterBySearch(displayPosts.filter(post => post.category === category))
+            const visibleCategory = categoryPosts.slice(0, visibleCount)
+            const hasMoreCat = visibleCategory.length < categoryPosts.length
             return (
               <TabsContent key={index} value={category}>
                 {categoryPosts.length > 0 ? (
-                  <BlogGrid posts={categoryPosts} onCategoryClick={handleTabChange} lang={lang} />
+                  <div className='space-y-10'>
+                    <BlogGrid posts={visibleCategory} onCategoryClick={handleTabChange} lang={lang} />
+                    {(hasMoreCat || archiveHref) && (
+                      <div className='flex flex-wrap items-center justify-center gap-4 pt-2'>
+                        {hasMoreCat && (
+                          <Button variant='outline' size='lg' onClick={() => setVisibleCount(c => c + PAGE_SIZE)}>
+                            {labels.loadMore}
+                          </Button>
+                        )}
+                        {archiveHref && (
+                          <Button asChild size='lg'>
+                            <a href={`${archiveHref}?category=${encodeURIComponent(category)}`}>
+                              {labels.viewFullArchive}
+                              <ArrowRightIcon className='ml-2 size-4' />
+                            </a>
+                          </Button>
+                        )}
+                      </div>
+                    )}
+                  </div>
                 ) : (
                   renderEmptyCategory(category)
                 )}
