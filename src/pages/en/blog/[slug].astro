@@ -13,7 +13,7 @@ import {
 } from '@/components/ui/breadcrumb'
 import DynamicToc from '@/components/astro/DynamicToc.astro'
 import { AuthorMetadata } from '@/components/AuthorAvatar'
-import { getRelatedPosts, getPostNavigation, calculateReadTime, parsePubDate, extractFaqFromContent } from '@/utils/blog'
+import { getRelatedPosts, getPostNavigation, calculateReadTime, parsePubDate, extractFaqFromContent, resolveEditorialAuthor } from '@/utils/blog'
 import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
 
 import Blog from '@/components/blocks/blog-related-post/blog-related-post'
@@ -84,6 +84,7 @@ const { previous: previousPost, next: nextPost } = getPostNavigation(publishedPo
 
 // Calculate read time if not provided
 const readTime = entry.data.readTime || calculateReadTime(entry.body)
+const editorialAuthor = resolveEditorialAuthor(entry.data.author, entry.data.category)
 
 const siteUrl = Astro.site?.toString().replace(/\/$/, '') || 'https://ondaconecta.com.br'
 const postUrl = new URL(Astro.url.pathname, Astro.site).toString()
@@ -152,9 +153,9 @@ const schemaGraph: any[] = [
     author: [
       {
         '@type': 'Person',
-        name: entry.data.author || 'Redação Onda Conecta',
+        name: editorialAuthor.name,
         url: `${siteUrl}/quem-somos`,
-        jobTitle: 'Journalist & Editor',
+        jobTitle: editorialAuthor.jobTitle,
         worksFor: {
           '@type': 'NewsMediaOrganization',
           name: 'Onda Conecta'
@@ -203,7 +204,7 @@ const schema = {
   image={entry.data.imageUrl}
   type='article'
   publishedTime={isoPublishedDate}
-  author={entry.data.author}
+  author={editorialAuthor.name}
   schema={schema}
   alternateLinks={{
     pt: ptVersion ? `/blog/${baseSlug}` : undefined,
@@ -250,11 +251,11 @@ const schema = {
               <!-- Post Metadata -->
               <div class='flex flex-wrap justify-between gap-4'>
                 <div class='flex flex-wrap items-center gap-3'>
-                  <AuthorMetadata client:load avatarUrl={entry.data.avatarUrl} author={entry.data.author} />
+                  <AuthorMetadata client:load avatarUrl={entry.data.avatarUrl} author={editorialAuthor.name} />
                   <div class='flex flex-col gap-1'>
                     <span class='text-muted-foreground text-sm'>Published by</span>
                     <a href='/quem-somos#diretrizes-editoriais' class='text-foreground text-sm font-medium hover:text-primary transition-colors hover:underline'>
-                      {entry.data.author} · Editorial Board
+                      {editorialAuthor.name} · Editorial Board
                     </a>
                   </div>
                 </div>

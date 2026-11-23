@@ -140,7 +140,8 @@
       "Época Negócios",
       "Banco Central do Brasil"
     ],
-    "title": "Quando a IA Passa o Pix: A Chegada dos Agentes Autônomos ao Open Finance"
+    "title": "Quando a IA Passa o Pix: A Chegada dos Agentes Autônomos ao Open Finance",
+    "consolidatedInto": "open-finance-investimentos-inteligencia-artificial-rebalanceamento-brasil"
   },
   {
     "id": 42,
@@ -205,7 +206,8 @@
       "Exame ESG",
       "Canal Solar"
     ],
-    "title": "Capital da IA Verde? Como o Redata Transforma o Brasil no Hub dos Data Centers"
+    "title": "Capital da IA Verde? Como o Redata Transforma o Brasil no Hub dos Data Centers",
+    "consolidatedInto": "data-centers-verdes-clusters-ia-energia-limpa-brasil"
   },
   {
     "id": 55,
@@ -231,7 +233,8 @@
       "Viagem e Turismo (Abril)",
       "BeFly Travel"
     ],
-    "title": "A Arte de Silenciar o Mundo: Por Que o Hushpitality Virou o Novo Luxo"
+    "title": "A Arte de Silenciar o Mundo: Por Que o Hushpitality Virou o Novo Luxo",
+    "consolidatedInto": "astroturismo-noctourism-parques-ceu-escuro-hotelaria-estelar-brasil"
   },
   {
     "id": 61,
@@ -257,7 +260,8 @@
       "MIT Technology Review",
       "Startups.com.br"
     ],
-    "title": "A Virada dos SLMs: Por Que Menos Nuvem Significa Mais Lucro e Privacidade"
+    "title": "A Virada dos SLMs: Por Que Menos Nuvem Significa Mais Lucro e Privacidade",
+    "consolidatedInto": "small-language-models-slm-npu-ia-offline-empresas-brasil"
   },
   {
     "id": 67,
@@ -283,7 +287,8 @@
       "Harvard Health Publishing",
       "Anvisa"
     ],
-    "title": "Cloreto de Magnésio: O Segredo Mineral para Disposição e Noites Tranquilas"
+    "title": "Cloreto de Magnésio: O Segredo Mineral para Disposição e Noites Tranquilas",
+    "consolidatedInto": "cloreto-de-magnesio-pa-beneficios-saude-sono-2026"
   },
   {
     "id": 73,
@@ -311,7 +316,8 @@
       "The Guardian Travel",
       "Embratur"
     ],
-    "title": "Adeus Calor Extremo: Por Que o 'Coolcationing' e os Destinos de Serra Redefinem as Viagens de Luxo"
+    "title": "Adeus Calor Extremo: Por Que o 'Coolcationing' e os Destinos de Serra Redefinem as Viagens de Luxo",
+    "consolidatedInto": "coolcationing-turismo-clima-ameno-fuga-calor-viagens-brasil"
   },
   {
     "id": 79,
@@ -393,7 +399,8 @@
       "The Aesthetic Guide",
       "Sociedade Brasileira de Dermatologia (SBD)"
     ],
-    "title": "O Fim dos Rostos Artificiais? O PDRN e a Revolução da Quiet Beauty na Pele"
+    "title": "O Fim dos Rostos Artificiais? O PDRN e a Revolução da Quiet Beauty na Pele",
+    "consolidatedInto": "pdrn-dna-salmao-biorregeneracao-celular-estetica-pele-brasil"
   },
   {
     "id": 97,
@@ -477,7 +484,8 @@
       "Sebrae",
       "Project for Public Spaces"
     ],
-    "title": "Nem Casa, Nem Trabalho: Por Que a Renascença dos Terceiros Espaços Conquistou o Brasil"
+    "title": "Nem Casa, Nem Trabalho: Por Que a Renascença dos Terceiros Espaços Conquistou o Brasil",
+    "consolidatedInto": "terceiros-lugares-third-places-cafes-oficinas-convivio-brasil"
   },
   {
     "id": 115,
@@ -505,7 +513,8 @@
       "Panrotas",
       "Condé Nast Traveler"
     ],
-    "title": "Dormir Virou o Novo Luxo: A Ascensão do Turismo do Sono e dos Hotéis Circadianos"
+    "title": "Dormir Virou o Novo Luxo: A Ascensão do Turismo do Sono e dos Hotéis Circadianos",
+    "consolidatedInto": "sleep-tourism-turismo-do-sono-hotelaria-bem-estar-brasil"
   },
   {
     "id": 121,
@@ -591,7 +600,8 @@
       "Cosmetic Innovation",
       "Cosmetics & Toiletries"
     ],
-    "title": "O Fim do Ácido Hialurônico? Como a Ectoína Virou o Escudo Supremo da Barreira Cutânea"
+    "title": "O Fim do Ácido Hialurônico? Como a Ectoína Virou o Escudo Supremo da Barreira Cutânea",
+    "consolidatedInto": "peptideos-cobre-ghk-cu-ectoina-barreira-cutanea-brasil"
   },
   {
     "id": 139,
@@ -687,7 +697,8 @@
       "Sociedade Brasileira de Endocrinologia e Metabologia (SBEM)",
       "Anvisa"
     ],
-    "title": "As Funções do Magnésio no Corpo: Por que o Cloreto É Essencial"
+    "title": "As Funções do Magnésio no Corpo: Por que o Cloreto É Essencial",
+    "consolidatedInto": "cloreto-de-magnesio-pa-beneficios-saude-sono-2026"
   },
   {
     "id": 160,
@@ -755,7 +766,8 @@
       "Gartner Research",
       "TecMundo Inovação"
     ],
-    "title": "Menos Nuvem, Mais Borda: A Virada dos Modelos Pequenos de IA nas Empresas"
+    "title": "Menos Nuvem, Mais Borda: A Virada dos Modelos Pequenos de IA nas Empresas",
+    "consolidatedInto": "small-language-models-slm-npu-ia-offline-empresas-brasil"
   },
   {
     "id": 175,
@@ -783,7 +795,8 @@
       "Valor Investe",
       "E-Investidor Estadão"
     ],
-    "title": "A Virada do Open Investment: Como Carteiras Automatizadas e Algoritmos Redefinem a Caça a Dividendos"
+    "title": "A Virada do Open Investment: Como Carteiras Automatizadas e Algoritmos Redefinem a Caça a Dividendos",
+    "consolidatedInto": "open-finance-investimentos-inteligencia-artificial-rebalanceamento-brasil"
   },
   {
     "id": 181,
@@ -1170,7 +1183,8 @@
       "Embratur",
       "Ministério do Turismo"
     ],
-    "title": "Mais Céu, Menos Tela: Como o Astroturismo e os Parques Dark Sky Redefinem o Ecoturismo de Luxo"
+    "title": "Mais Céu, Menos Tela: Como o Astroturismo e os Parques Dark Sky Redefinem o Ecoturismo de Luxo",
+    "consolidatedInto": "astroturismo-noctourism-parques-ceu-escuro-hotelaria-estelar-brasil"
   },
   {
     "id": 265,
@@ -1198,7 +1212,8 @@
       "UNICA",
       "IATA"
     ],
-    "title": "A Corrida do SAF: Por que as Aéreas Globais Apostam no Etanol Brasileiro para Descarbonizar os Céus"
+    "title": "A Corrida do SAF: Por que as Aéreas Globais Apostam no Etanol Brasileiro para Descarbonizar os Céus",
+    "consolidatedInto": "saf-combustivel-sustentavel-aviacao-brasil"
   },
   {
     "id": 271,
@@ -1283,7 +1298,8 @@
       "Reconnect Happiness at Work",
       "International Stress Management Association (Isma-BR)"
     ],
-    "title": "Trabalhar Menos e Faturar Mais? Os Resultados Reais da Semana de 4 Dias no Brasil segundo a FGV"
+    "title": "Trabalhar Menos e Faturar Mais? Os Resultados Reais da Semana de 4 Dias no Brasil segundo a FGV",
+    "consolidatedInto": "semana-de-4-dias-trabalho-produtividade-burnout-empresas-brasil"
   },
   {
     "id": 289,
@@ -1453,7 +1469,8 @@
       "Agência Nacional de Aviação Civil (ANAC)",
       "Organização da Aviação Civil Internacional (OACI/ICAO)"
     ],
-    "title": "Do Campo para as Nuvens: Como o SAF de Etanol e o ProBioQAV Lideram a Aviação Verde"
+    "title": "Do Campo para as Nuvens: Como o SAF de Etanol e o ProBioQAV Lideram a Aviação Verde",
+    "consolidatedInto": "saf-combustivel-sustentavel-aviacao-brasil"
   },
   {
     "id": 325,
@@ -1667,7 +1684,8 @@
       "ABRADETI (Associação Brasileira de Data Centers)",
       "BloombergNEF"
     ],
-    "title": "A Meca dos Data Centers de IA: Como a Energia Limpa Colocou o Brasil no Topo Global"
+    "title": "A Meca dos Data Centers de IA: Como a Energia Limpa Colocou o Brasil no Topo Global",
+    "consolidatedInto": "data-centers-verdes-clusters-ia-energia-limpa-brasil"
   },
   {
     "id": 370,
@@ -1826,7 +1844,8 @@
       "B3 (Brasil, Bolsa, Balcão)",
       "Harvard Business Review"
     ],
-    "title": "O Fim da Diluição Precoce? Como o Venture Debt Virou a Alternativa Predileta das Startups no Brasil"
+    "title": "O Fim da Diluição Precoce? Como o Venture Debt Virou a Alternativa Predileta das Startups no Brasil",
+    "consolidatedInto": "venture-debt-credito-privado-startups-brasil"
   },
   {
     "id": 403,
@@ -1901,7 +1920,8 @@
       "Casa Vogue Brasil",
       "Estadão Cultura & Comportamento"
     ],
-    "title": "O Fim da Mesa de Bar? Como as Oficinas Manuais e os 'Third Places' Criativos Viraram o Novo Ponto de Encontro Urbano no Brasil"
+    "title": "O Fim da Mesa de Bar? Como as Oficinas Manuais e os 'Third Places' Criativos Viraram o Novo Ponto de Encontro Urbano no Brasil",
+    "consolidatedInto": "terceiros-lugares-third-places-cafes-oficinas-convivio-brasil"
   },
   {
     "id": 418,
@@ -1931,7 +1951,8 @@
       "Sociedade Brasileira de Computação (SBC)",
       "MIT Technology Review Brasil"
     ],
-    "title": "O Fim da Dependência Estrangeira? Como o Supercomputador Santos Dumont e o Plano Brasileiro de IA Impulsionam Modelos Soberanos"
+    "title": "O Fim da Dependência Estrangeira? Como o Supercomputador Santos Dumont e o Plano Brasileiro de IA Impulsionam Modelos Soberanos",
+    "consolidatedInto": "soberania-ia-chips-brasil-supercomputadores"
   },
   {
     "id": 424,
@@ -2169,7 +2190,8 @@
       "Harvard Business Review",
       "Consumidor Moderno"
     ],
-    "title": "O Fim da Espera dos 65 Anos: Como as Micro-Aposentadorias e Sabáticos Recorrentes Transformam Carreiras no Brasil"
+    "title": "O Fim da Espera dos 65 Anos: Como as Micro-Aposentadorias e Sabáticos Recorrentes Transformam Carreiras no Brasil",
+    "consolidatedInto": "micro-aposentadorias-pausas-sabaticas-geracao-z-millennials-carreira"
   },
   {
     "id": 472,
@@ -2293,7 +2315,8 @@
       "TrendWatching",
       "Serasa Experian"
     ],
-    "title": "A Ascensão do 'Loud Budgeting': Por Que Dizer Não a Gastos Virou Símbolo de Status e Maturidade"
+    "title": "A Ascensão do 'Loud Budgeting': Por Que Dizer Não a Gastos Virou Símbolo de Status e Maturidade",
+    "consolidatedInto": "loud-budgeting-transparencia-financeira-consumo-jovem-brasil"
   },
   {
     "id": 499,

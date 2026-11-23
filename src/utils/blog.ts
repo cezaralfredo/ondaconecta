@@ -130,6 +130,26 @@ export function parsePubDate(dateStr: string | Date | undefined): Date {
 }
 
 /**
+ * Resolve autoria nominal real E-E-A-T quando o frontmatter usa rótulo genérico da redação
+ */
+export function resolveEditorialAuthor(rawAuthor: string | undefined, category: string | undefined): { name: string; jobTitle: string } {
+  const normalized = (rawAuthor || '').trim()
+  const isGeneric =
+    !normalized ||
+    /^(Reda[çc][ãa]o|Redaci[oó]n|Onda Conecta Editorial Team)/i.test(normalized)
+
+  if (!isGeneric) {
+    return { name: normalized, jobTitle: 'Editor & Especialista' }
+  }
+
+  const techCategories = new Set(['Inovação & IA', 'Sustentabilidade', 'Saúde & Bem-estar', 'Estética & Beleza'])
+  if (category && techCategories.has(category)) {
+    return { name: 'Bernardo Neto', jobTitle: 'Tech Lead & Editor Técnico' }
+  }
+  return { name: 'Cezar Alfredo', jobTitle: 'Estrategista Digital & Editor-Chefe' }
+}
+
+/**
  * Seleciona os posts exibidos na Home (últimos N gerais + até K por categoria) para evitar HTML inchado e preservar Core Web Vitals
  */
 export function selectHomeBlogPosts<T extends { id: number; category: string }>(

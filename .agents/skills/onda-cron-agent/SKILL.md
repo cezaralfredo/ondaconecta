@@ -29,8 +29,9 @@ A skill monitora e publica matérias estratégicas nas seguintes verticais:
 
 Sempre que esta skill for invocada sob demanda ou disparada via timer/cron (`/schedule`):
 
-### 1. Seleção Inteligente de Categoria e Paridade (Round-Robin & 50/50)
-- **Consulta de Histórico:** O orquestrador lê `scripts/published-history.json` para inspecionar as publicações mais recentes.
+### 1. Seleção Inteligente de Categoria, Cadência e Paridade (Round-Robin & 50/50)
+- **Cadência Sustentável (Qualidade > Volume):** Durante consolidação de autoridade no Google Search Console, operar prioritariamente em **1 publicação de alta profundidade por dia** (evitando escala excessiva que dilui *crawl budget*), com alternância de categoria via Round-Robin.
+- **Consulta de Histórico:** O orquestrador lê `scripts/published-history.json` para inspecionar **todo** o histórico publicado (evitando qualquer repetição temática histórica).
 - **Critério de Balanceamento (Round-Robin):** Seleciona automaticamente a categoria que está há mais tempo sem publicação (a menos que o usuário especifique uma categoria manualmente).
 - **Alternância de Foco Editorial (50/50):** 
   - Se a publicação anterior teve foco **Nacional**, a rodada atual obrigatoriamente prioriza um acontecimento **Global com impacto no Brasil**.

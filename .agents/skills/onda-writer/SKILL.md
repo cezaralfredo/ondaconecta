@@ -122,6 +122,7 @@ Para garantir que cada matéria domine a SERP tradicional e seja citada por moto
     - **Extensão Mínima Anti-Thin Content:** Todo artigo deve ter extensão substantiva de **800 a 1.500+ palavras**, eliminando qualquer risco de penalização por *"Conteúdo de baixo valor"* ou classificação como thin content no Search Console.
     - **Demonstração E-E-A-T (Experiência, Especialidade, Autoridade e Confiabilidade):**
       - Nunca fazer afirmações vagas ou sem base factual. Toda tese deve ser ancorada em dados numéricos, percentuais, órgãos oficiais ou estudos comprovados.
+      - **Autoria Nominal Real:** Assinar sempre com um dos editores responsáveis (`Bernardo Neto` para *Inovação & IA*, *Sustentabilidade*, *Saúde & Bem-estar* e *Estética & Beleza*; `Cezar Alfredo` para *Mercado & Negócios*, *Finanças Pessoais*, *Tendências*, *Comportamento* e *Estilo de Vida & Viagens*), evitando assinatura genérica.
       - **Named Entity Recognition (NER):** Citar nomes próprios completos de entidades (empresas, leis, resoluções, universidades, personalidades e tecnologias) para indexação no Google Knowledge Graph e nos grafos de conhecimento das IAs.
     - **Hierarquia de Cabeçalhos Semântica e Perfeita:**
       - Apenas um `H1` por página (renderizado pelo layout).

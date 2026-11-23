@@ -27,7 +27,7 @@ description: '<Metadescrição atraente de 120 a 160 caracteres>'
 imageUrl: '<Caminho da imagem em /images/blog-post/... ou URL externa>'
 imageAlt: '<Texto alternativo descritivo para acessibilidade e SEO>'
 pubDate: '<Data por extenso ou legível, ex: 10 de Março de 2026>'
-author: 'Redação Onda Conecta'
+author: '<Cezar Alfredo ou Bernardo Neto>' # Autoria nominal E-E-A-T (evitar genérico "Redação Onda Conecta")
 avatarUrl: '/images/avatars/1.webp'
 category: '<Categoria Válida>'
 readTime: <tempo estimado em minutos, ex: 5>

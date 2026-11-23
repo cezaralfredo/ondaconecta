@@ -140,12 +140,12 @@ A curadoria deve manter um equilíbrio rigoroso de relevância entre os mercados
 
 ---
 
-## 2. Fila Estratégica de Pautas & Filtro Anti-Duplicidade
+## 2. Fila Estratégica de Pautas & Filtro Anti-Duplicidade Total (Zero Canibalização)
 
 Antes de aprovar ou formular qualquer nova pauta:
 1. **Consulte a Fila Estratégica de Pautas:** Verifique o arquivo `scripts/editorial-queue.json` para inspecionar pautas prioritárias já validadas e em espera por categoria.
-2. **Consulte o Histórico Publicado:** Leia `scripts/published-history.json` para verificar se o tema central, as palavras-chave principais ou o ângulo já foram abordados nos últimos **30 dias**.
-3. **Rejeite temas repetitivos:** Se for uma evolução de um caso anterior, destaque o **novo fato** como gancho obrigatório.
+2. **Consulte o Histórico Completo (100% — Sem Limite de 30 Dias):** Leia **todo** o arquivo `scripts/published-history.json` (incluindo entradas com `consolidatedInto`) para verificar se o tema central, a entidade principal ou o ângulo semântico **já foram publicados em qualquer época**.
+3. **Bloqueio Estrito de Canibalização:** Nunca crie um segundo artigo sobre o mesmo tema ou tecnologia já coberta (ex: SLMs, PDRN, Astroturismo, SAF, Third Places, Cloreto de Magnésio, Open Finance, Data Centers Verdes, etc.). Se houver um fato novo relevante de altíssimo impacto, o caminho padrão é atualizar o artigo canônico existente em vez de criar uma URL concorrente.
 
 ---
 
