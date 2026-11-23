@@ -106,9 +106,10 @@ Quando o usuário ou o orquestrador disparar a publicação:
 3. **Garantir a Capa Otimizada:**
    - Confirme a existência do arquivo de capa compartilhado em `public/images/blog-post/<slug>.webp`.
 
-4. **Validação do Build Local (Zero-Error Policy):**
-   - Execute no terminal: `npm run build`.
-   - Se o comando retornar código de saída diferente de 0, **interrompa o fluxo imediatamente**, identifique o erro de schema ou sintaxe no MDX e corrija antes de qualquer ação no Git.
+4. **Validação SEO & Build Local (Zero-Error Policy):**
+   - Execute `npm run seo:audit` (obrigatório) para validar links internos, `<ReadAlso>`, anti-canibalização, autoria nominal, mínimo de 800 palavras e existência de capa `.webp`.
+   - Quando `astro` estiver disponível localmente, execute também `npm run build && npm run seo:audit:dist`.
+   - Se qualquer auditoria retornar código de saída diferente de 0, **interrompa o fluxo imediatamente**, corrija o problema e nunca commite conteúdo fora do padrão. O GitHub Actions executará novamente `seo:audit` e `seo:audit:dist` antes de liberar o deploy em produção.
 
 5. **Deploy Contínuo via Git:**
    - Execute com segurança:

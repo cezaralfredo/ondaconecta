@@ -22,8 +22,14 @@ jobs:
       - name: 📦 Instalar dependências
         run: npm install --legacy-peer-deps
 
+      - name: 🛡️ Auditoria SEO Pré-Build (Links, Anti-Canibalização & E-E-A-T)
+        run: npm run seo:audit
+
       - name: 🏗️ Gerar Build estático do Astro
         run: npm run build
+
+      - name: 🔍 Auditoria SEO Pós-Build (Home Bloat, FAQPage & Sitemap)
+        run: npm run seo:audit:dist
 
       - name: 🚀 Sincronizar via FTP com public_html
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
