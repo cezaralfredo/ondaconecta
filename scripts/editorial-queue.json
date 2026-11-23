@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22T17:34:00-03:00",
+  "updatedAt": "2026-11-23T07:56:00-03:00",
   "description": "Fila estratégica de pautas prioritárias de alta conversão e audiência popular para o Onda Conecta, alimentadas por radares de vanguarda e inteligência de dados.",
   "categories": {
     "Inovação & IA": [
@@ -634,7 +634,7 @@
           "exportacao beleza natural"
         ],
         "suggestedSlug": "beleza-biodiversidade-ativos-amazonia-industria-cosmeticos-brasil",
-        "status": "pending"
+        "status": "published"
       },
       {
         "id": "QUEUE-EB-07",
@@ -783,7 +783,7 @@
           "viagens nacionais 2026"
         ],
         "suggestedSlug": "rotas-aereas-regionais-direitos-passageiro-anac-viagens-brasil",
-        "status": "pending"
+        "status": "published"
       },
       {
         "id": "QUEUE-EV-07",
@@ -1181,7 +1181,7 @@
           "consumo consciente descartaveis"
         ],
         "suggestedSlug": "economia-circular-embalagens-logistica-reversa-industria-brasil",
-        "status": "pending"
+        "status": "published"
       },
       {
         "id": "QUEUE-SU-07",

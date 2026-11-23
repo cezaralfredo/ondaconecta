@@ -2722,5 +2722,47 @@
       "Valor Econômico"
     ],
     "title": "R$ 755 Bilhões na Fábrica: Onde o Brasil Ganha Espaço na Reindustrialização e no Nearshoring"
+  },
+  {
+    "id": 592,
+    "slug": "beleza-biodiversidade-ativos-amazonia-industria-cosmeticos-brasil",
+    "category": "Estética & Beleza",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-11-23T09:30:00-03:00",
+    "sources": [
+      "ABIHPEC",
+      "Anvisa",
+      "G1 Beleza & Universa",
+      "Euromonitor International"
+    ],
+    "title": "R$ 200 Bilhões em Bioativos: Como a Biodiversidade Brasileira Conquista a Beleza Global"
+  },
+  {
+    "id": 595,
+    "slug": "economia-circular-embalagens-logistica-reversa-industria-brasil",
+    "category": "Sustentabilidade",
+    "focus": "Global com impacto no Brasil (50/50)",
+    "publishedAt": "2026-11-23T14:00:00-03:00",
+    "sources": [
+      "Fundação Ellen MacArthur",
+      "CicloVivo & Conexão Planeta",
+      "Folha de S.Paulo — Ambiente",
+      "ESG Today"
+    ],
+    "title": "22% de Plástico Reciclado: Como o Decreto 12.688 Muda as Embalagens no Brasil"
+  },
+  {
+    "id": 598,
+    "slug": "rotas-aereas-regionais-direitos-passageiro-anac-viagens-brasil",
+    "category": "Estilo de Vida & Viagens",
+    "focus": "Nacional (50/50)",
+    "publishedAt": "2026-11-23T18:00:00-03:00",
+    "sources": [
+      "ANAC",
+      "Ministério do Turismo",
+      "G1 Turismo e Viagem",
+      "Panrotas"
+    ],
+    "title": "99,6 Milhões de Passageiros: A Expansão das Rotas Regionais e Seus Direitos no Brasil"
   }
 ]
