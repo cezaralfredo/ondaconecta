@@ -63,7 +63,8 @@ export async function postArticleToTelegram(article) {
   }
 
   const langPrefix = article.lang === 'en' ? '/en' : article.lang === 'es' ? '/es' : ''
-  const postUrl = `${SITE_URL}${langPrefix}/blog/${article.slug}/`
+  const cleanSlug = (article.slug || '').replace(/-(en|es)$/, '')
+  const postUrl = `${SITE_URL}${langPrefix}/blog/${cleanSlug}`
 
   const fullImageUrl = article.imageUrl
     ? (article.imageUrl.startsWith('http') ? article.imageUrl : `${SITE_URL}${article.imageUrl}`)

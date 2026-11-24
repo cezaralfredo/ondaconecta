@@ -20,3 +20,17 @@ jobs:
 
       - name: 🩺 Verificar saúde SEO ao vivo em produção
         run: node scripts/live-seo-healthcheck.mjs
+
+      - name: ✅ Notificar Saúde SEO OK no Telegram (se configurado)
+        if: success()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_ADMIN_CHAT_ID: ${{ secrets.TELEGRAM_ADMIN_CHAT_ID || secrets.TELEGRAM_CHAT_ID }}
+        run: node scripts/notify-status.mjs --healthcheck-ok
+
+      - name: 🚨 Alerta Imediato de Queda ou Regressão SEO em Produção
+        if: failure()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_ADMIN_CHAT_ID: ${{ secrets.TELEGRAM_ADMIN_CHAT_ID || secrets.TELEGRAM_CHAT_ID }}
+        run: node scripts/notify-status.mjs --error "Alerta crítico: O monitor live-seo-healthcheck.mjs detectou uma falha nas rotas ou no SEO ao vivo em https://ondaconecta.com.br."

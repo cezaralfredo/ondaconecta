@@ -47,3 +47,24 @@ jobs:
       - name: ⚡ Notificar motores de busca via IndexNow (Bing / Yandex)
         run: node scripts/submit-indexnow.mjs
 
+      - name: 📢 Publicar novidade no canal do Telegram (se configurado)
+        if: success()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID || '@ondaconecta' }}
+        run: node scripts/telegram-publisher.mjs --latest
+
+      - name: ✅ Notificar Sucesso Operacional no Telegram (se configurado)
+        if: success()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_ADMIN_CHAT_ID: ${{ secrets.TELEGRAM_ADMIN_CHAT_ID || secrets.TELEGRAM_CHAT_ID }}
+        run: node scripts/notify-status.mjs --success
+
+      - name: 🚨 Notificar Falha ou Erro de Build/SEO no Telegram (Circuit Breaker)
+        if: failure()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_ADMIN_CHAT_ID: ${{ secrets.TELEGRAM_ADMIN_CHAT_ID || secrets.TELEGRAM_CHAT_ID }}
+        run: node scripts/notify-status.mjs --error "Falha na pipeline GitHub Actions (Deploy via FTP / Auditoria SEO). Verifique a aba Actions do repositório."
+
