@@ -73,18 +73,51 @@ function getEditorialStats() {
   return { latest, totalPublished, pendingCount }
 }
 
+async function resolveTargetChatId(rawChatId) {
+  if (!rawChatId) return '@ondaconecta'
+  // Se já for um ID numérico ou o canal público @ondaconecta, testa/usa diretamente
+  if (/^-?\d+$/.test(rawChatId) || rawChatId.toLowerCase() === '@ondaconecta') {
+    return rawChatId
+  }
+
+  // Para contas pessoais (@cezaralfredo) ou se o usuário colocou o @ do próprio bot,
+  // consulta getUpdates para descobrir automaticamente o chat_id numérico privado após o /start
+  try {
+    const res = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/getUpdates`)
+    const data = await res.json()
+    if (data.ok && Array.isArray(data.result)) {
+      const cleanUsername = rawChatId.replace(/^@/, '').toLowerCase()
+      for (const upd of [...data.result].reverse()) {
+        const chat = upd.message?.chat || upd.my_chat_member?.chat
+        if (!chat) continue
+        if (chat.username && chat.username.toLowerCase() === cleanUsername) {
+          return String(chat.id)
+        }
+        if (chat.type === 'private' && chat.id) {
+          return String(chat.id)
+        }
+      }
+    }
+  } catch (_) {}
+
+  // Fallback seguro para o canal @ondaconecta enquanto o usuário ainda não enviou /start no privado do bot
+  return '@ondaconecta'
+}
+
 async function sendTelegramAlert(htmlText) {
   if (!BOT_TOKEN || !ADMIN_CHAT_ID) {
     console.log('ℹ️ [Notify Status] TELEGRAM_BOT_TOKEN / TELEGRAM_ADMIN_CHAT_ID não configurados. Alerta registrado apenas no console.')
     return { sent: false, reason: 'missing_credentials' }
   }
 
+  const resolvedChatId = await resolveTargetChatId(ADMIN_CHAT_ID)
+
   try {
     const res = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        chat_id: ADMIN_CHAT_ID,
+        chat_id: resolvedChatId,
         text: htmlText,
         parse_mode: 'HTML',
         disable_web_page_preview: false
@@ -95,8 +128,8 @@ async function sendTelegramAlert(htmlText) {
       console.error('❌ [Notify Status] Falha na API do Telegram:', data.description || data)
       return { sent: false, error: data }
     }
-    console.log('✅ [Notify Status] Notificação enviada ao Telegram com sucesso!')
-    return { sent: true, messageId: data.result?.message_id }
+    console.log(`✅ [Notify Status] Notificação enviada ao Telegram (${resolvedChatId}) com sucesso!`)
+    return { sent: true, messageId: data.result?.message_id, chatId: resolvedChatId }
   } catch (err) {
     console.error('❌ [Notify Status] Erro de rede ao contatar Telegram:', err.message)
     return { sent: false, error: err.message }
