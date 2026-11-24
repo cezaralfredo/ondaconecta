@@ -16,38 +16,65 @@ const languages = [
   { code: 'es', label: 'Español', flag: '🇪🇸', prefix: '/es' }
 ]
 
-export const LanguageSwitcher = () => {
-  const [currentLang, setCurrentLang] = useState('pt')
+interface LanguageSwitcherProps {
+  initialLang?: 'pt' | 'en' | 'es'
+}
+
+export const LanguageSwitcher = ({ initialLang = 'pt' }: LanguageSwitcherProps) => {
+  const [currentLang, setCurrentLang] = useState<'pt' | 'en' | 'es'>(initialLang)
 
   useEffect(() => {
-    const path = window.location.pathname
-    if (path.startsWith('/en')) {
-      setCurrentLang('en')
-    } else if (path.startsWith('/es')) {
-      setCurrentLang('es')
-    } else {
-      setCurrentLang('pt')
+    const syncLang = () => {
+      const path = window.location.pathname
+      if (path.startsWith('/en')) {
+        setCurrentLang('en')
+      } else if (path.startsWith('/es')) {
+        setCurrentLang('es')
+      } else {
+        setCurrentLang('pt')
+      }
+    }
+
+    syncLang()
+    document.addEventListener('astro:page-load', syncLang)
+    window.addEventListener('popstate', syncLang)
+    return () => {
+      document.removeEventListener('astro:page-load', syncLang)
+      window.removeEventListener('popstate', syncLang)
     }
   }, [])
 
+  const navigateWithCacheBust = (targetUrl: string, forceReloadCache = false) => {
+    if (forceReloadCache && typeof window.fetch === 'function') {
+      fetch(targetUrl, { cache: 'reload' })
+        .catch(() => {})
+        .finally(() => {
+          window.location.href = targetUrl
+        })
+      return
+    }
+    window.location.href = targetUrl
+  }
+
   const switchLanguage = (targetCode: string) => {
     const currentPath = window.location.pathname
+    const currentSearch = window.location.search || ''
     // Remove qualquer prefixo existente (/en ou /es)
     let cleanPath = currentPath.replace(/^\/(en|es)(\/|$)/, '/')
 
     // Se estiver em um post de blog, normaliza removendo sufixos legados (-en ou -es)
     cleanPath = cleanPath.replace(/(\/blog\/[^\/]+)-(en|es)(\/|$)/, '$1$3')
 
-    // Mapeamento de rotas de categorias
+    // Mapeamento de rotas de categorias (preservando filtro ?category= se houver)
     if (cleanPath.startsWith('/categories') || cleanPath.startsWith('/categorias')) {
       if (targetCode === 'en') {
-        window.location.href = '/en/categories'
+        navigateWithCacheBust(`/en/categories${currentSearch}`)
         return
       } else if (targetCode === 'es') {
-        window.location.href = '/es/categorias'
+        navigateWithCacheBust(`/es/categorias${currentSearch}`)
         return
       } else {
-        window.location.href = '/categorias'
+        navigateWithCacheBust(`/categorias${currentSearch}`, true)
         return
       }
     }
@@ -55,13 +82,13 @@ export const LanguageSwitcher = () => {
     // Mapeamento de rotas de ferramentas
     if (cleanPath.startsWith('/tools') || cleanPath.startsWith('/herramientas') || cleanPath.startsWith('/ferramentas')) {
       if (targetCode === 'en') {
-        window.location.href = '/en/tools'
+        navigateWithCacheBust('/en/tools')
         return
       } else if (targetCode === 'es') {
-        window.location.href = '/es/herramientas'
+        navigateWithCacheBust('/es/herramientas')
         return
       } else {
-        window.location.href = '/ferramentas'
+        navigateWithCacheBust('/ferramentas')
         return
       }
     }
@@ -73,10 +100,13 @@ export const LanguageSwitcher = () => {
       newUrl = `/es${cleanPath.startsWith('/') ? cleanPath : '/' + cleanPath}`
     }
 
-    // Normaliza barras duplicadas
+    // Normaliza barras duplicadas e remove barra final exceto na raiz
     newUrl = newUrl.replace(/\/{2,}/g, '/')
+    if (newUrl.length > 1 && newUrl.endsWith('/')) {
+      newUrl = newUrl.slice(0, -1)
+    }
 
-    window.location.href = newUrl
+    navigateWithCacheBust(`${newUrl}${currentSearch}`, targetCode === 'pt')
   }
 
   const activeLang = languages.find(l => l.code === currentLang) || languages[0]

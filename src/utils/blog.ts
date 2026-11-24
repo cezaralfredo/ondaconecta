@@ -1,5 +1,6 @@
 // Utility functions for blog posts
 import type { CollectionEntry } from 'astro:content'
+import { normalizeCategory } from '@/consts'
 
 /**
  * Calculate read time based on word count
@@ -24,14 +25,17 @@ export function getRelatedPosts(
   limit: number = 6,
   currentLang?: string
 ): CollectionEntry<'blog'>[] {
-  // Filtra primeiro pelo mesmo idioma para não misturar traduções
-  const langFilteredPosts = currentLang
+  // Filtra primeiro pelo mesmo idioma para não misturar traduções e ordena pelos mais recentes
+  const langFilteredPosts = (currentLang
     ? posts.filter(post => (post.data.lang || 'pt') === currentLang)
     : posts
+  ).sort((a, b) => (b.data.id || 0) - (a.data.id || 0))
+
+  const normalizedCurrent = normalizeCategory(currentCategory)
 
   // First try to get posts from same category
   const sameCategoryPosts = langFilteredPosts.filter(
-    post => post.data.category === currentCategory && post.id !== currentSlug
+    post => normalizeCategory(post.data.category) === normalizedCurrent && post.id !== currentSlug
   )
 
   // If we have enough posts from same category, use them
@@ -41,7 +45,7 @@ export function getRelatedPosts(
 
   // If not enough posts from same category, fill with other posts of the same language
   const otherPosts = langFilteredPosts.filter(
-    post => post.data.category !== currentCategory && post.id !== currentSlug
+    post => normalizeCategory(post.data.category) !== normalizedCurrent && post.id !== currentSlug
   )
 
   return [...sameCategoryPosts, ...otherPosts].slice(0, limit)
@@ -142,8 +146,9 @@ export function resolveEditorialAuthor(rawAuthor: string | undefined, category: 
     return { name: normalized, jobTitle: 'Editor & Especialista' }
   }
 
+  const canonicalCat = normalizeCategory(category)
   const techCategories = new Set(['Inovação & IA', 'Sustentabilidade', 'Saúde & Bem-estar', 'Estética & Beleza'])
-  if (category && techCategories.has(category)) {
+  if (techCategories.has(canonicalCat)) {
     return { name: 'Bernardo Neto', jobTitle: 'Tech Lead & Editor Técnico' }
   }
   return { name: 'Cezar Alfredo', jobTitle: 'Estrategista Digital & Editor-Chefe' }

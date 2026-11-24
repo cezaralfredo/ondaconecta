@@ -18,12 +18,14 @@ import Logo from '@/components/logo'
 
 type HeaderProps = {
   navigationData: NavigationSection[]
+  lang?: 'pt' | 'en' | 'es'
   className?: string
 }
 
-const Header = ({ navigationData, className }: HeaderProps) => {
+const Header = ({ navigationData, lang = 'pt', className }: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
+  const [currentLang, setCurrentLang] = useState<'pt' | 'en' | 'es'>(lang)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -76,21 +78,29 @@ const Header = ({ navigationData, className }: HeaderProps) => {
   }, [activeSection])
 
   useLayoutEffect(() => {
-    // Update activeSection based on the current route using window.location.pathname
-    const path = window.location.pathname
+    const syncRouteState = () => {
+      const path = window.location.pathname
+      if (path.startsWith('/en')) setCurrentLang('en')
+      else if (path.startsWith('/es')) setCurrentLang('es')
+      else setCurrentLang('pt')
 
-    setTimeout(() => {
       if (path === '/' || path === '/en' || path === '/es') {
         setActiveSection('home')
-      } else if (path.startsWith('/blog/')) {
-        setActiveSection('') // Don't show any active state on blog post pages
-      } else if (path.startsWith('/contact')) {
-        setActiveSection('') // Don't show any active state on contact page
       } else {
-        setActiveSection('') // Default case for other routes
+        setActiveSection('')
       }
-    }, 0)
+    }
+
+    syncRouteState()
+    document.addEventListener('astro:page-load', syncRouteState)
+    window.addEventListener('popstate', syncRouteState)
+    return () => {
+      document.removeEventListener('astro:page-load', syncRouteState)
+      window.removeEventListener('popstate', syncRouteState)
+    }
   }, [])
+
+  const homeHref = currentLang === 'en' ? '/en' : currentLang === 'es' ? '/es' : '/'
 
   return (
     <header
@@ -104,7 +114,7 @@ const Header = ({ navigationData, className }: HeaderProps) => {
     >
       <div className='mx-auto flex h-full max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-8'>
         {/* Logo */}
-        <a href='/' className='flex items-center'>
+        <a href={homeHref} className='flex items-center'>
           <Logo />
         </a>
 
@@ -113,7 +123,7 @@ const Header = ({ navigationData, className }: HeaderProps) => {
 
         {/* Actions */}
         <div className='flex items-center gap-2 sm:gap-3'>
-          <LanguageSwitcher />
+          <LanguageSwitcher initialLang={currentLang} />
           <ThemeToggle />
 
           {/* Navigation for small screens */}

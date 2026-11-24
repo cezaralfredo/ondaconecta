@@ -48,6 +48,7 @@ export default defineConfig({
         if (page.includes('/admin/') || page.includes('/private/') || page.includes('/404')) return false
 
         // Exclui URLs legadas de redirecionamento (nunca devem constar no sitemap segundo as diretrizes do Google Search Console)
+        // IMPORTANTE: /categorias e /ferramentas são páginas canônicas PT-BR (200 OK) e devem permanecer no sitemap
         const redirectPages = [
           '/about',
           '/sobre',
@@ -56,7 +57,6 @@ export default defineConfig({
           '/privacy',
           '/terms',
           '/categories',
-          '/categorias',
           '/inteligencia-artificial',
           '/solucoes-ia'
         ]
@@ -128,12 +128,31 @@ export default defineConfig({
             ]
           }
         }
-        // Categorias e ferramentas
-        else if (path.includes('/categories') || path.includes('/categorias') || path.includes('/tools') || path.includes('/herramientas') || path.includes('/ferramentas')) {
+        // Categorias multilíngues canônicas (/categorias, /en/categories, /es/categorias)
+        else if (path === '/categorias' || path === '/en/categories' || path === '/es/categorias') {
+          // @ts-expect-error - Valid sitemap changefreq value
+          item.changefreq = 'daily'
+          item.priority = 0.8
+          item.lastmod = new Date()
+          item.links = [
+            { lang: 'pt-BR', url: 'https://ondaconecta.com.br/categorias' },
+            { lang: 'en', url: 'https://ondaconecta.com.br/en/categories' },
+            { lang: 'es', url: 'https://ondaconecta.com.br/es/categorias' },
+            { lang: 'x-default', url: 'https://ondaconecta.com.br/categorias' }
+          ]
+        }
+        // Ferramentas multilíngues canônicas (/ferramentas, /en/tools, /es/herramientas)
+        else if (path === '/ferramentas' || path === '/en/tools' || path === '/es/herramientas') {
           // @ts-expect-error - Valid sitemap changefreq value
           item.changefreq = 'weekly'
           item.priority = 0.7
           item.lastmod = new Date('2026-11-10T08:00:00-03:00')
+          item.links = [
+            { lang: 'pt-BR', url: 'https://ondaconecta.com.br/ferramentas' },
+            { lang: 'en', url: 'https://ondaconecta.com.br/en/tools' },
+            { lang: 'es', url: 'https://ondaconecta.com.br/es/herramientas' },
+            { lang: 'x-default', url: 'https://ondaconecta.com.br/ferramentas' }
+          ]
         }
         // Demais páginas institucionais canônicas (Quem Somos, Contato, etc.)
         else {

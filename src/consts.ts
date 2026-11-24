@@ -162,3 +162,87 @@ export const PROJECT_CATEGORIES = [
 
 export type ProjectCategory = (typeof PROJECT_CATEGORIES)[number]
 
+const CATEGORY_ALIAS_MAP: Record<string, ProjectCategory> = {
+  'Inovação & IA': 'Inovação & IA',
+  'Innovation & AI': 'Inovação & IA',
+  'Innovación e IA': 'Inovação & IA',
+  'Mercado & Negócios': 'Mercado & Negócios',
+  'Market & Business': 'Mercado & Negócios',
+  'Business & Markets': 'Mercado & Negócios',
+  'Mercado y Negocios': 'Mercado & Negócios',
+  'Mercados y Negocios': 'Mercado & Negócios',
+  'Finanças Pessoais': 'Finanças Pessoais',
+  'Personal Finance': 'Finanças Pessoais',
+  'Finanzas Personales': 'Finanças Pessoais',
+  'Saúde & Bem-estar': 'Saúde & Bem-estar',
+  'Health & Wellness': 'Saúde & Bem-estar',
+  'Salud y Bienestar': 'Saúde & Bem-estar',
+  'Estética & Beleza': 'Estética & Beleza',
+  'Beauty & Aesthetics': 'Estética & Beleza',
+  'Estética y Belleza': 'Estética & Beleza',
+  'Estética & Belleza': 'Estética & Beleza',
+  'Belleza y Estética': 'Estética & Beleza',
+  'Estilo de Vida & Viagens': 'Estilo de Vida & Viagens',
+  'Lifestyle & Travel': 'Estilo de Vida & Viagens',
+  'Estilo de Vida y Viajes': 'Estilo de Vida & Viagens',
+  'Tendências': 'Tendências',
+  'Trends': 'Tendências',
+  'Tendencias': 'Tendências',
+  'Sustentabilidade': 'Sustentabilidade',
+  'Sustainability': 'Sustentabilidade',
+  'Sostenibilidad': 'Sustentabilidade',
+  'Comportamento': 'Comportamento',
+  'Behavior & Culture': 'Comportamento',
+  'Comportamiento': 'Comportamento',
+  'Comportamiento y Cultura': 'Comportamento'
+}
+
+export const CATEGORY_LABELS: Record<'pt' | 'en' | 'es', Record<ProjectCategory, string>> = {
+  pt: {
+    'Inovação & IA': 'Inovação & IA',
+    'Mercado & Negócios': 'Mercado & Negócios',
+    'Finanças Pessoais': 'Finanças Pessoais',
+    'Saúde & Bem-estar': 'Saúde & Bem-estar',
+    'Estética & Beleza': 'Estética & Beleza',
+    'Estilo de Vida & Viagens': 'Estilo de Vida & Viagens',
+    'Tendências': 'Tendências',
+    'Sustentabilidade': 'Sustentabilidade',
+    'Comportamento': 'Comportamento'
+  },
+  en: {
+    'Inovação & IA': 'Innovation & AI',
+    'Mercado & Negócios': 'Market & Business',
+    'Finanças Pessoais': 'Personal Finance',
+    'Saúde & Bem-estar': 'Health & Wellness',
+    'Estética & Beleza': 'Beauty & Aesthetics',
+    'Estilo de Vida & Viagens': 'Lifestyle & Travel',
+    'Tendências': 'Trends',
+    'Sustentabilidade': 'Sustainability',
+    'Comportamento': 'Behavior & Culture'
+  },
+  es: {
+    'Inovação & IA': 'Innovación e IA',
+    'Mercado & Negócios': 'Mercados y Negocios',
+    'Finanças Pessoais': 'Finanzas Personales',
+    'Saúde & Bem-estar': 'Salud y Bienestar',
+    'Estética & Beleza': 'Estética y Belleza',
+    'Estilo de Vida & Viagens': 'Estilo de Vida y Viajes',
+    'Tendências': 'Tendencias',
+    'Sustentabilidade': 'Sostenibilidad',
+    'Comportamento': 'Comportamiento'
+  }
+}
+
+export function normalizeCategory(rawCategory: string | undefined): ProjectCategory {
+  if (!rawCategory) return 'Tendências'
+  const trimmed = rawCategory.trim()
+  return CATEGORY_ALIAS_MAP[trimmed] || 'Tendências'
+}
+
+export function getCategoryLabel(rawCategory: string | undefined, lang: string = 'pt'): string {
+  const canonical = normalizeCategory(rawCategory)
+  const localeKey = lang === 'en' ? 'en' : lang === 'es' ? 'es' : 'pt'
+  return CATEGORY_LABELS[localeKey][canonical] || canonical
+}
+
+

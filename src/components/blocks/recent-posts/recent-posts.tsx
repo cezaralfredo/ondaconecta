@@ -4,6 +4,7 @@ import { ArrowRightIcon, CalendarDaysIcon, SparklesIcon } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { CardContent } from '@/components/ui/card'
+import { getCategoryLabel } from '@/consts'
 import type { BlogPost } from '@/components/blocks/blog-component/blog-component'
 
 interface RecentPostsProps {
@@ -101,7 +102,7 @@ export const RecentPosts = ({
 
             return (
               <a
-                key={post.id}
+                key={post.slug || post.id}
                 href={postHref}
                 className='group flex flex-col h-full overflow-hidden rounded-2xl border bg-card transition-all duration-300 hover:border-primary/50 hover:shadow-lg'
               >
@@ -115,7 +116,7 @@ export const RecentPosts = ({
                   />
                   <div className='absolute top-3 left-3'>
                     <span className='rounded-md bg-background/90 backdrop-blur-sm px-2.5 py-1 text-xs font-semibold text-primary shadow-sm'>
-                      {post.category}
+                      {getCategoryLabel(post.category, lang)}
                     </span>
                   </div>
                 </div>

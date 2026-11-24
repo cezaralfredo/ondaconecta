@@ -6,7 +6,8 @@ import HeroSection from '@/components/blocks/hero-section/hero-section'
 import RecentPosts from '@/components/blocks/recent-posts/recent-posts'
 import Blog from '@/components/blocks/blog-component/blog-component'
 import AdSenseBanner from '@/components/astro/AdSenseBanner.astro'
-import { selectHomeBlogPosts } from '@/utils/blog'
+import { normalizeCategory } from '@/consts'
+import { resolveEditorialAuthor } from '@/utils/blog'
 
 // Get all posts for English (or fallback to all if en posts are still being populated)
 const allPosts = await getCollection('blog')
@@ -16,22 +17,17 @@ const postsToShow = enPosts.length > 0 ? enPosts : allPosts
 const allBlogPosts = postsToShow
   .map((post, index) => ({
     id: post.data.id || index + 1,
-    slug: post.data.slug || post.id,
+    slug: (post.data.translationOf || post.data.slug || post.id).replace(/-(en|es)$/, ''),
     title: post.data.title,
     description: post.data.description,
     imageUrl: post.data.imageUrl || '/images/blog-post/post-1.webp',
-    imageAlt: post.data.imageAlt || post.data.title,
     pubDate: post.data.pubDate,
-    category: post.data.category,
-    author: post.data.author,
-    avatarUrl: post.data.avatarUrl || '/images/avatars/post-1.webp',
-    readTime: post.data.readTime || 5,
-    featured: post.data.featured || false
+    category: normalizeCategory(post.data.category),
+    author: resolveEditorialAuthor(post.data.author, post.data.category).name
   }))
   .sort((a, b) => b.id - a.id)
 
 const latestFourPosts = allBlogPosts.slice(0, 4)
-const homeBlogPosts = selectHomeBlogPosts(allBlogPosts)
 
 const pageTitle = 'Global Trends, Breaking News & Market Innovations'
 const pageDescription =
@@ -65,5 +61,5 @@ const schema = {
     <AdSenseBanner />
   </div>
 
-  <Blog blogData={homeBlogPosts} lang='en' archiveHref='/en/categories' client:load />
+  <Blog blogData={allBlogPosts} lang='en' archiveHref='/en/categories' client:load />
 </Layout>

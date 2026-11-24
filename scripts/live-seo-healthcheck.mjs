@@ -33,6 +33,27 @@ async function main() {
     }
   }
 
+  // 1b. Canonical PT-BR pages must return 200 directly (never 301 to /es or /en) and render in pt-BR
+  for (const ptRoute of ['/categorias', '/ferramentas', '/quem-somos', '/contato', '/servicos-ia']) {
+    const manualRes = await fetchStatus(`${BASE}${ptRoute}`, 'manual')
+    if (manualRes.status !== 200) {
+      errors.push(`Expected direct 200 on PT-BR route ${ptRoute}, got ${manualRes.status} (location: "${manualRes.location}")`)
+      continue
+    }
+    const followRes = await fetchStatus(`${BASE}${ptRoute}`, 'follow')
+    if (!followRes.body.includes('lang="pt-BR"')) {
+      errors.push(`PT-BR route ${ptRoute} is not rendering with lang="pt-BR"`)
+    }
+    console.log(`OK PT-BR ${ptRoute} -> 200 (lang="pt-BR")`)
+  }
+
+  const sitemapRes = await fetchStatus(`${BASE}/sitemap-0.xml`, 'follow')
+  if (sitemapRes.status !== 200 || !sitemapRes.body.includes('<loc>https://ondaconecta.com.br/categorias</loc>')) {
+    errors.push('Live sitemap-0.xml is missing <loc>https://ondaconecta.com.br/categorias</loc>')
+  } else {
+    console.log('OK sitemap-0.xml includes https://ondaconecta.com.br/categorias')
+  }
+
   // 2. Canonical 301 redirects (www, trailing slash, consolidated sample)
   const redirectChecks = [
     ['https://www.ondaconecta.com.br/', 'https://ondaconecta.com.br/'],

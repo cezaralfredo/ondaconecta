@@ -9,25 +9,22 @@ import OneSignal from '@/components/astro/OneSignal.astro'
 import Header from '@/components/layout/header'
 import Footer from '@/components/layout/footer'
 import CookieConsent from '@/components/astro/CookieConsent.astro'
+import { PROJECT_CATEGORIES, getCategoryLabel } from '@/consts'
 
 import type { NavigationSection } from '@/components/blocks/menu-navigation'
 
 const isEn = Astro.currentLocale === 'en'
 const isEs = Astro.currentLocale === 'es'
+const localeCode: 'pt' | 'en' | 'es' = isEn ? 'en' : isEs ? 'es' : 'pt'
 
 const categoryPrefix = isEn ? '/en/categories' : isEs ? '/es/categorias' : '/categorias'
 const categoryParamPrefix = isEn ? '/en/categories?category=' : isEs ? '/es/categorias?category=' : '/categorias?category='
 
 const categorySubmenu = [
-  { title: isEn ? 'Inovação & IA' : isEs ? 'Innovación e IA' : 'Inovação & IA', href: `${categoryParamPrefix}${encodeURIComponent('Inovação & IA')}` },
-  { title: isEn ? 'Mercado & Negócios' : isEs ? 'Mercados y Negocios' : 'Mercado & Negócios', href: `${categoryParamPrefix}${encodeURIComponent('Mercado & Negócios')}` },
-  { title: isEn ? 'Finanças Pessoais' : isEs ? 'Finanzas Personales' : 'Finanças Pessoais', href: `${categoryParamPrefix}${encodeURIComponent('Finanças Pessoais')}` },
-  { title: isEn ? 'Saúde & Bem-estar' : isEs ? 'Salud y Bienestar' : 'Saúde & Bem-estar', href: `${categoryParamPrefix}${encodeURIComponent('Saúde & Bem-estar')}` },
-  { title: isEn ? 'Estética & Beleza' : isEs ? 'Estética y Belleza' : 'Estética & Beleza', href: `${categoryParamPrefix}${encodeURIComponent('Estética & Beleza')}` },
-  { title: isEn ? 'Estilo de Vida & Viagens' : isEs ? 'Estilo de Vida y Viajes' : 'Estilo de Vida & Viagens', href: `${categoryParamPrefix}${encodeURIComponent('Estilo de Vida & Viagens')}` },
-  { title: isEn ? 'Tendências' : isEs ? 'Tendencias' : 'Tendências', href: `${categoryParamPrefix}${encodeURIComponent('Tendências')}` },
-  { title: isEn ? 'Sustentabilidade' : isEs ? 'Sostenibilidad' : 'Sustentabilidade', href: `${categoryParamPrefix}${encodeURIComponent('Sustentabilidade')}` },
-  { title: isEn ? 'Comportamento' : isEs ? 'Comportamiento' : 'Comportamento', href: `${categoryParamPrefix}${encodeURIComponent('Comportamento')}` },
+  ...PROJECT_CATEGORIES.map(cat => ({
+    title: getCategoryLabel(cat, localeCode),
+    href: `${categoryParamPrefix}${encodeURIComponent(cat)}`
+  })),
   { title: isEn ? '⚡ All Categories' : isEs ? '⚡ Todas las Categorías' : '⚡ Todas as Categorias', href: categoryPrefix }
 ]
 
@@ -130,6 +127,43 @@ const currentLang = Astro.currentLocale === 'en' ? 'en' : Astro.currentLocale ==
 
         // Re-apply theme on Astro page transitions
         document.addEventListener('astro:page-load', applyTheme)
+
+        // Auto-cura de cache 301 legado de /categorias -> /es/categorias nos navegadores dos leitores
+        try {
+          const path = window.location.pathname.replace(/\/$/, '')
+          const search = window.location.search || ''
+
+          // 1. Se o navegador caiu em /es/categorias vindo de uma página em Português (por cache 301 antigo),
+          // revalida /categorias direto no servidor (cache: 'reload') e redireciona imediatamente para a página PT-BR
+          if (path === '/es/categorias' && document.referrer) {
+            const refUrl = new URL(document.referrer)
+            const refPath = refUrl.pathname.replace(/\/$/, '')
+            const cameFromPtPage =
+              refUrl.origin === window.location.origin &&
+              !refPath.startsWith('/es') &&
+              !refPath.startsWith('/en') &&
+              refPath !== '/categorias'
+
+            if (cameFromPtPage && !sessionStorage.getItem('onda_pt_cat_recovered')) {
+              sessionStorage.setItem('onda_pt_cat_recovered', '1')
+              const targetPt = '/categorias' + search
+              fetch(targetPt, { cache: 'reload' })
+                .catch(function () {})
+                .finally(function () {
+                  window.location.replace(targetPt)
+                })
+              return
+            }
+          } else {
+            sessionStorage.removeItem('onda_pt_cat_recovered')
+          }
+
+          // 2. Invalida silenciosamente em background qualquer 301 antigo de /categorias no cache HTTP do navegador
+          if (localStorage.getItem('onda_pt_cat_cache_v2') !== '1') {
+            localStorage.setItem('onda_pt_cat_cache_v2', '1')
+            fetch('/categorias', { cache: 'reload' }).catch(function () {})
+          }
+        } catch (e) {}
       })()
     </script>
     <style>
@@ -144,12 +178,12 @@ const currentLang = Astro.currentLocale === 'en' ? 'en' : Astro.currentLocale ==
   <body class='flex min-h-full w-full flex-auto flex-col'>
     <div class='flex flex-col'>
       {/* Header Section */}
-      <Header navigationData={navigationData} client:load />
+      <Header navigationData={navigationData} lang={localeCode} client:load />
 
       <main class='flex flex-col *:scroll-mt-15.5'><slot /></main>
 
       {/* Footer Section */}
-      <Footer client:load />
+      <Footer lang={localeCode} client:load />
     </div>
 
     {/* Cookie Consent Banner (LGPD / GDPR / Google Consent Mode v2) */}

@@ -6,34 +6,29 @@ import HeroSection from '@/components/blocks/hero-section/hero-section'
 import RecentPosts from '@/components/blocks/recent-posts/recent-posts'
 import Blog from '@/components/blocks/blog-component/blog-component'
 import AdSenseBanner from '@/components/astro/AdSenseBanner.astro'
-import { selectHomeBlogPosts } from '@/utils/blog'
+import { normalizeCategory } from '@/consts'
+import { resolveEditorialAuthor } from '@/utils/blog'
 
 // Get all blog posts and convert to the format expected by components
 const allPosts = await getCollection('blog')
 // Exibe na home principal apenas os posts em português (ou posts sem idioma definido por retrocompatibilidade)
 const publishedPosts = allPosts.filter(p => !p.data.lang || p.data.lang === 'pt')
 
-
-// Convert to the format expected by the React components
+// Convert to the compact format expected by the React components (mantém HTML enxuto com 100% do acervo PT-BR)
 const allBlogPosts = publishedPosts
   .map((post, index) => ({
     id: post.data.id || index + 1,
-    slug: post.data.slug || post.id,
+    slug: (post.data.slug || post.id).replace(/-(en|es)$/, ''),
     title: post.data.title,
     description: post.data.description,
     imageUrl: post.data.imageUrl || '/images/blog-post/post-1.webp',
-    imageAlt: post.data.imageAlt || post.data.title,
     pubDate: post.data.pubDate,
-    category: post.data.category,
-    author: post.data.author,
-    avatarUrl: post.data.avatarUrl || '/images/avatars/post-1.webp',
-    readTime: post.data.readTime || 5,
-    featured: post.data.featured || false
+    category: normalizeCategory(post.data.category),
+    author: resolveEditorialAuthor(post.data.author, post.data.category).name
   }))
   .sort((a, b) => b.id - a.id)
 
 const latestFourPosts = allBlogPosts.slice(0, 4)
-const homeBlogPosts = selectHomeBlogPosts(allBlogPosts)
 
 // Page-specific SEO configuration
 const pageTitle = 'Tendências, atualidades, zoom e buzz! | Onda Conecta'
@@ -66,5 +61,5 @@ const schema = {
   </div>
 
   {/* Seção Todas as Publicações: Exploração Completa por Categoria e Tendência */}
-  <Blog blogData={homeBlogPosts} archiveHref='/categorias' client:load />
+  <Blog blogData={allBlogPosts} lang='pt' archiveHref='/categorias' client:load />
 </Layout>

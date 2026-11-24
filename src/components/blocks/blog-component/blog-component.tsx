@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { PROJECT_CATEGORIES } from '@/consts'
+import { PROJECT_CATEGORIES, normalizeCategory, getCategoryLabel } from '@/consts'
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -25,13 +25,13 @@ export type BlogPost = {
   title: string
   description: string
   imageUrl: string
-  imageAlt: string
+  imageAlt?: string
   pubDate: string
   author: string
-  avatarUrl: string
+  avatarUrl?: string
   category: string
-  readTime: number
-  featured: boolean
+  readTime?: number
+  featured?: boolean
 }
 
 interface BlogProps {
@@ -63,7 +63,7 @@ const BlogGrid = ({
         return (
           <a
             href={postHref}
-            key={post.id}
+            key={post.slug || post.id}
             className='group h-full cursor-pointer shadow-none transition-all duration-300'
             onClick={e => {
               const target = e.target as HTMLElement
@@ -79,7 +79,7 @@ const BlogGrid = ({
               <div className='mb-6 overflow-hidden rounded-lg sm:mb-12'>
                 <img
                   src={post.imageUrl}
-                  alt={post.imageAlt}
+                  alt={post.imageAlt || post.title}
                   className='h-59.5 w-full object-cover transition-transform duration-300 group-hover:scale-105'
                   loading='lazy'
                 />
@@ -94,10 +94,10 @@ const BlogGrid = ({
                   onClick={e => {
                     e.preventDefault()
                     e.stopPropagation()
-                    onCategoryClick(post.category)
+                    onCategoryClick(normalizeCategory(post.category))
                   }}
                 >
-                  {post.category}
+                  {getCategoryLabel(post.category, lang)}
                 </Badge>
               </div>
               <h3 className='line-clamp-2 text-lg font-bold md:text-xl text-foreground group-hover:text-primary transition-colors'>{post.title}</h3>
@@ -124,6 +124,7 @@ const BlogGrid = ({
 const blogI18n: Record<
   string,
   {
+    allTab: string
     allPublications: string
     publications: string
     title: string
@@ -133,10 +134,13 @@ const blogI18n: Record<
     comingSoon: string
     comingSoonDesc: string
     viewAll: string
+    loadMore: string
+    viewFullArchive: string
     homeHref: string
   }
 > = {
   pt: {
+    allTab: 'Todas',
     allPublications: 'Todas as Publicações',
     publications: 'Publicações',
     title: 'Explore as Notícias por Categoria e Tendência',
@@ -151,6 +155,7 @@ const blogI18n: Record<
     homeHref: '/#categories'
   },
   en: {
+    allTab: 'All',
     allPublications: 'All Publications',
     publications: 'Articles',
     title: 'Explore News by Category & Trends',
@@ -165,6 +170,7 @@ const blogI18n: Record<
     homeHref: '/en#categories'
   },
   es: {
+    allTab: 'Todas',
     allPublications: 'Todas las Publicaciones',
     publications: 'Publicaciones',
     title: 'Explora las Noticias por Categoría y Tendencia',
@@ -200,14 +206,25 @@ const Blog = ({ blogData = [], lang = 'pt', archiveHref }: BlogProps) => {
       const handleCategoryFromUrl = () => {
         const params = new URLSearchParams(window.location.search)
         const categoryParam = params.get('category')
-        if (categoryParam && categories.includes(categoryParam)) {
-          setSelectedTab(categoryParam)
+        if (categoryParam) {
+          const normalized = normalizeCategory(categoryParam)
+          if (categories.includes(normalized)) {
+            setSelectedTab(normalized)
+            setVisibleCount(PAGE_SIZE)
+            return
+          }
         }
+        setSelectedTab('All')
+        setVisibleCount(PAGE_SIZE)
       }
 
       handleCategoryFromUrl()
       window.addEventListener('popstate', handleCategoryFromUrl)
-      return () => window.removeEventListener('popstate', handleCategoryFromUrl)
+      document.addEventListener('astro:page-load', handleCategoryFromUrl)
+      return () => {
+        window.removeEventListener('popstate', handleCategoryFromUrl)
+        document.removeEventListener('astro:page-load', handleCategoryFromUrl)
+      }
     }
   }, [])
 
@@ -224,7 +241,8 @@ const Blog = ({ blogData = [], lang = 'pt', archiveHref }: BlogProps) => {
       post =>
         post.title.toLowerCase().includes(query) ||
         post.description.toLowerCase().includes(query) ||
-        post.category.toLowerCase().includes(query)
+        post.category.toLowerCase().includes(query) ||
+        getCategoryLabel(post.category, lang).toLowerCase().includes(query)
     )
   }
 
@@ -271,7 +289,7 @@ const Blog = ({ blogData = [], lang = 'pt', archiveHref }: BlogProps) => {
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                  <BreadcrumbPage>{selectedTab}</BreadcrumbPage>
+                  <BreadcrumbPage>{getCategoryLabel(selectedTab, lang)}</BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
@@ -314,7 +332,7 @@ const Blog = ({ blogData = [], lang = 'pt', archiveHref }: BlogProps) => {
                       id={`category-${category}`}
                       className='hover:bg-primary/10 cursor-pointer rounded-lg px-3.5 py-1.5 text-sm sm:text-base font-medium whitespace-nowrap transition-colors'
                     >
-                      {category}
+                      {category === 'All' ? labels.allTab : getCategoryLabel(category, lang)}
                     </TabsTrigger>
                   ))}
                 </TabsList>
@@ -387,7 +405,9 @@ const Blog = ({ blogData = [], lang = 'pt', archiveHref }: BlogProps) => {
             if (selectedTab !== category) {
               return <TabsContent key={index} value={category} />
             }
-            const categoryPosts = filterBySearch(displayPosts.filter(post => post.category === category))
+            const categoryPosts = filterBySearch(
+              displayPosts.filter(post => normalizeCategory(post.category) === category)
+            )
             const visibleCategory = categoryPosts.slice(0, visibleCount)
             const hasMoreCat = visibleCategory.length < categoryPosts.length
             return (
@@ -414,7 +434,7 @@ const Blog = ({ blogData = [], lang = 'pt', archiveHref }: BlogProps) => {
                     )}
                   </div>
                 ) : (
-                  renderEmptyCategory(category)
+                  renderEmptyCategory(getCategoryLabel(category, lang))
                 )}
               </TabsContent>
             )

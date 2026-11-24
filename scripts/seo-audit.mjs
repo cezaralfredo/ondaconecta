@@ -95,9 +95,20 @@ function auditMdxAndHistory() {
   const consolidatedSlugs = new Set(history.filter(h => h.consolidatedInto).map(h => h.slug))
   const htaccess = fs.readFileSync(HTACCESS_PATH, 'utf8')
 
-  // 1. Validate .htaccess rules
+  // 1. Validate .htaccess rules & PT-BR canonical route protection
   if (!htaccess.includes('RewriteCond %{THE_REQUEST}')) {
     errors.push('.htaccess missing external trailing-slash 301 rule (RewriteCond %{THE_REQUEST})')
+  }
+  if (/RewriteRule\s+\^categorias\/\?\$\s+\/(?:es|en)\//i.test(htaccess)) {
+    errors.push('.htaccess must NEVER redirect canonical PT-BR /categorias to /es/ or /en/')
+  }
+  if (/RewriteRule\s+\^ferramentas\/\?\$\s+\/(?:es|en)\//i.test(htaccess)) {
+    errors.push('.htaccess must NEVER redirect canonical PT-BR /ferramentas to /es/ or /en/')
+  }
+  const astroConfigRaw = fs.readFileSync(path.join(ROOT, 'astro.config.mjs'), 'utf8')
+  const redirectPagesBlock = astroConfigRaw.match(/const\s+redirectPages\s*=\s*\[([\s\S]*?)\]/)
+  if (redirectPagesBlock && /['"]\/(?:categorias|ferramentas)['"]/.test(redirectPagesBlock[1])) {
+    errors.push('astro.config.mjs redirectPages must NEVER exclude canonical PT-BR /categorias or /ferramentas from sitemap')
   }
   for (const oldSlug of consolidatedSlugs) {
     if (!htaccess.includes(oldSlug)) {
@@ -257,7 +268,7 @@ function auditDistBuild() {
     return
   }
 
-  // 1. Check homepage HTML weight (< 350 KB)
+  // 1. Check homepage & PT-BR canonical category/tool pages
   for (const rel of ['index.html', path.join('en', 'index.html'), path.join('es', 'index.html')]) {
     const p = path.join(DIST_DIR, rel)
     if (!fs.existsSync(p)) {
@@ -267,6 +278,17 @@ function auditDistBuild() {
     const size = fs.statSync(p).size
     if (size > MAX_HOME_HTML_BYTES) {
       errors.push(`Homepage bloat regression: dist/${rel} is ${(size / 1024).toFixed(1)} KB (limit 350 KB)`)
+    }
+  }
+  for (const ptPage of [path.join('categorias', 'index.html'), path.join('ferramentas', 'index.html')]) {
+    const p = path.join(DIST_DIR, ptPage)
+    if (!fs.existsSync(p)) {
+      errors.push(`Missing canonical PT-BR page: dist/${ptPage}`)
+    } else {
+      const html = fs.readFileSync(p, 'utf8')
+      if (!html.includes('lang="pt-BR"')) {
+        errors.push(`Canonical PT-BR page dist/${ptPage} is missing lang="pt-BR"`)
+      }
     }
   }
 
@@ -303,6 +325,12 @@ function auditDistBuild() {
     }
     if (/\/blog\/[a-z0-9-]+-(en|es)</.test(sitemap)) {
       errors.push('Duplicate suffixed /blog/*-en or *-es URL found in sitemap-0.xml')
+    }
+    if (!sitemap.includes('<loc>https://ondaconecta.com.br/categorias</loc>')) {
+      errors.push('Missing canonical PT-BR <loc>https://ondaconecta.com.br/categorias</loc> in sitemap-0.xml')
+    }
+    if (!sitemap.includes('<loc>https://ondaconecta.com.br/ferramentas</loc>')) {
+      errors.push('Missing canonical PT-BR <loc>https://ondaconecta.com.br/ferramentas</loc> in sitemap-0.xml')
     }
   }
 

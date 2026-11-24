@@ -11,10 +11,19 @@ const Footer = ({ lang: initialLang }: FooterProps) => {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const p = window.location.pathname
-      if (p.startsWith('/en')) setLang('en')
-      else if (p.startsWith('/es')) setLang('es')
-      else setLang('pt')
+      const syncLang = () => {
+        const p = window.location.pathname
+        if (p.startsWith('/en')) setLang('en')
+        else if (p.startsWith('/es')) setLang('es')
+        else setLang('pt')
+      }
+      syncLang()
+      document.addEventListener('astro:page-load', syncLang)
+      window.addEventListener('popstate', syncLang)
+      return () => {
+        document.removeEventListener('astro:page-load', syncLang)
+        window.removeEventListener('popstate', syncLang)
+      }
     }
   }, [])
 

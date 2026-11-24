@@ -59,12 +59,16 @@
   RewriteRule ^(en/|es/)?blog/open-investment-carteiras-automatizadas-dividendos/?$ https://ondaconecta.com.br/$1blog/open-finance-investimentos-inteligencia-artificial-rebalanceamento-brasil [R=301,L]
 
   # 5. Redirecionamento 301 para rotas de categorias e ferramentas multilíngues
+  # IMPORTANTE: /categorias e /ferramentas são as rotas canônicas oficiais em Português (PT-BR) e NUNCA devem ser redirecionadas
   RewriteRule ^categories/?$ /en/categories [R=301,L]
-  RewriteRule ^categorias/?$ /es/categorias [R=301,L]
   RewriteRule ^tools/?$ /en/tools [R=301,L]
   RewriteRule ^herramientas/?$ /es/herramientas [R=301,L]
   RewriteRule ^en/categorias/?$ /en/categories [R=301,L]
   RewriteRule ^es/categories/?$ /es/categorias [R=301,L]
+  RewriteRule ^en/ferramentas/?$ /en/tools [R=301,L]
+  RewriteRule ^es/ferramentas/?$ /es/herramientas [R=301,L]
+  RewriteRule ^en/herramientas/?$ /en/tools [R=301,L]
+  RewriteRule ^es/tools/?$ /es/herramientas [R=301,L]
 
   # 5. Resolução de URLs limpas geradas pelo Astro no DirectAdmin / Apache
   RewriteCond %{REQUEST_FILENAME} !-f

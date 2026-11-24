@@ -3,6 +3,8 @@ import Layout from '@/layouts/Layout.astro'
 import { getCollection } from 'astro:content'
 import Blog from '@/components/blocks/blog-component/blog-component'
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb'
+import { normalizeCategory } from '@/consts'
+import { resolveEditorialAuthor } from '@/utils/blog'
 
 const allPosts = await getCollection('blog')
 const enPosts = allPosts.filter(p => p.data.lang === 'en')
@@ -11,17 +13,13 @@ const postsToShow = enPosts.length > 0 ? enPosts : allPosts
 const allBlogPosts = postsToShow
   .map((post, index) => ({
     id: post.data.id || index + 1,
-    slug: post.data.slug || post.id,
+    slug: (post.data.translationOf || post.data.slug || post.id).replace(/-(en|es)$/, ''),
     title: post.data.title,
     description: post.data.description,
     imageUrl: post.data.imageUrl || '/images/blog-post/post-1.webp',
-    imageAlt: post.data.imageAlt || post.data.title,
     pubDate: post.data.pubDate,
-    category: post.data.category,
-    author: post.data.author,
-    avatarUrl: post.data.avatarUrl || '/images/avatars/post-1.webp',
-    readTime: post.data.readTime || 5,
-    featured: post.data.featured || false
+    category: normalizeCategory(post.data.category),
+    author: resolveEditorialAuthor(post.data.author, post.data.category).name
   }))
   .sort((a, b) => b.id - a.id)
 
@@ -48,7 +46,7 @@ const schema = {
     pt: '/categorias',
     en: '/en/categories',
     es: '/es/categorias',
-    default: '/en/categories'
+    default: '/categorias'
   }}
 >
   <div class='border-b bg-muted/20 py-4'>
