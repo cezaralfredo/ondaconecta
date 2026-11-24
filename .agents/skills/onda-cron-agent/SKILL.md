@@ -9,19 +9,19 @@ Esta skill permite que o Antigravity execute autonomamente o ciclo de pesquisa, 
 
 ---
 
-## 🎯 Categorias Monitoradas & Espectro Editorial
+## 🎯 Categorias Monitoradas & Espectro Editorial (9 Categorias Canônicas)
 
-A skill monitora e publica matérias estratégicas nas seguintes verticais:
+A skill monitora e publica matérias estratégicas nas 9 categorias oficiais (no frontmatter YAML dos arquivos `.mdx`, `-en.mdx` e `-es.mdx`, o campo `category` deve **sempre** usar o nome canônico em português abaixo; a interface traduz automaticamente os rótulos para EN e ES):
 
-1. **Inovação & IA** (`Innovation & AI` / `Innovación e IA`) — Agentes autônomos, inteligência artificial generativa, automação corporativa, LLMs e futuro do trabalho.
-2. **Mercado & Negócios** (`Business & Markets` / `Mercados y Negocios`) — Startups, venture capital, macroeconomia, fusões, ecossistema corporativo.
-3. **Finanças Pessoais** (`Personal Finance` / `Finanzas Personales`) — Investimentos, planejamento financeiro, finanças inteligentes, criptoeconomia, finanças comportamentais.
-4. **Saúde & Bem-estar** (`Health & Wellness` / `Salud y Bienestar`) — Longevidade saudável, biohacking, saúde mental, medicina preventiva, biotecnologia.
-5. **Estética & Beleza** (`Beauty & Aesthetics` / `Estética y Belleza`) — Tendências em skincare, estética avançada, cosméticos inteligentes, sustentabilidade na beleza e dermotecnologia.
-6. **Estilo de Vida & Viagens** (`Lifestyle & Travel` / `Estilo de Vida y Viajes`) — Destinos em alta, turismo de experiência, trabalho remoto global (nômades digitais), design de vida e tendências culturais.
-7. **Tendências & Comportamento** (`Trends` / `Tendencias`) — Mudanças de consumo, comportamento das novas gerações, novos hábitos urbanos.
-8. **Tecnologia & Futuro** (`Technology` / `Tecnología`) — Semicondutores, cibersegurança, computação em nuvem, computação quântica.
-9. **Sustentabilidade & ESG** (`Sustainability` / `Sostenibilidad`) — Mercado de carbono, tecnologias limpas (climate tech), transição energética e ESG.
+1. **`Inovação & IA`** — Agentes autônomos, inteligência artificial generativa, automação corporativa, semicondutores, cibersegurança, LLMs e futuro do trabalho.
+2. **`Mercado & Negócios`** — Startups, venture capital, macroeconomia, fusões, indústria, franquias, PMEs e ecossistema corporativo.
+3. **`Finanças Pessoais`** — Investimentos, planejamento financeiro, defesa do consumidor, crédito, previdência e finanças comportamentais.
+4. **`Saúde & Bem-estar`** — Longevidade saudável, medicina preventiva, saúde pública, saúde mental e biotecnologia.
+5. **`Estética & Beleza`** — Tendências em skincare, estética avançada, dermotecnologia, tricologia e ciência cosmética.
+6. **`Estilo de Vida & Viagens`** — Destinos em alta, turismo de experiência, mobilidade aérea, arquitetura cotidiana, gastronomia e cultura.
+7. **`Tendências`** — Mudanças de consumo, varejo, mobilidade, bioeconomia e novos hábitos de mercado.
+8. **`Sustentabilidade`** — Transição energética, economia circular, resiliência climática urbana, biocombustíveis (SAF) e ESG auditável.
+9. **`Comportamento`** — Transformações geracionais, psicologia social, trabalho, comunidade e vida cotidiana.
 
 ---
 
@@ -58,11 +58,13 @@ Sempre que esta skill for invocada sob demanda ou disparada via timer/cron (`/sc
 
 ### 5. Validação Técnica, Deploy e Rollback (`onda-publisher`)
 - Aciona a skill `onda-publisher` passando o lote de arquivos.
-- **Auditoria Prévia de SEO & GEO (Google Search Console Check):**
+- **Auditoria Prévia de SEO & GEO (`npm run seo:audit` — Google Search Console Check):**
   - Checagem anti-thin content (mínimo de 800 palavras por artigo).
-  - Verificação de metadados de imagem (`imageAlt` semântico).
-  - Confirmação de presença do bloco Key Takeaways e FAQ estruturada para geração do schema `FAQPage` e `BreadcrumbList`.
-- Executa a sanitização do YAML, cálculo do `readTime` real e teste de compilação: `npm run build`.
+  - Checagem de autoria nominal obrigatória (`Bernardo Neto` ou `Cezar Alfredo`) e `category` canônica em português nos 3 idiomas.
+  - Checagem de links internos canônicos sem barra final e sem sufixos `-en`/`-es` na URL (`/blog/<slug>` em PT, `/en/blog/<slug>` em EN, `/es/blog/<slug>` em ES) e bloqueio contra slugs consolidados via 301.
+  - Checagem de anti-canibalização semântica contra 100% do `scripts/published-history.json`.
+  - Confirmação de presença do bloco Key Takeaways e FAQ estruturada (encerrada com `---` antes de `### 🔗 Fontes & Referências Consultadas:`) para geração limpa do schema `FAQPage` e `BreadcrumbList`.
+- Executa `node scripts/seo-audit.mjs` (e `npm run build && npm run seo:audit:dist` quando aplicável).
 - **Protocolo de Rollback (Circuit Breaker):**
   - Se o build falhar, a skill cancela o lote (`git checkout -- .`), registra o erro no log e avisa o usuário, garantindo que código quebrado **nunca seja commitado**.
   - Se o build passar com 100% de sucesso, realiza o commit e push contínuo:

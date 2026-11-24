@@ -86,9 +86,12 @@ Para garantir que cada matéria domine a SERP tradicional e seja citada por moto
    - `H3` para dados rápidos, listas ou estudos de caso.
    - Parágrafos curtos de no máximo 3 a 4 linhas.
    - **Negritos seletivos** nos termos centrais para leitura dinâmica fluida.
-6. **Malha de Links Internos & Retenção Contextual (`Internal Linking & ReadAlso`):**
-   - Incluir pelo menos 1 link contextual no corpo do texto para outra matéria relevante do portal.
-   - **Box Visual de Retenção:** Inserir o componente `<ReadAlso slug="slug-do-artigo-relacionado" />` estrategicamente entre o 3º e 4º subtítulo (H2), convidando o leitor a continuar explorando o portal antes que ele decida sair da página (aumentando o tempo de permanência, o CTR interno e multiplicando as impressões de anúncios do Google AdSense).
+6. **Malha de Links Internos Canônicos & Retenção Contextual (`Internal Linking & ReadAlso`):**
+   - Incluir pelo menos 1 link contextual no corpo do texto para outra matéria relevante do portal, respeitando **estritamente** a rota canônica `200 OK` de cada idioma (sem barra `/` no final e **nunca** apontando para slugs consolidados via 301):
+     - No artigo em **Português (`<slug>.mdx`)**: usar `](/blog/<slug-relacionado>)` e `<ReadAlso slug="<slug-relacionado>" />`.
+     - No artigo em **Inglês (`<slug>-en.mdx`)**: usar `](/en/blog/<slug-relacionado>)` (sem sufixo `-en` na URL!) e `<ReadAlso slug="<slug-relacionado>-en" />`.
+     - No artigo em **Espanhol (`<slug>-es.mdx`)**: usar `](/es/blog/<slug-relacionado>)` (sem sufixo `-es` na URL!) e `<ReadAlso slug="<slug-relacionado>-es" />`.
+   - **Box Visual de Retenção:** Inserir o componente `<ReadAlso ... />` estrategicamente entre o 3º e 4º subtítulo (H2), convidando o leitor a continuar explorando o portal.
 
 ### C. Fechamento para "Featured Snippets", Motores de IA (GEO/AEO) & Schema.org:
 7. **Seção Obrigatória de Perguntas Frequentes (FAQ / People Also Ask & GEO):**
@@ -128,7 +131,7 @@ Para garantir que cada matéria domine a SERP tradicional e seja citada por moto
       - Apenas um `H1` por página (renderizado pelo layout).
       - No corpo, usar estritamente `H2` para pilares macro e `H3` para subseções. **Nunca pular níveis de cabeçalho** (ex: ir de H2 direto para H4).
     - **Links Internos Semânticos:**
-      - O texto deve incorporar links internos para outros artigos do portal com textos-âncora descritivos (ex: `veja nossa análise sobre [agentes de IA no mercado financeiro](/blog/agentes-ia-open-finance-pagamentos-autonomos-2026)`), proibindo âncoras vazias como "clique aqui" ou "leia mais".
+      - O texto deve incorporar links internos para outros artigos canônicos ativos do portal com textos-âncora descritivos (ex: `veja nossa análise sobre [rebalanceamento inteligente de carteiras no Open Finance](/blog/open-finance-investimentos-inteligencia-artificial-rebalanceamento-brasil)` em PT; `](/en/blog/open-finance-investimentos-inteligencia-artificial-rebalanceamento-brasil)` em EN; `](/es/blog/open-finance-investimentos-inteligencia-artificial-rebalanceamento-brasil)` em ES), proibindo âncoras vazias como "clique aqui" ou "leia mais" e proibindo links com sufixo `-en`/`-es` na URL (`/blog/...-en`).
     - **Segurança Editorial YMYL (Your Money or Your Life):**
       - **Saúde & Estética (`Saúde & Bem-estar`, `Estética & Beleza`):** Proibido fazer alegações médicas de cura milagrosa, promessas irreais de transformação biológica ou prescrições categóricas. Todo conteúdo deve ser embasado em literatura médica/científica reconhecida (NIH, Anvisa, Harvard, etc.). O layout do site injeta automaticamente o box `<ArticleDisclaimer />` com aviso de isenção médica.
       - **Finanças & Investimentos (`Finanças Pessoais`, `Mercado & Negócios`):** Proibido prometer "retorno garantido" ou indicar compra de ativos específicos como ordem imperativa. O tom deve ser puramente analítico e educacional. O layout do site injeta automaticamente o box `<ArticleDisclaimer />` com aviso de isenção financeira.

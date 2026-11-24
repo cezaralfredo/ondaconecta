@@ -77,15 +77,20 @@ Cada versão idiomática deve receber a data formatada de acordo com os padrões
 - As versões em inglês e espanhol acompanham o mesmo valor da flag da versão principal.
 
 ### E. Validação Prévia de Ranqueamento, Google Search Console e GEO (Compliance Audit Check):
-Antes de gerar o build e comitar, a skill deve verificar os 5 pilares de conformidade com os motores de busca e IAs:
-1. **Auditoria de Categoria Ativa:** Certificar-se de que a `category` pertence às 9 categorias oficiais permitidas. Jamais aceitar a categoria obsoleta `"Tecnologia"` (se vier com esse valor, converter automaticamente para `"Inovação & IA"`).
-2. **Checagem Anti-Thin Content (Google Search Console):** Validar se o artigo tem extensão substantiva (mínimo de 800 palavras no corpo do texto). Artigos superficiais devem ser rejeitados para reescrita antes de entrar na esteira de publicação.
-3. **Checagem Estrutural GEO/AEO (Key Takeaways & FAQ):**
-   - Confirmar a presença do bloco "Em Poucas Linhas" (Key Takeaways) na introdução.
-   - Confirmar a presença da seção `## Perguntas Frequentes` (ou `## Frequently Asked Questions` em EN, `## Preguntas Frecuentes` em ES) com perguntas em `### [Pergunta]?` para garantir a geração automática do schema `FAQPage` e rich snippets no Google.
-4. **Validação de Imagem & Acessibilidade (Google Imagens):**
-   - Confirmar se o frontmatter possui `imageAlt` descritivo e semântico (nunca vazio ou idêntico ao título sem contexto).
-5. **Segurança de Links Comerciais:** Se o artigo contiver links externos de afiliados ou parceiros de e-commerce (ex: Shopee, Amazon, etc.), verificar se possuem obrigatoriamente `rel="nofollow sponsored noopener noreferrer"` e a nota de transparência editorial.
+Antes de gerar o build e comitar, a skill deve verificar os 6 pilares de conformidade com os motores de busca e IAs (automatizados via `node scripts/seo-audit.mjs`):
+1. **Auditoria de Categoria Canônica nos 3 Idiomas:** Certificar-se de que o campo `category` no frontmatter YAML dos 3 arquivos (`.mdx`, `-en.mdx` e `-es.mdx`) usa **estritamente uma das 9 categorias canônicas em português** (`Inovação & IA`, `Mercado & Negócios`, `Finanças Pessoais`, `Saúde & Bem-estar`, `Estética & Beleza`, `Estilo de Vida & Viagens`, `Tendências`, `Sustentabilidade`, `Comportamento`). Nunca gravar nomes traduzidos no frontmatter (a interface traduz automaticamente os rótulos para EN e ES via `getCategoryLabel`).
+2. **Checagem Anti-Thin Content & Autoria Nominal E-E-A-T:** Validar se cada artigo (PT, EN e ES) tem no mínimo **800 palavras** no corpo do texto e se o campo `author` está assinado nominalmente por `Bernardo Neto` ou `Cezar Alfredo` (nunca `"Redação Onda Conecta"`).
+3. **Checagem de Links Internos Canônicos (`200 OK` Direto, Zero `301`):**
+   - Links Markdown no corpo de artigos PT devem usar `/blog/<baseSlug>` (sem barra final).
+   - Links Markdown no corpo de artigos EN devem usar `/en/blog/<baseSlug>` (nunca `/blog/<baseSlug>-en` nem `/en/blog/<baseSlug>-en`).
+   - Links Markdown no corpo de artigos ES devem usar `/es/blog/<baseSlug>` (nunca `/blog/<baseSlug>-es` nem `/es/blog/<baseSlug>-es`).
+   - Nenhum link interno ou `<ReadAlso>` pode apontar para slugs antigos consolidados via `301` em `scripts/published-history.json`.
+4. **Checagem Estrutural GEO/AEO (Key Takeaways & FAQ Limpa):**
+   - Confirmar a presença do bloco "Em Poucas Linhas" / "Key Takeaways" / "En Pocas Líneas" na introdução.
+   - Confirmar a presença da seção `## Perguntas Frequentes` (ou `## Frequently Asked Questions` em EN, `## Preguntas Frecuentes` em ES) com perguntas terminadas em `?` (`### [Pergunta]?`) e separador `---` antes de `### 🔗 Fontes & Referências Consultadas:`, garantindo schema `FAQPage` 100% puro no Google Search Console.
+5. **Validação de Imagem & Acessibilidade (Google Imagens & Discover):**
+   - Confirmar se a capa existe fisicamente em `public/images/blog-post/<slug>.webp` (proporção 16:9, mín. 1200px) e se o frontmatter possui `imageAlt` descritivo em cada idioma.
+6. **Segurança de Links Comerciais:** Se o artigo contiver links externos de afiliados ou parceiros de e-commerce, verificar se possuem obrigatoriamente `rel="nofollow sponsored noopener noreferrer"` e a nota de transparência editorial.
 
 ---
 

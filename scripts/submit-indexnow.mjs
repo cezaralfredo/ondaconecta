@@ -99,8 +99,14 @@ export function getRecentSiteUrls(limit = 60) {
     `https://${HOST}`,
     `https://${HOST}/en`,
     `https://${HOST}/es`,
-    `https://${HOST}/quem-somos`,
+    `https://${HOST}/categorias`,
+    `https://${HOST}/en/categories`,
+    `https://${HOST}/es/categorias`,
     `https://${HOST}/ferramentas`,
+    `https://${HOST}/en/tools`,
+    `https://${HOST}/es/herramientas`,
+    `https://${HOST}/servicos-ia`,
+    `https://${HOST}/quem-somos`,
     `https://${HOST}/contato`
   ]
 

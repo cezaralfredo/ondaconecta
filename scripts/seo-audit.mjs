@@ -174,13 +174,43 @@ function auditMdxAndHistory() {
       }
     }
 
-    for (const m of body.matchAll(/\]\(\/blog\/([^)#\s]+)\)/g)) {
-      const target = m[1]
-      if (!slugSet.has(target)) {
-        errors.push(`[${file}] Broken internal link (/blog/${target})`)
+    const postLang = data.lang || 'pt'
+    if (data.slug && data.slug !== fileSlug) {
+      errors.push(`[${file}] Frontmatter slug "${data.slug}" must match filename "${fileSlug}"`)
+    }
+    if (postLang === 'pt') {
+      if (!slugSet.has(`${fileSlug}-en`) || !slugSet.has(`${fileSlug}-es`)) {
+        errors.push(`[${file}] Missing multilingual pair (-en.mdx or -es.mdx) for PT article`)
       }
-      if (consolidatedSlugs.has(target.replace(/-(en|es)$/, ''))) {
-        errors.push(`[${file}] Internal link points to 301-consolidated slug: /blog/${target}`)
+    } else {
+      const expectedBase = fileSlug.replace(/-(en|es)$/, '')
+      if (data.translationOf && data.translationOf !== expectedBase) {
+        errors.push(`[${file}] Frontmatter translationOf must be "${expectedBase}", got "${data.translationOf}"`)
+      }
+    }
+
+    for (const m of body.matchAll(/\]\((\/(?:en\/|es\/)?blog\/([^)#\s]+))\)/g)) {
+      const fullUrl = m[1]
+      const target = m[2]
+      if (fullUrl.endsWith('/')) {
+        errors.push(`[${file}] Internal link must not have trailing slash: ${fullUrl}`)
+      }
+      if (/-(en|es)$/.test(target)) {
+        errors.push(`[${file}] Internal link must use clean canonical URL without -en/-es suffix (got ${fullUrl})`)
+      }
+      const cleanTarget = target.replace(/\/$/, '').replace(/-(en|es)$/, '')
+      if (!slugSet.has(cleanTarget)) {
+        errors.push(`[${file}] Broken internal link (${fullUrl})`)
+      }
+      if (consolidatedSlugs.has(cleanTarget)) {
+        errors.push(`[${file}] Internal link points to 301-consolidated slug: ${fullUrl}`)
+      }
+      if (postLang === 'pt' && !fullUrl.startsWith('/blog/')) {
+        errors.push(`[${file}] PT article must link to /blog/<slug>, got ${fullUrl}`)
+      } else if (postLang === 'en' && !fullUrl.startsWith('/en/blog/')) {
+        errors.push(`[${file}] EN article must link to /en/blog/<slug>, got ${fullUrl}`)
+      } else if (postLang === 'es' && !fullUrl.startsWith('/es/blog/')) {
+        errors.push(`[${file}] ES article must link to /es/blog/<slug>, got ${fullUrl}`)
       }
     }
 
