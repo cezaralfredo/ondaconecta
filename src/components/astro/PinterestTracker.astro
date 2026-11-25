@@ -2,97 +2,99 @@
 /**
  * Pinterest Tracker Component
  * Combines Pinterest Tag (Client-Side) with Pinterest Conversions API (Server-Side CAPI)
- * with automatic deduplication via unique event_id per action.
+ * Respeita o consentimento de cookies (LGPD / GDPR) antes de inicializar rastreamento.
  */
 interface Props {
   tagId?: string
-  userEmail?: string
 }
 
-const { tagId = '2614098012141', userEmail = 'gerandoparceria@gmail.com' } = Astro.props
-const emailHash = '2bbc7d3c4aa09982f805eb0de75a0b9dee7dba10338297794dcde89767510358'
+const { tagId = '2614098012141' } = Astro.props
 ---
 
-<!-- Pinterest Tag & Conversions API (CAPI) Integration -->
-<script is:inline define:vars={{ tagId, userEmail }}>
-  // 1. Pinterest Tag Client-Side init
-  !function(e){if(!window.pintrk){window.pintrk = function () {
-  window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
-    n=window.pintrk;n.queue=[],n.version="3.0";var
-    t=document.createElement("script");t.async=!0,t.src=e;var
-    r=document.getElementsByTagName("script")[0];
-    r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+<!-- Pinterest Tag & Conversions API (Consent-Aware) -->
+<script is:inline define:vars={{ tagId }}>
+  ;(function () {
+    var CONSENT_KEY = 'ondaconecta_cookie_consent';
+    var pinterestInitialized = false;
 
-  pintrk('load', tagId, { em: userEmail });
-
-  // 2. Hybrid Tracking Helper (Client-Side + Server-Side CAPI)
-  window.trackPinterestEvent = function (eventName, customData, userEmailOverride) {
-    try {
-      // Unique ID per event for Pinterest Tag/CAPI deduplication
-      var eventId = 'pin_' + Date.now() + '_' + Math.random().toString(36).substring(2, 9);
-      var eventSourceUrl = window.location.href;
-      var cleanEventName = eventName === 'page' || eventName === 'PageVisit' ? 'page_visit' : eventName;
-
-      // Client-side dispatch (Pinterest Tag)
-      if (typeof window.pintrk === 'function') {
-        var clientData = Object.assign({}, customData || {}, { event_id: eventId });
-        if (cleanEventName === 'page_visit') {
-          window.pintrk('page', clientData);
-        } else {
-          window.pintrk('track', cleanEventName, clientData);
-        }
+    function hasFullConsent() {
+      try {
+        return localStorage.getItem(CONSENT_KEY) === 'all';
+      } catch (e) {
+        return false;
       }
-
-      // Server-side dispatch (Pinterest Conversions API via own endpoint)
-      var payload = {
-        event_name: cleanEventName,
-        event_id: eventId,
-        event_source_url: eventSourceUrl,
-        custom_data: customData || {}
-      };
-
-      if (userEmailOverride) {
-        payload.email = userEmailOverride;
-      }
-
-      var jsonPayload = JSON.stringify(payload);
-
-      if (typeof navigator !== 'undefined' && navigator.sendBeacon) {
-        var blob = new Blob([jsonPayload], { type: 'application/json' });
-        navigator.sendBeacon('/api/pinterest-capi.php', blob);
-      } else if (typeof fetch !== 'undefined') {
-        fetch('/api/pinterest-capi.php', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: jsonPayload,
-          keepalive: true
-        }).catch(function () {
-          // Silent fail on local dev or offline
-        });
-      }
-    } catch (e) {
-      // Prevents any UI blocking
     }
-  };
 
-  // 3. Initial page view tracking
-  window.trackPinterestEvent('page_visit');
+    function initPinterestTag() {
+      if (pinterestInitialized || !hasFullConsent()) return;
+      pinterestInitialized = true;
 
-  // 4. Dynamic tracking on Astro ClientRouter page transitions
-  document.addEventListener('astro:after-swap', function () {
-    if (typeof window.trackPinterestEvent === 'function') {
+      !function(e){if(!window.pintrk){window.pintrk = function () {
+      window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
+        n=window.pintrk;n.queue=[],n.version="3.0";var
+        t=document.createElement("script");t.async=!0,t.src=e;var
+        r=document.getElementsByTagName("script")[0];
+        r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+
+      window.pintrk('load', tagId);
       window.trackPinterestEvent('page_visit');
     }
-  });
-</script>
 
-<noscript>
-  <img
-    height="1"
-    width="1"
-    style="display:none;"
-    alt=""
-    src={`https://ct.pinterest.com/v3/?event=init&tid=${tagId}&pd[em]=${emailHash}&noscript=1`}
-  />
-</noscript>
+    window.trackPinterestEvent = function (eventName, customData, userEmailOverride) {
+      if (!hasFullConsent()) return;
+      try {
+        if (!pinterestInitialized) {
+          initPinterestTag();
+        }
+        var eventId = 'pin_' + Date.now() + '_' + Math.random().toString(36).substring(2, 9);
+        var eventSourceUrl = window.location.href;
+        var cleanEventName = eventName === 'page' || eventName === 'PageVisit' ? 'page_visit' : eventName;
+
+        if (typeof window.pintrk === 'function') {
+          var clientData = Object.assign({}, customData || {}, { event_id: eventId });
+          if (cleanEventName === 'page_visit') {
+            window.pintrk('page', clientData);
+          } else {
+            window.pintrk('track', cleanEventName, clientData);
+          }
+        }
+
+        var payload = {
+          event_name: cleanEventName,
+          event_id: eventId,
+          event_source_url: eventSourceUrl,
+          custom_data: customData || {}
+        };
+
+        if (userEmailOverride) {
+          payload.email = userEmailOverride;
+        }
+
+        var jsonPayload = JSON.stringify(payload);
+
+        if (typeof navigator !== 'undefined' && navigator.sendBeacon) {
+          var blob = new Blob([jsonPayload], { type: 'application/json' });
+          navigator.sendBeacon('/api/pinterest-capi.php', blob);
+        } else if (typeof fetch !== 'undefined') {
+          fetch('/api/pinterest-capi.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: jsonPayload,
+            keepalive: true
+          }).catch(function () {});
+        }
+      } catch (e) {}
+    };
+
+    if (hasFullConsent()) {
+      initPinterestTag();
+    }
+
+    window.addEventListener('ondaconecta:consent-updated', function (ev) {
+      if (ev && ev.detail === 'all') {
+        initPinterestTag();
+      }
+    });
+  })();
+</script>
 <!-- End Pinterest Tag & Conversions API -->

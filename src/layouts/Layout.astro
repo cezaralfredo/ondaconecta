@@ -1,8 +1,6 @@
 ---
 import '@/styles/global.css'
 
-import { ClientRouter } from 'astro:transitions'
-
 import HeadSeo from '@/layouts/HeadSeo.astro'
 import PinterestTracker from '@/components/astro/PinterestTracker.astro'
 import OneSignal from '@/components/astro/OneSignal.astro'
@@ -100,7 +98,6 @@ const currentLang = Astro.currentLocale === 'en' ? 'en' : Astro.currentLocale ==
 
     <PinterestTracker />
     <OneSignal />
-    <ClientRouter />
     <script is:inline>
       ;(function () {
         const getTheme = () => {
@@ -125,16 +122,11 @@ const currentLang = Astro.currentLocale === 'en' ? 'en' : Astro.currentLocale ==
         // Apply theme immediately on initial load
         applyTheme()
 
-        // Re-apply theme on Astro page transitions
-        document.addEventListener('astro:page-load', applyTheme)
-
-        // Auto-cura de cache 301 legado de /categorias -> /es/categorias nos navegadores dos leitores
+        // Auto-cura pontual caso um leitor caia em /es/categorias vindo de página PT por cache 301 legado
         try {
           const path = window.location.pathname.replace(/\/$/, '')
           const search = window.location.search || ''
 
-          // 1. Se o navegador caiu em /es/categorias vindo de uma página em Português (por cache 301 antigo),
-          // revalida /categorias direto no servidor (cache: 'reload') e redireciona imediatamente para a página PT-BR
           if (path === '/es/categorias' && document.referrer) {
             const refUrl = new URL(document.referrer)
             const refPath = refUrl.pathname.replace(/\/$/, '')
@@ -157,23 +149,9 @@ const currentLang = Astro.currentLocale === 'en' ? 'en' : Astro.currentLocale ==
           } else {
             sessionStorage.removeItem('onda_pt_cat_recovered')
           }
-
-          // 2. Invalida silenciosamente em background qualquer 301 antigo de /categorias no cache HTTP do navegador
-          if (localStorage.getItem('onda_pt_cat_cache_v2') !== '1') {
-            localStorage.setItem('onda_pt_cat_cache_v2', '1')
-            fetch('/categorias', { cache: 'reload' }).catch(function () {})
-          }
         } catch (e) {}
       })()
     </script>
-    <style>
-      /* Disable all view transitions while keeping client-side navigation */
-      ::view-transition-group(*),
-      ::view-transition-old(*),
-      ::view-transition-new(*) {
-        animation-duration: 0ms !important;
-      }
-    </style>
   </head>
   <body class='flex min-h-full w-full flex-auto flex-col'>
     <div class='flex flex-col'>

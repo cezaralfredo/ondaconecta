@@ -213,7 +213,7 @@ const schema = {
     default: ptVersion ? `/blog/${baseSlug}` : `/en/blog/${baseSlug}`
   }}
 >
-  <main class='flex flex-col'>
+  <div class='flex flex-col'>
     <section class='py-8 sm:pt-16 sm:pb-24'>
       <div class='mx-auto max-w-7xl space-y-8 px-4 sm:px-6 lg:space-y-16 lg:px-8'>
         <div class='gap-16 md:grid md:grid-cols-5 lg:grid-cols-7'>
@@ -411,5 +411,5 @@ const schema = {
         <Blog relatedPosts={formattedRelatedPosts} lang={currentLang} client:load />
       )
     }
-  </main>
+  </div>
 </Layout>

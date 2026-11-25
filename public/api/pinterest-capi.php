@@ -18,10 +18,15 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-// Configurações da API do Pinterest
-$adAccountId = '549770820233';
-$defaultTokenEncoded = 'cGluYV9BSUEyUkZBV0FDWTRVQUFBR0FBTEdCT1hWVVE0NUlBQkFBQUFBQ1hHVlVXNjdWM0FMVDdSTkJUSFVFS003SVNTRENJWFNZWVc2QlhJSUtRREw1QjM0SU9FNjZRWkpCSUE=';
-$accessToken = getenv('PINTEREST_ACCESS_TOKEN') ?: base64_decode($defaultTokenEncoded);
+// Configurações da API do Pinterest (exige variável de ambiente no servidor; nunca manter token hardcoded no repositório)
+$adAccountId = getenv('PINTEREST_AD_ACCOUNT_ID') ?: '549770820233';
+$accessToken = getenv('PINTEREST_ACCESS_TOKEN') ?: '';
+if ($accessToken === '') {
+    http_response_code(200);
+    header('Content-Type: application/json; charset=utf-8');
+    echo json_encode(['success' => false, 'skipped' => true, 'reason' => 'PINTEREST_ACCESS_TOKEN not configured']);
+    exit;
+}
 $apiUrl = "https://api.pinterest.com/v5/ad_accounts/{$adAccountId}/events";
 
 // Obter e decodificar corpo da requisição JSON
@@ -86,18 +91,13 @@ $clientUserAgent = !empty($_SERVER['HTTP_USER_AGENT'])
     ? substr((string)$_SERVER['HTTP_USER_AGENT'], 0, 500) 
     : 'Mozilla/5.0 (compatible; OndaConectaBot/1.0)';
 
-// Gerenciamento de e-mails criptografados (SHA-256) para casamento de audiência
-$emails = [
-    '2bbc7d3c4aa09982f805eb0de75a0b9dee7dba10338297794dcde89767510358' // gerandoparceria@gmail.com
-];
+// E-mail criptografado (SHA-256) apenas quando enviado explicitamente pelo usuário (ex: formulário)
+$emails = [];
 
 if (!empty($input['email']) && is_string($input['email'])) {
     $cleanEmail = strtolower(trim($input['email']));
     if (filter_var($cleanEmail, FILTER_VALIDATE_EMAIL)) {
-        $userHash = hash('sha256', $cleanEmail);
-        if (!in_array($userHash, $emails, true)) {
-            array_unshift($emails, $userHash);
-        }
+        $emails[] = hash('sha256', $cleanEmail);
     }
 }
 
@@ -107,17 +107,21 @@ $customData = !empty($input['custom_data']) && is_array($input['custom_data'])
     : [];
 
 // Montagem do payload oficial da API v5 do Pinterest
+$userData = [
+    'client_ip_address' => $clientIp,
+    'client_user_agent' => $clientUserAgent
+];
+if (!empty($emails)) {
+    $userData['em'] = $emails;
+}
+
 $eventData = [
     'event_name' => $eventName,
     'action_source' => 'web',
     'event_time' => time(),
     'event_id' => $eventId,
     'event_source_url' => $eventSourceUrl,
-    'user_data' => [
-        'em' => $emails,
-        'client_ip_address' => $clientIp,
-        'client_user_agent' => $clientUserAgent
-    ]
+    'user_data' => $userData
 ];
 
 if (!empty($customData)) {

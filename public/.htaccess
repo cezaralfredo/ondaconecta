@@ -1,3 +1,7 @@
+Options -Indexes
+AddDefaultCharset UTF-8
+ErrorDocument 404 /404.html
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
@@ -8,14 +12,20 @@
   RewriteCond %{HTTP_HOST} ^www\. [NC]
   RewriteRule ^(.*)$ https://ondaconecta.com.br/$1 [L,R=301]
 
+  # 0b. Redirecionamento 301 imediato de diretórios índice /blog sem index.html (evita loop infinito DirectorySlash <-> THE_REQUEST)
+  RewriteRule ^blog/?$ https://ondaconecta.com.br/categorias [R=301,L]
+  RewriteRule ^en/blog/?$ https://ondaconecta.com.br/en/categories [R=301,L]
+  RewriteRule ^es/blog/?$ https://ondaconecta.com.br/es/categorias [R=301,L]
+  RewriteRule ^us/blog/?$ https://ondaconecta.com.br/en/categories [R=301,L]
+
   # 1. Normalização de Trailing Slash para URLs sem barra (alinhado com Astro trailingSlash: 'never')
   # Usa THE_REQUEST para redirecionar requisições externas com / final mesmo em diretórios estáticos do Astro sem causar loop
   RewriteCond %{THE_REQUEST} \s/+([^?\s]+?)/+(?:\?[^\s]*)?\s [NC]
   RewriteRule ^ https://ondaconecta.com.br/%1 [R=301,L]
 
   # 2. Redirecionamento 301 definitivo de /us para /en
-  RewriteRule ^us/(.*)$ /en/$1 [R=301,L]
-  RewriteRule ^us/?$ /en/ [R=301,L]
+  RewriteRule ^us/(.*)$ https://ondaconecta.com.br/en/$1 [R=301,L]
+  RewriteRule ^us/?$ https://ondaconecta.com.br/en [R=301,L]
 
   # 3. Redirecionamento 301 definitivo de rotas institucionais legadas
   RewriteRule ^about/?$ /quem-somos [R=301,L]
@@ -97,3 +107,23 @@
     Header set Cache-Control "public, max-age=3600"
   </IfModule>
 </Files>
+
+# Cabeçalhos de segurança e cache compatíveis com Google AdSense e Core Web Vitals no LiteSpeed/Apache
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+
+  <FilesMatch "\.(js|css|woff|woff2|ttf|otf)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  <FilesMatch "\.(webp|avif|png|jpg|jpeg|gif|svg|ico)$">
+    Header set Cache-Control "public, max-age=604800, stale-while-revalidate=86400"
+  </FilesMatch>
+</IfModule>

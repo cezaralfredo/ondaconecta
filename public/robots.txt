@@ -36,6 +36,15 @@ Allow: /
 User-agent: Mediapartners-Google
 Allow: /
 
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: AdsBot-Google-Mobile
+Allow: /
+
+User-agent: Google-Display-Ads-Bot
+Allow: /
+
 # -------------------------------------------------------------
 # GEO (Generative Engine Optimization) & AI Search Crawlers
 # Granting explicit and unrestricted access to AI engines

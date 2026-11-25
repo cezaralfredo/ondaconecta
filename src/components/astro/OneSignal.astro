@@ -17,12 +17,12 @@ const isEs = currentLocale === 'es'
 
 const promptTexts = {
   actionMessage: isEn
-    ? 'Receive instant alerts on breaking trends, market intelligence, and exclusive analyses from Onda Conecta.'
+    ? 'Get alerts on new trends and analyses from Onda Conecta.'
     : isEs
-      ? 'Recibe alertas instantáneas sobre nuevas tendencias, inteligencia de mercado y análisis exclusivos de Onda Conecta.'
-      : 'Receba alertas instantâneos sobre novas tendências, inteligência de mercado e análises exclusivas do Onda Conecta.',
-  acceptButton: isEn ? 'Enable Alerts' : isEs ? 'Activar Alertas' : 'Ativar Notificações',
-  cancelButton: isEn ? 'Maybe Later' : isEs ? 'Más Tarde' : 'Mais Tarde'
+      ? 'Recibe alertas de nuevas tendencias y análisis de Onda Conecta.'
+      : 'Receba alertas de novas tendências e análises do Onda Conecta.',
+  acceptButton: isEn ? 'Enable' : isEs ? 'Activar' : 'Ativar',
+  cancelButton: isEn ? 'Not Now' : isEs ? 'Ahora No' : 'Agora Não'
 }
 ---
 
@@ -50,15 +50,15 @@ const promptTexts = {
               prompts: [
                 {
                   type: 'push',
-                  autoPrompt: true,
+                  autoPrompt: false,
                   text: {
                     actionMessage: promptTexts.actionMessage,
                     acceptButton: promptTexts.acceptButton,
                     cancelButton: promptTexts.cancelButton
                   },
                   delay: {
-                    pageViews: 1,
-                    timeDelay: 6 // Aguarda 6 segundos para não interromper a primeira impressão do leitor
+                    pageViews: 2,
+                    timeDelay: 15
                   }
                 }
               ]
