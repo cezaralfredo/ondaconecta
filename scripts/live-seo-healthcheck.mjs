@@ -65,10 +65,11 @@ async function main() {
 
   for (const [fromUrl, expectedLoc] of redirectChecks) {
     const res = await fetchStatus(fromUrl, 'manual')
-    if (res.status !== 301 || res.location !== expectedLoc) {
+    const resolvedLoc = res.location ? new URL(res.location, fromUrl).toString() : ''
+    if (res.status !== 301 || resolvedLoc !== expectedLoc) {
       errors.push(`Redirect mismatch on ${fromUrl}: got ${res.status} -> "${res.location}", expected 301 -> "${expectedLoc}"`)
     } else {
-      console.log(`OK 301 ${fromUrl} -> ${res.location}`)
+      console.log(`OK 301 ${fromUrl} -> ${resolvedLoc}`)
     }
   }
 

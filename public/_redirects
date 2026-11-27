@@ -1,0 +1,107 @@
+# Cloudflare Workers Static Assets — Redirects 301 Canônicos (Onda Conecta)
+
+# Índices /blog sem index.html -> páginas de categorias canônicas
+/blog /categorias 301
+/en/blog /en/categories 301
+/es/blog /es/categorias 301
+/us/blog /en/categories 301
+
+# Legado /us -> /en
+/us /en 301
+/us/* /en/:splat 301
+
+# Rotas institucionais legadas
+/about /quem-somos 301
+/sobre /quem-somos 301
+/contact /contato 301
+/contact-us /contato 301
+/privacy /privacidade 301
+/terms /termos-de-uso 301
+/inteligencia-artificial /servicos-ia 301
+/solucoes-ia /servicos-ia 301
+
+# Rotas de categorias e ferramentas multilíngues
+/categories /en/categories 301
+/tools /en/tools 301
+/herramientas /es/herramientas 301
+/en/categorias /en/categories 301
+/es/categories /es/categorias 301
+/en/ferramentas /en/tools 301
+/es/ferramentas /es/herramientas 301
+/en/herramientas /en/tools 301
+/es/tools /es/herramientas 301
+
+# Consolidação Canônica 301 de Artigos Duplicados (PT)
+/blog/small-language-models-edge-ai-empresas-2026 /blog/small-language-models-slm-npu-ia-offline-empresas-brasil 301
+/blog/modelos-pequenos-ia-slm-edge-ai-empresas /blog/small-language-models-slm-npu-ia-offline-empresas-brasil 301
+/blog/renascenca-terceiros-espacos-comunidade-desconexao /blog/terceiros-lugares-third-places-cafes-oficinas-convivio-brasil 301
+/blog/third-places-oficinas-manuais-atelies-socializacao-urbana-brasil /blog/terceiros-lugares-third-places-cafes-oficinas-convivio-brasil 301
+/blog/cloreto-de-magnesio-disposicao-sono-liberdade-movimento /blog/cloreto-de-magnesio-pa-beneficios-saude-sono-2026 301
+/blog/funcoes-do-magnesio-no-corpo-beneficios-cloreto /blog/cloreto-de-magnesio-pa-beneficios-saude-sono-2026 301
+/blog/coolcationing-turismo-clima-fresco-viagens /blog/coolcationing-turismo-clima-ameno-fuga-calor-viagens-brasil 301
+/blog/loud-budgeting-tendencia-consumo-limites-financeiros-brasil /blog/loud-budgeting-transparencia-financeira-consumo-jovem-brasil 301
+/blog/pdrn-estetica-regenerativa-quiet-beauty-pele /blog/pdrn-dna-salmao-biorregeneracao-celular-estetica-pele-brasil 301
+/blog/saf-combustivel-sustentavel-aviacao-etanol-descarbonizacao /blog/saf-combustivel-sustentavel-aviacao-brasil 301
+/blog/combustivel-sustentavel-aviacao-saf-etanol-probioqav-brasil /blog/saf-combustivel-sustentavel-aviacao-brasil 301
+/blog/semana-de-4-dias-brasil-resultados-fgv-produtividade /blog/semana-de-4-dias-trabalho-produtividade-burnout-empresas-brasil 301
+/blog/turismo-do-sono-hoteis-circadianos-viagens /blog/sleep-tourism-turismo-do-sono-hotelaria-bem-estar-brasil 301
+/blog/venture-debt-startups-credito-estruturado-nao-dilutivo-brasil /blog/venture-debt-credito-privado-startups-brasil 301
+/blog/micro-aposentadorias-pausas-sabaticas-planejamento-carreira-brasil /blog/micro-aposentadorias-pausas-sabaticas-geracao-z-millennials-carreira 301
+/blog/hushpitality-astroturismo-luxo-silencioso-viagens-2026 /blog/astroturismo-noctourism-parques-ceu-escuro-hotelaria-estelar-brasil 301
+/blog/astroturismo-dark-sky-parques-noturnos-chapada-veadeiros /blog/astroturismo-noctourism-parques-ceu-escuro-hotelaria-estelar-brasil 301
+/blog/supercomputador-santos-dumont-plano-brasileiro-ia-soberana /blog/soberania-ia-chips-brasil-supercomputadores 301
+/blog/redata-data-centers-verdes-ia-energia-limpa-2026 /blog/data-centers-verdes-clusters-ia-energia-limpa-brasil 301
+/blog/data-centers-ia-energia-limpa-brasil-topo-global /blog/data-centers-verdes-clusters-ia-energia-limpa-brasil 301
+/blog/ectoina-barreira-cutanea-skincare-extremolitos /blog/peptideos-cobre-ghk-cu-ectoina-barreira-cutanea-brasil 301
+/blog/agentes-ia-open-finance-pagamentos-autonomos-2026 /blog/open-finance-investimentos-inteligencia-artificial-rebalanceamento-brasil 301
+/blog/open-investment-carteiras-automatizadas-dividendos /blog/open-finance-investimentos-inteligencia-artificial-rebalanceamento-brasil 301
+
+# Consolidação Canônica 301 de Artigos Duplicados (EN)
+/en/blog/small-language-models-edge-ai-empresas-2026 /en/blog/small-language-models-slm-npu-ia-offline-empresas-brasil 301
+/en/blog/modelos-pequenos-ia-slm-edge-ai-empresas /en/blog/small-language-models-slm-npu-ia-offline-empresas-brasil 301
+/en/blog/renascenca-terceiros-espacos-comunidade-desconexao /en/blog/terceiros-lugares-third-places-cafes-oficinas-convivio-brasil 301
+/en/blog/third-places-oficinas-manuais-atelies-socializacao-urbana-brasil /en/blog/terceiros-lugares-third-places-cafes-oficinas-convivio-brasil 301
+/en/blog/cloreto-de-magnesio-disposicao-sono-liberdade-movimento /en/blog/cloreto-de-magnesio-pa-beneficios-saude-sono-2026 301
+/en/blog/funcoes-do-magnesio-no-corpo-beneficios-cloreto /en/blog/cloreto-de-magnesio-pa-beneficios-saude-sono-2026 301
+/en/blog/coolcationing-turismo-clima-fresco-viagens /en/blog/coolcationing-turismo-clima-ameno-fuga-calor-viagens-brasil 301
+/en/blog/loud-budgeting-tendencia-consumo-limites-financeiros-brasil /en/blog/loud-budgeting-transparencia-financeira-consumo-jovem-brasil 301
+/en/blog/pdrn-estetica-regenerativa-quiet-beauty-pele /en/blog/pdrn-dna-salmao-biorregeneracao-celular-estetica-pele-brasil 301
+/en/blog/saf-combustivel-sustentavel-aviacao-etanol-descarbonizacao /en/blog/saf-combustivel-sustentavel-aviacao-brasil 301
+/en/blog/combustivel-sustentavel-aviacao-saf-etanol-probioqav-brasil /en/blog/saf-combustivel-sustentavel-aviacao-brasil 301
+/en/blog/semana-de-4-dias-brasil-resultados-fgv-produtividade /en/blog/semana-de-4-dias-trabalho-produtividade-burnout-empresas-brasil 301
+/en/blog/turismo-do-sono-hoteis-circadianos-viagens /en/blog/sleep-tourism-turismo-do-sono-hotelaria-bem-estar-brasil 301
+/en/blog/venture-debt-startups-credito-estruturado-nao-dilutivo-brasil /en/blog/venture-debt-credito-privado-startups-brasil 301
+/en/blog/micro-aposentadorias-pausas-sabaticas-planejamento-carreira-brasil /en/blog/micro-aposentadorias-pausas-sabaticas-geracao-z-millennials-carreira 301
+/en/blog/hushpitality-astroturismo-luxo-silencioso-viagens-2026 /en/blog/astroturismo-noctourism-parques-ceu-escuro-hotelaria-estelar-brasil 301
+/en/blog/astroturismo-dark-sky-parques-noturnos-chapada-veadeiros /en/blog/astroturismo-noctourism-parques-ceu-escuro-hotelaria-estelar-brasil 301
+/en/blog/supercomputador-santos-dumont-plano-brasileiro-ia-soberana /en/blog/soberania-ia-chips-brasil-supercomputadores 301
+/en/blog/redata-data-centers-verdes-ia-energia-limpa-2026 /en/blog/data-centers-verdes-clusters-ia-energia-limpa-brasil 301
+/en/blog/data-centers-ia-energia-limpa-brasil-topo-global /en/blog/data-centers-verdes-clusters-ia-energia-limpa-brasil 301
+/en/blog/ectoina-barreira-cutanea-skincare-extremolitos /en/blog/peptideos-cobre-ghk-cu-ectoina-barreira-cutanea-brasil 301
+/en/blog/agentes-ia-open-finance-pagamentos-autonomos-2026 /en/blog/open-finance-investimentos-inteligencia-artificial-rebalanceamento-brasil 301
+/en/blog/open-investment-carteiras-automatizadas-dividendos /en/blog/open-finance-investimentos-inteligencia-artificial-rebalanceamento-brasil 301
+
+# Consolidação Canônica 301 de Artigos Duplicados (ES)
+/es/blog/small-language-models-edge-ai-empresas-2026 /es/blog/small-language-models-slm-npu-ia-offline-empresas-brasil 301
+/es/blog/modelos-pequenos-ia-slm-edge-ai-empresas /es/blog/small-language-models-slm-npu-ia-offline-empresas-brasil 301
+/es/blog/renascenca-terceiros-espacos-comunidade-desconexao /es/blog/terceiros-lugares-third-places-cafes-oficinas-convivio-brasil 301
+/es/blog/third-places-oficinas-manuais-atelies-socializacao-urbana-brasil /es/blog/terceiros-lugares-third-places-cafes-oficinas-convivio-brasil 301
+/es/blog/cloreto-de-magnesio-disposicao-sono-liberdade-movimento /es/blog/cloreto-de-magnesio-pa-beneficios-saude-sono-2026 301
+/es/blog/funcoes-do-magnesio-no-corpo-beneficios-cloreto /es/blog/cloreto-de-magnesio-pa-beneficios-saude-sono-2026 301
+/es/blog/coolcationing-turismo-clima-fresco-viagens /es/blog/coolcationing-turismo-clima-ameno-fuga-calor-viagens-brasil 301
+/es/blog/loud-budgeting-tendencia-consumo-limites-financeiros-brasil /es/blog/loud-budgeting-transparencia-financeira-consumo-jovem-brasil 301
+/es/blog/pdrn-estetica-regenerativa-quiet-beauty-pele /es/blog/pdrn-dna-salmao-biorregeneracao-celular-estetica-pele-brasil 301
+/es/blog/saf-combustivel-sustentavel-aviacao-etanol-descarbonizacao /es/blog/saf-combustivel-sustentavel-aviacao-brasil 301
+/es/blog/combustivel-sustentavel-aviacao-saf-etanol-probioqav-brasil /es/blog/saf-combustivel-sustentavel-aviacao-brasil 301
+/es/blog/semana-de-4-dias-brasil-resultados-fgv-produtividade /es/blog/semana-de-4-dias-trabalho-produtividade-burnout-empresas-brasil 301
+/es/blog/turismo-do-sono-hoteis-circadianos-viagens /es/blog/sleep-tourism-turismo-do-sono-hotelaria-bem-estar-brasil 301
+/es/blog/venture-debt-startups-credito-estruturado-nao-dilutivo-brasil /es/blog/venture-debt-credito-privado-startups-brasil 301
+/es/blog/micro-aposentadorias-pausas-sabaticas-planejamento-carreira-brasil /es/blog/micro-aposentadorias-pausas-sabaticas-geracao-z-millennials-carreira 301
+/es/blog/hushpitality-astroturismo-luxo-silencioso-viagens-2026 /es/blog/astroturismo-noctourism-parques-ceu-escuro-hotelaria-estelar-brasil 301
+/es/blog/astroturismo-dark-sky-parques-noturnos-chapada-veadeiros /es/blog/astroturismo-noctourism-parques-ceu-escuro-hotelaria-estelar-brasil 301
+/es/blog/supercomputador-santos-dumont-plano-brasileiro-ia-soberana /es/blog/soberania-ia-chips-brasil-supercomputadores 301
+/es/blog/redata-data-centers-verdes-ia-energia-limpa-2026 /es/blog/data-centers-verdes-clusters-ia-energia-limpa-brasil 301
+/es/blog/data-centers-ia-energia-limpa-brasil-topo-global /es/blog/data-centers-verdes-clusters-ia-energia-limpa-brasil 301
+/es/blog/ectoina-barreira-cutanea-skincare-extremolitos /es/blog/peptideos-cobre-ghk-cu-ectoina-barreira-cutanea-brasil 301
+/es/blog/agentes-ia-open-finance-pagamentos-autonomos-2026 /es/blog/open-finance-investimentos-inteligencia-artificial-rebalanceamento-brasil 301
+/es/blog/open-investment-carteiras-automatizadas-dividendos /es/blog/open-finance-investimentos-inteligencia-artificial-rebalanceamento-brasil 301

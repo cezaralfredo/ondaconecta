@@ -1,4 +1,4 @@
-name: Deploy via FTP to DirectAdmin
+name: Deploy to Cloudflare Workers Static Assets
 
 on:
   push:
@@ -31,18 +31,16 @@ jobs:
       - name: 🔍 Auditoria SEO Pós-Build (Home Bloat, FAQPage & Sitemap)
         run: npm run seo:audit:dist
 
-      - name: 🚀 Sincronizar via FTP com public_html
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: pro127.dnspro.net.br
-          username: ${{ secrets.FTP_USERNAME || 'ondaconecta' }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/
-          server-dir: public_html/
-          dangerous-clean-slate: false
-          timeout: 60000
-          security: 'loose'
-          log-level: 'verbose'
+      - name: 🚀 Deploy atômico no Cloudflare Workers Static Assets
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 43cc48c6912f96cf45bf4177dcbe31ce
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "::warning::Secret CLOUDFLARE_API_TOKEN não configurado no GitHub. Configure-o em Settings -> Secrets -> Actions para deploy automático."
+            exit 0
+          fi
+          npx cf deploy ./dist --force
 
       - name: ⚡ Notificar motores de busca via IndexNow (Bing / Yandex)
         run: node scripts/submit-indexnow.mjs
@@ -66,5 +64,4 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_ADMIN_CHAT_ID: ${{ secrets.TELEGRAM_ADMIN_CHAT_ID || secrets.TELEGRAM_CHAT_ID }}
-        run: node scripts/notify-status.mjs --error "Falha na pipeline GitHub Actions (Deploy via FTP / Auditoria SEO). Verifique a aba Actions do repositório."
-
+        run: node scripts/notify-status.mjs --error "Falha na pipeline GitHub Actions (Deploy Cloudflare / Auditoria SEO). Verifique a aba Actions do repositório."

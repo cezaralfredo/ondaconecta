@@ -37,8 +37,9 @@ coverage/
 # production
 build/
 
-# vercel
+# vercel & cloudflare
 .vercel
+.cloudflare/
 
 # misc
 .DS_Store

@@ -1,103 +1,70 @@
-# Netlify Headers Configuration
-# Security, Performance, and SEO optimized headers
+# Cloudflare Workers Static Assets — Headers (Onda Conecta)
+# Otimizado para Google AdSense, Core Web Vitals, SEO e Segurança
 
-# Global headers for all pages
 /*
-  # Security Headers
-  X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
-  X-XSS-Protection: 1; mode=block
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
-
-  # Content Security Policy (Google AdSense, Pinterest, Fonts, CDN)
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://s.pinimg.com https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.google.com https://*.doubleclick.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; frame-src 'self' https://googleads.g.doubleclick.net https://*.googlesyndication.com https://*.google.com; connect-src 'self' https://api.github.com https://ct.pinterest.com https://s.pinimg.com https://pagead2.googlesyndication.com https://*.google.com https://*.googlesyndication.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
-
-  # Performance & SEO
-  X-DNS-Prefetch-Control: on
-
-# HTML pages - always fresh, enable revalidation
-/*.html
-  Cache-Control: public, max-age=0, must-revalidate
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
 
 /
   Cache-Control: public, max-age=0, must-revalidate
 
-# JavaScript and CSS with hashes - immutable, long cache
-/assets/*.js
+/en
+  Cache-Control: public, max-age=0, must-revalidate
+
+/es
+  Cache-Control: public, max-age=0, must-revalidate
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/_astro/*
   Cache-Control: public, max-age=31536000, immutable
 
-/assets/*.css
-  Cache-Control: public, max-age=31536000, immutable
-
-/_astro/*.js
-  Cache-Control: public, max-age=31536000, immutable
-
-/_astro/*.css
-  Cache-Control: public, max-age=31536000, immutable
-
-# Images - long cache but not immutable
-/*.jpg
+/images/*
   Cache-Control: public, max-age=604800, stale-while-revalidate=86400
 
-/*.jpeg
-  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
-
-/*.png
-  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
-
-/*.webp
-  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
-
-/*.avif
-  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
-
-/*.svg
-  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
-
-/*.gif
-  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
-
-# Image assets in public folder
-/images/**/*.jpg
-  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
-/images/**/*.png
-  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
-/images/**/*.webp
-  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
-# Fonts - immutable, very long cache
-/*.woff
-  Cache-Control: public, max-age=31536000, immutable
-
-/*.woff2
-  Cache-Control: public, max-age=31536000, immutable
-
-/*.ttf
-  Cache-Control: public, max-age=31536000, immutable
-
-/*.otf
-  Cache-Control: public, max-age=31536000, immutable
-
-/*.eot
-  Cache-Control: public, max-age=31536000, immutable
-
-# Static files
-/favicon/favicon.ico
+/favicon/*
   Cache-Control: public, max-age=604800
 
-/favicon/*.ico
-  Cache-Control: public, max-age=604800
-
-/robots.txt
+/ads.txt
+  Content-Type: text/plain; charset=utf-8
+  Access-Control-Allow-Origin: *
   Cache-Control: public, max-age=3600
 
-/sitemap*.xml
+/robots.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/llms-full.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/sitemap-index.xml
+  Content-Type: application/xml; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/sitemap-0.xml
+  Content-Type: application/xml; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/rss.xml
+  Content-Type: application/rss+xml; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/en/rss.xml
+  Content-Type: application/rss+xml; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/es/rss.xml
+  Content-Type: application/rss+xml; charset=utf-8
   Cache-Control: public, max-age=3600
 
 /site.webmanifest
+  Content-Type: application/manifest+json; charset=utf-8
   Cache-Control: public, max-age=604800
-
-# RSS Feed
-/rss.xml
-  Cache-Control: public, max-age=3600
-  Content-Type: application/rss+xml; charset=utf-8
